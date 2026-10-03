@@ -1,0 +1,25 @@
+{
+  "appId": "com.belentani.app",
+  "appName": "BELENTANI",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https",
+    "iosPrepend": false
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    },
+    "LocalNotifications": {},
+    "Geolocation": {},
+    "Camera": {}
+  },
+  "android": {
+    "buildOptions": {
+      "releaseType": "AAB"
+    }
+  },
+  "ios": {
+    "contentInset": "automatic"
+  }
+}

@@ -1,0 +1,824 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "name": "Belentani Academy",
+    "tagline": "Aprende sin límites. Crece sin fronteras.",
+    "languages": ["es", "pt", "en", "ca"],
+    "totalTracks": 8,
+    "totalLessons": 55
+  },
+  "tracks": [
+    {
+      "id": "ia-basica",
+      "name": { "es": "Inteligencia Artificial desde Cero", "pt": "Inteligência Artificial do Zero", "en": "AI from Scratch", "ca": "Intel·ligència Artificial des de Zero" },
+      "icon": "🤖",
+      "color": "#00f0ff",
+      "description": { "es": "Domina la IA: desde ChatGPT hasta prompts profesionales", "pt": "Domine a IA: do ChatGPT a prompts profissionais", "en": "Master AI: from ChatGPT to professional prompts", "ca": "Domina la IA: del ChatGPT a prompts professionals" },
+      "difficulty": "beginner",
+      "duration": "8h",
+      "gem": "explorador",
+      "modules": [
+        {
+          "id": "ia-m1",
+          "name": { "es": "¿Qué es la IA?", "pt": "O que é IA?", "en": "What is AI?", "ca": "Què és la IA?" },
+          "lessons": [
+            {
+              "id": "ia-1-1",
+              "title": { "es": "IA explicada para tu abuela", "pt": "IA explicada para sua avó", "en": "AI explained for your grandma", "ca": "IA explicada per a la teva àvia" },
+              "duration": "8min",
+              "type": "text",
+              "content": "ia/1-1.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Qué es la IA?", "en": "What is AI?" }, "options": ["Un robot físico", "Software que aprende patrones", "Una calculadora rápida", "Un videojuego"], "correct": 1 }
+              ]
+            },
+            {
+              "id": "ia-1-2",
+              "title": { "es": "Historia de la IA en 5 minutos", "pt": "História da IA em 5 minutos", "en": "AI history in 5 minutes", "ca": "Història de la IA en 5 minuts" },
+              "duration": "5min",
+              "type": "text",
+              "content": "ia/1-2.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿En qué año nació el término 'Inteligencia Artificial'?", "en": "When was 'Artificial Intelligence' coined?" }, "options": ["1920", "1956", "1984", "2001"], "correct": 1 }
+              ]
+            },
+            {
+              "id": "ia-1-3",
+              "title": { "es": "Tipos de IA: estrecha, general y súper", "pt": "Tipos de IA: estreita, geral e super", "en": "Types of AI: narrow, general and super", "ca": "Tipus d'IA: estreta, general i súper" },
+              "duration": "7min",
+              "type": "text",
+              "content": "ia/1-3.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Qué tipo de IA es ChatGPT?", "en": "What type of AI is ChatGPT?" }, "options": ["IA General", "IA Estrecha", "IA Superinteligente", "No es IA"], "correct": 1 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ia-m2",
+          "name": { "es": "Tu primer chat con IA", "pt": "Seu primeiro chat com IA", "en": "Your first AI chat", "ca": "El teu primer xat amb IA" },
+          "lessons": [
+            {
+              "id": "ia-2-1",
+              "title": { "es": "Abriendo ChatGPT por primera vez", "pt": "Abrindo ChatGPT pela primeira vez", "en": "Opening ChatGPT for the first time", "ca": "Obrint ChatGPT per primera vegada" },
+              "duration": "10min",
+              "type": "text",
+              "content": "ia/2-1.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Cuál es la URL de ChatGPT?", "en": "What is ChatGPT's URL?" }, "options": ["chat.openai.com", "chatgpt.google.com", "ai.microsoft.com", "chat.yahoo.com"], "correct": 0 }
+              ]
+            },
+            {
+              "id": "ia-2-2",
+              "title": { "es": "Escribiendo tu primer prompt", "pt": "Escrevendo seu primeiro prompt", "en": "Writing your first prompt", "ca": "Escrivint el teu primer prompt" },
+              "duration": "12min",
+              "type": "text",
+              "content": "ia/2-2.md",
+              "voice": true,
+              "project": { "es": "Escribe un prompt para que la IA te ayude a redactar un email formal", "en": "Write a prompt for AI to help you draft a formal email" }
+            },
+            {
+              "id": "ia-2-3",
+              "title": { "es": "ChatGPT vs Gemini vs Claude: ¿cuál usar?", "pt": "ChatGPT vs Gemini vs Claude: qual usar?", "en": "ChatGPT vs Gemini vs Claude: which to use?", "ca": "ChatGPT vs Gemini vs Claude: quin usar?" },
+              "duration": "8min",
+              "type": "text",
+              "content": "ia/2-3.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Cuál es gratuito con límites?", "en": "Which is free with limits?" }, "options": ["Solo ChatGPT", "Solo Gemini", "Todos tienen versión gratuita", "Ninguno es gratuito"], "correct": 2 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ia-m3",
+          "name": { "es": "Prompts que funcionan", "pt": "Prompts que funcionam", "en": "Prompts that work", "ca": "Prompts que funcionen" },
+          "lessons": [
+            {
+              "id": "ia-3-1",
+              "title": { "es": "La fórmula mágica del prompt perfecto", "pt": "A fórmula mágica do prompt perfeito", "en": "The magic formula for the perfect prompt", "ca": "La fórmula màgica del prompt perfecte" },
+              "duration": "15min",
+              "type": "text",
+              "content": "ia/3-1.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Qué debe incluir un buen prompt?", "en": "What should a good prompt include?" }, "options": ["Solo una pregunta", "Contexto + tarea + formato", "Solo palabras clave", "Un emoji"], "correct": 1 }
+              ]
+            },
+            {
+              "id": "ia-3-2",
+              "title": { "es": "Prompts para tu trabajo", "pt": "Prompts para seu trabalho", "en": "Prompts for your job", "ca": "Prompts per a la teva feina" },
+              "duration": "12min",
+              "type": "text",
+              "content": "ia/3-2.md",
+              "voice": true,
+              "project": { "es": "Crea 3 prompts útiles para tu búsqueda de empleo", "en": "Create 3 useful prompts for your job search" }
+            },
+            {
+              "id": "ia-3-3",
+              "title": { "es": "Prompts para la vida diaria", "pt": "Prompts para o dia a dia", "en": "Prompts for daily life", "ca": "Prompts per al dia a dia" },
+              "duration": "10min",
+              "type": "text",
+              "content": "ia/3-3.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Puedes pedirle a la IA que te explique algo 'como si tuviera 5 años'?", "en": "Can you ask AI to explain something 'like I'm 5'?" }, "options": ["Sí, es una técnica válida", "No, solo entiende lenguaje técnico", "Solo en inglés", "Solo con ChatGPT"], "correct": 0 }
+              ]
+            },
+            {
+              "id": "ia-3-4",
+              "title": { "es": "Errores comunes al usar IA", "pt": "Erros comuns ao usar IA", "en": "Common mistakes when using AI", "ca": "Errors comuns en usar IA" },
+              "duration": "8min",
+              "type": "text",
+              "content": "ia/3-4.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿La IA siempre dice la verdad?", "en": "Does AI always tell the truth?" }, "options": ["Sí, nunca miente", "No, puede 'alucinar' información", "Solo a veces", "Solo en español"], "correct": 1 }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "office",
+      "name": { "es": "Office que Trabaja para Ti", "pt": "Office que Trabalha para Você", "en": "Office That Works for You", "ca": "Office que Treballa per a Tu" },
+      "icon": "📊",
+      "color": "#ff6b35",
+      "description": { "es": "Word, Excel y PowerPoint sin dolor", "pt": "Word, Excel e PowerPoint sem dor", "en": "Word, Excel and PowerPoint without pain", "ca": "Word, Excel i PowerPoint sense dolor" },
+      "difficulty": "beginner",
+      "duration": "6h",
+      "gem": "artesano",
+      "modules": [
+        {
+          "id": "office-m1",
+          "name": { "es": "Word: documentos profesionales", "pt": "Word: documentos profissionais", "en": "Word: professional documents", "ca": "Word: documents professionals" },
+          "lessons": [
+            {
+              "id": "off-1-1",
+              "title": { "es": "Word en 10 minutos: lo esencial", "pt": "Word em 10 minutos: o essencial", "en": "Word in 10 minutes: the essentials", "ca": "Word en 10 minuts: l'essencial" },
+              "duration": "10min",
+              "type": "text",
+              "content": "office/1-1.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Qué atajo guarda un documento en Word?", "en": "What shortcut saves a document in Word?" }, "options": ["Ctrl+S", "Ctrl+P", "Ctrl+Z", "Ctrl+X"], "correct": 0 }
+              ]
+            },
+            {
+              "id": "off-1-2",
+              "title": { "es": "Formatos que impresionan: CVs y cartas", "pt": "Formatos que impressionam: CVs e cartas", "en": "Formats that impress: CVs and letters", "ca": "Formats que impressionen: CVs i cartes" },
+              "duration": "15min",
+              "type": "text",
+              "content": "office/1-2.md",
+              "voice": true,
+              "project": { "es": "Crea un CV profesional usando una plantilla de Word", "en": "Create a professional CV using a Word template" }
+            },
+            {
+              "id": "off-1-3",
+              "title": { "es": "Tablas, índices y referencias", "pt": "Tabelas, índices e referências", "en": "Tables, indexes and references", "ca": "Taules, índexs i referències" },
+              "duration": "12min",
+              "type": "text",
+              "content": "office/1-3.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Para qué sirve un índice automático?", "en": "What is an automatic index for?" }, "options": ["Decorar el documento", "Navegar rápidamente por las secciones", "Traducir el texto", "Comprimir el archivo"], "correct": 1 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "office-m2",
+          "name": { "es": "Excel: de cero a héroe", "pt": "Excel: do zero ao herói", "en": "Excel: from zero to hero", "ca": "Excel: de zero a heroi" },
+          "lessons": [
+            {
+              "id": "off-2-1",
+              "title": { "es": "Excel no da miedo: promesa", "pt": "Excel não dá medo: promessa", "en": "Excel isn't scary: promise", "ca": "Excel no fa por: promesa" },
+              "duration": "10min",
+              "type": "text",
+              "content": "office/2-1.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Qué es una celda en Excel?", "en": "What is a cell in Excel?" }, "options": ["Un archivo", "La intersección de fila y columna", "Un gráfico", "Una fórmula"], "correct": 1 }
+              ]
+            },
+            {
+              "id": "off-2-2",
+              "title": { "es": "Fórmulas que te salvan la vida", "pt": "Fórmulas que salvam sua vida", "en": "Formulas that save your life", "ca": "Fórmules que et salven la vida" },
+              "duration": "15min",
+              "type": "text",
+              "content": "office/2-2.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Qué hace =SUMA(A1:A10)?", "en": "What does =SUM(A1:A10) do?" }, "options": ["Resta los valores", "Suma los valores de A1 a A10", "Multiplica", "Borra las celdas"], "correct": 1 }
+              ]
+            },
+            {
+              "id": "off-2-3",
+              "title": { "es": "Gráficos que cuentan historias", "pt": "Gráficos que contam histórias", "en": "Charts that tell stories", "ca": "Gràfics que expliquen històries" },
+              "duration": "12min",
+              "type": "text",
+              "content": "office/2-3.md",
+              "voice": true,
+              "project": { "es": "Crea un presupuesto mensual con gráfico de barras", "en": "Create a monthly budget with a bar chart" }
+            }
+          ]
+        },
+        {
+          "id": "office-m3",
+          "name": { "es": "PowerPoint: presentaciones que enganchan", "pt": "PowerPoint: apresentações que engancham", "en": "PowerPoint: presentations that hook", "ca": "PowerPoint: presentacions que enganxen" },
+          "lessons": [
+            {
+              "id": "off-3-1",
+              "title": { "es": "Menos texto, más impacto", "pt": "Menos texto, mais impacto", "en": "Less text, more impact", "ca": "Menys text, més impacte" },
+              "duration": "8min",
+              "type": "text",
+              "content": "office/3-1.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Cuántas ideas máximo por diapositiva?", "en": "Maximum ideas per slide?" }, "options": ["10", "5", "1 idea central", "Todas las que quepan"], "correct": 2 }
+              ]
+            },
+            {
+              "id": "off-3-2",
+              "title": { "es": "Diseño que no da vergüenza", "pt": "Design que não dá vergonha", "en": "Design that isn't embarrassing", "ca": "Disseny que no fa vergonya" },
+              "duration": "10min",
+              "type": "text",
+              "content": "office/3-2.md",
+              "voice": true,
+              "project": { "es": "Crea una presentación de 5 diapositivas sobre ti", "en": "Create a 5-slide presentation about yourself" }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "diseno",
+      "name": { "es": "Diseño para No-Diseñadores", "pt": "Design para Não-Designers", "en": "Design for Non-Designers", "ca": "Disseny per a No-Dissenyadors" },
+      "icon": "🎨",
+      "color": "#c084fc",
+      "description": { "es": "Crea diseños increíbles sin estudiar 5 años", "pt": "Crie designs incríveis sem estudar 5 anos", "en": "Create amazing designs without 5 years of study", "ca": "Crea dissenys increïbles sense estudiar 5 anys" },
+      "difficulty": "beginner",
+      "duration": "5h",
+      "gem": "creativo",
+      "modules": [
+        {
+          "id": "dis-m1",
+          "name": { "es": "Canva: tu estudio de diseño", "pt": "Canva: seu estúdio de design", "en": "Canva: your design studio", "ca": "Canva: el teu estudi de disseny" },
+          "lessons": [
+            {
+              "id": "dis-1-1",
+              "title": { "es": "Canva en 15 minutos", "pt": "Canva em 15 minutos", "en": "Canva in 15 minutes", "ca": "Canva en 15 minuts" },
+              "duration": "15min",
+              "type": "text",
+              "content": "diseno/1-1.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Canva es gratuito?", "en": "Is Canva free?" }, "options": ["No, es de pago", "Sí, con versión Pro opcional", "Solo para empresas", "Solo 7 días gratis"], "correct": 1 }
+              ]
+            },
+            {
+              "id": "dis-1-2",
+              "title": { "es": "Tu primer cartel profesional", "pt": "Seu primeiro cartaz profissional", "en": "Your first professional poster", "ca": "El teu primer cartell professional" },
+              "duration": "20min",
+              "type": "text",
+              "content": "diseno/1-2.md",
+              "voice": true,
+              "project": { "es": "Diseña un cartel para un evento comunitario", "en": "Design a poster for a community event" }
+            },
+            {
+              "id": "dis-1-3",
+              "title": { "es": "Redes sociales con estilo", "pt": "Redes sociais com estilo", "en": "Social media with style", "ca": "Xarxes socials amb estil" },
+              "duration": "12min",
+              "type": "text",
+              "content": "diseno/1-3.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Cuál es el tamaño recomendado para post de Instagram?", "en": "Recommended size for Instagram post?" }, "options": ["1080x1080px", "1920x1080px", "500x500px", "2000x2000px"], "correct": 0 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "dis-m2",
+          "name": { "es": "Principios de diseño express", "pt": "Princípios de design express", "en": "Express design principles", "ca": "Principis de disseny exprés" },
+          "lessons": [
+            {
+              "id": "dis-2-1",
+              "title": { "es": "Colores que hablan", "pt": "Cores que falam", "en": "Colors that speak", "ca": "Colors que parlen" },
+              "duration": "10min",
+              "type": "text",
+              "content": "diseno/2-1.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Qué color transmite confianza en negocios?", "en": "What color conveys trust in business?" }, "options": ["Rojo", "Azul", "Amarillo", "Negro"], "correct": 1 }
+              ]
+            },
+            {
+              "id": "dis-2-2",
+              "title": { "es": "Tipografía: no uses Comic Sans", "pt": "Tipografia: não use Comic Sans", "en": "Typography: don't use Comic Sans", "ca": "Tipografia: no usis Comic Sans" },
+              "duration": "8min",
+              "type": "text",
+              "content": "diseno/2-2.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Cuántas fuentes máximo en un diseño?", "en": "Maximum fonts in a design?" }, "correct": 2, "options": ["1", "2-3", "5", "Las que quieras"] }
+              ]
+            },
+            {
+              "id": "dis-2-3",
+              "title": { "es": "Layout: la regla de oro", "pt": "Layout: a regra de ouro", "en": "Layout: the golden rule", "ca": "Layout: la regla d'or" },
+              "duration": "10min",
+              "type": "text",
+              "content": "diseno/2-3.md",
+              "voice": true,
+              "project": { "es": "Rediseña una tarjeta de visita usando principios de layout", "en": "Redesign a business card using layout principles" }
+            },
+            {
+              "id": "dis-2-4",
+              "title": { "es": "Accesibilidad visual: diseño para todos", "pt": "Acessibilidade visual: design para todos", "en": "Visual accessibility: design for everyone", "ca": "Accessibilitat visual: disseny per a tothom" },
+              "duration": "8min",
+              "type": "text",
+              "content": "diseno/2-4.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Cuál es el ratio de contraste mínimo para texto normal (WCAG AA)?", "en": "Minimum contrast ratio for normal text (WCAG AA)?" }, "options": ["2:1", "4.5:1", "10:1", "No importa"], "correct": 1 }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "programacion",
+      "name": { "es": "Programación: Tu Primer Sitio Web", "pt": "Programação: Seu Primeiro Site", "en": "Programming: Your First Website", "ca": "Programació: El Teu Primer Lloc Web" },
+      "icon": "💻",
+      "color": "#22c55e",
+      "description": { "es": "HTML, CSS y JavaScript desde cero", "pt": "HTML, CSS e JavaScript do zero", "en": "HTML, CSS and JavaScript from scratch", "ca": "HTML, CSS i JavaScript des de zero" },
+      "difficulty": "beginner",
+      "duration": "10h",
+      "gem": "constructor",
+      "modules": [
+        {
+          "id": "prog-m1",
+          "name": { "es": "HTML: el esqueleto de la web", "pt": "HTML: o esqueleto da web", "en": "HTML: the skeleton of the web", "ca": "HTML: l'esquelet de la web" },
+          "lessons": [
+            {
+              "id": "prog-1-1",
+              "title": { "es": "¿Qué es HTML? (y por qué mola)", "pt": "O que é HTML? (e por que é legal)", "en": "What is HTML? (and why it's cool)", "ca": "Què és HTML? (i per què mola)" },
+              "duration": "8min",
+              "type": "text",
+              "content": "prog/1-1.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Qué significa HTML?", "en": "What does HTML stand for?" }, "options": ["HyperText Markup Language", "High Tech Modern Language", "Home Tool Markup Language", "Hyper Transfer Markup Language"], "correct": 0 }
+              ]
+            },
+            {
+              "id": "prog-1-2",
+              "title": { "es": "Tu primera página web", "pt": "Sua primeira página web", "en": "Your first web page", "ca": "La teva primera pàgina web" },
+              "duration": "15min",
+              "type": "interactive",
+              "content": "prog/1-2.md",
+              "voice": true,
+              "project": { "es": "Crea una página 'Sobre mí' con HTML", "en": "Create an 'About me' page with HTML" }
+            },
+            {
+              "id": "prog-1-3",
+              "title": { "es": "Enlaces, imágenes y listas", "pt": "Links, imagens e listas", "en": "Links, images and lists", "ca": "Enllaços, imatges i llistes" },
+              "duration": "12min",
+              "type": "text",
+              "content": "prog/1-3.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Qué etiqueta crea un enlace?", "en": "Which tag creates a link?" }, "options": ["<link>", "<a>", "<href>", "<url>"], "correct": 1 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "prog-m2",
+          "name": { "es": "CSS: dale estilo", "pt": "CSS: dê estilo", "en": "CSS: give it style", "ca": "CSS: dona-li estil" },
+          "lessons": [
+            {
+              "id": "prog-2-1",
+              "title": { "es": "CSS: la ropa de tu web", "pt": "CSS: a roupa da sua web", "en": "CSS: your website's clothes", "ca": "CSS: la roba de la teva web" },
+              "duration": "10min",
+              "type": "text",
+              "content": "prog/2-1.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Qué propiedad cambia el color del texto?", "en": "Which property changes text color?" }, "options": ["text-color", "font-color", "color", "text-style"], "correct": 2 }
+              ]
+            },
+            {
+              "id": "prog-2-2",
+              "title": { "es": "Flexbox: layout sin dolor", "pt": "Flexbox: layout sem dor", "en": "Flexbox: layout without pain", "ca": "Flexbox: layout sense dolor" },
+              "duration": "15min",
+              "type": "interactive",
+              "content": "prog/2-2.md",
+              "voice": true,
+              "project": { "es": "Crea un layout de tarjeta con Flexbox", "en": "Create a card layout with Flexbox" }
+            },
+            {
+              "id": "prog-2-3",
+              "title": { "es": "Responsive: móvil primero", "pt": "Responsivo: mobile primeiro", "en": "Responsive: mobile first", "ca": "Responsiu: mòbil primer" },
+              "duration": "12min",
+              "type": "text",
+              "content": "prog/2-3.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Qué unidad es relativa al viewport?", "en": "Which unit is relative to the viewport?" }, "options": ["px", "em", "vw/vh", "cm"], "correct": 2 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "prog-m3",
+          "name": { "es": "JavaScript: hazlo interactivo", "pt": "JavaScript: torne interativo", "en": "JavaScript: make it interactive", "ca": "JavaScript: fes-ho interactiu" },
+          "lessons": [
+            {
+              "id": "prog-3-1",
+              "title": { "es": "JavaScript: la magia de la web", "pt": "JavaScript: a magia da web", "en": "JavaScript: the magic of the web", "ca": "JavaScript: la màgia de la web" },
+              "duration": "10min",
+              "type": "text",
+              "content": "prog/3-1.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿JavaScript y Java son lo mismo?", "en": "Are JavaScript and Java the same?" }, "options": ["Sí", "No, son lenguajes diferentes", "Solo el nombre", "Son dialectos"], "correct": 1 }
+              ]
+            },
+            {
+              "id": "prog-3-2",
+              "title": { "es": "Variables, funciones y eventos", "pt": "Variáveis, funções e eventos", "en": "Variables, functions and events", "ca": "Variables, funcions i esdeveniments" },
+              "duration": "15min",
+              "type": "interactive",
+              "content": "prog/3-2.md",
+              "voice": true,
+              "project": { "es": "Crea un botón que cambie el color de fondo", "en": "Create a button that changes the background color" }
+            },
+            {
+              "id": "prog-3-3",
+              "title": { "es": "Tu primer mini-proyecto web", "pt": "Seu primeiro mini-projeto web", "en": "Your first mini web project", "ca": "El teu primer mini-projecte web" },
+              "duration": "20min",
+              "type": "interactive",
+              "content": "prog/3-3.md",
+              "voice": true,
+              "project": { "es": "Crea una calculadora simple con HTML+CSS+JS", "en": "Create a simple calculator with HTML+CSS+JS" }
+            },
+            {
+              "id": "prog-3-4",
+              "title": { "es": "Publica tu web en GitHub Pages", "pt": "Publique seu site no GitHub Pages", "en": "Publish your site on GitHub Pages", "ca": "Publica la teva web a GitHub Pages" },
+              "duration": "10min",
+              "type": "text",
+              "content": "prog/3-4.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿GitHub Pages es gratuito?", "en": "Is GitHub Pages free?" }, "options": ["No", "Sí, para repos públicos", "Solo para empresas", "Cuesta $5/mes"], "correct": 1 }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "idiomas",
+      "name": { "es": "Español para el Día a Día", "pt": "Espanhol para o Dia a Dia", "en": "Spanish for Everyday Life", "ca": "Castellà per al Dia a Dia" },
+      "icon": "🗣️",
+      "color": "#f59e0b",
+      "description": { "es": "Español práctico para migrantes y recién llegados", "pt": "Espanhol prático para migrantes e recém-chegados", "en": "Practical Spanish for migrants and newcomers", "ca": "Castellà pràctic per a migrants i nouvinguts" },
+      "difficulty": "beginner",
+      "duration": "4h",
+      "gem": "explorador",
+      "modules": [
+        {
+          "id": "idi-m1",
+          "name": { "es": "Sobrevivir en España", "pt": "Sobreviver na Espanha", "en": "Surviving in Spain", "ca": "Sobreviure a Espanya" },
+          "lessons": [
+            {
+              "id": "idi-1-1",
+              "title": { "es": "Presentarte como un pro", "pt": "Apresentar-se como um pro", "en": "Introduce yourself like a pro", "ca": "Presentar-te com un pro" },
+              "duration": "10min",
+              "type": "text",
+              "content": "idiomas/1-1.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Cómo se dice 'Nice to meet you' en español?", "en": "How do you say 'Nice to meet you' in Spanish?" }, "options": ["Buenos días", "Mucho gusto", "Hasta luego", "Por favor"], "correct": 1 }
+              ]
+            },
+            {
+              "id": "idi-1-2",
+              "title": { "es": "En el supermercado", "pt": "No supermercado", "en": "At the supermarket", "ca": "Al supermercat" },
+              "duration": "8min",
+              "type": "text",
+              "content": "idiomas/1-2.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Cómo pides algo de precio?", "en": "How do you ask for the price?" }, "options": ["¿Cuánto cuesta?", "¿Dónde está?", "¿Qué hora es?", "¿Cómo estás?"], "correct": 0 }
+              ]
+            },
+            {
+              "id": "idi-1-3",
+              "title": { "es": "En el médico", "pt": "No médico", "en": "At the doctor's", "ca": "Al metge" },
+              "duration": "10min",
+              "type": "text",
+              "content": "idiomas/1-3.md",
+              "voice": true,
+              "project": { "es": "Practica un diálogo en el médico con un compañero", "en": "Practice a doctor's office dialogue with a partner" }
+            },
+            {
+              "id": "idi-1-4",
+              "title": { "es": "Transporte público", "pt": "Transporte público", "en": "Public transport", "ca": "Transport públic" },
+              "duration": "8min",
+              "type": "text",
+              "content": "idiomas/1-4.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Cómo compras un billete de metro?", "en": "How do you buy a metro ticket?" }, "options": ["Pidiendo en la calle", "En la máquina expendedora", "Solo con app", "No se puede"], "correct": 1 }
+              ]
+            },
+            {
+              "id": "idi-1-5",
+              "title": { "es": "Trámites y papeles", "pt": "Trâmites e papéis", "en": "Paperwork and procedures", "ca": "Tràmits i papers" },
+              "duration": "12min",
+              "type": "text",
+              "content": "idiomas/1-5.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Qué es el NIE?", "en": "What is the NIE?" }, "options": ["Un tipo de visa", "Número de Identidad de Extranjero", "Un banco", "Un hospital"], "correct": 1 }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "derechos",
+      "name": { "es": "Conoce Tus Derechos", "pt": "Conheça Seus Direitos", "en": "Know Your Rights", "ca": "Coneix els Teus Drets" },
+      "icon": "⚖️",
+      "color": "#ef4444",
+      "description": { "es": "Papeles, arraigo, trabajo: tu guía legal", "pt": "Papéis, arraigo, trabalho: seu guia legal", "en": "Papers, residency, work: your legal guide", "ca": "Papers, arrelament, treball: la teva guia legal" },
+      "difficulty": "beginner",
+      "duration": "4h",
+      "gem": "guerrero",
+      "modules": [
+        {
+          "id": "der-m1",
+          "name": { "es": "Tu situación legal", "pt": "Sua situação legal", "en": "Your legal situation", "ca": "La teva situació legal" },
+          "lessons": [
+            {
+              "id": "der-1-1",
+              "title": { "es": "NIE, TIE y residencia: las siglas que salvan", "pt": "NIE, TIE e residência: as siglas que salvam", "en": "NIE, TIE and residency: the acronyms that save", "ca": "NIE, TIE i residència: les sigles que salven" },
+              "duration": "15min",
+              "type": "text",
+              "content": "derechos/1-1.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿El NIE lo necesitan todos los extranjeros en España?", "en": "Do all foreigners in Spain need the NIE?" }, "options": ["Solo los europeos", "Sí, todos los no europeos", "Solo mayores de 18", "No es necesario"], "correct": 1 }
+              ]
+            },
+            {
+              "id": "der-1-2",
+              "title": { "es": "Arraigo social: tu camino a los papeles", "pt": "Arraigo social: seu caminho para os papéis", "en": "Social roots: your path to papers", "ca": "Arrelament social: el teu camí als papers" },
+              "duration": "15min",
+              "type": "text",
+              "content": "derechos/1-2.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Cuántos años necesitas para arraigo social?", "en": "How many years for social roots?" }, "options": ["1 año", "2 años", "3 años", "5 años"], "correct": 2 }
+              ]
+            },
+            {
+              "id": "der-1-3",
+              "title": { "es": "Trabajar legalmente: tus opciones", "pt": "Trabalhar legalmente: suas opções", "en": "Working legally: your options", "ca": "Treballar legalment: les teves opcions" },
+              "duration": "12min",
+              "type": "text",
+              "content": "derechos/1-3.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Puedes trabajar sin permiso de trabajo?", "en": "Can you work without a work permit?" }, "options": ["Sí, siempre", "No, necesitas autorización", "Solo en negro", "Solo los europeos"], "correct": 1 }
+              ]
+            },
+            {
+              "id": "der-1-4",
+              "title": { "es": "Empadronamiento: el primer paso", "pt": "Empadronamento: o primeiro passo", "en": "Registration: the first step", "ca": "Empadronament: el primer pas" },
+              "duration": "10min",
+              "type": "text",
+              "content": "derechos/1-4.md",
+              "voice": true,
+              "project": { "es": "Haz una lista de los documentos necesarios para empadronarte", "en": "Make a list of documents needed for registration" }
+            },
+            {
+              "id": "der-1-5",
+              "title": { "es": "Recursos gratuitos de ayuda legal", "pt": "Recursos gratuitos de ajuda legal", "en": "Free legal aid resources", "ca": "Recursos gratuïts d'ajuda legal" },
+              "duration": "8min",
+              "type": "text",
+              "content": "derechos/1-5.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Hay abogados de oficio gratuitos?", "en": "Are there free public defenders?" }, "options": ["No", "Sí, para quien no pueda pagarlo", "Solo para españoles", "Solo en Barcelona"], "correct": 1 }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "empleo",
+      "name": { "es": "Encuentra Trabajo de Verdad", "pt": "Encontre Trabalho de Verdade", "en": "Find Real Work", "ca": "Troba Feina de Veritat" },
+      "icon": "💼",
+      "color": "#06b6d4",
+      "description": { "es": "CV, LinkedIn, entrevistas: todo lo que necesitas", "pt": "CV, LinkedIn, entrevistas: tudo que você precisa", "en": "CV, LinkedIn, interviews: everything you need", "ca": "CV, LinkedIn, entrevistes: tot el que necessites" },
+      "difficulty": "beginner",
+      "duration": "5h",
+      "gem": "artesano",
+      "modules": [
+        {
+          "id": "emp-m1",
+          "name": { "es": "Tu CV perfecto", "pt": "Seu CV perfeito", "en": "Your perfect CV", "ca": "El teu CV perfecte" },
+          "lessons": [
+            {
+              "id": "emp-1-1",
+              "title": { "es": "CV que pasa los filtros (y los humanos)", "pt": "CV que passa os filtros (e os humanos)", "en": "CV that passes filters (and humans)", "ca": "CV que passa els filtres (i els humans)" },
+              "duration": "15min",
+              "type": "text",
+              "content": "empleo/1-1.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Cuánto tiempo mira un reclutador un CV?", "en": "How long does a recruiter look at a CV?" }, "options": ["5 minutos", "6-10 segundos", "1 minuto", "30 segundos"], "correct": 1 }
+              ]
+            },
+            {
+              "id": "emp-1-2",
+              "title": { "es": "LinkedIn: tu escaparate profesional", "pt": "LinkedIn: sua vitrine profissional", "en": "LinkedIn: your professional showcase", "ca": "LinkedIn: el teu aparador professional" },
+              "duration": "12min",
+              "type": "text",
+              "content": "empleo/1-2.md",
+              "voice": true,
+              "project": { "es": "Optimiza tu perfil de LinkedIn con las técnicas aprendidas", "en": "Optimize your LinkedIn profile with learned techniques" }
+            },
+            {
+              "id": "emp-1-3",
+              "title": { "es": "Entrevistas: cómo brillar sin morir en el intento", "pt": "Entrevistas: como brilhar sem morrer na tentativa", "en": "Interviews: how to shine without dying trying", "ca": "Entrevistes: com brillar sense morir en l'intent" },
+              "duration": "15min",
+              "type": "text",
+              "content": "empleo/1-3.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Qué hacer si no sabes responder una pregunta?", "en": "What to do if you can't answer a question?" }, "options": ["Inventar algo", "Ser honesto y mostrar ganas de aprender", "Cambiar de tema", "Irte de la entrevista"], "correct": 1 }
+              ]
+            },
+            {
+              "id": "emp-1-4",
+              "title": { "es": "Networking: contactos que abren puertas", "pt": "Networking: contatos que abrem portas", "en": "Networking: contacts that open doors", "ca": "Networking: contactes que obren portes" },
+              "duration": "10min",
+              "type": "text",
+              "content": "empleo/1-4.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿El networking es solo para extrovertidos?", "en": "Is networking only for extroverts?" }, "options": ["Sí", "No, hay muchas formas de hacerlo", "Solo en eventos presenciales", "Solo online"], "correct": 1 }
+              ]
+            },
+            {
+              "id": "emp-1-5",
+              "title": { "es": "Carta de motivación que funciona", "pt": "Carta de motivação que funciona", "en": "Cover letter that works", "ca": "Carta de motivació que funciona" },
+              "duration": "10min",
+              "type": "text",
+              "content": "empleo/1-5.md",
+              "voice": true,
+              "project": { "es": "Escribe una carta de motivación para una oferta real", "en": "Write a cover letter for a real job posting" }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arte",
+      "name": { "es": "Arte y Expresión Digital", "pt": "Arte e Expressão Digital", "en": "Art and Digital Expression", "ca": "Art i Expressió Digital" },
+      "icon": "🎭",
+      "color": "#ec4899",
+      "description": { "es": "Crea, exprésate y comparte tu arte con el mundo", "pt": "Crie, expresse-se e compartilhe sua arte com o mundo", "en": "Create, express yourself and share your art with the world", "ca": "Crea, expressa't i comparteix el teu art amb el món" },
+      "difficulty": "beginner",
+      "duration": "4h",
+      "gem": "creativo",
+      "modules": [
+        {
+          "id": "arte-m1",
+          "name": { "es": "Tu voz creativa", "pt": "Sua voz criativa", "en": "Your creative voice", "ca": "La teva veu creativa" },
+          "lessons": [
+            {
+              "id": "arte-1-1",
+              "title": { "es": "Todos somos creativos (en serio)", "pt": "Todos somos criativos (sério)", "en": "We're all creative (seriously)", "ca": "Tots som creatius (de veritat)" },
+              "duration": "8min",
+              "type": "text",
+              "content": "arte/1-1.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿La creatividad es un don o se puede entrenar?", "en": "Is creativity a gift or can it be trained?" }, "options": ["Solo un don", "Se puede entrenar como un músculo", "Solo para artistas", "Solo de joven"], "correct": 1 }
+              ]
+            },
+            {
+              "id": "arte-1-2",
+              "title": { "es": "Fotografía con tu móvil", "pt": "Fotografia com seu celular", "en": "Photography with your phone", "ca": "Fotografia amb el teu mòbil" },
+              "duration": "12min",
+              "type": "text",
+              "content": "arte/1-2.md",
+              "voice": true,
+              "project": { "es": "Toma 5 fotos usando la regla de los tercios", "en": "Take 5 photos using the rule of thirds" }
+            },
+            {
+              "id": "arte-1-3",
+              "title": { "es": "Storytelling: cuenta tu historia", "pt": "Storytelling: conte sua história", "en": "Storytelling: tell your story", "ca": "Storytelling: explica la teva història" },
+              "duration": "10min",
+              "type": "text",
+              "content": "arte/1-3.md",
+              "voice": true,
+              "project": { "es": "Escribe tu historia de migración en 200 palabras", "en": "Write your migration story in 200 words" }
+            },
+            {
+              "id": "arte-1-4",
+              "title": { "es": "Podcast: tu voz al mundo", "pt": "Podcast: sua voz para o mundo", "en": "Podcast: your voice to the world", "ca": "Podcast: la teva veu al món" },
+              "duration": "10min",
+              "type": "text",
+              "content": "arte/1-4.md",
+              "voice": true,
+              "quiz": [
+                { "q": { "es": "¿Necesitas equipo caro para hacer un podcast?", "en": "Do you need expensive equipment for a podcast?" }, "options": ["Sí, siempre", "No, con el móvil basta", "Solo micrófonos de €500+", "Necesitas estudio"], "correct": 1 }
+              ]
+            },
+            {
+              "id": "arte-1-5",
+              "title": { "es": "Arte digital: crea con IA", "pt": "Arte digital: crie com IA", "en": "Digital art: create with AI", "ca": "Art digital: crea amb IA" },
+              "duration": "15min",
+              "type": "text",
+              "content": "arte/1-5.md",
+              "voice": true,
+              "project": { "es": "Genera una imagen artística usando IA y compártela", "en": "Generate an artistic image using AI and share it" }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "gems": {
+    "explorador": {
+      "name": { "es": "🧭 Explorador/a", "en": "🧭 Explorer" },
+      "description": { "es": "Curioso/a y aventurero/a del conocimiento", "en": "Curious knowledge adventurer" },
+      "color": "#00f0ff",
+      "tracks": ["ia-basica", "idiomas"]
+    },
+    "artesano": {
+      "name": { "es": "🔧 Artesano/a", "en": "🔧 Artisan" },
+      "description": { "es": "Construyes herramientas con tus manos digitales", "en": "You build tools with your digital hands" },
+      "color": "#ff6b35",
+      "tracks": ["office", "empleo"]
+    },
+    "creativo": {
+      "name": { "es": "🎨 Creativo/a", "en": "🎨 Creative" },
+      "description": { "es": "Transformas ideas en belleza visual", "en": "You transform ideas into visual beauty" },
+      "color": "#c084fc",
+      "tracks": ["diseno", "arte"]
+    },
+    "constructor": {
+      "name": { "es": "🏗️ Constructor/a", "en": "🏗️ Builder" },
+      "description": { "es": "Levantas estructuras desde cero", "en": "You build structures from scratch" },
+      "color": "#22c55e",
+      "tracks": ["programacion"]
+    },
+    "guerrero": {
+      "name": { "es": "⚔️ Guerrero/a", "en": "⚔️ Warrior" },
+      "description": { "es": "Luchas por tus derechos y los de tu comunidad", "en": "You fight for your rights and your community's" },
+      "color": "#ef4444",
+      "tracks": ["derechos"]
+    }
+  },
+  "cruzandoCharco": {
+    "name": { "es": "🌊 Cruzando el Charco", "en": "🌊 Crossing the Pond" },
+    "description": { "es": "Ruta especial para migrantes: todo lo que necesitas saber al llegar", "en": "Special route for migrants: everything you need to know when arriving" },
+    "recommendedTracks": ["idiomas", "derechos", "empleo", "ia-basica"],
+    "bonusLessons": [
+      {
+        "id": "charco-1",
+        "title": { "es": "Los primeros 7 días en España", "en": "The first 7 days in Spain" },
+        "duration": "10min",
+        "content": "cruzando-charco/1.md"
+      },
+      {
+        "id": "charco-2",
+        "title": { "es": "Remesas: envía dinero a casa", "en": "Remittances: send money home" },
+        "duration": "8min",
+        "content": "cruzando-charco/2.md"
+      },
+      {
+        "id": "charco-3",
+        "title": { "es": "Comunidades de apoyo: no estás solo/a", "en": "Support communities: you're not alone" },
+        "duration": "8min",
+        "content": "cruzando-charco/3.md"
+      }
+    ]
+  }
+}

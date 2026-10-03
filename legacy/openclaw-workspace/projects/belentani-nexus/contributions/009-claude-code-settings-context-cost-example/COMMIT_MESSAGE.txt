@@ -1,0 +1,9 @@
+docs(examples): add settings example reclaiming per-request context cost
+
+Denying a built-in tool in permissions.deny also keeps that tool's schema out
+of the request context, but examples/settings only covered permission and
+sandbox posture. Add settings-context-cost.json (denies the Workflow
+built-in, the largest opt-in tool schema) plus a README table column/row and
+a Tips bullet explaining the context-cost effect.
+
+References #90065

@@ -1,0 +1,57 @@
+To: qwenlm-community@qwenlm.ai
+Cc: 
+Subject: Qwen Ambassador Program Application - Pedro Belentani (Barcelona, Spain)
+
+Dear Qwen Team,
+
+My name is Pedro Belentani, an AI systems architect, digital artist, and open-source contributor based in Barcelona, Spain. I am writing to apply to the Qwen Ambassador Program.
+
+WHY QWEN
+
+I am a daily, heavy user of Qwen models. I run the Coding Plan Pro subscription and have built my entire AI development workflow around Qwen, including:
+
+- Qwen3 Max and Qwen Flash as the backbone of my coding agents (Qwen Code CLI, and as the model behind Claude Code, Codex, and OpenCode configurations).
+- Qwen-Image, Wan (video), CosyVoice (TTS), and Paraformer (ASR) integrated into my creative platform "Belentani Nexus", an all-in-one AI platform that aggregates 50+ models with Qwen at its core.
+
+WHAT I DO AND WHAT I CAN OFFER AS AN AMBASSADOR
+
+1. OPEN-SOURCE CONTRIBUTIONS
+   - Active GitHub contributor with 200+ public repositories (github.com/belentani7).
+   - Contributions to major AI ecosystems including Qwen, HuggingFace, OpenAI, and Anthropic projects.
+   - Maintainer of open-source tooling for repo auditing, secret scanning, and AI orchestration.
+
+2. COMMUNITY BUILDING
+   - Founder of "ManosAbiertas", a free educational platform for migrants with 3,600+ resources in 39 languages — a concrete example of how I use AI to create public good.
+   - Creator of the Belentani artistic ecosystem (music, visual art, interactive experiences) which showcases AI-powered creation to broad audiences.
+
+3. CONTENT AND ADVOCACY
+   - I write documentation, tutorials, and integration guides for Qwen/DashScope APIs (in Spanish and English), helping European and Latin American developers adopt the ecosystem.
+   - I actively recommend Qwen models in developer communities, highlighting the transparent token-plan pricing and the strength of the open-weight releases.
+
+MY PLAN AS AN AMBASSADOR
+
+- Publish at least one practical tutorial per month integrating Qwen models (coding agents, multimodal pipelines).
+- Build and maintain demo projects on HuggingFace Spaces showcasing Qwen capabilities.
+- Provide structured feedback, bug reports, and improvement suggestions from real production usage.
+- Represent Qwen at local meetups and online communities in Spain.
+
+LINKS
+
+- GitHub: https://github.com/belentani7
+- Website: https://belentani.eu
+- Main project: https://belentani7.github.io/
+- Email: belentani7pedro@gmail.com
+
+I would be honored to represent Qwen and help grow its community in Europe and Latin America. Thank you very much for considering my application.
+
+Warm regards,
+
+Pedro Marcos Santos Belentani
+Barcelona, Spain
+belentani7pedro@gmail.com
+
+---
+NOTA PARA PEDRO (borrar antes de enviar):
+- Verifica la dirección oficial de contacto del Ambassador Program en la página del
+  programa (puede ser un formulario web). Si es formulario, pega este texto allí.
+- Añade capturas o enlaces concretos si el formulario lo permite.

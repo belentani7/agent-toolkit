@@ -1,0 +1,125 @@
+{
+  "task_id": "newbelentani-judas",
+  "overall_status": "completed",
+  "started_at": "2026-09-12T11:27:38.732903",
+  "completed_at": "2026-09-12T11:27:39.102239",
+  "phases": [
+    {
+      "phase": "RECON",
+      "status": "error",
+      "findings_count": 0,
+      "duration": 5
+    },
+    {
+      "phase": "COLLECT",
+      "status": "error",
+      "findings_count": 0,
+      "duration": 5
+    },
+    {
+      "phase": "AUDIT",
+      "status": "completed",
+      "findings_count": 0,
+      "duration": 30
+    },
+    {
+      "phase": "FIX",
+      "status": "completed",
+      "findings_count": 0,
+      "duration": 60
+    },
+    {
+      "phase": "SECRETS",
+      "status": "completed",
+      "findings_count": 0,
+      "duration": 15
+    },
+    {
+      "phase": "GITHUB",
+      "status": "completed",
+      "findings_count": 0,
+      "duration": 20
+    },
+    {
+      "phase": "BUILD",
+      "status": "error",
+      "findings_count": 0,
+      "duration": 60
+    },
+    {
+      "phase": "DEPLOY",
+      "status": "completed",
+      "findings_count": 0,
+      "duration": 30
+    },
+    {
+      "phase": "README",
+      "status": "completed",
+      "findings_count": 0,
+      "duration": 5
+    },
+    {
+      "phase": "RECON",
+      "status": "error",
+      "findings_count": 0,
+      "duration": 5
+    },
+    {
+      "phase": "COLLECT",
+      "status": "error",
+      "findings_count": 0,
+      "duration": 5
+    },
+    {
+      "phase": "AUDIT",
+      "status": "completed",
+      "findings_count": 0,
+      "duration": 30
+    },
+    {
+      "phase": "FIX",
+      "status": "completed",
+      "findings_count": 0,
+      "duration": 60
+    },
+    {
+      "phase": "SECRETS",
+      "status": "completed",
+      "findings_count": 0,
+      "duration": 15
+    },
+    {
+      "phase": "GITHUB",
+      "status": "completed",
+      "findings_count": 0,
+      "duration": 20
+    },
+    {
+      "phase": "BUILD",
+      "status": "error",
+      "findings_count": 0,
+      "duration": 60
+    },
+    {
+      "phase": "DEPLOY",
+      "status": "completed",
+      "findings_count": 0,
+      "duration": 30
+    },
+    {
+      "phase": "README",
+      "status": "completed",
+      "findings_count": 0,
+      "duration": 5
+    }
+  ],
+  "findings_summary": {
+    "CRITICO": 0,
+    "ALTO": 0,
+    "MEDIO": 0,
+    "BAJO": 0
+  },
+  "deploy_urls": [
+    "https://belentani7.github.io/https://github.com/belentani7/newbelentani-judas/"
+  ]
+}

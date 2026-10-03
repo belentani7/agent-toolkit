@@ -1,0 +1,24 @@
+diff --git a/codex-rs/mcp-server/src/codex_tool_config.rs b/codex-rs/mcp-server/src/codex_tool_config.rs
+index b9c8aa8..109479d 100644
+--- a/codex-rs/mcp-server/src/codex_tool_config.rs
++++ b/codex-rs/mcp-server/src/codex_tool_config.rs
+@@ -26,7 +26,9 @@ pub struct CodexToolCallParam {
+     /// The *initial user prompt* to start the Codex conversation.
+     pub prompt: String,
+ 
+-    /// Optional override for the model name (e.g. 'gpt-5.2', 'gpt-5.2-codex').
++    /// Optional override for the model name (e.g. 'gpt-5.6-terra', 'gpt-5.6-sol').
++    /// See the model registry (`codex-rs/model-provider-info`) for the ids of
++    /// the models currently supported by this build.
+     #[serde(default, skip_serializing_if = "Option::is_none")]
+     pub model: Option<String>,
+ 
+@@ -326,7 +328,7 @@ mod tests {
+                 "type": "string"
+               },
+               "model": {
+-                "description": "Optional override for the model name (e.g. 'gpt-5.2', 'gpt-5.2-codex').",
++                "description": "Optional override for the model name (e.g. 'gpt-5.6-terra', 'gpt-5.6-sol'). See the model registry (`codex-rs/model-provider-info`) for the ids of the models currently supported by this build.",
+                 "type": "string"
+               },
+               "prompt": {

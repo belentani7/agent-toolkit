@@ -1,0 +1,77 @@
+/* Belentani Corp — Design Tokens */
+/* Copy these into any project for consistent branding */
+
+:root {
+  /* Colors - Primary */
+  --bc-void: #09090b;
+  --bc-void-2: #111113;
+  --bc-void-3: #1e1e22;
+  --bc-green: #00ff88;
+  --bc-green-dim: #00cc6a;
+  --bc-indigo: #6366f1;
+  --bc-indigo-dim: #4f46e5;
+
+  /* Colors - Neutral */
+  --bc-white: #fafafa;
+  --bc-gray-100: #f4f4f5;
+  --bc-gray-200: #e4e4e7;
+  --bc-gray-300: #d4d4d8;
+  --bc-gray-400: #a1a1aa;
+  --bc-gray-500: #71717a;
+  --bc-gray-600: #52525b;
+  --bc-gray-700: #3f3f46;
+  --bc-gray-800: #27272a;
+  --bc-gray-900: #18181b;
+
+  /* Colors - Functional */
+  --bc-success: #22c55e;
+  --bc-warning: #f59e0b;
+  --bc-error: #ef4444;
+  --bc-info: #3b82f6;
+
+  /* Typography */
+  --bc-font-heading: 'Space Grotesk', system-ui, sans-serif;
+  --bc-font-body: 'Inter', system-ui, sans-serif;
+  --bc-font-mono: 'JetBrains Mono', monospace;
+
+  /* Font Sizes */
+  --bc-text-xs: 0.65rem;
+  --bc-text-sm: 0.75rem;
+  --bc-text-base: 0.875rem;
+  --bc-text-lg: 1rem;
+  --bc-text-xl: 1.125rem;
+  --bc-text-2xl: 1.5rem;
+  --bc-text-3xl: 2rem;
+  --bc-text-4xl: 2.5rem;
+  --bc-text-5xl: 3.5rem;
+
+  /* Spacing (8px base) */
+  --bc-space-1: 4px;
+  --bc-space-2: 8px;
+  --bc-space-3: 12px;
+  --bc-space-4: 16px;
+  --bc-space-5: 20px;
+  --bc-space-6: 24px;
+  --bc-space-8: 32px;
+  --bc-space-10: 40px;
+  --bc-space-12: 48px;
+  --bc-space-16: 64px;
+
+  /* Border Radius */
+  --bc-radius-sm: 4px;
+  --bc-radius-md: 8px;
+  --bc-radius-lg: 12px;
+  --bc-radius-xl: 16px;
+  --bc-radius-full: 9999px;
+
+  /* Shadows */
+  --bc-shadow-sm: 0 1px 2px rgba(0,0,0,.3);
+  --bc-shadow-md: 0 4px 6px rgba(0,0,0,.4);
+  --bc-shadow-lg: 0 10px 15px rgba(0,0,0,.5);
+  --bc-shadow-xl: 0 20px 25px rgba(0,0,0,.6);
+
+  /* Glass */
+  --bc-glass: rgba(255,255,255,.025);
+  --bc-border: rgba(255,255,255,.06);
+  --bc-border-hover: rgba(255,255,255,.12);
+}

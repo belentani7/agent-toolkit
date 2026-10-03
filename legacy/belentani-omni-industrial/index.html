@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    
+    <!-- App Metadata -->
+    <title>BELENTANI - Generador de Playlists con IA</title>
+    <meta name="description" content="Genera playlists personalizadas con IA. Tecnología Gemini. Modo Fiesta colaborativo. Minimalista. Rentable. Neoglassomorfismo." />
+    <meta name="keywords" content="música, IA, playlists, generador, Gemini, fiesta colaborativa" />
+    <meta name="author" content="BELENTANI" />
+    
+    <!-- Theme & Branding -->
+    <meta name="theme-color" content="#0c0c0e" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230c0c0e' width='100' height='100'/><circle cx='50' cy='50' r='40' fill='%23d9a85d'/><circle cx='50' cy='50' r='30' fill='%230c0c0e'/><path d='M35 50 L65 50 M50 35 L50 65' stroke='%23d9a85d' stroke-width='3'/></svg>" />
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="BELENTANI - Generador de Playlists con IA" />
+    <meta property="og:description" content="Genera playlists personalizadas con IA. Modo Fiesta colaborativo. Neoglassomorfismo negro y ámbar." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://belentani.com" />
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <!-- PWA Configuration -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="BELENTANI" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    
+    <!-- Vite -->
+    <link rel="stylesheet" href="/index.css">
+    <script type="importmap">
+    {
+      "imports": {
+        "@google/genai": "https://esm.sh/@google/genai@1.28.0",
+        "react": "https://esm.sh/react@19.2.0",
+        "react-dom": "https://esm.sh/react-dom@19.2.0/client"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+    
+    <!-- No-JS Fallback -->
+    <noscript>
+      <div style="display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #0c0c0e; color: #d9a85d; font-family: monospace; text-align: center; padding: 20px;">
+        <div>
+          <h1 style="font-size: 24px; margin-bottom: 20px;">⚠️ BELENTANI REQUIRES JAVASCRIPT</h1>
+          <p style="color: #999; margin-bottom: 10px;">Please enable JavaScript to use this application.</p>
+          <p style="color: #666; font-size: 12px;">BELENTANI is a modern web application built with React and requires JavaScript to function.</p>
+        </div>
+      </div>
+    </noscript>
+  </body>
+</html>

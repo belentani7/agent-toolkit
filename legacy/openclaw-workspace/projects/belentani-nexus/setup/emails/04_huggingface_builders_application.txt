@@ -1,0 +1,55 @@
+To: team@huggingface.co
+Cc: 
+Subject: HuggingFace Builders Program Application - Pedro Belentani
+
+Dear HuggingFace Team,
+
+My name is Pedro Belentani, an AI systems architect and digital artist from Barcelona, Spain. I am writing to apply to the HuggingFace Builders Program.
+
+WHO I AM
+
+I build open-source AI projects and communities. My background combines software architecture, creative AI, and social-impact education:
+
+- 200+ public repositories on GitHub (github.com/belentani7), with contributions to projects from HuggingFace, Qwen, OpenAI, and Anthropic.
+- I deploy static AI-powered web experiences via GitHub Pages and integrate 50+ AI models (open-weight first) into a single creative platform.
+
+PROJECTS I WOULD BUILD AS AN HF BUILDER
+
+1. MANOSABIERTAS
+   A free educational platform for migrants: 3,600+ resources curated in 39 languages. As a Builder, I would publish its datasets and multilingual resource-classification models on the Hub, making them reusable by other social-impact teams.
+
+2. BELENTANI NEXUS
+   An open, all-in-one AI platform aggregating 50+ models (text, image, video, audio) with a transparent credit system. I would publish its Spaces demo and share integration code for open-weight models hosted on HuggingFace.
+
+3. REPO AUDITING TOOLING
+   Open-source agents that audit GitHub repositories for exposed secrets, stale dependencies, and missing documentation. I would release the tooling and its evaluation datasets publicly.
+
+WHY THE BUILDERS PROGRAM
+
+I strongly believe in HuggingFace's mission to democratize machine learning. My work already depends on the Hub — models, datasets, and Spaces — and I want to contribute back by shipping high-quality open projects, documenting them well, and helping Spanish- and Portuguese-speaking developers engage with the ecosystem.
+
+WHAT I COMMIT TO
+
+- Ship at least one public project on HuggingFace (Space, model, or dataset) within the first month.
+- Document everything with clear READMEs, model cards, and dataset cards.
+- Share progress publicly and give feedback to improve the Builder experience.
+
+LINKS
+
+- GitHub: https://github.com/belentani7
+- Website: https://belentani.eu
+- Email: belentani7pedro@gmail.com
+
+Thank you very much for your time and consideration. I would be thrilled to build in the open with the HuggingFace community.
+
+Warm regards,
+
+Pedro Marcos Santos Belentani
+Barcelona, Spain
+belentani7pedro@gmail.com
+
+---
+NOTA PARA PEDRO (borrar antes de enviar):
+- La vía principal del Builders Program suele ser el formulario en
+  https://huggingface.co/builders (o huggingface.co/community/builders).
+  Si existe formulario, pega este texto allí; el email es respaldo/alternativa.

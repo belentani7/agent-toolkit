@@ -1,0 +1,17 @@
+{
+  "smtp": {
+    "host": "smtp.gmail.com",
+    "port": 587,
+    "ssl": true,
+    "starttls": true,
+    "username": "belentani7pedro@gmail.com",
+    "password": "TU_APP_PASSWORD_16_CHAR"
+  },
+  "from": {
+    "address": "belentani7pedro@gmail.com",
+    "name": "Pedro Belentani"
+  },
+  "defaults": {
+    "replyTo": "belentani7pedro@gmail.com"
+  }
+}

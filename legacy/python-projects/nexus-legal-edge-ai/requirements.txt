@@ -1,0 +1,6 @@
+# Nexus LegalEdgeAI - Enterprise Offline Edition
+# No external heavy dependencies required.
+# Tkinter and SQLite3 come included with Python standard library.
+# For AI functionality, user must have Ollama installed locally.
+# Optional: pyinstaller for building executable
+pyinstaller>=6.0.0

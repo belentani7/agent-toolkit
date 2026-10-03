@@ -1,0 +1,102 @@
+diff --git a/examples/hooks/auto_format_hook_example.py b/examples/hooks/auto_format_hook_example.py
+new file mode 100644
+index 0000000..a22b7a0
+--- /dev/null
++++ b/examples/hooks/auto_format_hook_example.py
+@@ -0,0 +1,96 @@
++#!/usr/bin/env python3
++"""
++Claude Code Hook: PostToolUse Auto-Formatter (safe quoting edition)
++====================================================================
++This hook runs as a PostToolUse hook for the Edit/Write/MultiEdit tools and
++formats the edited Python file with `black` (falling back to `ruff format`).
++
++It fixes two failure modes commonly seen in formatter hooks:
++
++1. Paths containing spaces are passed safely. The command is built as an argv
++   list and executed with `subprocess.run` without a shell, so no manual
++   quoting is required and no path can be mis-parsed.
++2. Unsupported files never block the tool call. If the formatter exits
++   non-zero (e.g. unsupported file type or a syntax error in the edit), this
++   hook exits 0 and reports the outcome as a non-blocking system message so
++   Claude sees it without the call failing.
++
++Hook configuration (settings.json):
++
++{
++  "hooks": {
++    "PostToolUse": [
++      {
++        "matcher": "Edit|Write|MultiEdit",
++        "hooks": [
++          {
++            "type": "command",
++            "command": "python3 /path/to/claude-code/examples/hooks/auto_format_hook_example.py"
++          }
++        ]
++      }
++    ]
++  }
++}
++"""
++
++import json
++import shutil
++import subprocess
++import sys
++
++
++def _find_formatter() -> list[str] | None:
++    """Return the argv prefix of the first available formatter, or None."""
++    for argv in (["black", "-q"], ["ruff", "format", "-q"]):
++        if shutil.which(argv[0]):
++            return argv
++    return None
++
++
++def main() -> None:
++    try:
++        input_data = json.load(sys.stdin)
++    except json.JSONDecodeError as exc:
++        # Exit 1: show stderr to the user, do not feed it to Claude.
++        print(f"Error: Invalid JSON input: {exc}", file=sys.stderr)
++        sys.exit(1)
++
++    tool_name = input_data.get("tool_name", "")
++    if tool_name not in ("Edit", "Write", "MultiEdit"):
++        sys.exit(0)
++
++    file_path = input_data.get("tool_input", {}).get("file_path", "")
++    if not file_path or not file_path.endswith(".py"):
++        # Nothing to do; never fail the tool call.
++        sys.exit(0)
++
++    formatter = _find_formatter()
++    if formatter is None:
++        # No formatter installed: report and continue.
++        print(json.dumps({"systemMessage": "auto-format skipped: no formatter (black/ruff) found"}))
++        sys.exit(0)
++
++    # Build the command as an argv list: paths with spaces, quotes, or other
++    # special characters are passed through verbatim without shell parsing.
++    cmd = [*formatter, file_path]
++    try:
++        result = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
++    except (subprocess.TimeoutExpired, OSError) as exc:
++        print(json.dumps({"systemMessage": f"auto-format skipped: {exc}"}))
++        sys.exit(0)
++
++    if result.returncode == 0:
++        print(json.dumps({"systemMessage": f"auto-format: {file_path} formatted"}))
++    else:
++        # A formatting failure (syntax error, unsupported syntax version, ...)
++        # must not block the edit. Surface it as a non-blocking note.
++        detail = (result.stderr or result.stdout).strip().splitlines()
++        first_line = detail[0] if detail else "unknown error"
++        print(json.dumps({"systemMessage": f"auto-format skipped for {file_path}: {first_line}"}))
++
++    sys.exit(0)
++
++
++if __name__ == "__main__":
++    main()

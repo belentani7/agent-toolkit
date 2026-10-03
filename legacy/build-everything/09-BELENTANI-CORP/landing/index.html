@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Belentani Corp — AI Safety & Creative Technology</title>
+<meta name="description" content="AI Safety Engineer & Creative Technologist. 7+ years at Meta. Building systems that protect people.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#09090b;--bg2:#111113;--accent:#00ff88;--accent2:#6366f1;--text:#fafafa;--text2:#a1a1aa;--text3:#52525b;--glass:rgba(255,255,255,.025);--border:rgba(255,255,255,.06);--font:'Inter',system-ui,sans-serif;--heading:'Space Grotesk',system-ui,sans-serif;--mono:'JetBrains Mono',monospace}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:hidden}
+::selection{background:var(--accent);color:#000}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:.8rem 2rem;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);background:rgba(9,9,11,.8);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:var(--heading);font-weight:700;font-size:1.1rem;color:var(--accent)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-links a{color:var(--text2);font-size:.8rem;text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.btn{display:inline-block;padding:.5rem 1.2rem;background:var(--accent);color:#000;border-radius:6px;font-weight:600;font-size:.75rem;text-decoration:none;transition:opacity .2s}
+.btn:hover{opacity:.9}
+.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+
+section{padding:5rem 2rem}
+.section-inner{max-width:1000px;margin:0 auto}
+.section-label{font-size:.6rem;text-transform:uppercase;letter-spacing:.15em;color:var(--accent);font-family:var(--mono);margin-bottom:.4rem}
+.section-title{font-family:var(--heading);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;margin-bottom:1rem}
+.section-desc{color:var(--text2);font-size:1rem;max-width:600px;margin-bottom:2.5rem}
+
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative}
+.hero::before{content:'';position:absolute;top:30%;left:50%;transform:translateX(-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(0,255,136,.05) 0%,transparent 70%);pointer-events:none}
+.hero h1{font-family:var(--heading);font-size:clamp(2.5rem,6vw,4.5rem);font-weight:700;letter-spacing:-.03em;margin-bottom:1rem}
+.hero h1 .accent{color:var(--accent)}
+.hero p{color:var(--text2);font-size:1.1rem;max-width:550px;margin:0 auto 2rem}
+.hero-numbers{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.hero-num .val{font-family:var(--heading);font-size:2rem;font-weight:700}
+.hero-num .lbl{font-size:.6rem;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;font-family:var(--mono)}
+.hero-actions{display:flex;gap:.8rem;justify-content:center}
+
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem}
+.service-card{background:var(--glass);border:1px solid var(--border);border-radius:10px;padding:1.5rem;transition:border-color .3s}
+.service-card:hover{border-color:var(--border)}
+.service-card h3{font-family:var(--heading);font-size:.95rem;font-weight:600;margin-bottom:.5rem}
+.service-card p{font-size:.8rem;color:var(--text2);line-height:1.6}
+.service-card .tech{margin-top:.8rem;display:flex;flex-wrap:wrap;gap:.3rem}
+.service-card .tech span{font-size:.6rem;font-family:var(--mono);color:var(--text3);padding:.15rem .4rem;border:1px solid var(--border);border-radius:3px}
+
+.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.8rem}
+.metric-card{background:var(--glass);border:1px solid var(--border);border-radius:8px;padding:1.2rem;text-align:center}
+.metric-card .number{font-family:var(--heading);font-size:1.5rem;font-weight:700;color:var(--accent)}
+.metric-card .label{font-size:.6rem;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-top:.2rem;font-family:var(--mono)}
+
+.frameworks-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+.framework-card{background:var(--glass);border:1px solid var(--border);border-radius:8px;padding:1.2rem}
+.framework-card h4{font-family:var(--heading);font-size:.85rem;font-weight:600;margin-bottom:.3rem}
+.framework-card p{font-size:.75rem;color:var(--text2);line-height:1.5}
+
+.cta-section{background:var(--bg2);text-align:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.cta-section h2{font-family:var(--heading);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;margin-bottom:1rem}
+.cta-section p{color:var(--text2);margin-bottom:2rem}
+
+footer{text-align:center;padding:2rem;border-top:1px solid var(--border);color:var(--text3);font-size:.7rem;font-family:var(--mono)}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hero-numbers{gap:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">BELENTANI</div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#frameworks">Frameworks</a>
+    <a href="#about">About</a>
+    <a href="#contact" class="btn">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div>
+    <h1>Building systems that<br><span class="accent">protect people</span></h1>
+    <p>AI Safety Engineer & Creative Technologist. 7+ years at Meta. Full-stack developer building voice AI platforms in 5 languages.</p>
+    <div class="hero-numbers">
+      <div class="hero-num"><div class="val">7+</div><div class="lbl">Years in Safety</div></div>
+      <div class="hero-num"><div class="val">36+</div><div class="lbl">Projects</div></div>
+      <div class="hero-num"><div class="val">5</div><div class="lbl">Languages</div></div>
+      <div class="hero-num"><div class="val">12+</div><div class="lbl">AI Providers</div></div>
+    </div>
+    <div class="hero-actions">
+      <a href="#services" class="btn">See Services</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="section-inner">
+    <div class="section-label">Services</div>
+    <div class="section-title">What We Build</div>
+    <div class="section-desc">From AI safety systems to voice platforms to immersive web experiences.</div>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>AI Safety & Trust</h3>
+        <p>Content moderation systems, behavioral threat detection, policy compliance automation, and risk assessment frameworks.</p>
+        <div class="tech"><span>BTI</span><span>DARVO</span><span>ACH</span><span>Policy Engine</span></div>
+      </div>
+      <div class="service-card">
+        <h3>Voice AI Platforms</h3>
+        <p>Multi-language voice bots for WhatsApp, Instagram, and phone calls. Real-time STT/TTS pipelines with neural voices.</p>
+        <div class="tech"><span>Whisper</span><span>Edge-TTS</span><span>Twilio</span><span>5 Languages</span></div>
+      </div>
+      <div class="service-card">
+        <h3>Full-Stack Development</h3>
+        <p>Web applications, backend APIs, database design, and cloud deployment. From MVP to production.</p>
+        <div class="tech"><span>React</span><span>Next.js</span><span>FastAPI</span><span>PostgreSQL</span></div>
+      </div>
+      <div class="service-card">
+        <h3>Creative Technology</h3>
+        <p>Immersive web experiences with Three.js, GSAP, WebGL. Music platforms, interactive installations, generative art.</p>
+        <div class="tech"><span>Three.js</span><span>GSAP</span><span>WebGL</span><span>Web Audio</span></div>
+      </div>
+      <div class="service-card">
+        <h3>AI Agent Systems</h3>
+        <p>Multi-agent orchestration, autonomous workflows, RAG pipelines, and local LLM deployment.</p>
+        <div class="tech"><span>LangChain</span><span>Ollama</span><span>CrewAI</span><span>ChromaDB</span></div>
+      </div>
+      <div class="service-card">
+        <h3>Security & DevOps</h3>
+        <p>Security auditing, Windows hardening, Docker deployment, CI/CD pipelines, and infrastructure automation.</p>
+        <div class="tech"><span>Docker</span><span>GitHub Actions</span><span>PowerShell</span><span>Firewall</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="frameworks" style="background:var(--bg2)">
+  <div class="section-inner">
+    <div class="section-label">Proprietary</div>
+    <div class="section-title">Analytical Frameworks</div>
+    <div class="section-desc">Original systems for AI safety, behavioral analysis, and threat intelligence.</div>
+    <div class="frameworks-grid">
+      <div class="framework-card"><h4>BTI</h4><p>Behavioral Threat Intelligence — Pattern-based threat detection for digital platforms.</p></div>
+      <div class="framework-card"><h4>ACH</h4><p>Analysis of Competing Hypotheses — Multi-hypothesis evaluation under uncertainty.</p></div>
+      <div class="framework-card"><h4>DARVO Detection</h4><p>Deny, Attack, Reverse Victim and Offender — Manipulation pattern recognition in text.</p></div>
+      <div class="framework-card"><h4>Anti-Sycophancy</h4><p>Prompt engineering that eliminates validation bias in LLMs. Forces honest responses.</p></div>
+      <div class="framework-card"><h4>Cassandra Complex</h4><p>Framework for analyzing vulnerable populations and institutional negligence.</p></div>
+      <div class="framework-card"><h4>Hipervigilancia</h4><p>Social pattern analysis and early anomaly detection system.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label">About</div>
+    <div class="section-title">The Centaur Model</div>
+    <div class="section-desc">One person augmented by AI doing the work of a complete team.</div>
+    <div class="metrics-grid">
+      <div class="metric-card"><div class="number">36+</div><div class="label">Projects</div></div>
+      <div class="metric-card"><div class="number">50+</div><div class="label">Websites</div></div>
+      <div class="metric-card"><div class="number">70+</div><div class="label">Tracks</div></div>
+      <div class="metric-card"><div class="number">82+</div><div class="label">Tools</div></div>
+      <div class="metric-card"><div class="number">50K+</div><div class="label">Cases</div></div>
+      <div class="metric-card"><div class="number">36M+</div><div class="label">Streams</div></div>
+      <div class="metric-card"><div class="number">6.7x</div><div class="label">Multiplier</div></div>
+      <div class="metric-card"><div class="number">99.2%</div><div class="label">Accuracy</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="cta-section">
+  <div class="section-inner">
+    <div class="section-label">Contact</div>
+    <div class="section-title">Let's Build Something</div>
+    <p>AI Safety, Trust & Safety, Voice AI, Full-Stack Development. Barcelona-based, remote-friendly.</p>
+    <div style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap">
+      <a href="mailto:belentani7pedro@gmail.com" class="btn">Email</a>
+      <a href="https://www.linkedin.com/in/pedro-b-09473598" target="_blank" class="btn btn-outline">LinkedIn</a>
+      <a href="https://github.com/belentani7pedro" target="_blank" class="btn btn-outline">GitHub</a>
+      <a href="https://pedro-belentani.vercel.app" target="_blank" class="btn btn-outline">Portfolio</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>Belentani Corp · estudi digital · L'Hospitalet de Llobregat, Barcelona · © 2026</div>
+</footer>
+
+</body>
+</html>

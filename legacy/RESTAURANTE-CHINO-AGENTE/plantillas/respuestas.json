@@ -1,0 +1,35 @@
+{
+  "bienvenida": {
+    "whatsapp": "🐉 ¡Bienvenido a Dragon de Jade! ¿En qué puedo ayudarte?\n\n1️⃣ Reservar mesa\n2️⃣ Ver menú\n3️⃣ Hacer pedido\n4️⃣ Cómo llegar",
+    "telegram": "🐉 ¡Bienvenido a Dragon de Jade!\n\nSelecciona una opción:",
+    "email": "Gracias por contactar con Dragón de Jade. Le responderemos en menos de 2 horas."
+  },
+  "confirmacion_reserva": {
+    "whatsapp": "✅ ¡Reserva confirmada!\n\n📅 {fecha}\n⏰ {hora}\n👥 {personas} personas\n📝 {nombre}\n\n📍 {direccion}\n📞 {telefono}\n\n¡Le esperamos! 🐉",
+    "email": "Su reserva ha sido confirmada. Detalles: {fecha} a las {hora} para {personas} personas."
+  },
+  "pedido_recibido": {
+    "whatsapp": "📦 ¡Pedido recibido!\n\n{lista_platos}\n\n💰 Total: {total}€\n🕐 Tiempo estimado: {tiempo} minutos\n\n¿Confirmas el pedido?",
+    "email": "Su pedido ha sido registrado. Procesando..."
+  },
+  "seguimiento_pedido": {
+    "whatsapp": "🚚 Tu pedido va en camino!\n\nEstado: {estado}\nTiempo restante: {tiempo_min} min",
+    "telegram": "🚚 Pedido en camino: {estado}"
+  },
+  "error": {
+    "whatsapp": "❌ Lo siento, ha ocurrido un error. Por favor, intenta de nuevo o llámanos al {telefono}.",
+    "email": "Disculpe las molestias. Ha ocurrido un error procesando su solicitud."
+  },
+  "fuera_horario": {
+    "whatsapp": "🕐 Estamos cerrados ahora.\n\nHorario:\nLu-Ju: 12:00-23:00\nVi-Sa: 12:00-00:00\nDo: 12:00-22:00\n\nPuedes dejarnos un mensaje y te respondemos mañana.",
+    "email": "Nuestro horario de atención es de lunes a domingo. Responderemos su mensaje en el próximo horario laboral."
+  },
+  "evento_cumpleanos": {
+    "whatsapp": "🎂 ¡Feliz cumpleaños!\n\nTe ofrecemos:\n- Mesa decorada\n- Pastel sorpresa (+15€)\n- 10% descuento en grupo (6+)\n- Cóctel de cortesía\n\n¿Quieres reservar?",
+    "email": "Ofrecemos paquetes especiales para celebraciones con descuentos para grupos."
+  },
+  "menu_del_dia": {
+    "whatsapp": "🍱 MENÚ DEL DÍA\n\n🥗 Entrante: {entrada}\n🍚 Principal: {principal}\n🍰 Postre: {postre}\n🥤 Bebida: {bebida}\n\n💰 Solo {precio}€\n⏰ Disponible de 12:00 a 16:00",
+    "telegram": "🍱 Menú del día: {precio}€"
+  }
+}

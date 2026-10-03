@@ -1,0 +1,10 @@
+docs(mcp-server): refresh stale model ids in the codex tool schema
+
+The model parameter of the codex MCP tool documented 'gpt-5.2' /
+'gpt-5.2-codex' as examples. Those ids are several releases stale; the same
+binary's model registry lists the current family (gpt-5.6-*). An LLM-driven
+MCP client reading the schema can silently pin a session to an old model.
+
+Update the doc comment and the verify_codex_tool_json_schema fixture to
+current example ids and point at the model registry as the source of
+supported ids.

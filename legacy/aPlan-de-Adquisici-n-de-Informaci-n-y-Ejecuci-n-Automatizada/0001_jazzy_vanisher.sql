@@ -1,0 +1,20 @@
+CREATE TABLE `projects` (
+	`id` int AUTO_INCREMENT NOT NULL,
+	`name` varchar(180) NOT NULL,
+	`purpose` text NOT NULL,
+	`status` varchar(40) NOT NULL DEFAULT 'por validar',
+	`stack` text NOT NULL,
+	`source` varchar(40) NOT NULL DEFAULT 'manual',
+	`sourceUrl` varchar(500),
+	`lastActivityAt` timestamp,
+	`commits30d` int NOT NULL DEFAULT 0,
+	`hasDeploy` int NOT NULL DEFAULT 0,
+	`hasUsers` int NOT NULL DEFAULT 0,
+	`hasDocs` int NOT NULL DEFAULT 0,
+	`hasRevenue` int NOT NULL DEFAULT 0,
+	`estimated` int NOT NULL DEFAULT 1,
+	`score` int NOT NULL DEFAULT 0,
+	`createdAt` timestamp NOT NULL DEFAULT (now()),
+	`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	CONSTRAINT `projects_id` PRIMARY KEY(`id`)
+);

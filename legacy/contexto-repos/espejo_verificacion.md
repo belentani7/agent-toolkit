@@ -1,0 +1,235 @@
+# Verificacion de limpieza (espejo en repos/git)
+
+Generado: 2026-09-25T19:34:21  |  total: 226  |  SEGURO BORRAR: 90  |  NO: 136  |  aplicado: True
+
+## SEGURO BORRAR (90)
+
+- `C:\Users\USER\Documents\_OMEGA-SHOWCASE` <- https://github.com/belentani7/belentani-omega-showcase.git
+- `C:\Users\USER\MANOS-ABIERTAS-UNIFICADO\_repos-github\belentani-cv-work` <- https://github.com/belentani7/belentani-cv-work.git
+- `C:\Users\USER\MANOS-ABIERTAS-UNIFICADO\_repos-github\manos-abiertas-docs` <- https://github.com/belentani7/manos-abiertas-docs.git
+- `C:\Users\USER\MANOS-ABIERTAS-UNIFICADO\_repos-github\manos_abiertas_course_modules` <- https://github.com/belentani7/manos_abiertas_course_modules.git
+- `C:\Users\USER\Documents\Proyectos\belentani-unify` <- https://github.com/belentani7/belentani-unify.git
+- `C:\Users\USER\Belentani\AI\aetumi-3d-web-examples` <- https://github.com/AETumiApp/aetumi-3d-web-examples.git
+- `C:\Users\USER\MANOS-ABIERTAS-UNIFICADO\_repos-github\cv-ai-launch` <- https://github.com/belentani7/cv-ai-launch.git
+- `C:\Users\USER\Belentani\AI\motion-anything` <- https://github.com/nexu-io/motion-anything.git
+- `C:\Users\USER\Documents\belentani-workspace\projects\agent-refs\anthropics-skills` <- https://github.com/anthropics/skills.git
+- `C:\Users\USER\USO\belentani-agent-os\knowledge\awesome-harness-engineering` <- https://github.com/ai-boost/awesome-harness-engineering.git
+- `C:\Users\USER\MANOS-ABIERTAS-UNIFICADO\_repos-github\clon-manosabiertas` <- https://github.com/belentani7/clon-manosabiertas.git
+- `C:\Users\USER\buquet\2026-09-24\2026-09-15\Documents__secure-t-platform` <- https://github.com/belentani7/secure-t-platform.git
+- `C:\Users\USER\MANOS-ABIERTAS-UNIFICADO\_repos-github\manosabiertas-optimizacion-2` <- https://github.com/belentani7/manosabiertas-optimizacion-2.git
+- `C:\Users\USER\Documents\Proyectos\respaldo_belentani\ps-lm-local-powershell` <- https://github.com/belentani7/ps-lm-local-powershell.git
+- `C:\Users\USER\Belentani\AI\3DCellForge` <- https://github.com/huangserva/3DCellForge.git
+- `C:\Users\USER\USO\_agent-skills-clone` <- https://github.com/belentani7/agent-skills.git
+- `C:\Users\USER\MANOS-ABIERTAS-UNIFICADO\_repos-github\manos-abiertas-release-netlify-20260812` <- https://github.com/belentani7/manos-abiertas-release-netlify-20260812.git
+- `C:\Users\USER\MANOS-ABIERTAS-UNIFICADO\_repos-github\manosabiertas-38d5f` <- https://github.com/belentani7/manosabiertas-38d5f.git
+- `C:\Users\USER\MANOS-ABIERTAS-UNIFICADO\_repos-github\manosabiertas-vercel-20260813` <- https://github.com/belentani7/manosabiertas-vercel-20260813.git
+- `C:\Users\USER\buquet\2026-09-24\2026-09-15\belentani-unified-master__repos__belentani-monorepo` <- https://github.com/belentani7/belentani-monorepo
+- `C:\Users\USER\repos\_ORGANIZED\04-BACKEND-SERVICES\clerk-node` <- https://github.com/clerk/clerk-sdk-node.git
+- `C:\Users\USER\buquet\2026-09-24\2026-09-15\Documents__01_PROYECTOS__agentguard` <- https://github.com/belentani7/agentguard.git
+- `C:\Users\USER\repos\_ORGANIZED\06-PROJECTS-BELENTANI\belentani-es-neon` <- https://github.com/belentani7/belentani-es-neon.git
+- `C:\Users\USER\buquet\2026-09-24\2026-09-15\Documents__01_PROYECTOS__BELENTANI_OMEGA_CORE` <- https://github.com/belentani7/belentani-omega-core.git
+- `C:\Users\USER\buquet\2026-09-24\2026-09-15\Documents__01_PROYECTOS__manos-abiertas` <- https://github.com/belentani7/manos-abiertas-2026.git
+- `C:\Users\USER\buquet\2026-09-24\2026-09-15\Documents__01_PROYECTOS__william-game` <- https://github.com/belentani7/william-game-cuarentena.git
+- `C:\Users\USER\buquet\2026-09-24\2026-09-15\Documents__belentani-unified` <- https://github.com/belentani7/belentani-unified-map.git
+- `C:\Users\USER\MANOS-ABIERTAS-UNIFICADO\_repos-github\manos-abiertas-2026` <- https://github.com/belentani7/manos-abiertas-2026.git
+- `C:\Users\USER\repos\_ORGANIZED\01-CORE-AI-CLI\aider` <- https://github.com/Aider-AI/aider.git
+- `C:\Users\USER\repos\_ORGANIZED\05-AI-TOOLS-LOCAL\aider` <- https://github.com/Aider-AI/aider.git
+- `C:\Users\USER\repos\_ORGANIZED\06-PROJECTS-BELENTANI\belentani-visual-engine` <- https://github.com/belentani7/belentani-visual-engine.git
+- `C:\Users\USER\repos\_ORGANIZED\01-CORE-AI-CLI\deepseek-harness` <- https://github.com/deepseek-ai/deepseek-harness.git
+- `C:\Users\USER\Documents\RESCATE-SYSTEM32-2026-09-23\dir_deepseek-harness` <- https://github.com/deepseek-ai/deepseek-harness
+- `C:\Users\USER\_PROYECTOS\eso-ai` <- https://github.com/belentani7/eso-ai.git
+- `C:\Users\USER\repos\_ORGANIZED\02-API-SDKS\google-generative-ai` <- https://github.com/google/generative-ai-python.git
+- `C:\Users\USER\repos\_ORGANIZED\05-AI-TOOLS-LOCAL\lms` <- https://github.com/lmstudio-ai/lms.git
+- `C:\Users\USER\_PROYECTOS\lumen-local-studio` <- https://github.com/belentani7/lumen-local-studio.git
+- `C:\Users\USER\MANOS-ABIERTAS-UNIFICADO\_repos-github\manosabiertas-repo` <- https://github.com/belentani7/manosabiertas-repo.git
+- `C:\Users\USER\MANOS-ABIERTAS-UNIFICADO\_repos-github\Myopenhands` <- https://github.com/belentani7/Myopenhands.git
+- `C:\Users\USER\repos\_ORGANIZED\03-FRONTEND-FRAMEWORKS\radix-ui` <- https://github.com/radix-ui/primitives.git
+- `C:\Users\USER\repos\_ORGANIZED\05-AI-TOOLS-LOCAL\stable-diffusion-webui` <- https://github.com/AUTOMATIC1111/stable-diffusion-webui.git
+- `C:\Users\USER\repos\_ORGANIZED\03-FRONTEND-FRAMEWORKS\svelte` <- https://github.com/sveltejs/svelte.git
+- `C:\Users\USER\repos\_ORGANIZED\03-FRONTEND-FRAMEWORKS\tailwindcss` <- https://github.com/tailwindlabs/tailwindcss.git
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\aPlan de Adquisición de Información y Ejecución Automatizada` <- https://github.com/belentani7/aPlan-de-Adquisici-n-de-Informaci-n-y-Ejecuci-n-Automatizada.git
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\aReview uploaded workspace archive` <- https://github.com/belentani7/aReview-uploaded-workspace-archive.git
+- `C:\Users\USER\repos\_ORGANIZED\06-PROJECTS-BELENTANI\belentani-visual-engine-judas` <- https://github.com/belentani7/belentani-visual-engine-judas.git
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\Construye Belentani_ Coder Local Independiente de API y IA` <- https://github.com/belentani7/Construye-Belentani_-Coder-Local-Independiente-de-API-y-IA.git
+- `C:\Users\USER\repos\_ORGANIZED\05-AI-TOOLS-LOCAL\text-generation-webui\extensions\coqui_tts` <- https://github.com/belentani7/coqui_tts.git
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\Crear un Prompt para Rellenar Vacíos en el Plan` <- https://github.com/belentani7/Crear-un-Prompt-para-Rellenar-Vac-os-en-el-Plan.git
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\omega-max-universal\src\agents\customer-agent\customer-agent` <- https://github.com/belentani7/customer-agent.git
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\Cybersecurity Course Document Overview` <- https://github.com/belentani7/Cybersecurity-Course-Document-Overview.git
+- `C:\Users\USER\buquet\2026-09-24\2026-09-15-obsoletos\Documents_MIGRADOS-USER_belentani-monorepo` <- https://github.com/belentani7/belentani-monorepo.git
+- `C:\Users\USER\buquet\2026-09-24\2026-09-15-obsoletos\Documents_MIGRADOS-USER_linguaforge` <- https://github.com/belentani7/linguaforge.git
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\duck-studio-platform` <- https://github.com/belentani7/duck-studio-platform.git
+- `C:\Users\USER\repos\_ORGANIZED\05-AI-TOOLS-LOCAL\text-generation-webui\extensions\google_translate` <- https://github.com/belentani7/google_translate.git
+- `C:\Users\USER\USO\imports\judas-evolved` <- https://github.com/belentani7/judas-evolved.git
+- `C:\Users\USER\MANOS-ABIERTAS-UNIFICADO\_repos-github\ManosAbiertas` <- https://github.com/belentani7/ManosAbiertas.git
+- `C:\Users\USER\MANOS-ABIERTAS-UNIFICADO\_repos-github\ManosAbiertas-backup-v1` <- https://github.com/belentani7/ManosAbiertas-backup-v1.git
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\maod-abertas` <- https://github.com/belentani7/maod-abertas.git
+- `C:\Users\USER\MANOS-ABIERTAS-UNIFICADO\_repos-github\maos-abertas-linguaforge` <- https://github.com/belentani7/maos-abertas-linguaforge.git
+- `C:\Users\USER\repos\_ORGANIZED\05-AI-TOOLS-LOCAL\text-generation-webui\extensions\ngrok` <- https://github.com/belentani7/ngrok.git
+- `C:\Users\USER\repos\_ORGANIZED\03-FRONTEND-FRAMEWORKS\shadcn-ui` <- https://github.com/shadcn-ui/ui.git
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\omega-max-universal\src\agents\strategic-agent\strategic-agent` <- https://github.com/belentani7/strategic-agent.git
+- `C:\Users\USER\repos\_ORGANIZED\04-BACKEND-SERVICES\trpc` <- https://github.com/tRPC/trpc.git
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\Unifica y Analiza Mis Repositorios en un Nuevo Privado` <- https://github.com/belentani7/Unifica-y-Analiza-Mis-Repositorios-en-un-Nuevo-Privado.git
+- `C:\Users\USER\_ORDENAR\fixes\voice-ai-agency` <- https://github.com/belentani7/voice-ai-agency.git
+- `C:\Users\USER\repos\_ORGANIZED\03-FRONTEND-FRAMEWORKS\vue` <- https://github.com/vuejs/core.git
+- `C:\Users\USER\buquet\2026-09-24\2026-09-15\belentani-core` <- https://github.com/belentani7/belentani-core.git
+- `C:\Users\USER\buquet\2026-09-24\2026-09-15\belentani-judas-web` <- https://github.com/belentani7/belentani-judas-web.git
+- `C:\Users\USER\repos\_ORGANIZED\02-API-SDKS\cohere-python` <- https://github.com/cohere-ai/cohere-python.git
+- `C:\Users\USER\buquet\2026-09-24\2026-09-15\Documents__01_PROYECTOS__lingua-aberta-empresa` <- https://github.com/belentani7/lingua-aberta-empresa.git
+- `C:\Users\USER\buquet\2026-09-24\2026-09-15\Documents__secure-t` <- https://github.com/belentani7/secure-t.git
+- `C:\Users\USER\repos\_ORGANIZED\04-BACKEND-SERVICES\fastapi` <- https://github.com/fastapi/fastapi.git
+- `C:\Users\USER\Documents\01_PROYECTOS\judas-experience` <- https://github.com/belentani7/judas-experience.git
+- `C:\Users\USER\repos\_ORGANIZED\02-API-SDKS\mistral-python` <- https://github.com/mistralai/client-python.git
+- `C:\Users\USER\repos\_ORGANIZED\04-BACKEND-SERVICES\sqlmodel` <- https://github.com/tiangolo/sqlmodel.git
+- `C:\Users\USER\repos\_ORGANIZED\02-API-SDKS\anthropic-sdk-python` <- https://github.com/anthropics/anthropic-sdk-python.git
+- `C:\Users\USER\MANOS-ABIERTAS-UNIFICADO\_repos-github\Belentani.cv-ai` <- https://github.com/belentani7/Belentani.cv-ai.git
+- `C:\Users\USER\repos\_ORGANIZED\02-API-SDKS\groq-python` <- https://github.com/groq/groq-python.git
+- `C:\Users\USER\repos\_ORGANIZED\02-API-SDKS\huggingface-hub` <- https://github.com/huggingface/huggingface_hub.git
+- `C:\Users\USER\USO\imports\manos-abiertas` <- https://github.com/belentani7/manos-abiertas.git
+- `C:\Users\USER\USO\imports\mimo-patch\mimo_patch` <- https://github.com/belentani7/mimo_patch.git
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\mimo_patch\mimo_patch` <- https://github.com/belentani7/mimo_patch.git
+- `C:\Users\USER\USO\imports\belentani-agency-omega\money-machine-24h` <- https://github.com/belentani7/money-machine-24h.git
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace (16)\money-machine-24h` <- https://github.com/belentani7/money-machine-24h.git
+- `C:\Users\USER\repos\_ORGANIZED\02-API-SDKS\ollama-python` <- https://github.com/ollama/ollama-python.git
+- `C:\Users\USER\repos\_ORGANIZED\02-API-SDKS\openai-python` <- https://github.com/openai/openai-python.git
+- `C:\Users\USER\Desktop\factory\securetea` <- https://github.com/belentani7/securetea.git
+- `C:\Users\USER\repos\_ORGANIZED\06-PROJECTS-BELENTANI\belentani-repos-master\securetea` <- https://github.com/belentani7/securetea
+- `C:\Users\USER\_PROYECTOS\system-one-unified` <- https://github.com/belentani7/system-one-unified.git
+
+## NO BORRAR (136)
+
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace (20)` — sin remoto
+- `C:\Users\USER\repos\_ORGANIZED\03-FRONTEND-FRAMEWORKS\astro` — sin remoto
+- `C:\Users\USER\repos\_ORGANIZED\05-AI-TOOLS-LOCAL\continue` — sin remoto
+- `C:\Users\USER\repos\_ORGANIZED\02-API-SDKS\langchain` — sin remoto
+- `C:\Users\USER\repos\_ORGANIZED\02-API-SDKS\langgraph` — sin remoto
+- `C:\Users\USER\repos\_ORGANIZED\03-FRONTEND-FRAMEWORKS\nextjs` — sin remoto
+- `C:\Users\USER\repos\_ORGANIZED\05-AI-TOOLS-LOCAL\playwright` — sin remoto
+- `C:\Users\USER\repos\_ORGANIZED\04-BACKEND-SERVICES\prisma` — sin remoto
+- `C:\Users\USER\repos\_ORGANIZED\03-FRONTEND-FRAMEWORKS\react` — sin remoto
+- `C:\Users\USER\repos\_ORGANIZED\04-BACKEND-SERVICES\supabase` — sin remoto
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace (27)` — sin remoto
+- `C:\Users\USER\USO\belentani-agent-os` — sin remoto
+- `C:\Users\USER\Desktop` — cambios sin commitear (74); commits sin subir (1)
+- `C:\Users\USER\USO\imports\noiacore-fullstack` — sin remoto
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace (22)` — sin remoto
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace (25)` — sin remoto
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace (26)` — sin remoto
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace (6)` — sin remoto
+- `C:\Users\USER\Documents\_OMEGA-ARCHIVE-2026-09-22` — cambios sin commitear (1)
+- `C:\Users\USER\Documents` — sin remoto
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace-` — sin remoto
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace-0962ce28-7faa-4ffb-ab27-8432cd63eb2d` — sin remoto
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace-525e2452-1076-4f43-b09e-f7058f021b93` — sin remoto
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace-81d88db0-14ed-4c5b-ad25-cb30fc6a9052` — sin remoto
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace-dc798de9-5f67-4fe0-b6d8-c5b6b50532fa` — sin remoto
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace (19)` — sin remoto
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace (23)` — sin remoto
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace (3)` — sin remoto
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace (4)` — sin remoto
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace (8)` — sin remoto
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace (9)` — sin remoto
+- `C:\Users\USER\Documents\Proyectos\PROJECTOS\conway-research-automation` — cambios sin commitear (1)
+- `C:\Users\USER\USO\auditorias\secure-t-audit-ready-kit` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\USO\imports\belentani-agency-omega` — sin remoto
+- `C:\Users\USER\USO\imports\github-profile-audit-machine` — sin remoto
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace (16)` — sin remoto
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace-ace0463d-d179-43a4-b2a1-defd59bb73c8` — sin remoto
+- `C:\Users\USER\repos\_ORGANIZED\06-PROJECTS-BELENTANI\belentani-repos-master\letra-office` — cambios sin commitear (96)
+- `C:\Users\USER\buquet\2026-09-24\2026-09-15\belentani-v2` — remoto no responde (ls-remote)
+- `C:\Users\USER\buquet\2026-09-24\2026-09-15\saas-starter` — remoto no responde (ls-remote)
+- `C:\Users\USER\buquet\2026-09-24\2026-09-15\Documents__belentani7-profile\client` — sin remoto
+- `C:\Users\USER\buquet\2026-09-24\2026-09-15\Documents__lingua-aberta\client` — sin remoto
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace (24)` — sin remoto
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace (7)` — sin remoto
+- `C:\Users\USER\Documents\Proyectos\PROJECTOS\music-cli-lab\audacity` — cambios sin commitear (838)
+- `C:\Users\USER\Documents\01_PROYECTOS_ACTIVOS\Belentani-Agency-AI-Omega` — cambios sin commitear (1)
+- `C:\Users\USER\repos\_ORGANIZED\05-AI-TOOLS-LOCAL\text-generation-webui` — cambios sin commitear (6)
+- `C:\Users\USER\Documents\Proyectos\respaldo_belentani\20-demos` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\Documents\belentani-workspace\projects\belentani-repos-master\belentani-v2` — sin upstream (no se puede comprobar push); remoto no responde (ls-remote)
+- `C:\Users\USER\buquet\2026-09-24\2026-09-15\Downloads__bportal` — remoto no responde (ls-remote)
+- `C:\Users\USER\Documents\belentani-workspace\projects\belentani-repos-master\manos-abiertas-docs` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\buquet\2026-09-24\2026-09-15\Documents__belentani7-profile\docs` — sin remoto
+- `C:\Users\USER\Documents\belentani-workspace\projects\agent-refs\superpowers` — cambios sin commitear (4)
+- `C:\Users\USER\buquet\2026-09-24\2026-09-15\belentani7` — cambios sin commitear (1)
+- `C:\Users\USER\Belentani\AI\openvj` — cambios sin commitear (1)
+- `C:\Users\USER\Documents\Proyectos\PROJECTOS\music-cli-lab\audiocraft` — cambios sin commitear (12)
+- `C:\Users\USER\USO\auditorias\escaneo-seguridad` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\Desktop\judas-experience-web` — cambios sin commitear (7)
+- `C:\Users\USER\USO\auditorias\misaas` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\USO\auditorias\rh-fiscal-ultra-elite` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\USO\auditorias\securetea-auditoria` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\buquet\2026-09-24\2026-09-15\belentani-unified-master__repos__belentani-infrastructure-core` — remoto no responde (ls-remote)
+- `C:\Users\USER\_ORDENAR\fixes\Belentani.cv-ai` — cambios sin commitear (2); sin upstream (no se puede comprobar push)
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\Compañero de Windows Similar a Widget Flotante en Android` — cambios sin commitear (2)
+- `C:\Users\USER\repos\_ORGANIZED\05-AI-TOOLS-LOCAL\text-generation-webui\desktop` — cambios sin commitear (1)
+- `C:\Users\USER\USO\imports\eau-noire` — cambios sin commitear (2)
+- `C:\Users\USER\Documents\Proyectos\PROJECTOS\freellmapi` — cambios sin commitear (541)
+- `C:\Users\USER\USO\imports\modern-creative-web` — cambios sin commitear (2)
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\modern-creative-web-development` — cambios sin commitear (2)
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\Plan de Adquisición de Información y Ejecución Automatizada` — cambios sin commitear (1)
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\Review uploaded workspace archive` — cambios sin commitear (2)
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\Revisión de Herramientas Python en GitHub y Locales` — cambios sin commitear (1)
+- `C:\Users\USER\USO\imports\superpowers-plan` — cambios sin commitear (1)
+- `C:\Users\USER\USO\imports\system-one-local-portable` — cambios sin commitear (2)
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\uaol-machine-realm` — cambios sin commitear (3); sin upstream (no se puede comprobar push)
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace` — cambios sin commitear (2)
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace (1)` — cambios sin commitear (2)
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace (10)` — cambios sin commitear (2)
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace (11)` — cambios sin commitear (2)
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace (12)` — cambios sin commitear (2)
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace (13)` — cambios sin commitear (2)
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace (14)` — cambios sin commitear (2)
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace (15)` — cambios sin commitear (2)
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace (17)` — cambios sin commitear (2)
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace (18)` — cambios sin commitear (2)
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace (2)` — cambios sin commitear (2)
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\workspace (21)` — cambios sin commitear (2)
+- `C:\Users\USER\Desktop\belentani-unified` — cambios sin commitear (3); sin upstream (no se puede comprobar push)
+- `C:\Users\USER\Documents\Proyectos\PROJECTOS\music-cli-lab\ffmpeg-normalize` — cambios sin commitear (9)
+- `C:\Users\USER\repos\_ORGANIZED\05-AI-TOOLS-LOCAL\llama-cpp-python` — cambios sin commitear (1)
+- `C:\Users\USER\MoneyPrinterTurbo` — cambios sin commitear (50)
+- `C:\Users\USER\Documents\Proyectos\PROJECTOS\music-cli-lab\pedalboard` — cambios sin commitear (60)
+- `C:\Users\USER\Documents\Proyectos\PROJECTOS\music-cli-lab\matchering` — commits sin subir (1)
+- `C:\Users\USER\buquet\2026-09-24\2026-09-15-obsoletos\belentani-unified-master_repos_belentani-unified` — cambios sin commitear (27); sin upstream (no se puede comprobar push)
+- `C:\Users\USER\Documents\belentani-workspace\projects\agent-refs\ECC` — cambios sin commitear (64)
+- `C:\Users\USER\Documents\01_PROYECTOS\_HERRAMIENTAS\paperclip` — cambios sin commitear (6262)
+- `C:\Users\USER\USO\auditorias\secure-t` — cambios sin commitear (24)
+- `C:\Users\USER\USO\imports\system-one-local` — cambios sin commitear (2)
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\system-one-local-belentani` — cambios sin commitear (2)
+- `C:\Users\USER\buquet\2026-09-24\system-one-local-python-openclaw` — cambios sin commitear (1)
+- `C:\Users\USER\repos\_ORGANIZED\04-BACKEND-SERVICES\trigger-dev` — cambios sin commitear (1)
+- `C:\Users\USER\USO\auditorias\agentguard` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\USO\auditorias\belent-cad` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\_PROYECTOS\_DESCARGAS_EXTRAIDAS\belentani-judas-evolved` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\USO\auditorias\belentani-school-unificado` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\USO\auditorias\belentani7` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\USO\auditorias\Cruzando-el-charco` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\USO\auditorias\cruzando-el-charco-v2` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\USO\auditorias\linguaforge-v2` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\USO\auditorias\ManosAbiertas` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\USO\auditorias\natalia-marinho-business` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\USO\auditorias\noiacore-lab-audited` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\USO\auditorias\noiacore-turbo-v2` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\USO\auditorias\open-school` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\USO\auditorias\presupuestador-fotografos-001` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\USO\auditorias\rh-fiscal-ultra-web` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\USO\auditorias\saas-plasma` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\USO\auditorias\saas-plasma-extracted` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\USO\auditorias\saas-plasma_2` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\repos\_ORGANIZED\05-AI-TOOLS-LOCAL\text-generation-webui\extensions\silero_tts` — sin upstream (no se puede comprobar push); remoto no responde (ls-remote)
+- `C:\Users\USER\USO\auditorias\ux-academy-professional-program` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\USO\auditorias\william-recursos-educativos` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\USO\auditorias\william.game` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\USO\auditorias\WILLIAMSCHOOL` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\buquet\2026-09-24\2026-09-15\Documents__belentani7-profile\engine` — sin upstream (no se puede comprobar push); remoto no responde (ls-remote)
+- `C:\Users\USER\USO\auditorias\Belentani.cv-ai` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\USO\auditorias\cinematic-prompt-formatter` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\buquet\2026-09-24\2026-09-15\Documents__belentani7-profile\desktop` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\buquet\2026-09-24\2026-09-15\Documents__belentani7-profile` — contiene 4 repo(s) no verificados
+- `C:\Users\USER\buquet\2026-09-24\2026-09-15\Documents__lingua-aberta` — contiene 1 repo(s) no verificados
+- `C:\Users\USER\USO\auditorias\harmonia-hub` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\USO\auditorias\pvc-u-core` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\USO\auditorias\qr-pro-enterprise` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\USO\auditorias\securetea` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\USO\auditorias\skills-registry` — sin upstream (no se puede comprobar push)
+- `C:\Users\USER\USO\auditorias\system-one-unified` — sin upstream (no se puede comprobar push)

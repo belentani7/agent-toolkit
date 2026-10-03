@@ -1,0 +1,122 @@
+/**
+ * DUCK STUDIO OS - Cyberpunk CSS Variables & Base Styles
+ * Extraído de duck-studio-os.html
+ */
+
+:root {
+  /* VERDE */
+  --g300: #6ee7b7;
+  --g400: #34d399;
+  --g500: #10b981;
+  --g600: #059669;
+  --g950: #022c22;
+  
+  /* MORADO OSCURO */
+  --p200: #e9d5ff;
+  --p300: #c4b5fd;
+  --p400: #a78bfa;
+  --p500: #7c3aed;
+  --p700: #4c2580;
+  --p800: #3b1a63;
+  --p900: #2a1245;
+  --p950: #150826;
+  
+  /* BACKGROUNDS */
+  --bg0: #0b0614;
+  --bg1: #140a20;
+  --bg2: #1a0f26;
+  --bg3: #241436;
+  
+  /* BORDERS */
+  --bd1: #3b1a63;
+  --bd2: #4c2580;
+  
+  /* TEXT */
+  --t1: #f0fdf4;
+  --t2: #d1fae5;
+  --t3: #a7f3d0;
+  --t4: #a78bfa;
+  --t5: #6d5a9c;
+}
+
+/* BASE STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg0);
+  color: var(--t2);
+  font-size: 12px;
+  user-select: none;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bd2);
+  border-radius: 4px;
+}
+
+/* UTILITIES */
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+input, select {
+  font-family: inherit;
+}
+
+/* ANIMATIONS */
+@keyframes floatDuck {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(-18px) rotate(4deg); }
+}
+
+@keyframes coin {
+  0% { transform: rotateY(0deg) rotateX(6deg); }
+  50% { transform: rotateY(180deg) rotateX(-4deg); }
+  100% { transform: rotateY(360deg) rotateX(6deg); }
+}
+
+@keyframes drip {
+  0% { transform: translateY(-8px) scaleY(.3); opacity: 0; }
+  25% { opacity: 1; }
+  100% { transform: translateY(52px) scaleY(1.2); opacity: 0; }
+}
+
+@keyframes eqb {
+  0%, 100% { height: 20%; }
+  50% { height: 100%; }
+}
+
+@keyframes rpulse {
+  0%, 100% { box-shadow: 0 0 6px rgba(16, 185, 129, .4); }
+  50% { box-shadow: 0 0 22px rgba(16, 185, 129, .9); }
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}

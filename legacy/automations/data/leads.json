@@ -1,0 +1,183 @@
+{
+  "leads": [
+    {
+      "id": "41521488-df77-422a-b055-e1ce9cd8eb1b",
+      "email": "producer1@beatport.com",
+      "name": "DJ Marco",
+      "niche": "duck",
+      "source": "instagram",
+      "tags": [
+        "beats",
+        "collab"
+      ],
+      "metadata": {},
+      "status": "new",
+      "created_at": "2026-08-24T23:28:03.623Z",
+      "updated_at": "2026-08-24T23:28:03.623Z"
+    },
+    {
+      "id": "829c274f-0769-418a-90d2-df8323d78e9f",
+      "email": "studio@musiclab.es",
+      "name": "MusicLab BCN",
+      "niche": "duck",
+      "source": "web",
+      "tags": [
+        "licensing"
+      ],
+      "metadata": {},
+      "status": "new",
+      "created_at": "2026-08-24T23:28:03.815Z",
+      "updated_at": "2026-08-24T23:28:03.815Z"
+    },
+    {
+      "id": "2cc69c07-e9e6-43b8-bd1a-913d62e6bbac",
+      "email": "marie.d@gmail.com",
+      "name": "Marie Dupont",
+      "niche": "reformas",
+      "source": "google",
+      "tags": [
+        "salle-de-bains",
+        "paris-16"
+      ],
+      "metadata": {},
+      "status": "new",
+      "created_at": "2026-08-24T23:28:04.040Z",
+      "updated_at": "2026-08-24T23:28:04.040Z"
+    },
+    {
+      "id": "9282f925-b9eb-48bd-a553-15c20d88d810",
+      "email": "pierre.l@outlook.fr",
+      "name": "Pierre Laurent",
+      "niche": "reformas",
+      "source": "google",
+      "tags": [
+        "cuisine",
+        "devis"
+      ],
+      "metadata": {},
+      "status": "new",
+      "created_at": "2026-08-24T23:28:04.205Z",
+      "updated_at": "2026-08-24T23:28:04.205Z"
+    },
+    {
+      "id": "116d08d4-fd8e-4dac-bb9e-dca9add759ed",
+      "email": "sophie.m@yahoo.fr",
+      "name": "Sophie Martin",
+      "niche": "reformas",
+      "source": "landing",
+      "tags": [
+        "peinture",
+        "haussmann"
+      ],
+      "metadata": {},
+      "status": "new",
+      "created_at": "2026-08-24T23:28:04.369Z",
+      "updated_at": "2026-08-24T23:28:04.369Z"
+    },
+    {
+      "id": "15bc0141-6fb1-4861-a161-9945cc14f280",
+      "email": "fashionista@ig.com",
+      "name": "Ana Beatriz",
+      "niche": "moda",
+      "source": "instagram",
+      "tags": [
+        "vestido",
+        "colecao"
+      ],
+      "metadata": {},
+      "status": "new",
+      "created_at": "2026-08-24T23:28:04.612Z",
+      "updated_at": "2026-08-24T23:28:04.612Z"
+    },
+    {
+      "id": "13671497-9c76-462c-bced-9952f712c77c",
+      "email": "galeria@arte.pt",
+      "name": "Galeria Nova",
+      "niche": "moda",
+      "source": "web",
+      "tags": [
+        "exposicao"
+      ],
+      "metadata": {},
+      "status": "new",
+      "created_at": "2026-08-24T23:28:04.825Z",
+      "updated_at": "2026-08-24T23:28:04.825Z"
+    },
+    {
+      "id": "180ca533-abf1-488c-b036-22cf9f08a3e7",
+      "email": "reader@organize.com",
+      "name": "Carlos R.",
+      "niche": "organizacion",
+      "source": "leadmagnet",
+      "tags": [
+        "ebook",
+        "7-dias"
+      ],
+      "metadata": {},
+      "status": "new",
+      "created_at": "2026-08-24T23:28:05.091Z",
+      "updated_at": "2026-08-24T23:28:05.091Z"
+    },
+    {
+      "id": "65b65d5b-850a-4229-8bfb-9fb61094aac3",
+      "email": "nuevo.bcn@gmail.com",
+      "name": "Alejandro",
+      "niche": "migracion",
+      "source": "telegram",
+      "tags": [
+        "llegada",
+        "barcelona"
+      ],
+      "metadata": {},
+      "status": "new",
+      "created_at": "2026-08-24T23:28:05.393Z",
+      "updated_at": "2026-08-24T23:28:05.393Z"
+    },
+    {
+      "id": "79926352-1b9d-49c6-a441-e352a7b3afcb",
+      "email": "help.lgbtq@pm.me",
+      "name": "Kai",
+      "niche": "migracion",
+      "source": "web",
+      "tags": [
+        "salud",
+        "derechos"
+      ],
+      "metadata": {},
+      "status": "new",
+      "created_at": "2026-08-24T23:28:05.632Z",
+      "updated_at": "2026-08-24T23:28:05.632Z"
+    },
+    {
+      "id": "114d3fa1-1273-4b45-a128-17b4c5b60702",
+      "email": "dev@startup.io",
+      "name": "DevTeam AI",
+      "niche": "tech",
+      "source": "github",
+      "tags": [
+        "claude-skills",
+        "integration"
+      ],
+      "metadata": {},
+      "status": "new",
+      "created_at": "2026-08-24T23:28:05.865Z",
+      "updated_at": "2026-08-24T23:28:05.865Z"
+    },
+    {
+      "id": "23305ed9-7b57-4875-9a65-2495716c5080",
+      "email": "ml.eng@company.com",
+      "name": "ML Eng",
+      "niche": "tech",
+      "source": "huggingface",
+      "tags": [
+        "noiacore-os",
+        "fork"
+      ],
+      "metadata": {},
+      "status": "new",
+      "created_at": "2026-08-24T23:28:06.076Z",
+      "updated_at": "2026-08-24T23:28:06.077Z"
+    }
+  ],
+  "created": "2026-08-24T23:28:03.621Z"
+}

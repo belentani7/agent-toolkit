@@ -1,0 +1,8 @@
+docs(plugins): fix stale security-guidance entry in plugins/README.md
+
+The plugins table described security-guidance as a PreToolUse hook monitoring
+9 patterns, but the plugin registers UserPromptSubmit/PostToolUse/Stop hooks
+with 25 pattern rules plus background LLM diff and commit review. Update the
+row to match hooks/hooks.json and hooks/patterns.py.
+
+Fixes #89728

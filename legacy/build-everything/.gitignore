@@ -1,0 +1,36 @@
+# Environment files (never commit secrets)
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Node
+node_modules/
+dist/
+build/
+
+# Runtime / outputs
+*.log
+data/*.csv
+data/*.json
+transcription.txt
+video.mp4
+frame_*.jpg
+*.mp3
+*.mp4
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Archives
+*.zip
+*.tar.gz

@@ -1,0 +1,35 @@
+name: Update Docs Badge
+
+on:
+  push:
+    branches: [main]
+    paths: ['web/badge.svg']
+  workflow_dispatch:
+
+jobs:
+  update-badge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Update badge
+        run: |
+          # This would query the live database and update the SVG
+          # For now, it's a placeholder for CI integration
+          echo "Badge update pipeline ready"
+
+      - name: Commit badge
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add web/badge.svg
+          git diff --staged --quiet || git commit -m "docs: update badge [skip ci]"
+          git push

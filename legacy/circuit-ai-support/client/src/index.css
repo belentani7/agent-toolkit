@@ -1,0 +1,24 @@
+/* Dirección visual: Archivo operativo. Negro circuito, blanco papel y ámbar como señal; retícula editorial asimétrica. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: 0px; --radius-md: 0px; --radius-lg: 0px; --radius-xl: 0px;
+  --color-background: var(--background); --color-foreground: var(--foreground);
+  --color-card: var(--card); --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border); --color-input: var(--input); --color-ring: var(--ring);
+}
+:root { --background: #0b0c0c; --foreground: #f5f3ef; --card: #141615; --card-foreground: #f5f3ef; --border: rgba(255,255,255,.1); --input: rgba(255,255,255,.14); --ring: #e8a838; --radius: 0px; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: #0b0c0c; }
+body { margin: 0; background: #0b0c0c; color: #f5f3ef; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+body::after { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 50; opacity: .035; mix-blend-mode: screen; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.font-mono, .eyebrow { font-family: 'JetBrains Mono', monospace; }
+.eyebrow { color: #e8a838; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible { outline: 2px solid #e8a838; outline-offset: 3px; }
+@media (prefers-reduced-motion: no-preference) { a, button { transition: color 180ms ease, background-color 180ms ease, opacity 180ms ease, transform 180ms ease; } button:active { transform: scale(.98); } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+@layer base { * { @apply border-border outline-ring/50; } }

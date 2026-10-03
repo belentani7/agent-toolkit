@@ -1,0 +1,223 @@
+diff --git a/docs/source/es/assisted_decoding.md b/docs/source/es/assisted_decoding.md
+new file mode 100644
+index 0000000..932a5a2
+--- /dev/null
++++ b/docs/source/es/assisted_decoding.md
+@@ -0,0 +1,206 @@
++<!--Copyright 2025 The HuggingFace Team. All rights reserved.
++
++Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
++the License. You may obtain a copy of the License at
++
++http://www.apache.org/licenses/LICENSE-2.0
++
++Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
++an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
++specific language governing permissions and limitations under the License.
++
++⚠️ Ten en cuenta que este archivo está en Markdown pero contiene sintaxis específica para nuestro doc-builder (similar
++a MDX) que puede no mostrarse correctamente en tu visor de Markdown.
++
++-->
++
++# Decodificación asistida
++
++La decodificación asistida acelera la generación de texto permitiendo que un auxiliar proponga tokens candidatos antes de que el modelo principal los confirme. El modelo principal verifica los tokens candidatos en una sola pasada hacia adelante (*forward pass*). El auxiliar es rápido y barato, y puede sustituir decenas de pasadas hacia adelante más costosas del modelo principal.
++
++Esta guía cubre los métodos de decodificación asistida en Transformers.
++
++## Decodificación especulativa
++
++La [decodificación especulativa](https://hf.co/papers/2211.17192) utiliza un modelo asistente más pequeño para proponer tokens candidatos. El modelo principal comprueba estos tokens en una sola pasada. Los tokens validados pasan a la salida final y los tokens rechazados activan un muestreo estándar. La generación es más rápida porque el modelo principal realiza menos pasadas hacia adelante costosas.
++
++Este método funciona mejor cuando el modelo asistente es significativamente más pequeño que el modelo principal y utiliza el mismo tokenizador. La decodificación especulativa admite búsqueda voraz (*greedy search*) y muestreo (*sampling*), pero no entradas por lotes (*batched inputs*).
++
++Pasa `assistant_model` a [`~GenerationMixin.generate`]. Establece `do_sample=True` para volver a muestrear si la validación de tokens falla.
++
++<hfoptions id="spec-decoding">
++<hfoption id="búsqueda voraz">
++
++```py
++import torch
++from transformers import AutoModelForCausalLM, AutoTokenizer
++
++tokenizer = AutoTokenizer.from_pretrained("HuggingFaceTB/SmolLM-1.7B")
++model = AutoModelForCausalLM.from_pretrained("HuggingFaceTB/SmolLM-1.7B", dtype="auto")
++assistant_model = AutoModelForCausalLM.from_pretrained("HuggingFaceTB/SmolLM-135M", dtype="auto")
++inputs = tokenizer("Hugging Face is an open-source company", return_tensors="pt")
++
++outputs = model.generate(**inputs, assistant_model=assistant_model)
++tokenizer.batch_decode(outputs, skip_special_tokens=True)
++'Hugging Face is an open-source company that provides a platform for developers to build and deploy machine'
++```
++
++El argumento `assistant_model` también está disponible en la API [`Pipeline`].
++
++```python
++import torch
++from transformers import pipeline
++
++pipeline = pipeline(
++    "text-generation",
++    model="meta-llama/Llama-3.1-8B",
++    assistant_model="meta-llama/Llama-3.2-1B",
++    dtype="auto"
++)
++pipeline("Hugging Face is an open-source company, ", max_new_tokens=50, do_sample=False)
++```
++
++</hfoption>
++<hfoption id="muestreo">
++
++Establece `temperature` para controlar la aleatoriedad. Las temperaturas bajas suelen mejorar la latencia.
++
++```py
++from transformers import AutoModelForCausalLM, AutoTokenizer
++
++tokenizer = AutoTokenizer.from_pretrained("HuggingFaceTB/SmolLM-1.7B")
++model = AutoModelForCausalLM.from_pretrained("HuggingFaceTB/SmolLM-1.7B", dtype="auto")
++assistant_model = AutoModelForCausalLM.from_pretrained("HuggingFaceTB/SmolLM-135M", dtype="auto")
++inputs = tokenizer("Hugging Face is an open-source company", return_tensors="pt")
++
++outputs = model.generate(**inputs, assistant_model=assistant_model, do_sample=True, temperature=0.5)
++tokenizer.batch_decode(outputs, skip_special_tokens=True)
++'Hugging Face is an open-source company that is dedicated to creating a better world through technology.'
++```
++
++</hfoption>
++</hfoptions>
++
++## Decodificación por búsqueda en el prompt
++
++La decodificación por búsqueda en el prompt (*prompt lookup decoding*) no necesita un modelo asistente. Encuentra n-gramas solapados en el prompt para proponer tokens candidatos. Si no existe coincidencia, retrocede a la decodificación autorregresiva normal. Esto se adapta a tareas fundamentadas en la entrada, como la generación de resúmenes y la traducción, porque los tokens candidatos suelen reflejar patrones locales del texto fuente.
++
++Pasa `prompt_lookup_num_tokens` a [`~GenerationMixin.generate`]. Esto establece cuántos tokens intenta copiar el algoritmo de posiciones anteriores del prompt cuando detecta un patrón repetido.
++
++<hfoptions id="prompt-lookup-decoding">
++<hfoption id="decodificación voraz">
++
++```py
++import torch
++from transformers import AutoModelForCausalLM, AutoTokenizer
++
++tokenizer = AutoTokenizer.from_pretrained("HuggingFaceTB/SmolLM-1.7B")
++model = AutoModelForCausalLM.from_pretrained("HuggingFaceTB/SmolLM-1.7B", dtype="auto")
++inputs = tokenizer("Hugging Face is an open-source company", return_tensors="pt")
++
++outputs = model.generate(**inputs, prompt_lookup_num_tokens=5)
++tokenizer.batch_decode(outputs, skip_special_tokens=True)
++'Hugging Face is an open-source company that provides a platform for developers to build and deploy machine learning models. It offers a variety of tools'
++```
++
++</hfoption>
++<hfoption id="muestreo">
++
++```py
++import torch
++from transformers import AutoModelForCausalLM, AutoTokenizer
++
++tokenizer = AutoTokenizer.from_pretrained("HuggingFaceTB/SmolLM-1.7B")
++model = AutoModelForCausalLM.from_pretrained("HuggingFaceTB/SmolLM-1.7B", dtype="auto")
++inputs = tokenizer("Hugging Face is an open-source company", return_tensors="pt")
++
++outputs = model.generate(**inputs, prompt_lookup_num_tokens=5, do_sample=True, temperature=0.5)
++tokenizer.batch_decode(outputs, skip_special_tokens=True)
++'Hugging Face is an open-source company that provides a platform for developers to build and deploy machine learning models. It offers a variety of tools'
++```
++
++</hfoption>
++</hfoptions>
++
++## Decodificación autoespeculativa
++
++La decodificación autoespeculativa (*self-speculative decoding*) utiliza las capas intermedias de un modelo como asistente para proponer tokens candidatos. Si la propuesta coincide, el modelo sale anticipadamente (*early exit*) y las capas restantes verifican o corrigen los tokens.
++
++Como todo es un único modelo, los pesos y las cachés se comparten, lo que aumenta la velocidad sin sobrecarga de memoria adicional. Esta técnica solo funciona con modelos entrenados para admitir logits de salida anticipada desde capas intermedias.
++
++Pasa `assistant_early_exit` a [`~GenerationMixin.generate`] para establecer la capa de salida.
++
++```py
++import torch
++from transformers import AutoModelForCausalLM, AutoTokenizer
++
++tokenizer = AutoTokenizer.from_pretrained("facebook/layerskip-llama3.2-1B")
++model = AutoModelForCausalLM.from_pretrained("facebook/layerskip-llama3.2-1B", dtype="auto")
++inputs = tokenizer("Hugging Face is an open-source company", return_tensors="pt")
++
++outputs = model.generate(**inputs, assistant_early_exit=4, do_sample=False, max_new_tokens=20)
++tokenizer.batch_decode(outputs, skip_special_tokens=True)
++```
++
++## Predicción multitoken (MTP)
++
++La predicción multitoken (MTP, *multi-token prediction*) propone tokens candidatos con capas de predicción adicionales que provienen del propio checkpoint del modelo principal. Las capas MTP reutilizan los embeddings y la cabeza de salida del modelo principal. Cada capa MTP propone un token, por lo que el número de candidatos por paso coincide con el número de capas MTP del checkpoint. El modelo principal verifica las propuestas en una sola pasada hacia adelante.
++
++La MTP solo funciona con checkpoints entrenados con capas MTP, como [DeepSeek-V3](https://huggingface.co/deepseek-ai/DeepSeek-V3) y [GLM-4.5](https://huggingface.co/zai-org/GLM-4.5). Estos checkpoints incluyen pesos MTP y establecen `num_mtp_layers` en su configuración, listado como `num_nextn_predict_layers` en `config.json`.
++
++Pasa `use_mtp=True` a [`~GenerationMixin.generate`], que lanza un error si el modelo no tiene capas MTP. Al igual que la decodificación especulativa, la MTP admite búsqueda voraz y muestreo, pero no entradas por lotes.
++
++```py
++from transformers import AutoModelForCausalLM, AutoTokenizer
++
++tokenizer = AutoTokenizer.from_pretrained("zai-org/GLM-4.5-Air")
++model = AutoModelForCausalLM.from_pretrained("zai-org/GLM-4.5-Air", device_map="auto")
++inputs = tokenizer("Hugging Face is an open-source company", return_tensors="pt").to(model.device)
++
++outputs = model.generate(**inputs, use_mtp=True, do_sample=False, max_new_tokens=50)
++tokenizer.batch_decode(outputs, skip_special_tokens=True)
++```
++
++## Decodificación asistida universal
++
++La decodificación asistida universal (UAD, *universal assisted decoding*) hace posible la decodificación especulativa incluso cuando los modelos principal y asistente tienen tokenizadores diferentes. Permite emparejar cualquier modelo asistente pequeño con el modelo principal. Los tokens candidatos se recodifican y el algoritmo calcula la subsecuencia común más larga para que la continuación permanezca alineada.
++
++Pasa `tokenizer`, `assistant_tokenizer` y `assistant_model` a [`~GenerationMixin.generate`] para habilitar la UAD.
++
++```py
++import torch
++from transformers import AutoModelForCausalLM, AutoTokenizer
++
++assistant_tokenizer = AutoTokenizer.from_pretrained("double7/vicuna-68m")
++tokenizer = AutoTokenizer.from_pretrained("google/gemma-2-9b")
++model = AutoModelForCausalLM.from_pretrained("google/gemma-2-9b", dtype="auto")
++assistant_model = AutoModelForCausalLM.from_pretrained("double7/vicuna-68m", dtype="auto")
++inputs = tokenizer("Hugging Face is an open-source company", return_tensors="pt")
++
++outputs = model.generate(**inputs, assistant_model=assistant_model, tokenizer=tokenizer, assistant_tokenizer=assistant_tokenizer)
++tokenizer.batch_decode(outputs, skip_special_tokens=True)
++'Hugging Face is an open-source company that is dedicated to creating a better world through technology.'
++```
++
++### Verificación por ensemble estático
++
++La decodificación especulativa estándar es *sin pérdida* (*lossless*): garantiza que la distribución de salida coincida exactamente con la del modelo objetivo. La [verificación por ensemble estático](https://arxiv.org/abs/2604.07622) relaja esto verificando contra una mezcla de las distribuciones objetivo y de propuesta, lo que aumenta la tasa de aceptación (inferencia más rápida) a costa de que la distribución de salida sea una mezcla en lugar de la distribución objetivo exacta. Un valor inicial recomendado es `0.7`.
++
++```python
++import torch
++from transformers import AutoModelForCausalLM, AutoTokenizer
++
++tokenizer = AutoTokenizer.from_pretrained("HuggingFaceTB/SmolLM-1.7B")
++model = AutoModelForCausalLM.from_pretrained("HuggingFaceTB/SmolLM-1.7B", dtype="auto")
++assistant_model = AutoModelForCausalLM.from_pretrained("HuggingFaceTB/SmolLM-135M", dtype="auto")
++inputs = tokenizer("Hugging Face is an open-source company", return_tensors="pt")
++
++outputs = model.generate(**inputs, assistant_model=assistant_model, assistant_ensemble_weight=0.7, do_sample=True)
++tokenizer.batch_decode(outputs, skip_special_tokens=True)
++```
++
++Esto requiere logits candidatos del modelo asistente y no es compatible con la decodificación por búsqueda en el prompt.
++
++## Recursos
++
++- Lee la entrada de blog [Assisted Generation: a new direction toward low-latency text generation](https://huggingface.co/blog/assisted-generation) para obtener más contexto sobre la latencia de la generación de texto y la generación asistida.
+--- a/docs/source/es/_toctree.yml
++++ b/docs/source/es/_toctree.yml
+@@ -80,6 +80,8 @@
+     title: Acumulación de gradientes
+   - local: cache_explanation
+     title: Cómo funciona el almacenamiento en caché
++  - local: assisted_decoding
++    title: Decodificación asistida
+   title: Rendimiento y escalabilidad
+ - sections:
+   - local: add_new_pipeline

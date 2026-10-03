@@ -1,0 +1,105 @@
+{
+  "name": "Workflow Orchestrator Pipeline",
+  "nodes": [
+    {
+      "id": "trigger",
+      "type": "n8n-nodes-base.webhook",
+      "name": "Task Trigger",
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "orchestrator/task"
+      }
+    },
+    {
+      "id": "priority",
+      "type": "n8n-nodes-base.function",
+      "name": "Priority Engine",
+      "parameters": {
+        "functionCode": "const engine = require('src/priority_engine');\nconst queue = engine.generateQueue();\nreturn [{ json: { tasks: queue.tasks.slice(0, 3), generated_at: queue.generated_at } }];"
+      }
+    },
+    {
+      "id": "router",
+      "type": "n8n-nodes-base.function",
+      "name": "Router",
+      "parameters": {
+        "functionCode": "const router = require('src/router');\nconst task = items[0].json.tasks[0];\nconst route = router.route(task.id, task.name, task.type);\nreturn [{ json: route }];"
+      }
+    },
+    {
+      "id": "budget",
+      "type": "n8n-nodes-base.function",
+      "name": "Agentguard Check",
+      "parameters": {
+        "functionCode": "const guard = require('src/agentguard');\nconst guard = new guard.Agentguard();\nconst approved = guard.approveTask(items[0].json.estimated_cost);\nreturn [{ json: { ...items[0].json, approved } }];"
+      }
+    },
+    {
+      "id": "condition",
+      "type": "n8n-nodes-base.if",
+      "name": "Budget Check",
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.approved }}",
+              "value2": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "execute",
+      "type": "n8n-nodes-base.function",
+      "name": "Execute Task",
+      "parameters": {
+        "functionCode": "const executor = require('src/executor');\nconst e = new executor.Executor();\nconst result = e.executeTask(items[0].json.task_id, items[0].json.task_name, items[0].json.command, items[0].json.complexity);\nreturn [{ json: result }];"
+      }
+    },
+    {
+      "id": "secure_t",
+      "type": "n8n-nodes-base.function",
+      "name": "Secure-t Pipeline",
+      "parameters": {
+        "functionCode": "const pipeline = require('src/secure_t_pipeline');\nconst p = new pipeline.SecureTPipeline();\nconst result = p.run(items[0].json.task_id, items[0].json.repo_url);\nreturn [{ json: result }];"
+      }
+    },
+    {
+      "id": "validator",
+      "type": "n8n-nodes-base.function",
+      "name": "Validator",
+      "parameters": {
+        "functionCode": "const validator = require('src/validator');\nconst v = new validator.Validator();\nconst report = v.validate(items[0].json.task_id, items[0].json.output, items[0].json.type);\nreturn [{ json: report }];"
+      }
+    },
+    {
+      "id": "monitor",
+      "type": "n8n-nodes-base.function",
+      "name": "Monitor",
+      "parameters": {
+        "functionCode": "const monitor = require('src/monitor');\nconst m = new monitor.Monitor();\nconst report = m.runChecks();\nreturn [{ json: report }];"
+      }
+    },
+    {
+      "id": "output",
+      "type": "n8n-nodes-base.webhookResponse",
+      "name": "Response",
+      "parameters": {
+        "responseData": "={{ $json }}",
+        "options": {}
+      }
+    }
+  ],
+  "connections": {
+    "trigger": { "main": [[{ "node": "priority", "type": "main", "index": 0 }]] },
+    "priority": { "main": [[{ "node": "router", "type": "main", "index": 0 }]] },
+    "router": { "main": [[{ "node": "budget", "type": "main", "index": 0 }]] },
+    "budget": { "main": [[{ "node": "condition", "type": "main", "index": 0 }]] },
+    "condition": { "main": [[{ "node": "execute", "type": "main", "index": 0 }], [{ "node": "output", "type": "main", "index": 0 }]] },
+    "execute": { "main": [[{ "node": "secure_t", "type": "main", "index": 0 }]] },
+    "secure_t": { "main": [[{ "node": "validator", "type": "main", "index": 0 }]] },
+    "validator": { "main": [[{ "node": "monitor", "type": "main", "index": 0 }]] },
+    "monitor": { "main": [[{ "node": "output", "type": "main", "index": 0 }]] }
+  }
+}

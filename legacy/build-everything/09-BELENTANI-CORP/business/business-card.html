@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Card — Pedro Belentani</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#1a1a1a;display:flex;align-items:center;justify-content:center;min-height:100vh;gap:2rem;flex-wrap:wrap;padding:2rem}
+.card{width:90mm;height:55mm;border-radius:4mm;overflow:hidden;position:relative;font-family:'Inter',system-ui,sans-serif;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+
+/* FRONT */
+.front{background:#09090b;color:#fafafa;padding:6mm;display:flex;flex-direction:column;justify-content:space-between}
+.front::before{content:'';position:absolute;top:0;right:0;width:30mm;height:30mm;background:radial-gradient(circle,rgba(0,255,136,.08) 0%,transparent 70%)}
+.logo{font-family:'Space Grotesk',sans-serif;font-size:5mm;font-weight:700;color:#00ff88;letter-spacing:-.02em}
+.name{font-size:4.5mm;font-weight:700;margin-top:auto}
+.title{font-size:2.5mm;color:#a1a1aa;margin-top:1mm;letter-spacing:.05em}
+.qr{position:absolute;bottom:5mm;right:5mm;width:10mm;height:10mm;background:#fafafa;border-radius:2mm;display:flex;align-items:center;justify-content:center}
+.qr-inner{width:8mm;height:8mm;background:repeating-conic-gradient(#09090b 0% 25%,#fafafa 0% 50%) 50%/2mm 2mm}
+
+/* BACK */
+.back{background:#09090b;color:#fafafa;padding:6mm;display:flex;flex-direction:column;justify-content:space-between}
+.back .accent-bar{position:absolute;top:0;left:0;right:0;height:1mm;background:linear-gradient(90deg,#00ff88,#6366f1)}
+.contact-list{display:flex;flex-direction:column;gap:1.5mm}
+.contact-item{display:flex;align-items:center;gap:2mm;font-size:2.2mm;color:#a1a1aa}
+.contact-item .icon{width:3mm;height:3mm;border-radius:1mm;background:rgba(0,255,136,.1);display:flex;align-items:center;justify-content:center;font-size:1.5mm;color:#00ff88}
+.back-footer{display:flex;justify-content:space-between;align-items:end}
+.back-footer .url{font-family:'Space Grotesk',sans-serif;font-size:2mm;color:#52525b}
+.back-footer .tagline{font-size:1.8mm;color:#00ff88;font-style:italic}
+
+@media print{
+  body{background:white}
+  .card{box-shadow:none;border:0.5px solid #eee}
+}
+</style>
+</head>
+<body>
+
+<div class="card front">
+  <div class="logo">BELENTANI</div>
+  <div>
+    <div class="name">Pedro Belentani</div>
+    <div class="title">AI SAFETY ENGINEER & CREATIVE TECHNOLOGIST</div>
+  </div>
+  <div class="qr"><div class="qr-inner"></div></div>
+</div>
+
+<div class="card back">
+  <div class="accent-bar"></div>
+  <div class="contact-list">
+    <div class="contact-item"><div class="icon">✉</div> belentani7pedro@gmail.com</div>
+    <div class="contact-item"><div class="icon">📱</div> +34 631 816 810</div>
+    <div class="contact-item"><div class="icon">in</div> linkedin.com/in/pedro-b-09473598</div>
+    <div class="contact-item"><div class="icon">⌘</div> github.com/belentani7pedro</div>
+    <div class="contact-item"><div class="icon">◉</div> pedro-belentani.vercel.app</div>
+  </div>
+  <div class="back-footer">
+    <div class="url">belentani.com</div>
+    <div class="tagline">"Building systems that protect people"</div>
+  </div>
+</div>
+
+</body>
+</html>

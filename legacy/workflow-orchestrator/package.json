@@ -1,0 +1,26 @@
+{
+  "name": "workflow-orchestrator",
+  "version": "1.0.0",
+  "description": "Central workflow orchestration engine for the Belentani ecosystem",
+  "author": "Pedro Belentani (Noiacore)",
+  "license": "MIT",
+  "scripts": {
+    "start": "python src/main.py start",
+    "single": "python src/main.py single",
+    "kanban": "python src/main.py kanban",
+    "dashboard": "python src/main.py dashboard",
+    "health": "python src/main.py health",
+    "test": "python -m pytest tests/",
+    "secure-t": "./scripts/secure_t_runner.sh",
+    "kanban-update": "./scripts/kanban_update.sh"
+  },
+  "dependencies": {
+    "python": ">=3.12",
+    "node": ">=20"
+  },
+  "config": {
+    "orchestrator": "config/orchestrator.yaml",
+    "cli_providers": "config/cli_providers.yaml",
+    "monitor_targets": "config/monitor_targets.yaml"
+  }
+}

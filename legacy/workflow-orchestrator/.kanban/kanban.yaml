@@ -1,0 +1,46 @@
+# Kanban Board - Workflow Orchestrator
+## Agile Kanban Solo - Belentani Ecosystem
+
+### Columns
+- **Backlog**: Ideas, features not yet prioritized
+- **P0-Critical**: Must do immediately
+- **P1-High**: Important, schedule this week
+- **P2-Medium**: Plan for next sprint
+- **In Progress**: Active work (max 2 tasks)
+- **Validating**: Being tested/verified
+- **Done**: Completed and verified
+
+### Tasks
+
+#### P0-Critical
+- [x] Task Plan + Research (Phase 1-2)
+- [ ] Priority Engine - ranked task queue
+- [ ] Router - model + CLI selection
+- [ ] CLI Launcher - unified dispatch
+- [ ] Secure-t Pipeline - automated audit
+
+#### P1-High
+- [ ] Agentguard Budget - enforcement
+- [ ] Executor - sandbox execution
+- [ ] Validator - output checking
+- [ ] Monitor - health checks
+- [ ] Kanban Board - .kanban/ setup
+
+#### P2-Medium
+- [ ] n8n Pipeline - visual workflow
+- [ ] Multi-CLI integration - full 4 CLIs
+- [ ] MetaSkill archetype mapping
+- [ ] Domain monitoring (belentani.eu)
+- [ ] Documentation + README
+
+### WIP Limits
+- P0-Critical: 2 tasks max
+- P1-High: 3 tasks max
+- In Progress: 2 tasks max
+- Validating: 1 task max
+
+### Daily Check
+- Run `python src/monitor.py` - health check
+- Review `.kanban/` - update statuses
+- Check `src/agentguard.py` - budget status
+- Check `pendingActions` - stale items

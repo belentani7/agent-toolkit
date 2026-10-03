@@ -1,0 +1,366 @@
+[
+  {
+    "id": "ia-01",
+    "titulo": "Introducción a la Inteligencia Artificial",
+    "nivel": 1,
+    "dificultad": "básico",
+    "duracion_min": 35,
+    "objetivos": [
+      "Comprender el concepto de Introducción a la Inteligencia Artificial",
+      "Aplicar la herramienta en un caso práctico real",
+      "Evaluar resultados y corregir errores"
+    ],
+    "ejercicios": [
+      {
+        "tipo": "practica",
+        "descripcion": "Ejercicio guiado paso a paso"
+      },
+      {
+        "tipo": "quiz",
+        "descripcion": "5 preguntas de autoevaluación"
+      },
+      {
+        "tipo": "proyecto",
+        "descripcion": "Mini-proyecto aplicado"
+      }
+    ]
+  },
+  {
+    "id": "ia-02",
+    "titulo": "ChatGPT para trámites administrativos",
+    "nivel": 2,
+    "dificultad": "básico",
+    "duracion_min": 40,
+    "objetivos": [
+      "Comprender el concepto de ChatGPT para trámites administrativos",
+      "Aplicar la herramienta en un caso práctico real",
+      "Evaluar resultados y corregir errores"
+    ],
+    "ejercicios": [
+      {
+        "tipo": "practica",
+        "descripcion": "Ejercicio guiado paso a paso"
+      },
+      {
+        "tipo": "quiz",
+        "descripcion": "5 preguntas de autoevaluación"
+      },
+      {
+        "tipo": "proyecto",
+        "descripcion": "Mini-proyecto aplicado"
+      }
+    ]
+  },
+  {
+    "id": "ia-03",
+    "titulo": "Gemini para búsqueda de empleo",
+    "nivel": 3,
+    "dificultad": "básico",
+    "duracion_min": 45,
+    "objetivos": [
+      "Comprender el concepto de Gemini para búsqueda de empleo",
+      "Aplicar la herramienta en un caso práctico real",
+      "Evaluar resultados y corregir errores"
+    ],
+    "ejercicios": [
+      {
+        "tipo": "practica",
+        "descripcion": "Ejercicio guiado paso a paso"
+      },
+      {
+        "tipo": "quiz",
+        "descripcion": "5 preguntas de autoevaluación"
+      },
+      {
+        "tipo": "proyecto",
+        "descripcion": "Mini-proyecto aplicado"
+      }
+    ]
+  },
+  {
+    "id": "ia-04",
+    "titulo": "DeepSeek para traducción de documentos",
+    "nivel": 4,
+    "dificultad": "intermedio",
+    "duracion_min": 50,
+    "objetivos": [
+      "Comprender el concepto de DeepSeek para traducción de documentos",
+      "Aplicar la herramienta en un caso práctico real",
+      "Evaluar resultados y corregir errores"
+    ],
+    "ejercicios": [
+      {
+        "tipo": "practica",
+        "descripcion": "Ejercicio guiado paso a paso"
+      },
+      {
+        "tipo": "quiz",
+        "descripcion": "5 preguntas de autoevaluación"
+      },
+      {
+        "tipo": "proyecto",
+        "descripcion": "Mini-proyecto aplicado"
+      }
+    ]
+  },
+  {
+    "id": "ia-05",
+    "titulo": "Copilot para redacción profesional",
+    "nivel": 5,
+    "dificultad": "intermedio",
+    "duracion_min": 55,
+    "objetivos": [
+      "Comprender el concepto de Copilot para redacción profesional",
+      "Aplicar la herramienta en un caso práctico real",
+      "Evaluar resultados y corregir errores"
+    ],
+    "ejercicios": [
+      {
+        "tipo": "practica",
+        "descripcion": "Ejercicio guiado paso a paso"
+      },
+      {
+        "tipo": "quiz",
+        "descripcion": "5 preguntas de autoevaluación"
+      },
+      {
+        "tipo": "proyecto",
+        "descripcion": "Mini-proyecto aplicado"
+      }
+    ]
+  },
+  {
+    "id": "ia-06",
+    "titulo": "Qwen para análisis de texto",
+    "nivel": 6,
+    "dificultad": "intermedio",
+    "duracion_min": 60,
+    "objetivos": [
+      "Comprender el concepto de Qwen para análisis de texto",
+      "Aplicar la herramienta en un caso práctico real",
+      "Evaluar resultados y corregir errores"
+    ],
+    "ejercicios": [
+      {
+        "tipo": "practica",
+        "descripcion": "Ejercicio guiado paso a paso"
+      },
+      {
+        "tipo": "quiz",
+        "descripcion": "5 preguntas de autoevaluación"
+      },
+      {
+        "tipo": "proyecto",
+        "descripcion": "Mini-proyecto aplicado"
+      }
+    ]
+  },
+  {
+    "id": "ia-07",
+    "titulo": "Claude para resúmenes legales",
+    "nivel": 7,
+    "dificultad": "intermedio",
+    "duracion_min": 65,
+    "objetivos": [
+      "Comprender el concepto de Claude para resúmenes legales",
+      "Aplicar la herramienta en un caso práctico real",
+      "Evaluar resultados y corregir errores"
+    ],
+    "ejercicios": [
+      {
+        "tipo": "practica",
+        "descripcion": "Ejercicio guiado paso a paso"
+      },
+      {
+        "tipo": "quiz",
+        "descripcion": "5 preguntas de autoevaluación"
+      },
+      {
+        "tipo": "proyecto",
+        "descripcion": "Mini-proyecto aplicado"
+      }
+    ]
+  },
+  {
+    "id": "ia-08",
+    "titulo": "Perplexity para investigación fiable",
+    "nivel": 8,
+    "dificultad": "intermedio",
+    "duracion_min": 70,
+    "objetivos": [
+      "Comprender el concepto de Perplexity para investigación fiable",
+      "Aplicar la herramienta en un caso práctico real",
+      "Evaluar resultados y corregir errores"
+    ],
+    "ejercicios": [
+      {
+        "tipo": "practica",
+        "descripcion": "Ejercicio guiado paso a paso"
+      },
+      {
+        "tipo": "quiz",
+        "descripcion": "5 preguntas de autoevaluación"
+      },
+      {
+        "tipo": "proyecto",
+        "descripcion": "Mini-proyecto aplicado"
+      }
+    ]
+  },
+  {
+    "id": "ia-09",
+    "titulo": "Meta AI para comunicación",
+    "nivel": 9,
+    "dificultad": "avanzado",
+    "duracion_min": 75,
+    "objetivos": [
+      "Comprender el concepto de Meta AI para comunicación",
+      "Aplicar la herramienta en un caso práctico real",
+      "Evaluar resultados y corregir errores"
+    ],
+    "ejercicios": [
+      {
+        "tipo": "practica",
+        "descripcion": "Ejercicio guiado paso a paso"
+      },
+      {
+        "tipo": "quiz",
+        "descripcion": "5 preguntas de autoevaluación"
+      },
+      {
+        "tipo": "proyecto",
+        "descripcion": "Mini-proyecto aplicado"
+      }
+    ]
+  },
+  {
+    "id": "ia-10",
+    "titulo": "IA para creación de contenido",
+    "nivel": 10,
+    "dificultad": "avanzado",
+    "duracion_min": 80,
+    "objetivos": [
+      "Comprender el concepto de IA para creación de contenido",
+      "Aplicar la herramienta en un caso práctico real",
+      "Evaluar resultados y corregir errores"
+    ],
+    "ejercicios": [
+      {
+        "tipo": "practica",
+        "descripcion": "Ejercicio guiado paso a paso"
+      },
+      {
+        "tipo": "quiz",
+        "descripcion": "5 preguntas de autoevaluación"
+      },
+      {
+        "tipo": "proyecto",
+        "descripcion": "Mini-proyecto aplicado"
+      }
+    ]
+  },
+  {
+    "id": "ia-11",
+    "titulo": "IA para análisis de datos",
+    "nivel": 11,
+    "dificultad": "avanzado",
+    "duracion_min": 85,
+    "objetivos": [
+      "Comprender el concepto de IA para análisis de datos",
+      "Aplicar la herramienta en un caso práctico real",
+      "Evaluar resultados y corregir errores"
+    ],
+    "ejercicios": [
+      {
+        "tipo": "practica",
+        "descripcion": "Ejercicio guiado paso a paso"
+      },
+      {
+        "tipo": "quiz",
+        "descripcion": "5 preguntas de autoevaluación"
+      },
+      {
+        "tipo": "proyecto",
+        "descripcion": "Mini-proyecto aplicado"
+      }
+    ]
+  },
+  {
+    "id": "ia-12",
+    "titulo": "IA para aprendizaje autónomo",
+    "nivel": 12,
+    "dificultad": "avanzado",
+    "duracion_min": 90,
+    "objetivos": [
+      "Comprender el concepto de IA para aprendizaje autónomo",
+      "Aplicar la herramienta en un caso práctico real",
+      "Evaluar resultados y corregir errores"
+    ],
+    "ejercicios": [
+      {
+        "tipo": "practica",
+        "descripcion": "Ejercicio guiado paso a paso"
+      },
+      {
+        "tipo": "quiz",
+        "descripcion": "5 preguntas de autoevaluación"
+      },
+      {
+        "tipo": "proyecto",
+        "descripcion": "Mini-proyecto aplicado"
+      }
+    ]
+  },
+  {
+    "id": "ia-13",
+    "titulo": "Ética y seguridad en IA",
+    "nivel": 13,
+    "dificultad": "avanzado",
+    "duracion_min": 95,
+    "objetivos": [
+      "Comprender el concepto de Ética y seguridad en IA",
+      "Aplicar la herramienta en un caso práctico real",
+      "Evaluar resultados y corregir errores"
+    ],
+    "ejercicios": [
+      {
+        "tipo": "practica",
+        "descripcion": "Ejercicio guiado paso a paso"
+      },
+      {
+        "tipo": "quiz",
+        "descripcion": "5 preguntas de autoevaluación"
+      },
+      {
+        "tipo": "proyecto",
+        "descripcion": "Mini-proyecto aplicado"
+      }
+    ]
+  },
+  {
+    "id": "ia-14",
+    "titulo": "Proyecto final integrador",
+    "nivel": 14,
+    "dificultad": "proyecto",
+    "duracion_min": 100,
+    "objetivos": [
+      "Comprender el concepto de Proyecto final integrador",
+      "Aplicar la herramienta en un caso práctico real",
+      "Evaluar resultados y corregir errores"
+    ],
+    "ejercicios": [
+      {
+        "tipo": "practica",
+        "descripcion": "Ejercicio guiado paso a paso"
+      },
+      {
+        "tipo": "quiz",
+        "descripcion": "5 preguntas de autoevaluación"
+      },
+      {
+        "tipo": "proyecto",
+        "descripcion": "Mini-proyecto aplicado"
+      }
+    ]
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "name": "@belentani7/skills-registry",
+  "version": "1.0.0",
+  "description": "Global registry of CLI agent skills — discover, install, manage skills for Qwen Code, Claude Code, Cline, OpenCode, and more.",
+  "type": "module",
+  "main": "cli/src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node cli/dist/index.js",
+    "dev": "tsx cli/src/index.ts",
+    "validate": "tsx scripts/validate-registry.ts",
+    "test": "vitest run",
+    "generate-index": "tsx scripts/generate-index.ts"
+  },
+  "bin": {
+    "skills": "./cli/dist/index.js"
+  },
+  "keywords": [
+    "skills", "registry", "qwen-code", "claude-code", "cline", "opencode",
+    "ai-agents", "coding-agents", "cli-tools", "skills-management"
+  ],
+  "author": "Belentani",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^12.0.0",
+    "ora": "^8.0.0",
+    "semver": "^7.6.0",
+    "zod": "^4.0.0",
+    "glob": "^11.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.6.0",
+    "tsx": "^4.19.0",
+    "vitest": "^2.1.0"
+  }
+}

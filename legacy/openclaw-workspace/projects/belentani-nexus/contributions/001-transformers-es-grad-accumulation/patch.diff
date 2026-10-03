@@ -1,0 +1,82 @@
+diff --git a/docs/source/es/grad_accumulation.md b/docs/source/es/grad_accumulation.md
+new file mode 100644
+index 0000000..7358107
+--- /dev/null
++++ b/docs/source/es/grad_accumulation.md
+@@ -0,0 +1,65 @@
++<!---Copyright 2026 The HuggingFace Team. All rights reserved.
++
++Licensed under the Apache License, Version 2.0 (the "License");
++you may not use this file except in compliance with the License.
++You may obtain a copy of the License at
++
++    http://www.apache.org/licenses/LICENSE-2.0
++
++Unless required by applicable law or agreed to in writing, software
++distributed under the License is distributed on an "AS IS" BASIS,
++WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++See the License for the specific language governing permissions and
++limitations under the License.
++-->
++
++# Acumulación de gradientes
++
++Los lotes grandes producen activaciones grandes que agotan la memoria de la GPU. La acumulación de gradientes te permite entrenar con un tamaño de lote efectivo mayor repartiendo el cálculo de los gradientes entre varios minilotes.
++
++Los gradientes se acumulan a lo largo de *n* minilotes antes de que el optimizador actualice los pesos. Por ejemplo, con un tamaño de lote por dispositivo de 8 y 4 pasos de acumulación, el tamaño de lote efectivo es 32.
++
++```text
++Paso 1: minilote 1 → forward → backward → grads = G₁
++Paso 2: minilote 2 → forward → backward → grads = G₁ + G₂
++Paso 3: minilote 3 → forward → backward → grads = G₁ + G₂ + G₃
++Paso 4: minilote 4 → forward → backward → grads = G₁ + G₂ + G₃ + G₄
++        → optimizer.step()  ← misma actualización que si batch_size × 4
++        → zero_grad()
++```
++
++Utiliza la acumulación de gradientes solo cuando un lote mayor no quepa en memoria. No mejora el rendimiento (*throughput*) frente a entrenar con un lote grande real.
++
++Acumula gradientes durante `gradient_accumulation_steps` pasos sobre `per_device_train_batch_size`.
++
++```py
++from transformers import TrainingArguments
++
++args = TrainingArguments(
++    ...,
++    per_device_train_batch_size=8,
++    gradient_accumulation_steps=4,
++)
++```
++
++## Escalado de la pérdida
++
++Para una [función de pérdida personalizada](./trainer_recipes#custom-loss-function), incluye `num_items_in_batch` para que [`Trainer`] divida la pérdida entre el número de objetivos de predicción de todos los minilotes. Esto normaliza por tokens en lugar de por un número fijo de pasos con `gradient_accumulation_steps`. En caso contrario, [`Trainer`] divide la pérdida entre `gradient_accumulation_steps`.
++
++```py
++import torch.nn.functional as F
++
++def compute_loss(outputs, labels, num_items_in_batch=None):
++    logits = outputs["logits"]
++    loss = F.cross_entropy(logits, labels, reduction="sum")
++    return loss / num_items_in_batch
++```
++
++Para los modelos de lenguaje causales, `num_items_in_batch` cuenta las etiquetas *desplazadas*. La pérdida desplaza las etiquetas de modo que la predicción en la posición `i` apunta al token de la posición `i + 1`, lo que deja la posición 0 de cada secuencia sin objetivo. [`Trainer`] excluye esas posiciones y cuenta sobre `labels[..., 1:]`, de forma que el denominador coincide con el número de objetivos de predicción que utiliza la pérdida. Cuando un *data collator* proporciona `shift_labels` directamente, como un *collator* sin relleno (*padding-free*), [`Trainer`] cuenta sobre ese tensor en su lugar. Otros tipos de pérdida, como la de modelos de lenguaje enmascarados (MLM) y la de clasificación, cuentan el tensor de etiquetas completo.
++
++## Próximos pasos
++
++- Lee la documentación sobre el [Uso de memoria de la GPU](./model_memory_anatomy) para entender qué está impulsando el uso de memoria de la GPU durante el entrenamiento.
++- Consulta la guía de [Gradient checkpointing](./grad_checkpointing) para aprender a reducir la memoria de activaciones recomputando las activaciones en lugar de almacenarlas en caché.
++- Consulta la guía de [Entrenamiento en precisión mixta](./mixed_precision_training) para aprender a usar tipos de datos de menor precisión para reducir la memoria y acelerar el entrenamiento.
++- Lee la entrada de blog [Gradient Accumulation Fix](https://unsloth.ai/blog/gradient) para aprender cómo se calcula la acumulación de gradientes.
+--- a/docs/source/es/_toctree.yml
++++ b/docs/source/es/_toctree.yml
+@@ -76,6 +76,8 @@
+     title: Debugging
+   - local: torch_compile
+     title: torch.compile
++  - local: grad_accumulation
++    title: Acumulación de gradientes
+   title: Rendimiento y escalabilidad
+ - sections:
+   - local: add_new_pipeline

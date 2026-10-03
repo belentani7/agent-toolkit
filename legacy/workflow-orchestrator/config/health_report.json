@@ -1,0 +1,112 @@
+{
+  "overall_status": "critical",
+  "uptime_percent": 23.076923076923077,
+  "generated_at": "2026-09-12T11:27:47.572533",
+  "total_checks": 13,
+  "checks": [
+    {
+      "target": "NOIACORE",
+      "type": "repo",
+      "status": "error",
+      "response_time_ms": 532,
+      "error": "HTTP Error 404: Not Found",
+      "timestamp": "2026-09-12T11:27:40.233408"
+    },
+    {
+      "target": "secure-t",
+      "type": "repo",
+      "status": "error",
+      "response_time_ms": 446,
+      "error": "HTTP Error 404: Not Found",
+      "timestamp": "2026-09-12T11:27:40.680253"
+    },
+    {
+      "target": "skills-registry",
+      "type": "repo",
+      "status": "error",
+      "response_time_ms": 451,
+      "error": "HTTP Error 404: Not Found",
+      "timestamp": "2026-09-12T11:27:41.134159"
+    },
+    {
+      "target": "belentani-core",
+      "type": "repo",
+      "status": "error",
+      "response_time_ms": 457,
+      "error": "HTTP Error 404: Not Found",
+      "timestamp": "2026-09-12T11:27:41.596077"
+    },
+    {
+      "target": "manus-ai-skill-pack",
+      "type": "repo",
+      "status": "error",
+      "response_time_ms": 487,
+      "error": "HTTP Error 404: Not Found",
+      "timestamp": "2026-09-12T11:27:42.084233"
+    },
+    {
+      "target": "Belentani OS",
+      "type": "page",
+      "status": "ok",
+      "response_time_ms": 243,
+      "error": null,
+      "timestamp": "2026-09-12T11:27:42.328716"
+    },
+    {
+      "target": "Judas Experience",
+      "type": "page",
+      "status": "error",
+      "response_time_ms": 197,
+      "error": "HTTP Error 404: Not Found",
+      "timestamp": "2026-09-12T11:27:42.527617"
+    },
+    {
+      "target": "ManosAbiertas",
+      "type": "page",
+      "status": "ok",
+      "response_time_ms": 194,
+      "error": null,
+      "timestamp": "2026-09-12T11:27:42.723818"
+    },
+    {
+      "target": "OpenRouter",
+      "type": "api",
+      "status": "error",
+      "response_time_ms": 214,
+      "error": "HTTP Error 404: Not Found",
+      "timestamp": "2026-09-12T11:27:42.941296"
+    },
+    {
+      "target": "HuggingFace",
+      "type": "api",
+      "status": "error",
+      "response_time_ms": 110,
+      "error": "<urlopen error [Errno 11001] getaddrinfo failed>",
+      "timestamp": "2026-09-12T11:27:43.053742"
+    },
+    {
+      "target": "OmniRoute",
+      "type": "api",
+      "status": "error",
+      "response_time_ms": 4081,
+      "error": "<urlopen error [WinError 10061] No se puede establecer una conexi\u00f3n ya que el equipo de destino deneg\u00f3 expresamente dicha conexi\u00f3n>",
+      "timestamp": "2026-09-12T11:27:47.135125"
+    },
+    {
+      "target": "belentani.vercel.app",
+      "type": "domain",
+      "status": "ok",
+      "response_time_ms": 250,
+      "error": null,
+      "timestamp": "2026-09-12T11:27:47.385436"
+    },
+    {
+      "target": "belentani.eu",
+      "type": "domain",
+      "status": "error",
+      "response_time_ms": 181,
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'belentani.eu'. (_ssl.c:1006)>",
+      "timestamp": "2026-09-12T11:27:47.570519"
+    }
+  ]
+}

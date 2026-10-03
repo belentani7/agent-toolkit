@@ -1,0 +1,49 @@
+providers:
+  claude:
+    command: "claude"
+    default_model: "anthropic/claude-3.5-sonnet"
+    config_path: "~/.claude/settings.json"
+    context: 32768
+    thinking: false
+    priority: 1
+
+  codex:
+    command: "codex"
+    default_model: "openai/gpt-4o"
+    config_path: "~/.codex/config.toml"
+    context: 32768
+    priority: 2
+
+  opencode:
+    command: "opencode"
+    default_model: "openai/gpt-4o-mini"
+    config_path: "~/.config/opencode/opencode.json"
+    context: 32768
+    priority: 3
+
+task_routing:
+  coding: "codex"
+  reasoning: "claude"
+  quick: "codex"
+  open_source: "opencode"
+  web: "codex"
+  security: "claude"
+  audio: "claude"
+  image: "opencode"
+  video: "claude"
+  deploy: "claude"
+  monitor: "opencode"
+  documentation: "opencode"
+  default: "claude"
+
+budget:
+  plan_limit: 100
+  currency: "USD"
+  threshold_percent: 80
+  auto_pause: true
+  overflow_route_to: "cheapest"
+
+monitor:
+  refresh_interval_seconds: 300
+  health_report_path: "config/health_report.json"
+  priority_queue_path: "config/priority_queue.json"

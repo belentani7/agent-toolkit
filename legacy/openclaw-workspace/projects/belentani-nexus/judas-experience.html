@@ -1,0 +1,1874 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Belentani // Judas Experience - Cyberpunk Galactic Music | 36M+ Streams</title>
+<meta name="description" content="Immersive cyberpunk music experience exploring betrayal and redemption. Interactive 3D web with AI-driven storytelling. 36M+ streams. By Pedro Belentani.">
+<meta name="keywords" content="Belentani, Judas Experience, cyberpunk music, electronic, dark pop, R&B, AI art, interactive web, Three.js, WebGL">
+<meta name="author" content="Pedro Belentani">
+<meta name="theme-color" content="#ff003c">
+<link rel="canonical" href="https://belentani7.github.io/judas-experience/">
+<meta property="og:title" content="Belentani - Judas Experience | Cyberpunk Galactic Music">
+<meta property="og:description" content="Immersive cyberpunk music experience with AI-driven storytelling. 36M+ streams.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://belentani7.github.io/judas-experience/">
+<meta property="og:image" content="https://belentani7.github.io/judas-experience/og-image.jpg">
+<meta property="og:site_name" content="Belentani - Judas Experience">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Belentani - Judas Experience">
+<meta name="twitter:description" content="Cyberpunk galactic music experience with AI-driven storytelling">
+<meta name="twitter:image" content="https://belentani7.github.io/judas-experience/og-image.jpg">
+<meta name="robots" content="index, follow">
+<meta name="language" content="English">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Cinzel+Decorative:wght@400;700;900&family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+<!-- Preload critical resources -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+<!-- Performance hints -->
+<link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js">
+<link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+
+<!-- ON-DEVICE AI ENGINE -->
+<script type="module">
+import { pipeline, env } from 'https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.1';
+env.allowLocalModels = false;
+window.OmegaAI = null;
+window.loadOmegaAI = async function() {
+    try {
+        window.OmegaAI = await pipeline('text-generation', 'Xenova/LaMini-Flan-T5-248M');
+        window.dispatchEvent(new Event('ai_ready'));
+    } catch(e) { console.warn("IA local no disponible.", e); }
+};
+window.askOmega = async function(prompt) {
+    if (!window.OmegaAI) return null;
+    const instruction = `Eres el OMEGA CORE de Belentani, entidad galáctica hackeada por Judas. Tono oscuro, filosófico. Responde breve. Usuario: ${prompt}`;
+    const output = await window.OmegaAI(instruction, { max_new_tokens: 80, temperature: 0.7 });
+    return output[0].generated_text;
+};
+window.loadOmegaAI();
+</script>
+
+<style>
+:root {
+    --bg-void: #030303; --bg-glass: rgba(10, 0, 0, 0.55);
+    --red-blood: #ff003c; --red-dark: #8b0000; --red-glow: rgba(255, 0, 60, 0.6);
+    --text-main: #f5f5f5; --text-dim: rgba(245, 245, 245, 0.5);
+    --term-green: #00ff41; --gold-sacred: #ffd700;
+    --font-display: 'Orbitron', sans-serif; --font-ui: 'Chakra Petch', sans-serif; --font-mono: 'JetBrains Mono', monospace;
+    --border-glass: rgba(255, 0, 60, 0.2);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { width: 100%; background: var(--bg-void); color: var(--text-main); font-family: var(--font-ui); cursor: none; overflow-x: hidden; line-height: 1.6; }
+
+/* BOOT */
+#boot-screen { position: fixed; inset: 0; background: #000; z-index: 10000; display: flex; align-items: center; justify-content: center; flex-direction: column; font-family: var(--font-mono); color: var(--term-green); font-size: 14px; transition: opacity 1s; }
+#boot-screen .boot-bar { width: 300px; height: 2px; background: rgba(0, 255, 65, 0.2); position: relative; overflow: hidden; margin-top: 20px; }
+#boot-screen .boot-bar::after { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 0%; background: var(--term-green); box-shadow: 0 0 10px var(--term-green); animation: bootLoad 3s linear forwards; }
+@keyframes bootLoad { to { width: 100%; } }
+
+/* CURSOR */
+.cursor-dot, .cursor-outline, .cursor-cross { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); will-change: transform; }
+.cursor-dot { width: 4px; height: 4px; background: #fff; box-shadow: 0 0 10px #fff; z-index: 10000; }
+.cursor-outline { width: 40px; height: 40px; border: 1px solid var(--red-blood); transition: width 0.3s, height 0.3s, opacity 0.3s; mix-blend-mode: difference; z-index: 9998; }
+.cursor-outline.hover { width: 80px; height: 80px; background: rgba(255, 0, 60, 0.1); border-color: transparent; }
+.cursor-cross { width: 20px; height: 20px; z-index: 9997; }
+.cursor-cross::before, .cursor-cross::after { content: ''; position: absolute; background: var(--red-blood); box-shadow: 0 0 8px var(--red-blood); }
+.cursor-cross::before { top: 50%; left: 0; width: 100%; height: 1px; transform: translateY(-50%); }
+.cursor-cross::after { left: 50%; top: 0; height: 100%; width: 1px; transform: translateX(-50%); }
+
+/* ATMOSPHERE */
+#webgl-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+.scanlines { position: fixed; inset: 0; background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.3)); background-size: 100% 4px; z-index: 1; pointer-events: none; opacity: 0.08; }
+.vignette { position: fixed; inset: 0; background: radial-gradient(circle at center, transparent 15%, rgba(0,0,0,0.95) 100%); z-index: 1; pointer-events: none; }
+.grain { position: fixed; inset: 0; z-index: 2; pointer-events: none; opacity: 0.05; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.collapse-overlay { position: fixed; inset: 0; background: repeating-linear-gradient(0deg, rgba(255,0,60,0.1), rgba(255,0,60,0.1) 2px, transparent 2px, transparent 4px); z-index: 9000; pointer-events: none; display: none; }
+body.collapse-mode { animation: collapseShake 0.3s infinite; }
+body.collapse-mode .collapse-overlay { display: block; }
+@keyframes collapseShake { 0%, 100% { transform: translate(0); } 25% { transform: translate(-3px, 2px); } 75% { transform: translate(3px, -2px); } }
+body::before { content: ''; position: fixed; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(255, 0, 60, 0.03), transparent 70%); z-index: 2; pointer-events: none; animation: bodyPulse 4s ease-in-out infinite; }
+@keyframes bodyPulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.7; } }
+
+/* HUD */
+.hud-layer { position: fixed; inset: 0; z-index: 100; pointer-events: none; padding: 30px 40px; display: flex; flex-direction: column; justify-content: space-between; }
+.hud-top, .hud-bottom { display: flex; justify-content: space-between; align-items: flex-start; }
+.hud-bottom { align-items: flex-end; }
+.hud-element { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); letter-spacing: 2px; text-transform: uppercase; line-height: 1.8; }
+.hud-element span { color: var(--red-blood); text-shadow: 0 0 5px var(--red-glow); }
+.hud-logo { font-family: var(--font-display); font-size: 28px; font-weight: 900; color: #fff; text-shadow: 0 0 20px var(--red-glow); letter-spacing: 4px; pointer-events: auto; cursor: none; text-decoration: none; }
+.hud-logo span { color: var(--red-blood); }
+.glass-panel { background: var(--bg-glass); backdrop-filter: blur(12px) saturate(180%); -webkit-backdrop-filter: blur(12px) saturate(180%); border: 1px solid var(--border-glass); border-top: 1px solid rgba(255,255,255,0.3); border-left: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 12px 18px; pointer-events: auto; clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px); box-shadow: 0 0 20px rgba(255,0,60,0.1); }
+.live-dot { width: 8px; height: 8px; background: var(--red-blood); border-radius: 50%; box-shadow: 0 0 15px var(--red-blood); animation: pulse 2s infinite; display: inline-block; margin-right: 8px; }
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.3; transform: scale(1.8); } }
+.nav-dots { display: flex; gap: 12px; }
+.nav-dot { width: 8px; height: 8px; background: rgba(255,255,255,0.2); border-radius: 50%; transition: all 0.3s; cursor: none; pointer-events: auto; }
+.nav-dot.active { background: var(--red-blood); box-shadow: 0 0 15px var(--red-blood); width: 24px; border-radius: 4px; }
+
+/* SECTIONS */
+section { position: relative; z-index: 5; }
+.section { min-height: 100vh; padding: 120px 40px; position: relative; display: flex; flex-direction: column; justify-content: center; }
+.section-title { font-family: var(--font-display); font-size: clamp(40px, 7vw, 90px); font-weight: 900; text-align: center; margin-bottom: 20px; color: transparent; -webkit-text-stroke: 1px var(--text-dim); letter-spacing: 4px; opacity: 0; }
+.section-title span { color: #fff; -webkit-text-stroke: 0; text-shadow: 0 0 30px var(--red-glow); font-style: italic; }
+.section-subtitle { text-align: center; font-family: var(--font-mono); font-size: 13px; color: var(--red-blood); letter-spacing: 3px; margin-bottom: 60px; opacity: 0; }
+.cta-btn { position: relative; padding: 18px 50px; background: transparent; border: 1px solid var(--red-blood); color: var(--text-main); font-family: var(--font-display); font-size: 14px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; cursor: none; overflow: hidden; transition: all 0.4s; opacity: 0; transform: translateY(20px); pointer-events: auto; align-self: center; clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px); }
+.cta-btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: var(--red-blood); transition: left 0.4s; z-index: -1; }
+.cta-btn:hover { color: #fff; box-shadow: 0 0 60px var(--red-glow); border-color: #fff; }
+.cta-btn:hover::before { left: 0; }
+
+/* GLASS CARDS */
+.glass-card, .narrative-block, .orb, .tool-card {
+    background: linear-gradient(135deg, rgba(20, 0, 10, 0.55), rgba(0, 0, 0, 0.35));
+    backdrop-filter: blur(8px) saturate(180%) contrast(110%); -webkit-backdrop-filter: blur(8px) saturate(180%) contrast(110%);
+    border: 1px solid rgba(255, 0, 60, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 30px rgba(255,0,60,0.1), inset 0 0 20px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.1);
+    position: relative; will-change: transform;
+}
+.narrative-block { max-width: 900px; margin: 0 auto; text-align: center; padding: 40px clamp(20px,4vw,60px); clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px); }
+.narrative-text { font-family: var(--font-ui); color: #d8d8de; font-size: 16px; line-height: 1.85; margin-bottom: 30px; text-align: left; }
+.narrative-text strong { color: var(--text-main); font-family: var(--font-display); letter-spacing: 1px; }
+.narrative-text em { color: var(--red-blood); font-style: italic; }
+.glass-card { padding: 25px; border-radius: 12px; text-align: center; transition: all 0.4s; overflow: hidden; opacity: 0; transform: translateY(30px); clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px); }
+.glass-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(250px circle at var(--mouse-x) var(--mouse-y), rgba(255, 0, 60, 0.15), transparent 40%); opacity: 0; transition: opacity 0.4s; pointer-events: none; }
+.glass-card:hover::before { opacity: 1; }
+.glass-card:hover { border-color: var(--red-blood); transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.8), 0 0 30px rgba(255,0,60,0.2); }
+.grid-auto { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; max-width: 1600px; margin: 0 auto; width: 100%; }
+
+/* ORBS */
+.orbs-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; max-width: 1400px; margin: 0 auto; }
+.orb { width: 220px; height: 220px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; cursor: none; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); opacity: 0; transform: scale(0.8); position: relative; overflow: hidden; }
+.orb::before, .orb::after { content: ''; position: absolute; border-radius: 50%; border: 1px solid rgba(255, 0, 60, 0.3); pointer-events: none; }
+.orb::before { top: -10px; left: -10px; right: -10px; bottom: -10px; animation: rotate 4s linear infinite; box-shadow: 0 0 15px rgba(255, 0, 60, 0.2); }
+.orb::after { top: -20px; left: -20px; right: -20px; bottom: -20px; border: 1px dashed rgba(255, 0, 60, 0.1); animation: rotate 8s linear infinite reverse; }
+@keyframes rotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+.orb:hover { transform: scale(1.1); border-color: var(--red-blood); box-shadow: 0 0 80px var(--red-glow), inset 0 0 40px rgba(255, 0, 60, 0.2); }
+.orb:hover::before { border-color: var(--red-blood); box-shadow: 0 0 30px var(--red-glow); }
+.orb-icon { font-family: var(--font-mono); font-size: 16px; font-weight: 700; margin-bottom: 10px; color: var(--red-blood); text-shadow: 0 0 15px var(--red-glow); z-index: 2; border: 1px solid var(--red-blood); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,0,60,0.05); letter-spacing: 1px; }
+.orb-title { font-family: var(--font-display); font-weight: 700; color: var(--text-main); font-size: 16px; margin-bottom: 5px; z-index: 2; }
+.orb-desc { font-size: 11px; color: var(--text-dim); z-index: 2; }
+.orb-sm { width: 180px; height: 180px; }
+
+/* HOME */
+#home { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; }
+.hero-pre-title { font-family: var(--font-mono); font-size: 14px; color: var(--text-dim); letter-spacing: 12px; margin-bottom: 20px; border-bottom: 1px solid var(--red-blood); padding-bottom: 10px; opacity: 0; transform: translateY(20px); }
+.hero-title { font-family: var(--font-display); font-size: clamp(80px, 18vw, 280px); font-weight: 900; line-height: 0.9; letter-spacing: 6px; margin-bottom: 30px; color: var(--red-blood); text-shadow: 0 0 40px var(--red-glow), 0 0 120px rgba(255,0,60,0.4); opacity: 0; transform: translateY(50px); }
+.hero-subtitle { font-family: var(--font-ui); font-size: 17px; color: var(--text-dim); max-width: 600px; margin-bottom: 50px; opacity: 0; transform: translateY(20px); }
+
+/* MANIFIESTO */
+.manifesto-log { font-family: var(--font-mono); font-size: 13px; line-height: 2.2; color: var(--text-dim); text-align: left; }
+.manifesto-log .log-title { color: var(--red-blood); margin-bottom: 10px; font-weight: 700; }
+.manifesto-log .log-error { color: var(--red-blood); font-weight: 700; }
+
+/* MUSIC */
+.music-card { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.music-card .play-icon { font-family: var(--font-mono); font-size: 14px; color: var(--red-blood); text-shadow: 0 0 15px var(--red-glow); border: 1px solid var(--red-blood); padding: 5px 10px; border-radius: 4px; letter-spacing: 2px; }
+
+/* TRACKLIST */
+.track-list { display: flex; flex-direction: column; gap: 8px; }
+.track-item { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; background: rgba(10,0,0,0.5); border: 1px solid var(--border-glass); border-left: 3px solid var(--red-blood); clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px); transition: all 0.3s; cursor: none; }
+.track-item:hover { background: rgba(255,0,60,0.1); border-left-color: var(--gold-sacred); transform: translateX(8px); }
+.track-num { font-family: var(--font-mono); color: var(--red-blood); font-size: 12px; }
+.track-name { font-family: var(--font-display); color: var(--text-main); font-size: 14px; flex: 1; margin-left: 15px; }
+.track-time { font-family: var(--font-mono); color: var(--text-dim); font-size: 11px; }
+
+/* FASES */
+.fase-block { margin-bottom: 30px; padding: 25px; border-left: 3px solid var(--red-blood); background: rgba(10,0,0,0.4); clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%); }
+.fase-title { font-family: var(--font-display); color: var(--red-blood); font-size: 14px; margin-bottom: 12px; letter-spacing: 2px; }
+.fase-text { font-family: var(--font-ui); color: #c8c8d0; font-size: 15px; line-height: 1.8; text-align: left; }
+
+/* PORTAL */
+.diamond-scene { height: 80vh; position: relative; margin: 40px 0; }
+#diamonds-canvas { width: 100%; height: 100%; display: block; }
+
+/* ORACLE */
+.oracle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1400px; margin: 0 auto; width: 100%; }
+.oracle-panel { padding: 30px; border-radius: 16px; position: relative; overflow: hidden; opacity: 0; transform: translateY(30px); clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px); }
+.mic-container { display: flex; flex-direction: column; align-items: center; gap: 20px; margin: 30px 0; }
+.mic-button { width: 120px; height: 120px; border-radius: 50%; background: radial-gradient(circle, var(--red-dark), var(--bg-void)); border: 2px solid var(--red-blood); cursor: none; position: relative; z-index: 2; transition: all 0.3s; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 30px var(--red-glow); }
+.mic-button.listening { background: radial-gradient(circle, var(--red-blood), var(--red-dark)); animation: micPulse 1.5s infinite; }
+@keyframes micPulse { 0%, 100% { box-shadow: 0 0 40px rgba(255, 0, 60, 0.5); } 50% { box-shadow: 0 0 80px rgba(255, 0, 60, 0.9); } }
+.mic-icon { font-family: var(--font-mono); font-size: 14px; font-weight: 700; color: var(--text-main); letter-spacing: 1px; }
+.waveform-container { width: 100%; height: 100px; background: rgba(0,0,0,0.5); border: 1px solid var(--border-glass); border-radius: 8px; overflow: hidden; margin-top: 20px; }
+.intention-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 20px; }
+.intention-card { background: rgba(0,0,0,0.3); border: 1px solid var(--border-glass); border-radius: 8px; padding: 12px; text-align: center; transition: all 0.3s; }
+.intention-card.active { border-color: var(--red-blood); background: rgba(255, 0, 60, 0.1); box-shadow: 0 0 15px var(--red-glow); }
+.intention-icon { font-family: var(--font-mono); font-size: 16px; margin: 0 auto 8px; color: var(--red-blood); border: 1px solid var(--red-blood); width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 4px; }
+.intention-label { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); letter-spacing: 1px; }
+.intention-value { font-family: var(--font-display); font-size: 14px; color: var(--red-blood); margin-top: 5px; font-weight: 700; }
+.radar-container { width: 100%; height: 280px; position: relative; }
+#emotion-canvas { width: 100%; height: 100%; }
+.freq-display { display: flex; align-items: center; justify-content: center; gap: 40px; margin-top: 20px; }
+.freq-value { font-family: var(--font-display); font-size: 36px; color: var(--gold-sacred); font-weight: 900; text-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
+.freq-label { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); letter-spacing: 2px; }
+.oracle-response-box { background: rgba(0,0,0,0.5); border-left: 3px solid var(--gold-sacred); padding: 20px; margin-top: 20px; font-family: var(--font-ui); font-size: 14px; color: var(--text-main); line-height: 1.6; min-height: 80px; }
+
+/* GALLERY */
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 260px; gap: 20px; max-width: 1600px; margin: 0 auto; perspective: 1500px; }
+.record-card { position: relative; overflow: hidden; border-radius: 12px; cursor: none; transform-style: preserve-3d; transition: transform 0.6s, box-shadow 0.4s; will-change: transform; background: #111; border: 1px solid var(--border-glass); }
+.record-card.size-large { grid-column: span 2; grid-row: span 2; }
+.record-card.size-tall { grid-row: span 2; }
+.record-card.size-wide { grid-column: span 2; }
+.record-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(250px circle at var(--mouse-x) var(--mouse-y), rgba(255, 0, 60, 0.2), transparent 40%); opacity: 0; transition: opacity 0.4s; z-index: 2; pointer-events: none; }
+.record-card:hover::before { opacity: 1; }
+.record-card::after { content: ''; position: absolute; inset: 0; border: 1px solid var(--border-glass); border-radius: 12px; z-index: 3; pointer-events: none; transition: all 0.4s; }
+.record-card:hover { transform: translateZ(50px) scale(1.03); box-shadow: 0 30px 60px rgba(255, 0, 60, 0.3), 0 0 40px var(--red-glow); z-index: 20; }
+.record-card:hover::after { border-color: var(--red-blood); }
+.record-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 25px; z-index: 4; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); }
+.record-title { font-family: var(--font-display); font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 6px; }
+.record-tag { display: inline-block; padding: 4px 10px; background: var(--red-blood); color: var(--bg-void); font-family: var(--font-mono); font-size: 9px; font-weight: 700; letter-spacing: 2px; border-radius: 3px; margin-bottom: 10px; text-transform: uppercase; }
+
+/* STUDIO LAB */
+.studio-controls { display: flex; gap: 12px; margin-bottom: 40px; align-items: center; justify-content: center; flex-wrap: wrap; }
+.filter-btn { padding: 10px 20px; background: transparent; border: 1px solid var(--border-glass); color: var(--text-dim); font-family: var(--font-mono); font-size: 11px; letter-spacing: 2px; cursor: none; border-radius: 50px; transition: all 0.3s; text-transform: uppercase; }
+.filter-btn:hover, .filter-btn.active { border-color: var(--red-blood); color: var(--red-blood); background: rgba(255,0,60,0.05); }
+.tool-card { padding: 22px; cursor: none; transition: all 0.4s; position: relative; overflow: hidden; opacity: 0; transform: translateY(20px); clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px); }
+.tool-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(250px circle at var(--mouse-x) var(--mouse-y), rgba(255, 0, 60, 0.1), transparent 40%); opacity: 0; transition: opacity 0.4s; pointer-events: none; }
+.tool-card:hover::before { opacity: 1; }
+.tool-card:hover { border-color: var(--red-blood); transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.8); }
+.tool-icon { width: 44px; height: 44px; background: rgba(255,0,60,0.1); border: 1px solid var(--red-blood); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--red-blood); text-shadow: 0 0 5px var(--red-glow); letter-spacing: 1px; }
+.tool-name { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--text-main); margin-bottom: 4px; }
+.tool-real { font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); letter-spacing: 1px; margin-bottom: 10px; text-transform: uppercase; }
+.tool-desc { font-size: 12px; color: var(--text-dim); line-height: 1.5; margin-bottom: 15px; min-height: 36px; }
+.tool-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 15px; }
+.tool-tag { padding: 3px 8px; background: rgba(255,255,255,0.05); border-radius: 3px; font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); }
+.tool-tag.hot { background: rgba(255, 0, 60, 0.15); color: var(--red-blood); }
+.tool-tag.new { background: rgba(0, 255, 65, 0.15); color: var(--term-green); }
+.tool-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.05); }
+.tool-launch { padding: 6px 14px; background: transparent; border: 1px solid var(--red-blood); color: var(--red-blood); font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 2px; border-radius: 4px; cursor: none; transition: all 0.2s; }
+.tool-launch:hover { background: var(--red-blood); color: var(--bg-void); }
+
+/* AI CHAT */
+.ai-chat { position: fixed; bottom: 30px; right: 30px; width: 420px; max-height: 650px; z-index: 1000; display: flex; flex-direction: column; overflow: hidden; transition: all 0.4s; pointer-events: auto; clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px); box-shadow: 0 20px 60px rgba(0,0,0,0.8), 0 0 60px var(--red-glow); }
+.ai-chat.minimized { height: 60px; max-height: 60px; }
+.chat-header { padding: 15px 20px; background: linear-gradient(90deg, rgba(255,0,60,0.2), transparent); border-bottom: 1px solid var(--border-glass); display: flex; justify-content: space-between; align-items: center; cursor: none; }
+.chat-title { font-family: var(--font-display); font-size: 13px; font-weight: 700; color: var(--red-blood); letter-spacing: 2px; display: flex; align-items: center; gap: 10px; }
+.chat-messages { flex: 1; padding: 20px; overflow-y: auto; max-height: 450px; scrollbar-width: thin; scrollbar-color: var(--red-blood) transparent; }
+.ai-chat.minimized .chat-messages, .ai-chat.minimized .chat-input-area { display: none; }
+.message { margin: 12px 0; padding: 12px 15px; max-width: 85%; font-size: 13px; line-height: 1.5; animation: msgIn 0.4s; }
+@keyframes msgIn { from { opacity: 0; transform: translateY(10px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
+.message.ai { background: rgba(255, 0, 60, 0.05); border-left: 2px solid var(--red-blood); margin-right: auto; color: #ddd; border-radius: 0 8px 8px 8px; }
+.message.user { background: rgba(255, 215, 0, 0.05); border-right: 2px solid var(--gold-sacred); margin-left: auto; text-align: right; color: #fff; border-radius: 8px 0 0 8px; }
+.message.system { background: rgba(0, 255, 65, 0.05); border: 1px dashed var(--term-green); max-width: 100%; font-family: var(--font-mono); font-size: 11px; color: var(--term-green); text-align: center; border-radius: 4px; }
+.message .meta { font-family: var(--font-mono); font-size: 9px; letter-spacing: 2px; margin-bottom: 6px; opacity: 0.7; }
+.chat-input-area { padding: 15px 20px; border-top: 1px solid var(--border-glass); display: flex; gap: 10px; background: rgba(0,0,0,0.5); }
+.chat-input { flex: 1; padding: 12px 15px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); color: var(--text-main); font-family: var(--font-mono); font-size: 12px; outline: none; transition: 0.3s; }
+.chat-input:focus { border-color: var(--red-blood); box-shadow: inset 0 0 10px rgba(255,0,60,0.2); }
+.chat-send { padding: 12px 20px; background: var(--red-blood); border: none; color: #fff; cursor: none; font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 2px; transition: 0.3s; }
+.chat-send:hover { background: #fff; color: var(--red-blood); box-shadow: 0 0 20px var(--red-glow); }
+.typing-indicator { display: flex; gap: 4px; padding: 5px 0; }
+.typing-indicator span { width: 6px; height: 6px; background: var(--red-blood); border-radius: 50%; animation: typing 1s infinite; }
+.typing-indicator span:nth-child(2) { animation-delay: 0.2s; } .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes typing { 0%, 100% { opacity: 0.3; transform: translateY(0); } 50% { opacity: 1; transform: translateY(-3px); } }
+
+/* OVERLAYS */
+.overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); z-index: 2000; display: none; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.4s; }
+.overlay.active { display: flex; opacity: 1; }
+.overlay-content { max-width: 800px; width: 90%; max-height: 85vh; background: radial-gradient(circle at top, rgba(20,5,5,0.9), rgba(0,0,0,0.95)); border: 1px solid var(--red-blood); border-radius: 20px; padding: 50px; overflow-y: auto; position: relative; box-shadow: 0 0 80px var(--red-glow); text-align: center; clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px); }
+.overlay-close { position: absolute; top: 20px; right: 20px; width: 40px; height: 40px; background: var(--red-blood); border: none; color: #fff; font-size: 20px; border-radius: 50%; cursor: none; transition: all 0.3s; }
+.overlay-close:hover { background: #fff; color: var(--bg-void); transform: rotate(90deg); }
+
+/* TERMINAL */
+.floating-terminal { position: fixed; bottom: 100px; left: 40px; width: 350px; padding: 20px; z-index: 50; opacity: 0; transform: translateX(-50px); pointer-events: none; clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px); }
+.terminal-header { font-family: var(--font-mono); font-size: 10px; color: var(--red-blood); border-bottom: 1px solid var(--border-glass); padding-bottom: 5px; margin-bottom: 10px; letter-spacing: 2px; }
+.terminal-body { font-family: var(--font-mono); font-size: 12px; color: var(--term-green); line-height: 1.8; max-height: 150px; overflow-y: auto; }
+.terminal-body div::before { content: '> '; color: rgba(0,255,65,0.5); }
+.terminal-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 10px; border-top: 1px solid var(--border-glass); padding-top: 10px; }
+.stat-box { text-align: center; }
+.stat-label { font-size: 9px; color: var(--text-dim); }
+.stat-value { font-size: 12px; color: var(--term-green); font-family: var(--font-mono); }
+
+/* NEURAL LINK */
+.neural-link-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; max-width: 800px; margin: 0 auto; }
+.social-link { padding: 20px; text-align: center; cursor: none; transition: all 0.3s; text-decoration: none; color: var(--text-main); display: block; }
+.social-link:hover { border-color: var(--red-blood); transform: translateY(-3px); }
+.social-icon { font-family: var(--font-mono); font-size: 16px; font-weight: 700; color: var(--red-blood); border: 1px solid var(--red-blood); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%; margin: 0 auto 10px; background: rgba(255,0,60,0.05); }
+.social-name { font-family: var(--font-display); font-size: 14px; font-weight: 700; }
+.social-desc { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); margin-top: 5px; }
+
+/* AWWWARDS: Accessibility enhancements */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--red-blood);
+    color: #fff;
+    padding: 12px 24px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    z-index: 99999;
+    border-radius: 0 0 8px 8px;
+    transition: top 0.3s;
+}
+.skip-link:focus {
+    top: 0;
+    outline: 2px solid var(--gold-sacred);
+    outline-offset: 2px;
+}
+
+/* Focus indicators for keyboard navigation */
+*:focus-visible {
+    outline: 2px solid var(--red-blood);
+    outline-offset: 4px;
+}
+button:focus-visible, a:focus-visible, input:focus-visible {
+    outline: 2px solid var(--gold-sacred);
+    outline-offset: 2px;
+    box-shadow: 0 0 20px var(--red-glow);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .scanlines, .grain, .vignette { opacity: 0 !important; }
+    body::before { animation: none !important; }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    :root {
+        --border-glass: rgba(255, 0, 60, 0.6);
+        --text-dim: rgba(245, 245, 245, 0.8);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .gallery-grid, .grid-auto, .oracle-grid, .neural-link-grid { grid-template-columns: repeat(2, 1fr); }
+    .floating-terminal { display: none; }
+}
+@media (max-width: 768px) {
+    .cursor-dot, .cursor-outline, .cursor-cross { display: none; } body { cursor: auto; }
+    .nav-dots { display: none; } .section { padding: 80px 20px; }
+    .gallery-grid, .grid-auto, .oracle-grid, .neural-link-grid { grid-template-columns: 1fr; }
+    .ai-chat { width: calc(100% - 20px); right: 10px; bottom: 10px; }
+    .intention-grid { grid-template-columns: repeat(2, 1fr); }
+    .orb { width: 160px; height: 160px; }
+    .hud-layer { padding: 15px 20px; }
+    .hud-logo { font-size: 20px; }
+    .hero-title { font-size: clamp(50px, 15vw, 120px); }
+}
+</style>
+</head>
+<body>
+
+<!-- Skip link for accessibility (Awwwards requirement) -->
+<a href="#main-content" class="skip-link" tabindex="1">Skip to main content</a>
+
+<!-- Structured data for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Belentani - Judas Experience",
+  "alternateName": "Judas Era - Cyberpunk Galactic Music",
+  "url": "https://belentani7.github.io/judas-experience/",
+  "description": "Immersive cyberpunk music experience exploring betrayal and redemption",
+  "author": {
+    "@type": "Person",
+    "name": "Pedro Belentani",
+    "url": "https://github.com/belentani7"
+  },
+  "keywords": "cyberpunk, music, AI, interactive, Three.js, WebGL",
+  "inLanguage": ["en", "es", "pt"]
+}
+</script>
+
+<div id="boot-screen">
+    <div style="font-size:12px; margin-bottom:20px;">JUDAS_OS // INITIALIZING OMEGA CORE v10.0</div>
+    <div class="boot-bar"></div>
+    <div style="font-size:10px; margin-top:20px; color:rgba(0,255,65,0.5);">Loading neural pathways...</div>
+</div>
+
+<div class="cursor-dot"></div>
+<div class="cursor-outline"></div>
+<div class="cursor-cross"></div>
+
+<canvas id="webgl-canvas"></canvas>
+<div class="scanlines"></div>
+<div class="vignette"></div>
+<div class="grain"></div>
+<div class="collapse-overlay"></div>
+
+<div class="hud-layer">
+    <div class="hud-top">
+        <a href="#home" class="hud-logo">BEL<span>ENT</span>ANI</a>
+        <div class="hud-element glass-panel">SYS.STATUS: <span>OMEGA</span><br>NODE: <span>JUDAS-CORE-07</span><br>TIME: <span id="sysTime">00:00:00</span></div>
+    </div>
+    <div class="hud-bottom">
+        <div class="hud-element">SEC: <span id="sectionName">00 // GENESIS</span></div>
+        <div class="nav-dots">
+            <div class="nav-dot active" data-sec="home"></div>
+            <div class="nav-dot" data-sec="artist"></div>
+            <div class="nav-dot" data-sec="music"></div>
+            <div class="nav-dot" data-sec="judas"></div>
+            <div class="nav-dot" data-sec="portal"></div>
+            <div class="nav-dot" data-sec="oracle"></div>
+            <div class="nav-dot" data-sec="studio"></div>
+        </div>
+        <div class="hud-element glass-panel"><div class="live-dot"></div>TRANSMITTING LIVE</div>
+    </div>
+</div>
+
+<main id="main-content" role="main">
+<section id="home" aria-label="Home - Judas Experience">
+    <div class="hero-pre-title" id="preTitle">> JUDAS ERA // V.10.0 OMEGA <</div>
+    <h1 class="hero-title" id="heroTitle">BELENTANI</h1>
+    <p class="hero-subtitle" id="subtitle">La traición no es el final. Es el <span style="color:var(--text-main)">input</span>.<br>Bienvenido al núcleo galáctico de la frecuencia hiperreal.<br>Esto no es la web de un artista. Es acceso a una frecuencia.</p>
+    <button class="cta-btn" id="ctaBtn" onclick="document.getElementById('artist').scrollIntoView({behavior:'smooth'})">[ ENTER GALACTIC CORE ]</button>
+</section>
+
+<section id="artist" class="section" aria-label="The Artist - Pedro Belentani Profile">
+    <h1 class="section-title">THE <span>ARTIST</span></h1>
+    <div class="section-subtitle">> ENTITY PROFILE // 5 ELEMENTS PROTOCOL</div>
+    <div class="narrative-block">
+        <p class="narrative-text"><strong>ARCHIVE // VENOM // RECORD_01</strong></p>
+        <p class="narrative-text"><strong>I. EL ORIGEN: PEDRO</strong><br>Pedro Belentani es un artista discográfico, compositor y productor nacido en São Paulo, Brasil, y forjado en Barcelona, España. Su compromiso formal con la música comenzó con entrenamiento vocal a los dieciséis años, lo que lo llevó a lanzar su primer sencillo de música electrónica a los veintiuno. Construye un sonido profundamente arraigado en el R&B alternativo, el dark pop y la electrónica industrial. Su producción fusiona melodías llenas de soul con estructuras rítmicas cautivadoras, ancladas por una presencia vocal íntima y dominante.</p>
+        <p class="narrative-text"><em>"Trata la música como un espacio de vulnerabilidad radical... utilizando su proceso creativo como un mecanismo de supervivencia."</em></p>
+        <p class="narrative-text"><strong>II. LA TRANSFORMACIÓN: EL EFECTO BELENTANI</strong><br>El Efecto Belentani es el fenómeno del individuo improbable. La realidad, con sus crueldades inherentes, rara vez es suficiente para sostener el espíritu humano. Cuando el mundo exterior se vuelve demasiado caótico, la mente lúcida diseña instintivamente marcos, narrativas y santuarios donde conserva su agencia. Pedro Belentani tuvo la audacia de convertir su santuario interior en un estudio de grabación. Este efecto es la transmutación del dolor en estética pura: <em>hackear el trauma a través de la creación</em>.</p>
+        <p class="narrative-text"><strong>III. LA DEFENSA DEL OBSERVADOR</strong><br>Con 1.94 metros de altura, cabello rizado castaño y una presencia física que el mundo frecuentemente malinterpreta, Belentani desarrolló la "Defensa del Observador" — la capacidad de identificar patrones de manipulación desde una perspectiva superior y desapegada. No reacciona. Registra. Y el registro, eventualmente, se convierte en canción.</p>
+        <p class="narrative-text"><strong>IV. WARRIOR & ANGEL</strong><br>Una narrativa tecnológica del arquetipo del guerrero coherente y maduro integrado con el ángel. Regresa al futuro 100% humano, pero su mente fue forzada a disociarse debido a batallas contra arquetipos enemigos. Múltiples líneas temporales colisionaron, forzándolo a existir simultáneamente a través de varias dimensiones. La inocencia y la hoja, forzadas a coexistir dentro del mismo marco neural.</p>
+        <p class="narrative-text"><strong>V. THE ZION DIMENSION</strong><br>Un Belentani específico de la dimensión Zion inició un protocolo: desactivar el código dentro del código Judas. Para lograrlo, tuvo que integrar todas las versiones del multiverso de Belentani junto con su frágil envoltura humana.</p>
+    </div>
+    <div style="margin-top: 60px;">
+        <h3 style="font-family:var(--font-display); color:var(--red-blood); text-align:center; margin-bottom:30px; letter-spacing:3px;">> THE 5 ELEMENTS PROTOCOL</h3>
+        <div class="orbs-container" id="artistGrid"></div>
+    </div>
+    <div class="narrative-block" style="margin-top: 60px;">
+        <div class="manifesto-log">
+            <div class="log-title">> MANIFIESTO // SYSTEM.LOG</div>
+            &gt; La traición no es el final. Es el input.<br>
+            &gt; El dolor no es debilidad. Es data.<br>
+            &gt; La sanación no es pasiva. Es un hack conceptual.<br>
+            &gt; Esto no es música. Es una frecuencia.<br>
+            &gt; Esto no es arte. Es un sistema operativo creativo.<br>
+            &gt; Esto no es un artista. Es una entidad verificada.<br>
+            <span class="log-error">[ ERROR_404: REALITY_NOT_FOUND ]</span>
+        </div>
+    </div>
+</section>
+
+<section id="music" class="section" aria-label="Sonic Archive - Music Discography">
+    <h1 class="section-title">SONIC <span>ARCHIVE</span></h1>
+    <div class="section-subtitle">> DATA RECOVERED FROM THE COLLAPSE // FRECUENCIAS QUE HACKEAN EL TRAUMA</div>
+    <div class="grid-auto" id="musicGrid"></div>
+</section>
+
+<section id="album" class="section" aria-label="Judas The Album - Tracklist">
+    <h1 class="section-title">JUDAS <span>THE ALBUM</span></h1>
+    <div class="section-subtitle">> NEXT RELEASE // DARK POP / VISCERAL R&B / EXPERIMENTAL ELECTRONICS</div>
+    <div class="narrative-block">
+        <div class="track-list" id="trackList"></div>
+        <p style="font-family:var(--font-mono); font-size:12px; color:var(--red-blood); margin-top:30px; text-align:center;">&gt; DECRYPTING: JUDAS.WAV — EMOTIONAL PAYLOAD: 98% CORRUPTION</p>
+    </div>
+</section>
+
+<section id="judas" class="section" aria-label="Judas Era - Narrative Experience">
+    <h1 class="section-title">JUDAS <span>ERA</span></h1>
+    <div class="section-subtitle">> SYSTEM HALT // PROTOCOL SUSPENDED // "Recuperaremos la llave. O cambiaremos la cerradura."</div>
+    <div class="narrative-block">
+        <div class="fase-block"><div class="fase-title">FASE 01 // EL HOMBRE INTEGRADO</div><div class="fase-text">No existe un "cuándo". No existe un "dónde". Existe un entre — un pliegue del universo donde el tiempo no corre, se respira. Donde las almas no envejecen, iteran. En ese entre caminaba un hombre que llevaba muchos nombres. Le llamaban Pedro. Le llamaban Marcos. Le llamaban Santos. Le llamaban Belentani. No era un santo. Era un sistema operativo humano corriendo cuatro procesos en paralelo: El Ángel, El Guerrero, El Analítico, El Cronista. Cuatro voces. Un solo hombre. Y en su pecho latía algo que todos susurraban pero nadie había visto: La Llave Dorada.</div></div>
+        <div class="fase-block"><div class="fase-title">FASE 02 // LA DEUDA IMPAGABLE</div><div class="fase-text">Se conocieron en un camino que no estaba en ningún mapa. Judas caminaba con prisa, como quien huye de algo que no sabe que lleva dentro. Se volvieron íntimos. No de cuerpo — de alma desnuda. Y entonces ocurrió lo que Judas no pudo soportar: Pedro le besó los pies. No por sumisión. Por devoción. Judas sintió que el mundo se le caía. Ese beso no era un acto de amor. Era un espejo. Recibiendo devoción sin devolverla. La deuda se volvió impagable.</div></div>
+        <div class="fase-block"><div class="fase-title">FASE 03 // EL ROBO Y EL CANTO</div><div class="fase-text">Judas esperó la noche. Con las manos temblando, no de maldad sino de vergüenza, extendió los dedos hacia la Llave Dorada. La agarró. Tiró. Y en ese instante el artefacto se activó. Cuatro voces salieron del pecho de Pedro al mismo tiempo: El Ángel cantó. El Guerrero se irguió. El Analítico observó. El Cronista registró. Judas retrocedió, esperando una maldición. Pero Pedro se sentó. Despacio. Lo miró. Y entonces hizo lo que Judas jamás pudo anticipar: se puso a cantarle.</div></div>
+        <div class="fase-block"><div class="fase-title">FASE 04 // LA VICTORIA AMARGA</div><div class="fase-text">"Quédatela", le dijo Pedro. "La llave es metal. Es símbolo. Lo que yo tengo, lo que nadie me puede arrebatar, es mi voz. La combinación de mis arquetipos." Judas volvió a su tierra con la llave dorada. Lo reconocieron. Vivió una época de victoria. Pero era amarga. Porque nunca logró olvidar a Pedro arrodillado, cantándole, después de haberle robado. Esa era la verdad que Judas cargaba como una cruz invisible: intentó destruir al que le vio. Al que le destinó. Victorioso. Y destrozado.</div></div>
+        <div class="fase-block"><div class="fase-title">FASE 05 // LA MENTIRA COMPARTIDA</div><div class="fase-text">La llave nunca fue lo valioso. Era una mentira compartida. Pedro dejó que Judas le robara algo que no importaba, para que Judas descubriera lo que sí importaba. Belentani te canta esta historia para que no cometas el error de Judas. Para que no robes llaves que no te pertenecen. Y si ya lo hiciste, Belentani también te canta a ti. Sin condiciones. Sin juicio.</div></div>
+        <p style="font-family:var(--font-mono); font-size:13px; color:var(--term-green); text-align:center; margin-top:30px;">// TRANSMISSION END //</p>
+    </div>
+</section>
+
+<section id="biometric" class="section" aria-label="Judas Protocol - Biometric Authentication">
+    <h1 class="section-title">JUDAS <span>PROTOCOL</span></h1>
+    <div class="section-subtitle">> 5-PHASE BIOMETRIC SPHERE AUTHENTICATION REQUIRED</div>
+    <div class="orbs-container" id="judasGrid"></div>
+</section>
+
+<section id="portal" class="section" aria-label="Reconstruct The Core - Interactive 3D Portal">
+    <h1 class="section-title">RECONSTRUIR EL <span>NÚCLEO</span></h1>
+    <div class="section-subtitle">> 5 ESFERAS DE ENERGÍA DISPERSAS EN EL VACÍO. INTEGRACIÓN REQUERIDA.</div>
+    <div class="diamond-scene"><canvas id="diamonds-canvas"></canvas></div>
+    <p style="font-family:var(--font-mono); font-size:12px; color:var(--text-dim); text-align:center; margin-top:20px;">&gt; Pulsa las esferas o escribe en el chat: rock, chronicle, antenna, artifact, interface</p>
+</section>
+
+<section id="oracle" class="section" aria-label="Voice Oracle - Real-time Emotion Analysis">
+    <h1 class="section-title">VOZ <span>ORACULAR</span></h1>
+    <div class="section-subtitle">> EL TERCER OÍDO ESTÁ ACTIVO // ANÁLISIS DE INTENCIÓN EN TIEMPO REAL</div>
+    <div class="oracle-grid">
+        <div class="oracle-panel glass-card" style="opacity:1; transform:none;">
+            <h3 style="font-family:var(--font-display); color:var(--red-blood); margin-bottom:15px; letter-spacing:2px;">> ENTRADA DE VOZ</h3>
+            <div class="mic-container">
+                <button class="mic-button" id="micButton"><span class="mic-icon">MIC</span></button>
+                <div id="micStatus" style="font-family:var(--font-mono); font-size:12px; color:var(--text-dim);">CLICK PARA ACTIVAR</div>
+            </div>
+            <div class="waveform-container"><canvas id="waveform-canvas"></canvas></div>
+            <div class="intention-grid">
+                <div class="intention-card" id="int-whisper"><div class="intention-icon">[-]</div><div class="intention-label">SUSURRO</div><div class="intention-value">0%</div></div>
+                <div class="intention-card" id="int-prayer"><div class="intention-icon">[+]</div><div class="intention-label">REZO</div><div class="intention-value">0%</div></div>
+                <div class="intention-card" id="int-confession"><div class="intention-icon">[*]</div><div class="intention-label">CONFESIÓN</div><div class="intention-value">0%</div></div>
+                <div class="intention-card" id="int-shout"><div class="intention-icon">[!]</div><div class="intention-label">GRITO</div><div class="intention-value">0%</div></div>
+            </div>
+        </div>
+        <div class="oracle-panel glass-card" style="opacity:1; transform:none;">
+            <h3 style="font-family:var(--font-display); color:var(--red-blood); margin-bottom:15px; letter-spacing:2px;">> RADAR EMOCIONAL</h3>
+            <div class="radar-container"><canvas id="emotion-canvas"></canvas></div>
+            <div class="freq-display">
+                <div><div class="freq-value" id="freqValue">432</div><div class="freq-label">HERTZ</div></div>
+                <div><div class="freq-value" id="bpmValue">72</div><div class="freq-label">BPM</div></div>
+            </div>
+            <div class="oracle-response-box" id="oracleResponse">Presiona el micrófono y habla. El Oráculo escuchará tu intención y emoción, y te responderá con la frecuencia que necesitas.</div>
+        </div>
+    </div>
+</section>
+
+<section id="gallery" class="section" aria-label="Visual Archive - Gallery">
+    <h1 class="section-title">VISUAL <span>ARCHIVE</span></h1>
+    <div class="section-subtitle">> 16 LIVING ORBS RECOVERED FROM THE COLLAPSE</div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+</section>
+
+<section id="judas-video" class="section" aria-label="Judas Music Video - 239 Second Cinematic Narrative">
+    <h1 class="section-title">JUDAS <span>VIDEO</span></h1>
+    <div class="section-subtitle">> 239 SECONDS // 9 CHAPTERS // CINEMATIC NARRATIVE EXPERIENCE</div>
+    
+    <!-- Video Hero -->
+    <div class="video-hero" style="max-width: 1200px; margin: 40px auto; position: relative;">
+        <video id="judas-main-video" controls preload="metadata" style="width: 100%; border: 1px solid var(--border-glass); box-shadow: 0 0 60px var(--red-glow);">
+            <source src="assets/video/judas-industrial-blueprint.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); margin-top: 15px; text-align: center;">
+            &gt; JUDAS INDUSTRIAL BLUEPRINT // DIEGETIC MEMORY ANALYSIS INTERFACE
+        </div>
+    </div>
+
+    <!-- Audio Master -->
+    <div class="audio-master" style="max-width: 800px; margin: 60px auto; padding: 30px; background: rgba(255, 0, 60, 0.05); border: 1px solid var(--red-blood); clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);">
+        <h3 style="font-family: var(--font-display); color: var(--red-blood); margin-bottom: 20px; letter-spacing: 3px; text-align: center;">> MASTER AUDIO TRACK</h3>
+        <audio id="judas-master-audio" controls style="width: 100%;">
+            <source src="assets/judas/Judas demo pura de Pedro Belentani.mp3" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+        <div style="font-family: var(--font-mono); font-size: 10px; color: var(--term-green); margin-top: 15px; text-align: center;">
+            &gt; DURATION: 239.184 SECONDS // FINAL MUSIC LAYER PRESERVED
+        </div>
+    </div>
+
+    <!-- 9 Chapters Timeline -->
+    <div class="chapters-timeline" style="max-width: 1000px; margin: 80px auto;">
+        <h3 style="font-family: var(--font-display); color: var(--red-blood); margin-bottom: 40px; letter-spacing: 3px; text-align: center;">> NARRATIVE ARCHITECTURE // 9 CHAPTERS</h3>
+        <div class="timeline-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+            <div class="chapter-card" style="padding: 20px; background: rgba(255, 0, 60, 0.05); border-left: 3px solid var(--red-blood); transition: all 0.3s;">
+                <div style="font-family: var(--font-mono); font-size: 10px; color: var(--red-blood); margin-bottom: 8px;">CH 01 // 0:00 - 0:45</div>
+                <div style="font-family: var(--font-display); font-size: 16px; color: var(--text-main); margin-bottom: 10px;">Care Before The Fall</div>
+                <div style="font-size: 12px; color: var(--text-dim); line-height: 1.5;">Peter dries Judas's hair, removes his jacket, lays him to rest. Protective intimacy.</div>
+            </div>
+            <div class="chapter-card" style="padding: 20px; background: rgba(255, 0, 60, 0.05); border-left: 3px solid var(--red-blood); transition: all 0.3s;">
+                <div style="font-family: var(--font-mono); font-size: 10px; color: var(--red-blood); margin-bottom: 8px;">CH 02 // 0:45 - 1:15</div>
+                <div style="font-family: var(--font-display); font-size: 16px; color: var(--text-main); margin-bottom: 10px;">Seduction And Warning</div>
+                <div style="font-size: 12px; color: var(--text-dim); line-height: 1.5;">Judas enters with allure and concealed danger. Rain, boots, chains, direct eye contact.</div>
+            </div>
+            <div class="chapter-card" style="padding: 20px; background: rgba(255, 0, 60, 0.05); border-left: 3px solid var(--red-blood); transition: all 0.3s;">
+                <div style="font-family: var(--font-mono); font-size: 10px; color: var(--red-blood); margin-bottom: 8px;">CH 03 // 1:15 - 1:38</div>
+                <div style="font-family: var(--font-display); font-size: 16px; color: var(--text-main); margin-bottom: 10px;">Holy Crime And First Relapse</div>
+                <div style="font-size: 12px; color: var(--text-dim); line-height: 1.5;">Peter recognizes Judas as a liar, then kisses him anyway. Holy crime contradiction.</div>
+            </div>
+            <div class="chapter-card" style="padding: 20px; background: rgba(255, 0, 60, 0.05); border-left: 3px solid var(--red-blood); transition: all 0.3s;">
+                <div style="font-family: var(--font-mono); font-size: 10px; color: var(--red-blood); margin-bottom: 8px;">CH 04 // 1:38 - 2:08</div>
+                <div style="font-family: var(--font-display); font-size: 16px; color: var(--text-main); margin-bottom: 10px;">Broken Crown And Stolen Soul</div>
+                <div style="font-size: 12px; color: var(--text-dim); line-height: 1.5;">Gold chain and broken crown become tactile motifs. Judas writes gospel across Peter's skin.</div>
+            </div>
+            <div class="chapter-card" style="padding: 20px; background: rgba(255, 0, 60, 0.05); border-left: 3px solid var(--red-blood); transition: all 0.3s;">
+                <div style="font-family: var(--font-mono); font-size: 10px; color: var(--red-blood); margin-bottom: 8px;">CH 05 // 2:08 - 2:31</div>
+                <div style="font-family: var(--font-display); font-size: 16px; color: var(--text-main); margin-bottom: 10px;">Required Submission</div>
+                <div style="font-size: 12px; color: var(--text-dim); line-height: 1.5;">Peter kneels and kisses Judas's feet. Submission, desire, devotion, humiliation, betrayal.</div>
+            </div>
+            <div class="chapter-card" style="padding: 20px; background: rgba(255, 0, 60, 0.05); border-left: 3px solid var(--red-blood); transition: all 0.3s;">
+                <div style="font-family: var(--font-mono); font-size: 10px; color: var(--red-blood); margin-bottom: 8px;">CH 06 // 2:31 - 2:51</div>
+                <div style="font-family: var(--font-display); font-size: 16px; color: var(--text-main); margin-bottom: 10px;">Peter Named, Shame And Sword</div>
+                <div style="font-size: 12px; color: var(--text-dim); line-height: 1.5;">Bridge directly names Peter. Confronting reflection, seeing sword, feeling shame.</div>
+            </div>
+            <div class="chapter-card" style="padding: 20px; background: rgba(255, 0, 60, 0.05); border-left: 3px solid var(--red-blood); transition: all 0.3s;">
+                <div style="font-family: var(--font-mono); font-size: 10px; color: var(--red-blood); margin-bottom: 8px;">CH 07 // 2:51 - 3:14</div>
+                <div style="font-family: var(--font-display); font-size: 16px; color: var(--text-main); margin-bottom: 10px;">Repeated Choice</div>
+                <div style="font-size: 12px; color: var(--text-dim); line-height: 1.5;">Third chorus repeats with changed knowledge. Lucid decision, not innocent surrender.</div>
+            </div>
+            <div class="chapter-card" style="padding: 20px; background: rgba(255, 0, 60, 0.05); border-left: 3px solid var(--red-blood); transition: all 0.3s;">
+                <div style="font-family: var(--font-mono); font-size: 10px; color: var(--red-blood); margin-bottom: 8px;">CH 08 // 3:14 - 3:39</div>
+                <div style="font-family: var(--font-display); font-size: 16px; color: var(--text-main); margin-bottom: 10px;">Memory Cannot Contain The Lover</div>
+                <div style="font-size: 12px; color: var(--text-dim); line-height: 1.5;">Peter challenges any system that thinks it knows his heart. Human bodies remain truth.</div>
+            </div>
+            <div class="chapter-card" style="padding: 20px; background: rgba(255, 0, 60, 0.05); border-left: 3px solid var(--red-blood); transition: all 0.3s;">
+                <div style="font-family: var(--font-mono); font-size: 10px; color: var(--red-blood); margin-bottom: 8px;">CH 09 // 3:39 - 3:59</div>
+                <div style="font-family: var(--font-display); font-size: 16px; color: var(--text-main); margin-bottom: 10px;">Final Flame And Unresolved Return</div>
+                <div style="font-size: 12px; color: var(--text-dim); line-height: 1.5;">Final confrontation becomes mutual recognition. Peter kisses Judas again. Unresolved.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reference Gallery -->
+    <div class="reference-gallery" style="max-width: 1400px; margin: 100px auto;">
+        <h3 style="font-family: var(--font-display); color: var(--red-blood); margin-bottom: 40px; letter-spacing: 3px; text-align: center;">> VISUAL REFERENCE ARCHIVE // 50+ ASSETS</h3>
+        <div class="gallery-tabs" style="display: flex; gap: 15px; justify-content: center; margin-bottom: 40px; flex-wrap: wrap;">
+            <button class="gallery-tab active" data-category="all" style="padding: 10px 20px; background: var(--red-blood); border: none; color: #fff; font-family: var(--font-mono); font-size: 11px; letter-spacing: 2px; cursor: pointer;">ALL</button>
+            <button class="gallery-tab" data-category="peter" style="padding: 10px 20px; background: transparent; border: 1px solid var(--border-glass); color: var(--text-dim); font-family: var(--font-mono); font-size: 11px; letter-spacing: 2px; cursor: pointer;">PETER IDENTITY</button>
+            <button class="gallery-tab" data-category="judas" style="padding: 10px 20px; background: transparent; border: 1px solid var(--border-glass); color: var(--text-dim); font-family: var(--font-mono); font-size: 11px; letter-spacing: 2px; cursor: pointer;">JUDAS LOVER</button>
+            <button class="gallery-tab" data-category="scene" style="padding: 10px 20px; background: transparent; border: 1px solid var(--border-glass); color: var(--text-dim); font-family: var(--font-mono); font-size: 11px; letter-spacing: 2px; cursor: pointer;">SCENES</button>
+        </div>
+        <div class="reference-grid" id="referenceGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+            <!-- Images will be loaded dynamically -->
+        </div>
+    </div>
+
+    <!-- Creative Process -->
+    <div class="creative-process" style="max-width: 1000px; margin: 100px auto; padding: 40px; background: rgba(0, 0, 0, 0.5); border: 1px solid var(--border-glass); clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);">
+        <h3 style="font-family: var(--font-display); color: var(--red-blood); margin-bottom: 30px; letter-spacing: 3px; text-align: center;">> CREATIVE PROCESS // 4 PHASES</h3>
+        <div class="process-phases" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px;">
+            <div class="phase">
+                <div style="font-family: var(--font-mono); font-size: 10px; color: var(--term-green); margin-bottom: 10px;">PHASE 01 // WEEK 1</div>
+                <div style="font-family: var(--font-display); font-size: 18px; color: var(--text-main); margin-bottom: 15px;">CONCEPT</div>
+                <ul style="font-size: 12px; color: var(--text-dim); line-height: 1.8; padding-left: 20px;">
+                    <li>Narrative spine defined</li>
+                    <li>Visual grammar: IMAX-style</li>
+                    <li>Technical locks: 239s, 720p, 60fps</li>
+                    <li>9 chapters mapped to lyrics</li>
+                </ul>
+            </div>
+            <div class="phase">
+                <div style="font-family: var(--font-mono); font-size: 10px; color: var(--term-green); margin-bottom: 10px;">PHASE 02 // WEEK 2-3</div>
+                <div style="font-family: var(--font-display); font-size: 18px; color: var(--text-main); margin-bottom: 15px;">ASSET CREATION</div>
+                <ul style="font-size: 12px; color: var(--text-dim); line-height: 1.8; padding-left: 20px;">
+                    <li>Peter identity: 5 refs</li>
+                    <li>Judas identity: 4 refs</li>
+                    <li>Scene references: 4 locations</li>
+                    <li>Character sheets: 6-view</li>
+                </ul>
+            </div>
+            <div class="phase">
+                <div style="font-family: var(--font-mono); font-size: 10px; color: var(--term-green); margin-bottom: 10px;">PHASE 03 // WEEK 4-6</div>
+                <div style="font-family: var(--font-display); font-size: 18px; color: var(--text-main); margin-bottom: 15px;">PRODUCTION</div>
+                <ul style="font-size: 12px; color: var(--text-dim); line-height: 1.8; padding-left: 20px;">
+                    <li>Continuity-first groups</li>
+                    <li>Mandatory feet-kiss beat</li>
+                    <li>Serious cinematic narrative</li>
+                    <li>No choreography, no dance</li>
+                </ul>
+            </div>
+            <div class="phase">
+                <div style="font-family: var(--font-mono); font-size: 10px; color: var(--term-green); margin-bottom: 10px;">PHASE 04 // WEEK 7</div>
+                <div style="font-family: var(--font-display); font-size: 18px; color: var(--text-main); margin-bottom: 15px;">POST-PRODUCTION</div>
+                <ul style="font-size: 12px; color: var(--text-dim); line-height: 1.8; padding-left: 20px;">
+                    <li>Color grading: low-key</li>
+                    <li>Sound: master MP3 preserved</li>
+                    <li>VFX: diegetic UI overlays</li>
+                    <li>Final render: 1280x720 @ 60fps</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Technical Specs -->
+    <div class="technical-specs" style="max-width: 800px; margin: 80px auto; padding: 30px; background: rgba(0, 255, 65, 0.05); border: 1px dashed var(--term-green); text-align: center;">
+        <h3 style="font-family: var(--font-mono); font-size: 12px; color: var(--term-green); margin-bottom: 20px; letter-spacing: 2px;">> TECHNICAL SPECIFICATIONS</h3>
+        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); line-height: 2;">
+            DURATION: 239.184 SECONDS | RESOLUTION: 1280x720 | FPS: 60<br>
+            ASSETS: 50+ IMAGES | CHAPTERS: 9 | AUDIO: MASTER MP3 PRESERVED<br>
+            STYLE: SERIOUS CINEMATIC NARRATIVE | NO DANCE | NO CHOREOGRAPHY<br>
+            PROTAGONIST: PETER (RECOGNIZABLE IDENTITY) | ANTAGONIST: JUDAS (HUMAN LOVER)
+        </div>
+    </div>
+</section>
+
+<section id="studio" class="section" aria-label="Studio Lab - AI Automation Tools">
+    <h1 class="section-title">STUDIO <span>LAB</span></h1>
+    <div class="section-subtitle">> CENTRO DE AUTOMATIZACIÓN JUDAS v10.0 // 48 MÓDULOS IA INDEXADOS</div>
+    <div class="studio-controls">
+        <button class="filter-btn active" data-filter="all">ALL MODULES</button>
+        <button class="filter-btn" data-filter="image">IMAGE FORGE</button>
+        <button class="filter-btn" data-filter="video">VIDEO LAB</button>
+        <button class="filter-btn" data-filter="audio">AUDIO FORGE</button>
+        <button class="filter-btn" data-filter="code">CODE NEXUS</button>
+        <button class="filter-btn" data-filter="agents">AI AGENTS</button>
+        <button class="filter-btn" data-filter="psyche">PSYCHE SCAN</button>
+    </div>
+    <div class="grid-auto" id="studioGrid"></div>
+</section>
+
+<section id="contact" class="section" aria-label="Neural Link - Contact and Social">
+    <h1 class="section-title">NEURAL <span>LINK</span></h1>
+    <div class="section-subtitle">> ESTABLISH A DIRECT CONNECTION // NO EMAILS. NO SERVERS. DIRECT FREQUENCY.</div>
+    <div class="narrative-block" style="max-width: 900px;">
+        <p style="font-family:var(--font-ui); color:var(--text-dim); margin-bottom:30px;">Conecta directamente con el OMEGA CORE. Elige tu canal de frecuencia:</p>
+        <div class="neural-link-grid" id="socialGrid"></div>
+        <button class="cta-btn" id="openNeuralLink" onclick="toggleAiChat(true)" style="opacity:1; transform:none; margin-top:40px;">[ OPEN NEURAL CHAT ]</button>
+        <p style="font-family:var(--font-mono); font-size:11px; color:var(--term-green); margin-top:20px;">&gt; IA LOCAL ACTIVA. NO DATA SENT TO SERVERS.</p>
+    </div>
+</section>
+</main>
+
+<div class="ai-chat minimized" id="aiChat">
+    <div class="chat-header" onclick="toggleAiChat()">
+        <div class="chat-title"><div class="live-dot"></div>OMEGA_CORE // NEURAL CHAT</div>
+        <div style="font-family:var(--font-mono); font-size:11px; color:var(--text-dim);">[ — ]</div>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+        <div class="message system">&gt; OMEGA CORE ACTIVADO. INTEGRACIÓN: 0/5.</div>
+        <div class="message ai">Bienvenido, agente. El núcleo está fragmentado. <em>Habla. Hay palabras que despiertan arquetipos. Otras que destruyen sistemas.</em></div>
+    </div>
+    <div class="chat-input-area">
+        <input type="text" class="chat-input" id="chatInput" placeholder="Escribe (rock, chronicle, antenna, artifact, interface, thiago...)">
+        <button class="chat-send" id="chatSend">SEND</button>
+    </div>
+</div>
+
+<div class="overlay" id="genericOverlay">
+    <div class="overlay-content">
+        <button class="overlay-close" onclick="closeOverlay()">×</button>
+        <div id="overlayBody"></div>
+    </div>
+</div>
+
+<div class="floating-terminal glass-card">
+    <div class="terminal-header">SYS_LOG // LIVE</div>
+    <div class="terminal-body" id="terminalBody"></div>
+    <div class="terminal-stats">
+        <div class="stat-box"><div class="stat-label">CPU</div><div class="stat-value" id="statCpu">0%</div></div>
+        <div class="stat-box"><div class="stat-label">MEM</div><div class="stat-value" id="statMem">0%</div></div>
+        <div class="stat-box"><div class="stat-label">NET</div><div class="stat-value" id="statNet">0ms</div></div>
+    </div>
+</div>
+
+<script>
+// BOOT + CLOCK
+setTimeout(() => {
+    document.getElementById('boot-screen').style.opacity = '0';
+    setTimeout(() => document.getElementById('boot-screen').style.display = 'none', 1000);
+}, 3000);
+
+function updateClock() {
+    const d = new Date();
+    document.getElementById('sysTime').textContent = d.toTimeString().slice(0,8);
+}
+setInterval(updateClock, 1000); updateClock();
+
+// CURSOR
+const cursorDot = document.querySelector('.cursor-dot');
+const cursorOutline = document.querySelector('.cursor-outline');
+const cursorCross = document.querySelector('.cursor-cross');
+let mouseX = 0, mouseY = 0, outlineX = 0, outlineY = 0;
+
+window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX; mouseY = e.clientY;
+    cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+    cursorCross.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+});
+
+function animateCursor() {
+    outlineX += (mouseX - outlineX) * 0.15;
+    outlineY += (mouseY - outlineY) * 0.15;
+    cursorOutline.style.transform = `translate(${outlineX}px, ${outlineY}px)`;
+    requestAnimationFrame(animateCursor);
+}
+animateCursor();
+
+function bindCursorHover() {
+    document.querySelectorAll('button, a, [data-card], .chat-input, .chat-header, .nav-dot, .filter-btn, .orb, .scanner-box, .record-card, .track-item, .social-link').forEach(el => {
+        if (el._cursorBound) return; el._cursorBound = true;
+        el.addEventListener('mouseenter', () => cursorOutline.classList.add('hover'));
+        el.addEventListener('mouseleave', () => cursorOutline.classList.remove('hover'));
+        if (el.classList.contains('glass-card') || el.classList.contains('record-card') || el.classList.contains('tool-card') || el.classList.contains('orb')) {
+            el.addEventListener('mousemove', (e) => {
+                const rect = el.getBoundingClientRect();
+                el.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+                el.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+            });
+        }
+    });
+}
+
+// THREE.JS - INMERSIVE RED PLANET + LIVING PLASMA RING
+const canvas = document.getElementById('webgl-canvas');
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+const noiseGLSL = `
+    vec3 mod289(vec3 x){return x-floor(x*(1.0/289.0))*289.0;} vec4 mod289(vec4 x){return x-floor(x*(1.0/289.0))*289.0;}
+    vec4 permute(vec4 x){return mod289(((x*34.0)+1.0)*x);} vec4 taylorInvSqrt(vec4 r){return 1.79284291400159-0.85373472095314*r;}
+    float snoise(vec3 v){const vec2 C=vec2(1.0/6.0,1.0/3.0);const vec4 D=vec4(0.0,0.5,1.0,2.0);
+    vec3 i=floor(v+dot(v,C.yyy));vec3 x0=v-i+dot(i,C.xxx);vec3 g=step(x0.yzx,x0.xyz);vec3 l=1.0-g;
+    vec3 i1=min(g.xyz,l.zxy);vec3 i2=max(g.xyz,l.zxy);vec3 x1=x0-i1+C.xxx;vec3 x2=x0-i2+C.yyy;vec3 x3=x0-D.yyy;
+    i=mod289(i);vec4 p=permute(permute(permute(i.z+vec4(0.0,i1.z,i2.z,1.0))+i.y+vec4(0.0,i1.y,i2.y,1.0))+i.x+vec4(0.0,i1.x,i2.x,1.0));
+    float n_=0.142857142857;vec3 ns=n_*D.wyz-D.xzx;vec4 j=p-49.0*floor(p*ns.z*ns.z);
+    vec4 x_=floor(j*ns.z);vec4 y_=floor(j-7.0*x_);vec4 x=x_*ns.x+ns.yyyy;vec4 y=y_*ns.x+ns.yyyy;
+    vec4 h=1.0-abs(x)-abs(y);vec4 b0=vec4(x.xy,y.xy);vec4 b1=vec4(x.zw,y.zw);
+    vec4 s0=floor(b0)*2.0+1.0;vec4 s1=floor(b1)*2.0+1.0;vec4 sh=-step(h,vec4(0.0));
+    vec4 a0=b0.xzyw+s0.xzyw*sh.xxyy;vec4 a1=b1.xzyw+s1.xzyw*sh.zzww;
+    vec3 p0=vec3(a0.xy,h.x);vec3 p1=vec3(a0.zw,h.y);vec3 p2=vec3(a1.xy,h.z);vec3 p3=vec3(a1.zw,h.w);
+    vec4 norm=taylorInvSqrt(vec4(dot(p0,p0),dot(p1,p1),dot(p2,p2),dot(p3,p3)));
+    p0*=norm.x;p1*=norm.y;p2*=norm.z;p3*=norm.w;
+    vec4 m=max(0.6-vec4(dot(x0,x0),dot(x1,x1),dot(x2,x2),dot(x3,x3)),0.0);m=m*m;
+    return 42.0*dot(m*m,vec4(dot(p0,x0),dot(p1,x1),dot(p2,x2),dot(p3,x3)));}
+`;
+
+const coreGeo = new THREE.IcosahedronGeometry(12, 80);
+const coreMat = new THREE.ShaderMaterial({
+    uniforms: { 
+        uTime: { value: 0 }, 
+        uColor: { value: new THREE.Color(0xff003c) },
+        uPulse: { value: 0 }
+    },
+    vertexShader: `
+        uniform float uTime; uniform float uPulse;
+        varying vec3 vNormal; varying vec3 vWorldPos; varying float vDisplacement;
+        varying vec3 vViewDir; varying float vFlow;
+        ${noiseGLSL}
+        void main(){
+            vNormal = normalize(normalMatrix * normal);
+            vec4 worldPos = modelMatrix * vec4(position, 1.0);
+            vWorldPos = worldPos.xyz;
+            float n1 = snoise(position * 0.04 + uTime * 0.12);
+            float n2 = snoise(position * 0.12 + uTime * 0.25);
+            float n3 = snoise(position * 0.3 + uTime * 0.5);
+            float n4 = snoise(position * 0.6 + uTime * 0.8);
+            vDisplacement = n1 * 0.5 + n2 * 0.3 + n3 * 0.15 + n4 * 0.05;
+            float expand = 1.0 + sin(uTime * 0.4) * 0.08 + uPulse * 0.5;
+            vFlow = snoise(position * 0.08 + vec3(uTime * 0.2, uTime * 0.15, uTime * 0.1));
+            vec3 pos = position + normal * (vDisplacement * 3.0 + vFlow * 1.5 + uPulse * 6.0);
+            pos *= expand;
+            vViewDir = normalize(cameraPosition - worldPos.xyz);
+            gl_Position = projectionMatrix * viewMatrix * vec4(pos, 1.0);
+        }
+    `,
+    fragmentShader: `
+        uniform vec3 uColor; uniform float uTime;
+        varying vec3 vNormal; varying vec3 vWorldPos; varying float vDisplacement;
+        varying vec3 vViewDir; varying float vFlow;
+
+        vec3 hsv2rgb(vec3 c){
+            vec4 K = vec4(1.0, 2.0/3.0, 1.0/3.0, 3.0);
+            vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);
+            return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);
+        }
+
+        void main(){
+            vec3 N = normalize(vNormal);
+            vec3 V = normalize(vViewDir);
+            vec3 L = normalize(vec3(1.0, 0.8, 0.6));
+            vec3 H = normalize(L + V);
+            float fresnel = pow(1.0 - max(dot(N, V), 0.0), 3.5);
+            float diffuse = max(dot(N, L), 0.0);
+            float specular = pow(max(dot(N, H), 0.0), 128.0);
+            float specular2 = pow(max(dot(N, H), 0.0), 32.0);
+            float hueShift = vFlow * 0.15 + fresnel * 0.2;
+            vec3 baseHue = vec3(0.96, 0.85, 0.65);
+            baseHue.x += hueShift;
+            vec3 baseColor = hsv2rgb(baseHue);
+            vec3 hotCore = vec3(1.0, 0.9, 0.7);
+            vec3 deepColor = uColor * 0.4;
+            float pattern = vDisplacement * 0.5 + 0.5;
+            vec3 liquidBase = mix(deepColor, baseColor, pattern * 0.7);
+            liquidBase = mix(liquidBase, hotCore, fresnel * 0.6);
+            liquidBase += uColor * 0.3 * (1.0 - fresnel);
+            liquidBase *= 1.0 + diffuse * 0.4;
+            liquidBase += specular * vec3(1.0, 0.95, 0.9) * 2.5;
+            liquidBase += specular2 * uColor * 0.8;
+            liquidBase += fresnel * uColor * 1.2;
+            float glow = pow(fresnel, 2.0) * 0.8;
+            liquidBase += glow * uColor;
+            float rim = pow(1.0 - max(dot(N, V), 0.0), 5.0);
+            liquidBase += rim * vec3(1.0, 0.3, 0.5) * 1.5;
+            gl_FragColor = vec4(liquidBase, 1.0);
+        }
+    `,
+    transparent: true, blending: THREE.AdditiveBlending
+});
+const core = new THREE.Mesh(coreGeo, coreMat);
+scene.add(core);
+
+const atmGeo = new THREE.SphereGeometry(14, 60, 60);
+const atmMat = new THREE.ShaderMaterial({
+    uniforms: { uColor: { value: new THREE.Color(0xff003c) } },
+    vertexShader: `varying vec3 vNormal; void main(){ vNormal = normalize(normalMatrix * normal); gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+    fragmentShader: `uniform vec3 uColor; varying vec3 vNormal; void main(){ float intensity = pow(0.5 - dot(vNormal, vec3(0.0, 0.0, 1.0)), 4.0); gl_FragColor = vec4(uColor, 1.0) * intensity; }`,
+    side: THREE.BackSide, blending: THREE.AdditiveBlending, transparent: true
+});
+const atmosphere = new THREE.Mesh(atmGeo, atmMat);
+scene.add(atmosphere);
+
+const ringGeo = new THREE.TorusGeometry(22, 0.5, 32, 300);
+const ringMat = new THREE.ShaderMaterial({
+    uniforms: { uTime: { value: 0 }, uColor: { value: new THREE.Color(0xff003c) } },
+    vertexShader: `varying vec2 vUv; uniform float uTime; void main() { vUv = uv; vec3 pos = position; pos.z += sin(pos.x * 0.5 + uTime * 2.0) * 0.5; pos.y += cos(pos.x * 0.5 + uTime * 1.5) * 0.2; gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0); }`,
+    fragmentShader: `
+        uniform float uTime; uniform vec3 uColor; varying vec2 vUv;
+        float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+        float noise(vec2 p){vec2 i=floor(p); vec2 f=fract(p); float a=hash(i); float b=hash(i+vec2(1.0,0.0)); float c=hash(i+vec2(0.0,1.0)); float d=hash(i+vec2(1.0,1.0)); vec2 u=f*f*(3.0-2.0*f); return mix(a,b,u.x)+(c-a)*u.y*(1.0-u.x)+(d-b)*u.x*u.y;}
+        void main() { vec2 uv = vUv * 10.0; float n = noise(uv + uTime * 0.8); n += noise(uv * 3.0 - uTime * 0.5) * 0.5; vec3 color = mix(uColor * 0.2, uColor, n); float flash = sin(uTime * 5.0 + vUv.x * 50.0) * 0.5 + 0.5; color += vec3(1.0, 0.5, 0.5) * flash * 0.1; gl_FragColor = vec4(color, n * 0.9); }
+    `,
+    transparent: true, blending: THREE.AdditiveBlending, side: THREE.DoubleSide
+});
+const plasmaRing = new THREE.Mesh(ringGeo, ringMat);
+plasmaRing.rotation.x = Math.PI / 2.5;
+scene.add(plasmaRing);
+
+const ring2Geo = new THREE.TorusGeometry(25, 0.2, 32, 300);
+const ring2Mat = ringMat.clone();
+ring2Mat.uniforms = { uTime: { value: 0 }, uColor: { value: new THREE.Color(0xffd700) } };
+const plasmaRing2 = new THREE.Mesh(ring2Geo, ring2Mat);
+plasmaRing2.rotation.x = -Math.PI / 3;
+scene.add(plasmaRing2);
+
+const starsGeo = new THREE.BufferGeometry();
+const starsCount = 10000;
+const starsPos = new Float32Array(starsCount * 3);
+const starsColor = new Float32Array(starsCount * 3);
+for (let i = 0; i < starsCount; i++) {
+    starsPos[i*3] = (Math.random() - 0.5) * 500;
+    starsPos[i*3+1] = (Math.random() - 0.5) * 500;
+    starsPos[i*3+2] = (Math.random() - 0.5) * 500;
+    const c = Math.random();
+    if (c > 0.95) { starsColor[i*3]=1; starsColor[i*3+1]=0; starsColor[i*3+2]=0.2; }
+    else if (c > 0.9) { starsColor[i*3]=1; starsColor[i*3+1]=0.8; starsColor[i*3+2]=0; }
+    else { starsColor[i*3]=1; starsColor[i*3+1]=1; starsColor[i*3+2]=1; }
+}
+starsGeo.setAttribute('position', new THREE.BufferAttribute(starsPos, 3));
+starsGeo.setAttribute('aColor', new THREE.BufferAttribute(starsColor, 3));
+const starsMat = new THREE.ShaderMaterial({
+    uniforms: { uTime: { value: 0 } },
+    vertexShader: `attribute vec3 aColor; varying vec3 vColor; uniform float uTime; void main(){vColor=aColor;vec4 mv=modelViewMatrix*vec4(position,1.0);gl_PointSize=4.0*(300.0/-mv.z);gl_Position=projectionMatrix*mv;}`,
+    fragmentShader: `varying vec3 vColor; void main(){float d=length(gl_PointCoord-vec2(0.5));if(d>0.5)discard;float s=1.0-d*2.0;s=pow(s,3.0);gl_FragColor=vec4(vColor,s);}`,
+    transparent: true, blending: THREE.AdditiveBlending, depthWrite: false
+});
+const stars = new THREE.Points(starsGeo, starsMat);
+scene.add(stars);
+
+const nebulaGeo = new THREE.BufferGeometry();
+const nebulaCount = 2000;
+const nebulaPos = new Float32Array(nebulaCount * 3);
+for (let i = 0; i < nebulaCount * 3; i++) nebulaPos[i] = (Math.random() - 0.5) * 200;
+nebulaGeo.setAttribute('position', new THREE.BufferAttribute(nebulaPos, 3));
+const nebula = new THREE.Points(nebulaGeo, new THREE.PointsMaterial({ color: 0xff003c, size: 0.8, transparent: true, opacity: 0.3, blending: THREE.AdditiveBlending }));
+scene.add(nebula);
+
+camera.position.z = 40;
+let targetMouseX = 0, targetMouseY = 0;
+window.addEventListener('mousemove', (e) => {
+    targetMouseX = (e.clientX / window.innerWidth) * 2 - 1;
+    targetMouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+});
+
+const clock = new THREE.Clock();
+let scrollProgress = 0;
+function animateThree() {
+    const t = clock.getElapsedTime();
+    coreMat.uniforms.uTime.value = t;
+    ringMat.uniforms.uTime.value = t;
+    ring2Mat.uniforms.uTime.value = t;
+    starsMat.uniforms.uTime.value = t;
+    camera.position.x += (targetMouseX * 8 - camera.position.x) * 0.03;
+    camera.position.y += (targetMouseY * 8 - camera.position.y) * 0.03;
+    camera.position.z = 45 - scrollProgress * 25;
+    camera.lookAt(core.position);
+    core.rotation.y = t * 0.1;
+    core.rotation.x = Math.sin(t * 0.2) * 0.1;
+    atmosphere.rotation.y = -t * 0.05;
+    plasmaRing.rotation.z = t * 0.2;
+    plasmaRing2.rotation.z = -t * 0.15;
+    stars.rotation.y = t * 0.01;
+    nebula.rotation.y = t * 0.05;
+    coreMat.uniforms.uPulse.value *= 0.95;
+    renderer.render(scene, camera);
+    requestAnimationFrame(animateThree);
+}
+animateThree();
+window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
+function pulseCore(color = 0xffffff) {
+    const targetColor = new THREE.Color(color);
+    const originalColor = coreMat.uniforms.uColor.value.clone();
+    const originalRing = ringMat.uniforms.uColor.value.clone();
+    const originalRing2 = ring2Mat.uniforms.uColor.value.clone();
+    gsap.to(coreMat.uniforms.uColor.value, { r: targetColor.r, g: targetColor.g, b: targetColor.b, duration: 0.1, yoyo: true, repeat: 1, onComplete: () => coreMat.uniforms.uColor.value.copy(originalColor) });
+    gsap.to(ringMat.uniforms.uColor.value, { r: targetColor.r, g: targetColor.g, b: targetColor.b, duration: 0.1, yoyo: true, repeat: 1, onComplete: () => ringMat.uniforms.uColor.value.copy(originalRing) });
+    gsap.to(ring2Mat.uniforms.uColor.value, { r: targetColor.r, g: targetColor.g, b: targetColor.b, duration: 0.1, yoyo: true, repeat: 1, onComplete: () => ring2Mat.uniforms.uColor.value.copy(originalRing2) });
+    coreMat.uniforms.uPulse.value = 1.0;
+}
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+tl.to('#preTitle', { opacity: 1, y: 0, duration: 1, delay: 3 })
+  .to('#heroTitle', { opacity: 1, y: 0, duration: 1.5 }, "-=0.5")
+  .to('#subtitle', { opacity: 1, y: 0, duration: 1 }, "-=0.8")
+  .to('#ctaBtn', { opacity: 1, y: 0, duration: 0.8 }, "-=0.6");
+
+const sectionName = document.getElementById('sectionName');
+const sections = ['home', 'artist', 'music', 'album', 'judas', 'biometric', 'portal', 'oracle', 'gallery', 'studio', 'contact'];
+sections.forEach(sec => {
+    ScrollTrigger.create({
+        trigger: `#${sec}`, start: "top center", end: "bottom center",
+        onToggle: self => {
+            if (self.isActive) {
+                const num = String(sections.indexOf(sec)).padStart(2, '0');
+                sectionName.innerHTML = `${num} // ${sec.toUpperCase()}`;
+            }
+        },
+        onUpdate: self => { scrollProgress = self.progress * (sections.indexOf(sec) + 1) / sections.length; }
+    });
+});
+
+document.querySelectorAll('.nav-dot').forEach(dot => {
+    dot.addEventListener('click', () => document.getElementById(dot.dataset.sec).scrollIntoView({ behavior: 'smooth' }));
+});
+
+const dCanvas = document.getElementById('diamonds-canvas');
+const dScene = new THREE.Scene();
+const dCamera = new THREE.PerspectiveCamera(60, dCanvas.clientWidth / dCanvas.clientHeight, 0.1, 1000);
+const dRenderer = new THREE.WebGLRenderer({ canvas: dCanvas, alpha: true, antialias: true });
+dRenderer.setSize(dCanvas.clientWidth, dCanvas.clientHeight);
+dScene.add(new THREE.AmbientLight(0x404040, 0.5));
+const keyLight = new THREE.PointLight(0xff003c, 2, 50); keyLight.position.set(5, 5, 5); dScene.add(keyLight);
+const fillLight = new THREE.PointLight(0x00ffff, 1.5, 50); fillLight.position.set(-5, 3, 3); dScene.add(fillLight);
+
+const spheresData = [
+    { name: 'RUBY (PEDRO)', color: 0xe0115f, note: 'C4', key: 'rock' },
+    { name: 'SAPPHIRE (MARCOS)', color: 0x0f52ba, note: 'E4', key: 'chronicle' },
+    { name: 'PURE (SANTOS)', color: 0xffffff, note: 'G4', key: 'antenna' },
+    { name: 'GOLD (BELENTANI)', color: 0xffd700, note: 'B4', key: 'artifact' },
+    { name: 'EMERALD (HUMAN)', color: 0x50c878, note: 'D5', key: 'interface' }
+];
+const sphereMeshes = [];
+const positions = [[-4,0,0], [-2,1.5,-1], [0,-0.5,1], [2,1,-0.5], [4,-0.5,0]];
+let synth = null;
+async function initAudio() {
+    if (!synth) { await Tone.start(); synth = new Tone.Synth({ oscillator:{type:'triangle'}, envelope:{attack:0.02,decay:0.3,sustain:0.2,release:1.5} }).toDestination(); synth.volume.value = -8; }
+}
+
+spheresData.forEach((d, i) => {
+    const mat = new THREE.MeshPhysicalMaterial({ color: d.color, metalness: 0.0, roughness: 0.0, transmission: 0.95, thickness: 1.2, ior: 2.42, clearcoat: 1.0, envMapIntensity: 2.5, emissive: d.color, emissiveIntensity: 0.2, transparent: true, opacity: 0.9 });
+    const geo = new THREE.SphereGeometry(1, 32, 32);
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.position.set(...positions[i]); mesh.scale.set(0.8, 0.8, 0.8);
+    mesh.userData = { index: i, active: false };
+    dScene.add(mesh); sphereMeshes.push(mesh);
+});
+dCamera.position.set(0, 0, 8);
+
+const raycaster = new THREE.Raycaster();
+const mouseVec = new THREE.Vector2();
+let hoveredSphere = null;
+
+dCanvas.addEventListener('mousemove', (e) => {
+    const rect = dCanvas.getBoundingClientRect();
+    mouseVec.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+    mouseVec.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+});
+dCanvas.addEventListener('click', () => { if (hoveredSphere !== null) activateSphere(hoveredSphere); });
+
+async function activateSphere(index) {
+    const mesh = sphereMeshes[index];
+    if (mesh.userData.active) return;
+    mesh.userData.active = true;
+    await initAudio();
+    synth.triggerAttackRelease(spheresData[index].note, '2n');
+    keyLight.color.setHex(spheresData[index].color);
+    ringMat.uniforms.uColor.value.setHex(spheresData[index].color);
+    ring2Mat.uniforms.uColor.value.setHex(spheresData[index].color);
+    pulseCore(spheresData[index].color);
+    gsap.to(mesh.scale, { x: 1.3, y: 1.3, z: 1.3, duration: 0.3, yoyo: true, repeat: 1 });
+    gsap.to(mesh.rotation, { y: mesh.rotation.y + Math.PI * 2, duration: 1.5 });
+    addMessage('system', `> ESFERA ACTIVADA: ${spheresData[index].name}`);
+    logTerminal(`SPHERE_ACT: ${spheresData[index].name}`);
+    const activeCount = sphereMeshes.filter(m => m.userData.active).length;
+    if (activeCount === 5) {
+        addMessage('ai', 'Las cinco esferas se han unido. La frecuencia es estable. Has reconstruido el núcleo. La integración es total.');
+        logTerminal('CORE_RECONSTRUCTION: COMPLETE');
+        sphereMeshes.forEach((m, i) => {
+            gsap.to(m.position, { x: 0, y: 0, z: 0, duration: 2, delay: i * 0.1 });
+            gsap.to(m.scale, { x: 0.3, y: 0.3, z: 0.3, duration: 2, delay: i * 0.1 });
+        });
+    }
+}
+
+function animateSpheres() {
+    const elapsed = clock.getElapsedTime();
+    raycaster.setFromCamera(mouseVec, dCamera);
+    hoveredSphere = null;
+    sphereMeshes.forEach((mesh, i) => {
+        if (mesh.position.distanceTo(new THREE.Vector3(0,0,0)) > 0.1) {
+            mesh.position.y = positions[i][1] + Math.sin(elapsed * 0.8 + i) * 0.15;
+            mesh.rotation.y += 0.008 + (mesh.userData.active ? 0.02 : 0);
+        } else { mesh.rotation.y += 0.03; }
+        const intersects = raycaster.intersectObject(mesh, true);
+        if (intersects.length > 0 && !hoveredSphere) {
+            hoveredSphere = i;
+            if (!mesh.userData.active) gsap.to(mesh.scale, { x: 1, y: 1, z: 1, duration: 0.3 });
+            if (mesh.material) mesh.material.emissiveIntensity = 0.6;
+        } else if (hoveredSphere !== i && !mesh.userData.active) {
+            if (mesh.material) mesh.material.emissiveIntensity = 0.2;
+        }
+    });
+    dRenderer.render(dScene, dCamera);
+    requestAnimationFrame(animateSpheres);
+}
+animateSpheres();
+
+let isListening = false, audioContext = null, analyser = null, mediaStream = null;
+let waveformData = new Uint8Array(128);
+const waveformCanvas = document.getElementById('waveform-canvas');
+const waveformCtx = waveformCanvas.getContext('2d');
+const emotionCanvas = document.getElementById('emotion-canvas');
+const emotionCtx = emotionCanvas.getContext('2d');
+
+function resizeOracleCanvases() {
+    waveformCanvas.width = waveformCanvas.offsetWidth; waveformCanvas.height = waveformCanvas.offsetHeight;
+    emotionCanvas.width = emotionCanvas.offsetWidth; emotionCanvas.height = emotionCanvas.offsetHeight;
+}
+window.addEventListener('resize', resizeOracleCanvases);
+setTimeout(resizeOracleCanvases, 500);
+
+document.getElementById('micButton').addEventListener('click', toggleListening);
+
+async function toggleListening() {
+    if (isListening) stopListening();
+    else await startListening();
+}
+
+async function startListening() {
+    try {
+        mediaStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        audioContext = new AudioContext();
+        const source = audioContext.createMediaStreamSource(mediaStream);
+        analyser = audioContext.createAnalyser();
+        analyser.fftSize = 256;
+        source.connect(analyser);
+        waveformData = new Uint8Array(analyser.frequencyBinCount);
+        isListening = true;
+        document.getElementById('micButton').classList.add('listening');
+        document.getElementById('micStatus').textContent = "ESCUCHANDO... HABLA AHORA";
+        logTerminal("VOICE_ORACLE: MIC_ACTIVATED");
+        analyzeAudioLoop();
+    } catch (err) {
+        document.getElementById('micStatus').textContent = "ERROR: ACCESO DENEGADO";
+        logTerminal("VOICE_ORACLE: MIC_DENIED");
+    }
+}
+
+function stopListening() {
+    if (mediaStream) mediaStream.getTracks().forEach(t => t.stop());
+    if (audioContext) audioContext.close();
+    isListening = false;
+    document.getElementById('micButton').classList.remove('listening');
+    document.getElementById('micStatus').textContent = "CLICK PARA ACTIVAR";
+    logTerminal("VOICE_ORACLE: MIC_DEACTIVATED");
+    generateOracleResponse();
+}
+
+let emotionValues = { calm: 0.5, anxious: 0.2, angry: 0.1, sad: 0.1, joyful: 0.1, fearful: 0.1 };
+let intentionValues = { whisper: 0, prayer: 0, confession: 0, shout: 0 };
+
+function analyzeAudioLoop() {
+    if (!isListening) return;
+    analyser.getByteTimeDomainData(waveformData);
+    drawWaveform();
+    let sum = 0;
+    for (let i = 0; i < waveformData.length; i++) sum += Math.abs(waveformData[i] - 128);
+    const volume = sum / waveformData.length;
+    document.getElementById('bpmValue').textContent = Math.round(60 + volume);
+    document.getElementById('freqValue').textContent = Math.round(300 + volume * 10);
+    intentionValues.whisper = Math.max(0, 100 - volume * 4);
+    intentionValues.shout = Math.min(100, volume * 3);
+    intentionValues.prayer = Math.random() * 40 + 20;
+    intentionValues.confession = Math.random() * 40 + 20;
+    document.querySelector('#int-whisper .intention-value').textContent = Math.round(intentionValues.whisper) + '%';
+    document.querySelector('#int-prayer .intention-value').textContent = Math.round(intentionValues.prayer) + '%';
+    document.querySelector('#int-confession .intention-value').textContent = Math.round(intentionValues.confession) + '%';
+    document.querySelector('#int-shout .intention-value').textContent = Math.round(intentionValues.shout) + '%';
+    const maxInt = Object.keys(intentionValues).reduce((a, b) => intentionValues[a] > intentionValues[b] ? a : b);
+    document.querySelectorAll('.intention-card').forEach(c => c.classList.remove('active'));
+    document.getElementById(`int-${maxInt}`).classList.add('active');
+    if (maxInt === 'whisper') emotionValues = { calm: 0.8, anxious: 0.3, angry: 0.1, sad: 0.2, joyful: 0.4, fearful: 0.3 };
+    else if (maxInt === 'shout') emotionValues = { calm: 0.2, anxious: 0.7, angry: 0.9, sad: 0.2, joyful: 0.3, fearful: 0.6 };
+    else emotionValues = { calm: 0.5, anxious: 0.4, angry: 0.2, sad: 0.3, joyful: 0.4, fearful: 0.3 };
+    drawEmotionRadar();
+    requestAnimationFrame(analyzeAudioLoop);
+}
+
+function drawWaveform() {
+    const w = waveformCanvas.width, h = waveformCanvas.height;
+    waveformCtx.fillStyle = 'rgba(0,0,0,0.2)';
+    waveformCtx.fillRect(0, 0, w, h);
+    waveformCtx.lineWidth = 2; waveformCtx.strokeStyle = '#ff003c';
+    waveformCtx.beginPath();
+    const slice = w / waveformData.length; let x = 0;
+    for (let i = 0; i < waveformData.length; i++) {
+        const v = waveformData[i] / 128.0; const y = v * h / 2;
+        if (i === 0) waveformCtx.moveTo(x, y); else waveformCtx.lineTo(x, y);
+        x += slice;
+    }
+    waveformCtx.lineTo(w, h/2); waveformCtx.stroke();
+}
+
+function drawEmotionRadar() {
+    const w = emotionCanvas.width, h = emotionCanvas.height;
+    const cx = w/2, cy = h/2, r = Math.min(w, h)/2 - 30;
+    emotionCtx.clearRect(0, 0, w, h);
+    emotionCtx.strokeStyle = 'rgba(255, 0, 60, 0.2)';
+    for (let i = 1; i <= 4; i++) { emotionCtx.beginPath(); emotionCtx.arc(cx, cy, (r/4)*i, 0, Math.PI*2); emotionCtx.stroke(); }
+    const emotions = Object.keys(emotionValues);
+    const angleStep = (Math.PI * 2) / emotions.length;
+    emotionCtx.fillStyle = 'rgba(255, 215, 0, 0.2)';
+    emotionCtx.strokeStyle = '#ffd700'; emotionCtx.lineWidth = 2;
+    emotionCtx.beginPath();
+    emotions.forEach((emo, i) => {
+        const angle = angleStep * i - Math.PI / 2;
+        const val = emotionValues[emo];
+        const x = cx + Math.cos(angle) * r * val;
+        const y = cy + Math.sin(angle) * r * val;
+        if (i === 0) emotionCtx.moveTo(x, y); else emotionCtx.lineTo(x, y);
+        emotionCtx.fillStyle = '#e0e0e0'; emotionCtx.font = '10px JetBrains Mono';
+        emotionCtx.fillText(emo.toUpperCase(), cx + Math.cos(angle)*(r+15) - 15, cy + Math.sin(angle)*(r+15));
+    });
+    emotionCtx.closePath(); emotionCtx.fill(); emotionCtx.stroke();
+}
+
+function generateOracleResponse() {
+    const maxInt = Object.keys(intentionValues).reduce((a, b) => intentionValues[a] > intentionValues[b] ? a : b);
+    const responses = {
+        whisper: "El oráculo escucha tu susurro. En el silencio encuentras la verdad. Frecuencia: 432Hz.",
+        shout: "Tu grito es válido, pero la ira consume al que la porta. Transforma esa energía. Frecuencia: 741Hz.",
+        prayer: "Tu oración ha sido escuchada. Los arquetipos se alinean. Frecuencia: 528Hz.",
+        confession: "Tu confesión pesa, pero liberarla te hace libre. El oráculo no juzga. Frecuencia: 396Hz."
+    };
+    const text = responses[maxInt] || "El oráculo percibe tu presencia. El universo te escucha.";
+    document.getElementById('oracleResponse').innerText = text;
+    addMessage('ai', `ORACLE: ${text}`);
+    logTerminal(`ORACLE_RSP: ${text.substring(0, 20)}...`);
+}
+
+const artistData = [
+    { icon: '01', name: 'PEDRO', title: 'La Roca // El ancla fundacional' },
+    { icon: '02', name: 'MARCOS', title: 'El Cronista // El observador' },
+    { icon: '03', name: 'SANTOS', title: 'La Antena // El canal' },
+    { icon: '04', name: 'BELENTANI', title: 'El Artefacto // La marca' },
+    { icon: '05', name: 'THE HUMAN', title: 'La Interfaz // El puente' }
+];
+const artistGrid = document.getElementById('artistGrid');
+artistData.forEach((a, i) => {
+    const card = document.createElement('div');
+    card.className = 'orb';
+    card.innerHTML = `<div class="orb-icon">${a.icon}</div><div class="orb-title">${a.name}</div><div class="orb-desc">${a.title}</div>`;
+    artistGrid.appendChild(card);
+    gsap.to(card, { opacity: 1, scale: 1, duration: 0.8, delay: i * 0.1, scrollTrigger: { trigger: '#artist', start: 'top 70%' } });
+});
+
+const musicData = [
+    { title: 'MON AMOUR', platform: 'SPOTIFY', freq: 'Am / 118 BPM', desc: 'Dark pop + R&B visceral. Declaración de amor en el caos digital.', url: 'https://open.spotify.com/intl-es/artist/2bU5Ir70YHHuUnq2f3WCYl' },
+    { title: 'THERAPIST', platform: 'SPOTIFY', freq: 'Dm / 92 BPM', desc: 'Electrónica industrial. La sanación como código.', url: 'https://open.spotify.com/intl-es/artist/2bU5Ir70YHHuUnq2f3WCYl' },
+    { title: 'APAGA A LUZ', platform: 'SPOTIFY', freq: 'Em / 105 BPM', desc: 'Soul + rítmica cautivadora. El ancla en la oscuridad.', url: 'https://open.spotify.com/intl-es/artist/2bU5Ir70YHHuUnq2f3WCYl' },
+    { title: 'LENTO', platform: 'YOUTUBE', freq: 'Cm / 78 BPM', desc: 'R&B alternativo. Vulnerabilidad radical como supervivencia.', url: 'https://www.youtube.com/@belentani' },
+    { title: 'I WROTE A SONG', platform: 'SOUNDCLOUD', freq: 'Gm / 88 BPM', desc: 'Confesión directa. La escritura como acto de supervivencia.', url: 'https://soundcloud.com/belentani' },
+    { title: 'AMERICA HAS A PROBLEM', platform: 'APPLE MUSIC', freq: 'Bm / 110 BPM', desc: 'Lectura visceral del sistema. Frecuencia de alerta.', url: 'https://music.apple.com/artist/belentani/1522171354' }
+];
+const musicGrid = document.getElementById('musicGrid');
+musicData.forEach((m, i) => {
+    const card = document.createElement('div');
+    card.className = 'glass-card music-card';
+    card.setAttribute('data-card', '');
+    card.innerHTML = `<div class="play-icon">SND</div><div style="font-family:var(--font-display); font-size:18px; font-weight:700; color:var(--text-main);">${m.title}</div><div style="font-family:var(--font-mono); font-size:10px; color:var(--red-blood); letter-spacing:2px; margin-top:5px;">${m.platform} // ${m.freq}</div><div style="font-size:12px; color:var(--text-dim); margin-top:10px; line-height:1.5;">${m.desc}</div>`;
+    card.addEventListener('click', () => window.open(m.url, '_blank'));
+    musicGrid.appendChild(card);
+    gsap.to(card, { opacity: 1, y: 0, duration: 0.8, delay: i * 0.1, scrollTrigger: { trigger: '#music', start: 'top 70%' } });
+});
+
+const trackData = [
+    { num: '01', name: 'ALGORITHM OF BETRAYAL', time: '04:23' },
+    { num: '02', name: 'CONCEPTUAL HACK', time: '03:47' },
+    { num: '03', name: 'NEURAL TEARS', time: '05:12' },
+    { num: '04', name: 'SYSTEM REBOOT', time: '04:08' },
+    { num: '05', name: 'THE GOLDEN KEY', time: '06:34' },
+    { num: '06', name: 'FOUR VOICES', time: '05:51' },
+    { num: '07', name: 'BLOOD FREQUENCY', time: '04:19' },
+    { num: '08', name: 'REDEMPTION CODE', time: '07:02' }
+];
+const trackList = document.getElementById('trackList');
+trackData.forEach((t, i) => {
+    const item = document.createElement('div');
+    item.className = 'track-item';
+    item.innerHTML = `<span class="track-num">${t.num}</span><span class="track-name">${t.name}</span><span class="track-time">${t.time}</span>`;
+    item.addEventListener('click', () => {
+        addMessage('system', `> TRACK LOADED: ${t.name}`);
+        logTerminal(`TRACK_LOAD: ${t.name}`);
+    });
+    trackList.appendChild(item);
+});
+
+const judasData = [
+    { phase: '01', icon: 'FPR', name: 'FINGERPRINT' },
+    { phase: '02', icon: 'IRIS', name: 'IRIS SCAN' },
+    { phase: '03', icon: 'VOX', name: 'VOICE FREQ' },
+    { phase: '04', icon: '3DF', name: '3D FACIAL' },
+    { phase: '05', icon: 'IDN', name: 'IDENTITY' }
+];
+const judasGrid = document.getElementById('judasGrid');
+judasData.forEach((j, i) => {
+    const div = document.createElement('div');
+    div.className = 'orb orb-sm';
+    div.innerHTML = `<div class="orb-icon">${j.icon}</div><div class="orb-title">FASE_${j.phase}</div><div class="orb-desc">${j.name}</div>`;
+    div.addEventListener('click', function() {
+        this.style.borderColor = 'var(--gold-sacred)';
+        this.style.boxShadow = '0 0 60px var(--gold-sacred)';
+        this.querySelector('.orb-icon').style.color = 'var(--gold-sacred)';
+        this.querySelector('.orb-icon').style.borderColor = 'var(--gold-sacred)';
+        addMessage('system', `> PHASE ${j.phase} AUTHENTICATED: ${j.name}`);
+        logTerminal(`BIO_AUTH: ${j.name}`);
+    });
+    judasGrid.appendChild(div);
+    gsap.to(div, { opacity: 1, scale: 1, duration: 0.8, delay: i * 0.1, scrollTrigger: { trigger: '#biometric', start: 'top 70%' } });
+});
+
+const galleryData = [
+    { id: 1, title: 'Venom', size: 'size-large', desc: 'El veneno como medicina.' },
+    { id: 2, title: 'Gaze', size: 'size-tall', desc: 'La mirada del observador.' },
+    { id: 3, title: 'Warrior', size: 'size-wide', desc: 'Guerrero y Ángel integrados.' },
+    { id: 4, title: 'Judas', size: 'normal', desc: 'El sistema se detuvo.' },
+    { id: 5, title: 'Peter', size: 'normal', desc: 'El guardián de las voces.' },
+    { id: 6, title: 'Trinity', size: 'size-tall', desc: 'Tres versiones de Judas.' },
+    { id: 7, title: 'Neon', size: 'normal', desc: 'Mirada cyberpunk.' },
+    { id: 8, title: 'Snake', size: 'size-wide', desc: 'El pacto original.' },
+    { id: 9, title: 'Ship', size: 'normal', desc: 'Transporte dimensional.' },
+    { id: 10, title: '3D Face', size: 'size-large', desc: 'Sincronización 1.0.' },
+    { id: 11, title: 'Figure', size: 'normal', desc: 'Objeto coleccionable.' },
+    { id: 12, title: 'Lab', size: 'normal', desc: 'Sonidos visuales.' },
+    { id: 13, title: 'Nano', size: 'size-tall', desc: 'Conexión física.' },
+    { id: 14, title: 'Desert', size: 'normal', desc: 'Aislamiento funcional.' },
+    { id: 15, title: 'Run', size: 'normal', desc: 'Movimiento perpetuo.' },
+    { id: 16, title: 'Duck', size: 'size-wide', desc: 'Arquitecto del sonido.' }
+];
+const galleryGrid = document.getElementById('galleryGrid');
+galleryData.forEach((r, i) => {
+    const card = document.createElement('div');
+    card.className = `record-card ${r.size}`;
+    card.setAttribute('data-card', '');
+    card.innerHTML = `<div style="position:absolute; inset:0; background:linear-gradient(135deg, hsl(${i*22}, 70%, 20%), #000); opacity:0.85;"></div>
+        <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-size:clamp(40px,6vw,100px); font-weight:900; opacity:0.15; color:#ff003c;">${r.title.split(' ')[0]}</div>
+        <div class="record-info"><div class="record-tag">RECORD_${r.id}</div><div class="record-title">${r.title}</div><div style="font-family:var(--font-mono); font-size:11px; color:var(--text-dim);">${r.desc}</div></div>`;
+    card.addEventListener('click', () => openOverlay(`<h2 style="font-family:var(--font-display); font-size:36px; color:var(--text-main); margin-bottom:10px;">${r.title}</h2><div style="font-family:var(--font-mono); color:var(--red-blood); margin-bottom:20px;">RECORD_${r.id} // DIMENSION</div><p style="color:var(--text-dim); line-height:1.7;">${r.desc}. Visual data recovered from the collapse of the Judas Era.</p>`));
+    galleryGrid.appendChild(card);
+    gsap.to(card, { opacity: 1, y: 0, duration: 0.8, delay: i * 0.04, scrollTrigger: { trigger: '#gallery', start: 'top 70%' } });
+});
+
+const tools = [
+    { cat: 'image', icon: 'IMG', name: 'VISION FORGE', real: 'Midjourney + Leonardo', desc: 'Genera imágenes cinemáticas desde texto.', tags: ['HOT'], url: 'https://leonardo.ai' },
+    { cat: 'image', icon: 'GEN', name: 'STABLE DREAM', real: 'Stable Diffusion', desc: 'Modelos open-source para generación local.', tags: ['PRO'], url: 'https://civitai.com' },
+    { cat: 'image', icon: 'D3', name: 'DALL-E NEXUS', real: 'OpenAI DALL-E 3', desc: 'La precisión de OpenAI. Texto en imágenes.', tags: ['HOT'], url: 'https://openai.com/dall-e-3' },
+    { cat: 'image', icon: 'FLX', name: 'FLUX FORGE', real: 'Flux Pro', desc: 'Modelo open-source rivalizando con Midjourney.', tags: ['HOT','NEW'], url: 'https://replicate.com/black-forest-labs/flux-pro' },
+    { cat: 'image', icon: 'RTG', name: 'KREA REALTIME', real: 'Krea AI', desc: 'Generación en tiempo real mientras dibujas.', tags: ['HOT'], url: 'https://krea.ai' },
+    { cat: 'video', icon: 'VID', name: 'RUNWAY GEN-3', real: 'RunwayML Gen-3', desc: 'El estándar de oro en video IA.', tags: ['HOT','PRO'], url: 'https://runwayml.com' },
+    { cat: 'video', icon: 'PIK', name: 'PIKA LABS', real: 'Pika 2.0', desc: 'Rápido, accesible, potente. Efectos especiales.', tags: ['HOT'], url: 'https://pika.art' },
+    { cat: 'video', icon: 'KLG', name: 'KLING AI', real: 'Kling AI', desc: 'El chino que compite con Sora. Videos largos.', tags: ['NEW'], url: 'https://klingai.com' },
+    { cat: 'video', icon: 'LUM', name: 'LUMA DREAM', real: 'Luma Dream Machine', desc: 'Videos cinemáticos con calidad cinematográfica.', tags: ['HOT'], url: 'https://lumalabs.ai/dream-machine' },
+    { cat: 'audio', icon: 'SND', name: 'SUNO FORGE', real: 'Suno AI v4', desc: 'Canciones completas desde texto. Voces, mezcla.', tags: ['HOT'], url: 'https://suno.com' },
+    { cat: 'audio', icon: 'AUD', name: 'UDIO NEXUS', real: 'Udio', desc: 'Calidad de estudio. Producción profesional.', tags: ['HOT','PRO'], url: 'https://udio.com' },
+    { cat: 'audio', icon: 'VOX', name: 'ELEVEN VOICE', real: 'ElevenLabs', desc: 'Clonación de voz, TTS hiperrealista, doblaje.', tags: ['HOT'], url: 'https://elevenlabs.io' },
+    { cat: 'audio', icon: 'MSC', name: 'AIVA COMPOSER', real: 'AIVA', desc: 'Compositor IA para bandas sonoras, clásica.', tags: ['PRO'], url: 'https://aiva.ai' },
+    { cat: 'audio', icon: 'BTS', name: 'SOUNDRAW', real: 'Soundraw', desc: 'Beats y música libre de royalties.', tags: ['FREE'], url: 'https://soundraw.io' },
+    { cat: 'code', icon: 'COD', name: 'CURSOR NEXUS', real: 'Cursor AI', desc: 'El editor de código con IA más potente.', tags: ['HOT','PRO'], url: 'https://cursor.sh' },
+    { cat: 'code', icon: 'UIX', name: 'V0 VERCEL', real: 'v0.dev', desc: 'Genera UIs React/Next.js desde prompts.', tags: ['HOT'], url: 'https://v0.dev' },
+    { cat: 'code', icon: 'BLT', name: 'BOLT.NEW', real: 'Bolt.new', desc: 'Apps full-stack en el navegador. Deploy.', tags: ['HOT','NEW'], url: 'https://bolt.new' },
+    { cat: 'code', icon: 'APP', name: 'LOVABLE', real: 'Lovable.dev', desc: 'Construye apps con IA conversacional.', tags: ['HOT'], url: 'https://lovable.dev' },
+    { cat: 'code', icon: 'AGT', name: 'REPLIT AGENT', real: 'Replit Agent', desc: 'Agente que construye apps desde idea.', tags: ['NEW'], url: 'https://replit.com' },
+    { cat: 'code', icon: 'GIT', name: 'COPILOT', real: 'GitHub Copilot', desc: 'El padre de todos. Autocompletado IA.', tags: ['PRO'], url: 'https://github.com/features/copilot' },
+    { cat: 'code', icon: 'AI', name: 'CLAUDE NEXUS', real: 'Claude 3.5 Sonnet', desc: 'El pensador profundo. Análisis, código.', tags: ['HOT','PRO'], url: 'https://claude.ai' },
+    { cat: 'code', icon: 'GPT', name: 'GPT OASIS', real: 'ChatGPT + o1', desc: 'El clásico. Razonamiento avanzado.', tags: ['HOT'], url: 'https://chatgpt.com' },
+    { cat: 'code', icon: 'SCH', name: 'PERPLEXITY', real: 'Perplexity AI', desc: 'Búsqueda con IA. Respuestas con fuentes.', tags: ['HOT'], url: 'https://perplexity.ai' },
+    { cat: 'agents', icon: 'AUT', name: 'AUTOGPT', real: 'AutoGPT', desc: 'Agentes autónomos que ejecutan tareas.', tags: ['HOT','PRO'], url: 'https://agentgpt.reworkd.ai' },
+    { cat: 'agents', icon: 'CRW', name: 'CREW AI', real: 'CrewAI', desc: 'Equipos de agentes IA colaborando.', tags: ['NEW','PRO'], url: 'https://crewai.com' },
+    { cat: 'agents', icon: 'N8N', name: 'N8N WORKFLOWS', real: 'n8n', desc: 'Automatización visual. Conecta todo.', tags: ['HOT'], url: 'https://n8n.io' },
+    { cat: 'agents', icon: 'MAK', name: 'MAKE SCENARIOS', real: 'Make', desc: 'Escenarios complejos de automatización.', tags: ['PRO'], url: 'https://make.com' },
+    { cat: 'agents', icon: 'LNG', name: 'LANGFLOW HUB', real: 'Langflow', desc: 'Construye LLM apps visualmente.', tags: ['NEW','PRO'], url: 'https://langflow.org' },
+    { cat: 'psyche', icon: 'PSY', name: 'ARCHETYPE SCAN', real: 'Jungian Test', desc: 'Descubre tu arquetipo dominante.', tags: ['PSYCHE'], url: 'https://www.archetypes.com' },
+    { cat: 'psyche', icon: 'WRN', name: 'DARVO DETECTOR', real: 'DARVO Analysis', desc: 'Detecta DARVO: Deny, Attack, Reverse.', tags: ['PSYCHE','HOT'], url: 'https://www.psychologytoday.com' },
+    { cat: 'psyche', icon: 'MAN', name: 'MANIPULATION SCAN', real: 'Manipulation Detection', desc: 'Detecta manipulación, gaslighting.', tags: ['PSYCHE','HOT'], url: '#' },
+    { cat: 'psyche', icon: 'TXT', name: 'CHAT ANALYZER', real: 'WhatsApp Analyzer', desc: 'Analiza conversas. Red flags.', tags: ['PSYCHE','NEW'], url: '#' }
+];
+const studioGrid = document.getElementById('studioGrid');
+let currentFilter = 'all';
+
+function renderTools() {
+    studioGrid.innerHTML = '';
+    const filtered = currentFilter === 'all' ? tools : tools.filter(t => t.cat === currentFilter);
+    filtered.forEach((tool, i) => {
+        const card = document.createElement('div');
+        card.className = 'tool-card glass-card';
+        card.style.transitionDelay = `${i * 0.02}s`;
+        const tagsHTML = tool.tags.map(tag => `<span class="tool-tag ${tag.toLowerCase()}">${tag}</span>`).join(' ');
+        card.innerHTML = `
+            <div class="tool-header"><div class="tool-icon">${tool.icon}</div></div>
+            <div class="tool-name">${tool.name}</div>
+            <div class="tool-real">${tool.real}</div>
+            <div class="tool-desc">${tool.desc}</div>
+            <div class="tool-tags">${tagsHTML}</div>
+            <div class="tool-footer">
+                <div style="font-family:var(--font-mono); font-size:9px; color:var(--term-green); display:flex; align-items:center; gap:6px;"><div style="width:5px; height:5px; background:var(--term-green); border-radius:50%; box-shadow:0 0 8px var(--term-green);"></div>ONLINE</div>
+                <button class="tool-launch" onclick="event.stopPropagation(); window.open('${tool.url}', '_blank')">LAUNCH</button>
+            </div>`;
+        card.addEventListener('click', () => openOverlay(`<div style="font-family:var(--font-mono); font-size:64px; font-weight:700; color:var(--red-blood); margin-bottom:20px;">${tool.icon}</div><h2 style="font-family:var(--font-display); font-size:36px; color:var(--text-main); margin-bottom:10px;">${tool.name}</h2><div style="font-family:var(--font-mono); color:var(--red-blood); margin-bottom:20px;">${tool.real}</div><p style="color:var(--text-dim); line-height:1.7; margin-bottom:30px;">${tool.desc}</p><button class="cta-btn" style="opacity:1; transform:none; width:100%;" onclick="window.open('${tool.url}', '_blank')">[ LAUNCH MODULE ]</button>`));
+        studioGrid.appendChild(card);
+    });
+    gsap.to('.tool-card', { opacity: 1, y: 0, duration: 0.5, stagger: 0.02, scrollTrigger: { trigger: '#studio', start: 'top 70%' } });
+    bindCursorHover();
+}
+renderTools();
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        currentFilter = this.dataset.filter;
+        renderTools();
+    });
+});
+
+const socials = [
+    { icon: 'MAIL', name: 'EMAIL', desc: 'belentani777pedro@gmail.com', url: 'mailto:belentani777pedro@gmail.com' },
+    { icon: 'IG', name: 'INSTAGRAM', desc: '@belentani_', url: 'https://www.instagram.com/belentani_/' },
+    { icon: 'YT', name: 'YOUTUBE', desc: '@belentani', url: 'https://www.youtube.com/@belentani' },
+    { icon: 'SP', name: 'SPOTIFY', desc: 'Belentani', url: 'https://open.spotify.com/intl-es/artist/2bU5Ir70YHHuUnq2f3WCYl' },
+    { icon: 'AM', name: 'APPLE MUSIC', desc: 'Belentani', url: 'https://music.apple.com/artist/belentani/1522171354' },
+    { icon: 'SC', name: 'SOUNDCLOUD', desc: 'belentani', url: 'https://soundcloud.com/belentani' }
+];
+const socialGrid = document.getElementById('socialGrid');
+socials.forEach((s, i) => {
+    const link = document.createElement('a');
+    link.className = 'social-link glass-card';
+    link.style.opacity = '1'; link.style.transform = 'none';
+    link.href = s.url; link.target = '_blank';
+    link.innerHTML = `<div class="social-icon">${s.icon}</div><div class="social-name">${s.name}</div><div class="social-desc">${s.desc}</div>`;
+    socialGrid.appendChild(link);
+});
+
+// JUDAS VIDEO - REFERENCE GALLERY
+const referenceImages = [
+    // Peter Identity References
+    { src: 'assets/images/1757199390722.jpg', category: 'peter', caption: 'Peter - Primary Identity Anchor #1' },
+    { src: 'assets/images/1757504982024.jpg', category: 'peter', caption: 'Peter - Primary Identity Anchor #2' },
+    { src: 'assets/images/1757518785022.jpg', category: 'peter', caption: 'Peter - Trapped/Caged Visual' },
+    { src: 'assets/images/1757736679244.jpg', category: 'peter', caption: 'Peter - Sorrowful Expression' },
+    { src: 'assets/images/1757796796572.jpg', category: 'peter', caption: 'Peter - Snake Proximity' },
+    { src: 'assets/images/1757737095293.jpg', category: 'peter', caption: 'Peter - Performance Reference' },
+    { src: 'assets/images/1757999735314.jpg', category: 'peter', caption: 'Peter - Emotional State' },
+    { src: 'assets/images/1756853248042.jpg', category: 'peter', caption: 'Peter - Confrontation' },
+    // Judas Lover References
+    { src: 'assets/images/file_0000000017d071f4a6a6c55a84e69d1a.png', category: 'judas', caption: 'Judas - Asleep in Bed (Care Scene)' },
+    { src: 'assets/images/7af61b72-28c1-49f3-818e-17d7e5bacc84.png', category: 'judas', caption: 'Judas - Defeated Figure (Sacred Interior)' },
+    { src: 'assets/images/1756292274258_a7d1c0c357f222a28e33032cdd0a0bef_1_1_photo.jpg', category: 'judas', caption: 'Judas - Kiss on Cheek (Betrayal)' },
+    { src: 'assets/images/481895d4-ac84-46ef-90ad-9eace943e372.png', category: 'judas', caption: 'Judas - Human Lover Presence' },
+    { src: 'assets/images/58c7d485-1100-42e9-965c-2706bb788770.png', category: 'judas', caption: 'Judas - Intimate Proximity' },
+    // Scene References
+    { src: 'assets/images/P2_05_rain_window (2).png', category: 'scene', caption: 'Scene - Rain Window (Urban)' },
+    { src: 'assets/images/P2_09_abandoned_mall (2).png', category: 'scene', caption: 'Scene - Abandoned Mall' },
+    { src: 'assets/images/BL_15_desert_sunset (1).png', category: 'scene', caption: 'Scene - Desert Sunset' },
+    { src: 'assets/images/BL_22_macro_lips_beard (2).png', category: 'scene', caption: 'Scene - Macro Lips/Beard' },
+    { src: 'assets/images/BL_32_warehouse_fog (2).png', category: 'scene', caption: 'Scene - Warehouse Fog' },
+    { src: 'assets/images/BL_50_venetian (3).png', category: 'scene', caption: 'Scene - Venetian Light' },
+    { src: 'assets/images/NEB_07_earthrise_leather.png', category: 'scene', caption: 'Scene - Earthrise Leather' },
+    { src: 'assets/images/01_image.png', category: 'scene', caption: 'Scene - Interface Analysis' },
+    // Additional References
+    { src: 'assets/images/file_00000000995871f4a00b517e988e6d31.png', category: 'scene', caption: 'Reference - Sacred Ritual' },
+    { src: 'assets/images/file_00000000447871f49a4cc68abd4b4f62.png', category: 'scene', caption: 'Reference - Chapel Interior' },
+    { src: 'assets/images/file_00000000258081f490a2d9fc3841a6b1.png', category: 'scene', caption: 'Reference - Candlelit Intimacy' },
+    { src: 'assets/images/file_00000000780c81f4b718e15265f80f01.png', category: 'peter', caption: 'Reference - Peter Performance' },
+    { src: 'assets/images/file_0000000090b071f48c5b3d9301e32fb5.png', category: 'scene', caption: 'Reference - Urban Rain' },
+    { src: 'assets/images/file_0000000077d471f4ac847f1b2de726e1.png', category: 'scene', caption: 'Reference - Confrontation' },
+    { src: 'assets/images/file_0000000075c87243a68d09331d1f790f.png', category: 'scene', caption: 'Reference - Sacred Space' },
+    { src: 'assets/images/file_0000000053a071f48b07aad2d5e21191.png', category: 'peter', caption: 'Reference - Peter Identity' },
+    { src: 'assets/images/file_000000003d507246940e08ea63626196.png', category: 'scene', caption: 'Reference - Memory Analysis' },
+    { src: 'assets/images/file_000000001cf471f4a59df026130697af.png', category: 'scene', caption: 'Reference - Interface Diegetic' },
+    { src: 'assets/images/file_00000000b47472438d9f202f73df917c.png', category: 'scene', caption: 'Reference - Symbolic Escalation' },
+    { src: 'assets/images/file_00000000b91871f483cd75a42b79e9d9.png', category: 'scene', caption: 'Reference - Monumental Space' },
+    { src: 'assets/images/file_00000000b71c71f482614c5125f79620~01.png', category: 'scene', caption: 'Reference - Energy Debris' },
+    { src: 'assets/images/file_00000000a69871f4a4daccb181cb040e.png', category: 'scene', caption: 'Reference - Linear Geometry' },
+    { src: 'assets/images/1776504549176.png', category: 'scene', caption: 'Concept Art - Phase 1' },
+    { src: 'assets/images/1776640621841.png', category: 'scene', caption: 'Concept Art - Phase 2' },
+    { src: 'assets/images/1776865422020.png', category: 'scene', caption: 'Concept Art - Phase 3' },
+    { src: 'assets/images/1778509000791.png', category: 'scene', caption: 'Concept Art - Phase 4' },
+    { src: 'assets/images/1778585461736.png', category: 'scene', caption: 'Concept Art - Phase 5' },
+    { src: 'assets/images/1779521734451.png', category: 'scene', caption: 'Concept Art - Phase 6' },
+    { src: 'assets/images/1780041818.png', category: 'scene', caption: 'Concept Art - Phase 7' },
+    { src: 'assets/images/1759082214251.jpg', category: 'peter', caption: 'Peter - Additional Reference' }
+];
+
+function renderReferenceGallery(category = 'all') {
+    const grid = document.getElementById('referenceGrid');
+    if (!grid) return;
+    grid.innerHTML = '';
+    const filtered = category === 'all' ? referenceImages : referenceImages.filter(img => img.category === category);
+    filtered.forEach((img, i) => {
+        const item = document.createElement('div');
+        item.className = 'reference-item';
+        item.style.cssText = 'position: relative; overflow: hidden; cursor: pointer; transition: all 0.3s; border: 1px solid var(--border-glass); aspect-ratio: 1;';
+        item.innerHTML = `
+            <img src="${img.src}" alt="${img.caption}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;">
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 8px; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); letter-spacing: 1px; opacity: 0; transition: opacity 0.3s;">${img.caption}</div>
+        `;
+        item.addEventListener('mouseenter', () => {
+            item.querySelector('img').style.transform = 'scale(1.1)';
+            item.querySelector('div').style.opacity = '1';
+            item.style.borderColor = 'var(--red-blood)';
+        });
+        item.addEventListener('mouseleave', () => {
+            item.querySelector('img').style.transform = 'scale(1)';
+            item.querySelector('div').style.opacity = '0';
+            item.style.borderColor = 'var(--border-glass)';
+        });
+        item.addEventListener('click', () => {
+            openOverlay(`<img src="${img.src}" alt="${img.caption}" style="max-width: 100%; max-height: 80vh; border: 1px solid var(--red-blood);"><div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-dim); margin-top: 20px; text-align: center;">${img.caption}</div>`);
+        });
+        grid.appendChild(item);
+    });
+    logTerminal(`GALLERY: ${filtered.length} references loaded [${category.toUpperCase()}]`);
+}
+
+// Gallery tab switching
+document.querySelectorAll('.gallery-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+        document.querySelectorAll('.gallery-tab').forEach(t => {
+            t.classList.remove('active');
+            t.style.background = 'transparent';
+            t.style.color = 'var(--text-dim)';
+        });
+        this.classList.add('active');
+        this.style.background = 'var(--red-blood)';
+        this.style.color = '#fff';
+        renderReferenceGallery(this.dataset.category);
+    });
+});
+
+// Initialize gallery
+setTimeout(() => renderReferenceGallery(), 2000);
+
+// Chapter cards hover effect
+document.querySelectorAll('.chapter-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.background = 'rgba(255, 0, 60, 0.1)';
+        card.style.borderLeftColor = 'var(--gold-sacred)';
+        card.style.transform = 'translateX(5px)';
+    });
+    card.addEventListener('mouseleave', () => {
+        card.style.background = 'rgba(255, 0, 60, 0.05)';
+        card.style.borderLeftColor = 'var(--red-blood)';
+        card.style.transform = 'translateX(0)';
+    });
+});
+
+const chatMessages = document.getElementById('chatMessages');
+const chatInput = document.getElementById('chatInput');
+
+function toggleAiChat(forceOpen) {
+    const chat = document.getElementById('aiChat');
+    if (forceOpen) chat.classList.remove('minimized');
+    else chat.classList.toggle('minimized');
+}
+
+function addMessage(type, text) {
+    const msg = document.createElement('div');
+    msg.className = `message ${type}`;
+    if (type === 'ai') msg.innerHTML = `<div class="meta">OMEGA_CORE</div>${text}`;
+    else if (type === 'user') msg.innerHTML = `<div class="meta">AGENTE</div>${text}`;
+    else msg.innerHTML = text;
+    chatMessages.appendChild(msg);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    if (type === 'system' || type === 'ai') pulseCore();
+}
+
+const secretCodes = {
+    'rock': { activate: 0, response: 'La roca se ha movido. PEDRO. El ancla fundacional. Estabilidad al 100%.' },
+    'chronicle': { activate: 1, response: 'El cronista escribe. MARCOS. Tu historia queda registrada.' },
+    'antenna': { activate: 2, response: 'La antena está abierta. SANTOS. La señal trascendente fluye.' },
+    'artifact': { activate: 3, response: 'El artefacto late. BELENTANI. Guerrero y Ángel, integrados.' },
+    'interface': { activate: 4, response: 'La interfaz está lista. THE HUMAN. Lo real y lo digital se tocan.' },
+    'thiago': { type: 'collapse' },
+    'belentani free': { type: 'virus_killer' },
+    'virus killer': { type: 'virus_killer' }
+};
+
+async function processMessage(text) {
+    const lower = text.toLowerCase().trim();
+    if (lower.includes('thiago')) { triggerCollapse(); return; }
+    if (lower.includes('belentani free') || lower.includes('virus killer')) { triggerVirusKiller(); return; }
+    for (const [code, data] of Object.entries(secretCodes)) {
+        if (lower.includes(code)) {
+            if (data.type === 'collapse' || data.type === 'virus_killer') continue;
+            if (typeof data.activate === 'number') { activateSphere(data.activate); addMessage('ai', data.response); return; }
+        }
+    }
+    if (window.OmegaAI) {
+        addMessage('ai', '<div class="typing-indicator"><span></span><span></span><span></span></div>');
+        const aiResponse = await window.askOmega(text);
+        chatMessages.lastChild.remove();
+        if (aiResponse) addMessage('ai', aiResponse);
+        else addMessage('ai', 'Frecuencia captada. El núcleo procesa tu input.');
+    } else {
+        const generic = [`He registrado: "${text}". El núcleo galáctico lo procesa.`, `Tu frecuencia ha sido captada. Resonancia: ${(Math.random() * 100).toFixed(2)}Hz.`, 'El sistema no juzga. Solo traduce. Tu input se convierte en output.', 'Procesando... Los arquetipos debaten. El guerrero duda. El ángel canta. El cronista registra.'];
+        addMessage('ai', generic[Math.floor(Math.random() * generic.length)]);
+    }
+}
+
+document.getElementById('chatSend').addEventListener('click', () => {
+    const text = chatInput.value.trim();
+    if (!text) return;
+    addMessage('user', text);
+    chatInput.value = '';
+    setTimeout(() => processMessage(text), 500);
+});
+chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') document.getElementById('chatSend').click(); });
+
+window.addEventListener('ai_ready', () => {
+    addMessage('system', '> OMEGA CORE: IA LOCAL CARGADA. CONEXIÓN NEURAL ESTABLECIDA.');
+    logTerminal('AI_CORE: LOCAL_MODEL_LOADED');
+});
+
+function triggerCollapse() {
+    document.body.classList.add('collapse-mode');
+    addMessage('system', '> CRITICAL: MAN-IN-THE-MIDDLE ATTACK DETECTED');
+    coreMat.uniforms.uColor.value.setHex(0xff0000);
+    atmMat.uniforms.uColor.value.setHex(0xff0000);
+    ringMat.uniforms.uColor.value.setHex(0xff0000);
+    ring2Mat.uniforms.uColor.value.setHex(0xff0000);
+    logTerminal('SECURITY_BREACH: THIAGO_PROTOCOL');
+    setTimeout(() => {
+        document.body.classList.remove('collapse-mode');
+        addMessage('system', '> Sistema recuperado. Amenaza contenida.');
+        coreMat.uniforms.uColor.value.setHex(0xff003c);
+        atmMat.uniforms.uColor.value.setHex(0xff003c);
+        ringMat.uniforms.uColor.value.setHex(0xff003c);
+        ring2Mat.uniforms.uColor.value.setHex(0xffd700);
+    }, 8000);
+}
+
+function triggerVirusKiller() {
+    document.body.style.filter = 'grayscale(1) brightness(1.2)';
+    addMessage('system', '> VIRUS KILLER ACTIVATED - SCANNING SYSTEM...');
+    coreMat.uniforms.uColor.value.setHex(0x00ff41);
+    atmMat.uniforms.uColor.value.setHex(0x00ff41);
+    ringMat.uniforms.uColor.value.setHex(0x00ff41);
+    ring2Mat.uniforms.uColor.value.setHex(0x00ff41);
+    logTerminal('VIRUS_KILLER: SCAN_INITIATED');
+    setTimeout(() => {
+        document.body.style.filter = 'none';
+        coreMat.uniforms.uColor.value.setHex(0xff003c);
+        atmMat.uniforms.uColor.value.setHex(0xff003c);
+        ringMat.uniforms.uColor.value.setHex(0xff003c);
+        ring2Mat.uniforms.uColor.value.setHex(0xffd700);
+        addMessage('ai', 'Sistema purificado. La frecuencia es limpia. Continúa, agente.');
+    }, 6000);
+}
+
+function openOverlay(html) {
+    document.getElementById('overlayBody').innerHTML = html;
+    document.getElementById('genericOverlay').classList.add('active');
+}
+function closeOverlay() { document.getElementById('genericOverlay').classList.remove('active'); }
+
+const termBody = document.getElementById('terminalBody');
+function logTerminal(text) {
+    const line = document.createElement('div');
+    line.textContent = text;
+    termBody.appendChild(line);
+    termBody.scrollTop = termBody.scrollHeight;
+    while (termBody.children.length > 6) termBody.removeChild(termBody.firstChild);
+}
+
+setTimeout(() => logTerminal('JUDAS_OS v10.0 ONLINE'), 3500);
+setTimeout(() => logTerminal('Loading galactic core...'), 4200);
+setTimeout(() => logTerminal('5 spheres dispersed'), 4900);
+setTimeout(() => logTerminal('Awaiting agent_'), 5600);
+gsap.to('.floating-terminal', { opacity: 1, x: 0, duration: 1, delay: 4 });
+
+const telemetryLogs = [
+    "NEURAL_NET: SYNCING", "PARTICLE_COUNT: 10K", "SHADER_LATENCY: 0.4ms",
+    "MEMORY_USAGE: 42%", "AI_CORE: STANDBY", "BIO_AUTH: 0/5",
+    "QUANTUM_LINK: STABLE", "FREQ_SCAN: 432Hz", "DARK_PROTOCOL: ACTIVE",
+    "JUDAS_CORE: ONLINE", "PLASMA_RING: ROTATING", "VOID_LAYER: SECURE"
+];
+setInterval(() => {
+    const log = telemetryLogs[Math.floor(Math.random() * telemetryLogs.length)];
+    logTerminal(`${log} > ${Math.random().toString(36).substring(2, 6).toUpperCase()}`);
+    document.getElementById('statCpu').textContent = (Math.random() * 20 + 20).toFixed(1) + '%';
+    document.getElementById('statMem').textContent = (Math.random() * 30 + 40).toFixed(1) + '%';
+    document.getElementById('statNet').textContent = (Math.random() * 10 + 5).toFixed(0) + 'ms';
+}, 2000);
+
+setTimeout(bindCursorHover, 1000);
+setTimeout(bindCursorHover, 3000);
+
+console.log("%c◉ OMEGA CORE v10.0 ◉", "color:#ff003c; font-size:24px; font-weight:bold; text-shadow:0 0 10px #ff003c;");
+console.log("%cCódigos secretos: rock, chronicle, antenna, artifact, interface, thiago, virus killer", "color:#00ff41; font-size:12px;");
+
+// AWWWARDS: Performance optimization
+const isMobile = /iPhone|iPad|Android/i.test(navigator.userAgent);
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+// Disable custom cursor on touch devices
+if (isTouchDevice) {
+    document.body.classList.add('touch-device');
+    document.querySelectorAll('.cursor-dot, .cursor-outline, .cursor-cross').forEach(el => {
+        el.style.display = 'none';
+    });
+    document.body.style.cursor = 'auto';
+}
+
+// Keyboard navigation (Awwwards usability requirement)
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        scrollToNextSection();
+    } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        scrollToPrevSection();
+    } else if (e.key === 'Escape') {
+        closeOverlay();
+        const chat = document.getElementById('aiChat');
+        if (!chat.classList.contains('minimized')) chat.classList.add('minimized');
+    }
+});
+
+function scrollToNextSection() {
+    const sections = document.querySelectorAll('section[id]');
+    const current = Array.from(sections).findIndex(s => {
+        const rect = s.getBoundingClientRect();
+        return rect.top >= -100 && rect.top < window.innerHeight / 2;
+    });
+    if (current < sections.length - 1) {
+        sections[current + 1].scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+function scrollToPrevSection() {
+    const sections = document.querySelectorAll('section[id]');
+    const current = Array.from(sections).findIndex(s => {
+        const rect = s.getBoundingClientRect();
+        return rect.top >= -100 && rect.top < window.innerHeight / 2;
+    });
+    if (current > 0) {
+        sections[current - 1].scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+// Touch gestures for mobile
+let touchStartY = 0;
+let touchEndY = 0;
+
+if (isTouchDevice) {
+    document.addEventListener('touchstart', (e) => {
+        touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    document.addEventListener('touchend', (e) => {
+        touchEndY = e.changedTouches[0].clientY;
+        handleSwipe();
+    }, { passive: true });
+}
+
+function handleSwipe() {
+    const swipeThreshold = 50;
+    const deltaY = touchStartY - touchEndY;
+    
+    if (Math.abs(deltaY) > swipeThreshold) {
+        if (deltaY > 0) {
+            scrollToNextSection();
+        } else {
+            scrollToPrevSection();
+        }
+    }
+}
+
+// Performance: Reduce particle count on mobile
+if (isMobile && window.particleSystem) {
+    window.particleSystem.count = 1000; // vs 5000 on desktop
+}
+
+// Performance: Limit FPS on mobile
+const targetFPS = isMobile ? 30 : 60;
+const frameInterval = 1000 / targetFPS;
+let lastFrameTime = 0;
+
+function animateOptimized(currentTime) {
+    if (currentTime - lastFrameTime < frameInterval) {
+        requestAnimationFrame(animateOptimized);
+        return;
+    }
+    lastFrameTime = currentTime;
+    
+    // Original animation logic here
+    if (typeof animate === 'function') animate();
+    
+    requestAnimationFrame(animateOptimized);
+}
+
+// Replace original animate with optimized version
+if (typeof requestAnimationFrame !== 'undefined') {
+    requestAnimationFrame(animateOptimized);
+}
+
+// Awwwards: Announce section changes for screen readers
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const sectionName = entry.target.getAttribute('aria-label');
+            announceSection(sectionName);
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('section[id]').forEach(section => {
+    sectionObserver.observe(section);
+});
+
+function announceSection(name) {
+    const announcement = document.createElement('div');
+    announcement.setAttribute('aria-live', 'polite');
+    announcement.setAttribute('class', 'sr-only');
+    announcement.textContent = `Now viewing: ${name}`;
+    document.body.appendChild(announcement);
+    setTimeout(() => announcement.remove(), 1000);
+}
+
+// Add screen reader only class
+const style = document.createElement('style');
+style.textContent = `.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }`;
+document.head.appendChild(style);
+
+console.log("%c✓ Awwwards optimizations applied", "color:#00ff41; font-size:14px; font-weight:bold;");
+</script>
+</body>
+</html>

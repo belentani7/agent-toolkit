@@ -1,0 +1,15 @@
+{
+  "orchestrator": "running",
+  "last_run": "2026-09-12T11:27:47.574547",
+  "config_path": "config/orchestrator.yaml",
+  "components": {
+    "priority_engine": "active",
+    "router": "active",
+    "cli_launcher": "active",
+    "executor": "active",
+    "agentguard": "active",
+    "secure_t": "active",
+    "validator": "active",
+    "monitor": "active"
+  }
+}

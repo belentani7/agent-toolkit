@@ -1,0 +1,1421 @@
+{
+  "generado": "2026-09-25T19:34:21",
+  "total": 226,
+  "seguros_borrar": 90,
+  "no_seguros": [
+    {
+      "name": "workspace (20)",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace (20)",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "astro",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\03-FRONTEND-FRAMEWORKS\\astro",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "continue",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\05-AI-TOOLS-LOCAL\\continue",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "langchain",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\02-API-SDKS\\langchain",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "langgraph",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\02-API-SDKS\\langgraph",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "nextjs",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\03-FRONTEND-FRAMEWORKS\\nextjs",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "playwright",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\05-AI-TOOLS-LOCAL\\playwright",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "prisma",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\04-BACKEND-SERVICES\\prisma",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "react",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\03-FRONTEND-FRAMEWORKS\\react",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "supabase",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\04-BACKEND-SERVICES\\supabase",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "workspace (27)",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace (27)",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "belentani-agent-os",
+      "path": "C:\\Users\\USER\\USO\\belentani-agent-os",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "Desktop",
+      "path": "C:\\Users\\USER\\Desktop",
+      "motivos": [
+        "cambios sin commitear (74)",
+        "commits sin subir (1)"
+      ]
+    },
+    {
+      "name": "noiacore-fullstack",
+      "path": "C:\\Users\\USER\\USO\\imports\\noiacore-fullstack",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "workspace (22)",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace (22)",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "workspace (25)",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace (25)",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "workspace (26)",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace (26)",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "workspace (6)",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace (6)",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "_OMEGA-ARCHIVE-2026-09-22",
+      "path": "C:\\Users\\USER\\Documents\\_OMEGA-ARCHIVE-2026-09-22",
+      "motivos": [
+        "cambios sin commitear (1)"
+      ]
+    },
+    {
+      "name": "Documents",
+      "path": "C:\\Users\\USER\\Documents",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "workspace-",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace-",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "workspace-0962ce28-7faa-4ffb-ab27-8432cd63eb2d",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace-0962ce28-7faa-4ffb-ab27-8432cd63eb2d",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "workspace-525e2452-1076-4f43-b09e-f7058f021b93",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace-525e2452-1076-4f43-b09e-f7058f021b93",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "workspace-81d88db0-14ed-4c5b-ad25-cb30fc6a9052",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace-81d88db0-14ed-4c5b-ad25-cb30fc6a9052",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "workspace-dc798de9-5f67-4fe0-b6d8-c5b6b50532fa",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace-dc798de9-5f67-4fe0-b6d8-c5b6b50532fa",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "workspace (19)",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace (19)",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "workspace (23)",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace (23)",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "workspace (3)",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace (3)",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "workspace (4)",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace (4)",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "workspace (8)",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace (8)",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "workspace (9)",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace (9)",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "conway-research-automation",
+      "path": "C:\\Users\\USER\\Documents\\Proyectos\\PROJECTOS\\conway-research-automation",
+      "motivos": [
+        "cambios sin commitear (1)"
+      ]
+    },
+    {
+      "name": "secure-t-audit-ready-kit",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\secure-t-audit-ready-kit",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "belentani-agency-omega",
+      "path": "C:\\Users\\USER\\USO\\imports\\belentani-agency-omega",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "github-profile-audit-machine",
+      "path": "C:\\Users\\USER\\USO\\imports\\github-profile-audit-machine",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "workspace (16)",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace (16)",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "workspace-ace0463d-d179-43a4-b2a1-defd59bb73c8",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace-ace0463d-d179-43a4-b2a1-defd59bb73c8",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "letra-office",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\06-PROJECTS-BELENTANI\\belentani-repos-master\\letra-office",
+      "motivos": [
+        "cambios sin commitear (96)"
+      ]
+    },
+    {
+      "name": "belentani-v2",
+      "path": "C:\\Users\\USER\\buquet\\2026-09-24\\2026-09-15\\belentani-v2",
+      "motivos": [
+        "remoto no responde (ls-remote)"
+      ]
+    },
+    {
+      "name": "saas-starter",
+      "path": "C:\\Users\\USER\\buquet\\2026-09-24\\2026-09-15\\saas-starter",
+      "motivos": [
+        "remoto no responde (ls-remote)"
+      ]
+    },
+    {
+      "name": "client",
+      "path": "C:\\Users\\USER\\buquet\\2026-09-24\\2026-09-15\\Documents__belentani7-profile\\client",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "client",
+      "path": "C:\\Users\\USER\\buquet\\2026-09-24\\2026-09-15\\Documents__lingua-aberta\\client",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "workspace (24)",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace (24)",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "workspace (7)",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace (7)",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "audacity",
+      "path": "C:\\Users\\USER\\Documents\\Proyectos\\PROJECTOS\\music-cli-lab\\audacity",
+      "motivos": [
+        "cambios sin commitear (838)"
+      ]
+    },
+    {
+      "name": "Belentani-Agency-AI-Omega",
+      "path": "C:\\Users\\USER\\Documents\\01_PROYECTOS_ACTIVOS\\Belentani-Agency-AI-Omega",
+      "motivos": [
+        "cambios sin commitear (1)"
+      ]
+    },
+    {
+      "name": "text-generation-webui",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\05-AI-TOOLS-LOCAL\\text-generation-webui",
+      "motivos": [
+        "cambios sin commitear (6)"
+      ]
+    },
+    {
+      "name": "20-demos",
+      "path": "C:\\Users\\USER\\Documents\\Proyectos\\respaldo_belentani\\20-demos",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "belentani-v2",
+      "path": "C:\\Users\\USER\\Documents\\belentani-workspace\\projects\\belentani-repos-master\\belentani-v2",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)",
+        "remoto no responde (ls-remote)"
+      ]
+    },
+    {
+      "name": "Downloads__bportal",
+      "path": "C:\\Users\\USER\\buquet\\2026-09-24\\2026-09-15\\Downloads__bportal",
+      "motivos": [
+        "remoto no responde (ls-remote)"
+      ]
+    },
+    {
+      "name": "manos-abiertas-docs",
+      "path": "C:\\Users\\USER\\Documents\\belentani-workspace\\projects\\belentani-repos-master\\manos-abiertas-docs",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "docs",
+      "path": "C:\\Users\\USER\\buquet\\2026-09-24\\2026-09-15\\Documents__belentani7-profile\\docs",
+      "motivos": [
+        "sin remoto"
+      ]
+    },
+    {
+      "name": "superpowers",
+      "path": "C:\\Users\\USER\\Documents\\belentani-workspace\\projects\\agent-refs\\superpowers",
+      "motivos": [
+        "cambios sin commitear (4)"
+      ]
+    },
+    {
+      "name": "belentani7",
+      "path": "C:\\Users\\USER\\buquet\\2026-09-24\\2026-09-15\\belentani7",
+      "motivos": [
+        "cambios sin commitear (1)"
+      ]
+    },
+    {
+      "name": "openvj",
+      "path": "C:\\Users\\USER\\Belentani\\AI\\openvj",
+      "motivos": [
+        "cambios sin commitear (1)"
+      ]
+    },
+    {
+      "name": "audiocraft",
+      "path": "C:\\Users\\USER\\Documents\\Proyectos\\PROJECTOS\\music-cli-lab\\audiocraft",
+      "motivos": [
+        "cambios sin commitear (12)"
+      ]
+    },
+    {
+      "name": "escaneo-seguridad",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\escaneo-seguridad",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "judas-experience-web",
+      "path": "C:\\Users\\USER\\Desktop\\judas-experience-web",
+      "motivos": [
+        "cambios sin commitear (7)"
+      ]
+    },
+    {
+      "name": "misaas",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\misaas",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "rh-fiscal-ultra-elite",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\rh-fiscal-ultra-elite",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "securetea-auditoria",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\securetea-auditoria",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "belentani-unified-master__repos__belentani-infrastructure-core",
+      "path": "C:\\Users\\USER\\buquet\\2026-09-24\\2026-09-15\\belentani-unified-master__repos__belentani-infrastructure-core",
+      "motivos": [
+        "remoto no responde (ls-remote)"
+      ]
+    },
+    {
+      "name": "Belentani.cv-ai",
+      "path": "C:\\Users\\USER\\_ORDENAR\\fixes\\Belentani.cv-ai",
+      "motivos": [
+        "cambios sin commitear (2)",
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "Compañero de Windows Similar a Widget Flotante en Android",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\Compañero de Windows Similar a Widget Flotante en Android",
+      "motivos": [
+        "cambios sin commitear (2)"
+      ]
+    },
+    {
+      "name": "desktop",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\05-AI-TOOLS-LOCAL\\text-generation-webui\\desktop",
+      "motivos": [
+        "cambios sin commitear (1)"
+      ]
+    },
+    {
+      "name": "eau-noire",
+      "path": "C:\\Users\\USER\\USO\\imports\\eau-noire",
+      "motivos": [
+        "cambios sin commitear (2)"
+      ]
+    },
+    {
+      "name": "freellmapi",
+      "path": "C:\\Users\\USER\\Documents\\Proyectos\\PROJECTOS\\freellmapi",
+      "motivos": [
+        "cambios sin commitear (541)"
+      ]
+    },
+    {
+      "name": "modern-creative-web",
+      "path": "C:\\Users\\USER\\USO\\imports\\modern-creative-web",
+      "motivos": [
+        "cambios sin commitear (2)"
+      ]
+    },
+    {
+      "name": "modern-creative-web-development",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\modern-creative-web-development",
+      "motivos": [
+        "cambios sin commitear (2)"
+      ]
+    },
+    {
+      "name": "Plan de Adquisición de Información y Ejecución Automatizada",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\Plan de Adquisición de Información y Ejecución Automatizada",
+      "motivos": [
+        "cambios sin commitear (1)"
+      ]
+    },
+    {
+      "name": "Review uploaded workspace archive",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\Review uploaded workspace archive",
+      "motivos": [
+        "cambios sin commitear (2)"
+      ]
+    },
+    {
+      "name": "Revisión de Herramientas Python en GitHub y Locales",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\Revisión de Herramientas Python en GitHub y Locales",
+      "motivos": [
+        "cambios sin commitear (1)"
+      ]
+    },
+    {
+      "name": "superpowers-plan",
+      "path": "C:\\Users\\USER\\USO\\imports\\superpowers-plan",
+      "motivos": [
+        "cambios sin commitear (1)"
+      ]
+    },
+    {
+      "name": "system-one-local-portable",
+      "path": "C:\\Users\\USER\\USO\\imports\\system-one-local-portable",
+      "motivos": [
+        "cambios sin commitear (2)"
+      ]
+    },
+    {
+      "name": "uaol-machine-realm",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\uaol-machine-realm",
+      "motivos": [
+        "cambios sin commitear (3)",
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "workspace",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace",
+      "motivos": [
+        "cambios sin commitear (2)"
+      ]
+    },
+    {
+      "name": "workspace (1)",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace (1)",
+      "motivos": [
+        "cambios sin commitear (2)"
+      ]
+    },
+    {
+      "name": "workspace (10)",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace (10)",
+      "motivos": [
+        "cambios sin commitear (2)"
+      ]
+    },
+    {
+      "name": "workspace (11)",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace (11)",
+      "motivos": [
+        "cambios sin commitear (2)"
+      ]
+    },
+    {
+      "name": "workspace (12)",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace (12)",
+      "motivos": [
+        "cambios sin commitear (2)"
+      ]
+    },
+    {
+      "name": "workspace (13)",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace (13)",
+      "motivos": [
+        "cambios sin commitear (2)"
+      ]
+    },
+    {
+      "name": "workspace (14)",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace (14)",
+      "motivos": [
+        "cambios sin commitear (2)"
+      ]
+    },
+    {
+      "name": "workspace (15)",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace (15)",
+      "motivos": [
+        "cambios sin commitear (2)"
+      ]
+    },
+    {
+      "name": "workspace (17)",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace (17)",
+      "motivos": [
+        "cambios sin commitear (2)"
+      ]
+    },
+    {
+      "name": "workspace (18)",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace (18)",
+      "motivos": [
+        "cambios sin commitear (2)"
+      ]
+    },
+    {
+      "name": "workspace (2)",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace (2)",
+      "motivos": [
+        "cambios sin commitear (2)"
+      ]
+    },
+    {
+      "name": "workspace (21)",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace (21)",
+      "motivos": [
+        "cambios sin commitear (2)"
+      ]
+    },
+    {
+      "name": "belentani-unified",
+      "path": "C:\\Users\\USER\\Desktop\\belentani-unified",
+      "motivos": [
+        "cambios sin commitear (3)",
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "ffmpeg-normalize",
+      "path": "C:\\Users\\USER\\Documents\\Proyectos\\PROJECTOS\\music-cli-lab\\ffmpeg-normalize",
+      "motivos": [
+        "cambios sin commitear (9)"
+      ]
+    },
+    {
+      "name": "llama-cpp-python",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\05-AI-TOOLS-LOCAL\\llama-cpp-python",
+      "motivos": [
+        "cambios sin commitear (1)"
+      ]
+    },
+    {
+      "name": "MoneyPrinterTurbo",
+      "path": "C:\\Users\\USER\\MoneyPrinterTurbo",
+      "motivos": [
+        "cambios sin commitear (50)"
+      ]
+    },
+    {
+      "name": "pedalboard",
+      "path": "C:\\Users\\USER\\Documents\\Proyectos\\PROJECTOS\\music-cli-lab\\pedalboard",
+      "motivos": [
+        "cambios sin commitear (60)"
+      ]
+    },
+    {
+      "name": "matchering",
+      "path": "C:\\Users\\USER\\Documents\\Proyectos\\PROJECTOS\\music-cli-lab\\matchering",
+      "motivos": [
+        "commits sin subir (1)"
+      ]
+    },
+    {
+      "name": "belentani-unified-master_repos_belentani-unified",
+      "path": "C:\\Users\\USER\\buquet\\2026-09-24\\2026-09-15-obsoletos\\belentani-unified-master_repos_belentani-unified",
+      "motivos": [
+        "cambios sin commitear (27)",
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "ECC",
+      "path": "C:\\Users\\USER\\Documents\\belentani-workspace\\projects\\agent-refs\\ECC",
+      "motivos": [
+        "cambios sin commitear (64)"
+      ]
+    },
+    {
+      "name": "paperclip",
+      "path": "C:\\Users\\USER\\Documents\\01_PROYECTOS\\_HERRAMIENTAS\\paperclip",
+      "motivos": [
+        "cambios sin commitear (6262)"
+      ]
+    },
+    {
+      "name": "secure-t",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\secure-t",
+      "motivos": [
+        "cambios sin commitear (24)"
+      ]
+    },
+    {
+      "name": "system-one-local",
+      "path": "C:\\Users\\USER\\USO\\imports\\system-one-local",
+      "motivos": [
+        "cambios sin commitear (2)"
+      ]
+    },
+    {
+      "name": "system-one-local-belentani",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\system-one-local-belentani",
+      "motivos": [
+        "cambios sin commitear (2)"
+      ]
+    },
+    {
+      "name": "system-one-local-python-openclaw",
+      "path": "C:\\Users\\USER\\buquet\\2026-09-24\\system-one-local-python-openclaw",
+      "motivos": [
+        "cambios sin commitear (1)"
+      ]
+    },
+    {
+      "name": "trigger-dev",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\04-BACKEND-SERVICES\\trigger-dev",
+      "motivos": [
+        "cambios sin commitear (1)"
+      ]
+    },
+    {
+      "name": "agentguard",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\agentguard",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "belent-cad",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\belent-cad",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "belentani-judas-evolved",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\belentani-judas-evolved",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "belentani-school-unificado",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\belentani-school-unificado",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "belentani7",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\belentani7",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "Cruzando-el-charco",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\Cruzando-el-charco",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "cruzando-el-charco-v2",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\cruzando-el-charco-v2",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "linguaforge-v2",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\linguaforge-v2",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "ManosAbiertas",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\ManosAbiertas",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "natalia-marinho-business",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\natalia-marinho-business",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "noiacore-lab-audited",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\noiacore-lab-audited",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "noiacore-turbo-v2",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\noiacore-turbo-v2",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "open-school",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\open-school",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "presupuestador-fotografos-001",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\presupuestador-fotografos-001",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "rh-fiscal-ultra-web",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\rh-fiscal-ultra-web",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "saas-plasma",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\saas-plasma",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "saas-plasma-extracted",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\saas-plasma-extracted",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "saas-plasma_2",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\saas-plasma_2",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "silero_tts",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\05-AI-TOOLS-LOCAL\\text-generation-webui\\extensions\\silero_tts",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)",
+        "remoto no responde (ls-remote)"
+      ]
+    },
+    {
+      "name": "ux-academy-professional-program",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\ux-academy-professional-program",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "william-recursos-educativos",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\william-recursos-educativos",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "william.game",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\william.game",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "WILLIAMSCHOOL",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\WILLIAMSCHOOL",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "engine",
+      "path": "C:\\Users\\USER\\buquet\\2026-09-24\\2026-09-15\\Documents__belentani7-profile\\engine",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)",
+        "remoto no responde (ls-remote)"
+      ]
+    },
+    {
+      "name": "Belentani.cv-ai",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\Belentani.cv-ai",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "cinematic-prompt-formatter",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\cinematic-prompt-formatter",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "desktop",
+      "path": "C:\\Users\\USER\\buquet\\2026-09-24\\2026-09-15\\Documents__belentani7-profile\\desktop",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "Documents__belentani7-profile",
+      "path": "C:\\Users\\USER\\buquet\\2026-09-24\\2026-09-15\\Documents__belentani7-profile",
+      "motivos": [
+        "contiene 4 repo(s) no verificados"
+      ]
+    },
+    {
+      "name": "Documents__lingua-aberta",
+      "path": "C:\\Users\\USER\\buquet\\2026-09-24\\2026-09-15\\Documents__lingua-aberta",
+      "motivos": [
+        "contiene 1 repo(s) no verificados"
+      ]
+    },
+    {
+      "name": "harmonia-hub",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\harmonia-hub",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "pvc-u-core",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\pvc-u-core",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "qr-pro-enterprise",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\qr-pro-enterprise",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "securetea",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\securetea",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "skills-registry",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\skills-registry",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    },
+    {
+      "name": "system-one-unified",
+      "path": "C:\\Users\\USER\\USO\\auditorias\\system-one-unified",
+      "motivos": [
+        "sin upstream (no se puede comprobar push)"
+      ]
+    }
+  ],
+  "aplicado": true,
+  "espejo": "C:\\Users\\USER\\repos\\git",
+  "seguros": [
+    {
+      "name": "_OMEGA-SHOWCASE",
+      "path": "C:\\Users\\USER\\Documents\\_OMEGA-SHOWCASE",
+      "remote": "https://github.com/belentani7/belentani-omega-showcase.git"
+    },
+    {
+      "name": "belentani-cv-work",
+      "path": "C:\\Users\\USER\\MANOS-ABIERTAS-UNIFICADO\\_repos-github\\belentani-cv-work",
+      "remote": "https://github.com/belentani7/belentani-cv-work.git"
+    },
+    {
+      "name": "manos-abiertas-docs",
+      "path": "C:\\Users\\USER\\MANOS-ABIERTAS-UNIFICADO\\_repos-github\\manos-abiertas-docs",
+      "remote": "https://github.com/belentani7/manos-abiertas-docs.git"
+    },
+    {
+      "name": "manos_abiertas_course_modules",
+      "path": "C:\\Users\\USER\\MANOS-ABIERTAS-UNIFICADO\\_repos-github\\manos_abiertas_course_modules",
+      "remote": "https://github.com/belentani7/manos_abiertas_course_modules.git"
+    },
+    {
+      "name": "belentani-unify",
+      "path": "C:\\Users\\USER\\Documents\\Proyectos\\belentani-unify",
+      "remote": "https://github.com/belentani7/belentani-unify.git"
+    },
+    {
+      "name": "aetumi-3d-web-examples",
+      "path": "C:\\Users\\USER\\Belentani\\AI\\aetumi-3d-web-examples",
+      "remote": "https://github.com/AETumiApp/aetumi-3d-web-examples.git"
+    },
+    {
+      "name": "cv-ai-launch",
+      "path": "C:\\Users\\USER\\MANOS-ABIERTAS-UNIFICADO\\_repos-github\\cv-ai-launch",
+      "remote": "https://github.com/belentani7/cv-ai-launch.git"
+    },
+    {
+      "name": "motion-anything",
+      "path": "C:\\Users\\USER\\Belentani\\AI\\motion-anything",
+      "remote": "https://github.com/nexu-io/motion-anything.git"
+    },
+    {
+      "name": "anthropics-skills",
+      "path": "C:\\Users\\USER\\Documents\\belentani-workspace\\projects\\agent-refs\\anthropics-skills",
+      "remote": "https://github.com/anthropics/skills.git"
+    },
+    {
+      "name": "awesome-harness-engineering",
+      "path": "C:\\Users\\USER\\USO\\belentani-agent-os\\knowledge\\awesome-harness-engineering",
+      "remote": "https://github.com/ai-boost/awesome-harness-engineering.git"
+    },
+    {
+      "name": "clon-manosabiertas",
+      "path": "C:\\Users\\USER\\MANOS-ABIERTAS-UNIFICADO\\_repos-github\\clon-manosabiertas",
+      "remote": "https://github.com/belentani7/clon-manosabiertas.git"
+    },
+    {
+      "name": "Documents__secure-t-platform",
+      "path": "C:\\Users\\USER\\buquet\\2026-09-24\\2026-09-15\\Documents__secure-t-platform",
+      "remote": "https://github.com/belentani7/secure-t-platform.git"
+    },
+    {
+      "name": "manosabiertas-optimizacion-2",
+      "path": "C:\\Users\\USER\\MANOS-ABIERTAS-UNIFICADO\\_repos-github\\manosabiertas-optimizacion-2",
+      "remote": "https://github.com/belentani7/manosabiertas-optimizacion-2.git"
+    },
+    {
+      "name": "ps-lm-local-powershell",
+      "path": "C:\\Users\\USER\\Documents\\Proyectos\\respaldo_belentani\\ps-lm-local-powershell",
+      "remote": "https://github.com/belentani7/ps-lm-local-powershell.git"
+    },
+    {
+      "name": "3DCellForge",
+      "path": "C:\\Users\\USER\\Belentani\\AI\\3DCellForge",
+      "remote": "https://github.com/huangserva/3DCellForge.git"
+    },
+    {
+      "name": "_agent-skills-clone",
+      "path": "C:\\Users\\USER\\USO\\_agent-skills-clone",
+      "remote": "https://github.com/belentani7/agent-skills.git"
+    },
+    {
+      "name": "manos-abiertas-release-netlify-20260812",
+      "path": "C:\\Users\\USER\\MANOS-ABIERTAS-UNIFICADO\\_repos-github\\manos-abiertas-release-netlify-20260812",
+      "remote": "https://github.com/belentani7/manos-abiertas-release-netlify-20260812.git"
+    },
+    {
+      "name": "manosabiertas-38d5f",
+      "path": "C:\\Users\\USER\\MANOS-ABIERTAS-UNIFICADO\\_repos-github\\manosabiertas-38d5f",
+      "remote": "https://github.com/belentani7/manosabiertas-38d5f.git"
+    },
+    {
+      "name": "manosabiertas-vercel-20260813",
+      "path": "C:\\Users\\USER\\MANOS-ABIERTAS-UNIFICADO\\_repos-github\\manosabiertas-vercel-20260813",
+      "remote": "https://github.com/belentani7/manosabiertas-vercel-20260813.git"
+    },
+    {
+      "name": "belentani-unified-master__repos__belentani-monorepo",
+      "path": "C:\\Users\\USER\\buquet\\2026-09-24\\2026-09-15\\belentani-unified-master__repos__belentani-monorepo",
+      "remote": "https://github.com/belentani7/belentani-monorepo"
+    },
+    {
+      "name": "clerk-node",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\04-BACKEND-SERVICES\\clerk-node",
+      "remote": "https://github.com/clerk/clerk-sdk-node.git"
+    },
+    {
+      "name": "Documents__01_PROYECTOS__agentguard",
+      "path": "C:\\Users\\USER\\buquet\\2026-09-24\\2026-09-15\\Documents__01_PROYECTOS__agentguard",
+      "remote": "https://github.com/belentani7/agentguard.git"
+    },
+    {
+      "name": "belentani-es-neon",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\06-PROJECTS-BELENTANI\\belentani-es-neon",
+      "remote": "https://github.com/belentani7/belentani-es-neon.git"
+    },
+    {
+      "name": "Documents__01_PROYECTOS__BELENTANI_OMEGA_CORE",
+      "path": "C:\\Users\\USER\\buquet\\2026-09-24\\2026-09-15\\Documents__01_PROYECTOS__BELENTANI_OMEGA_CORE",
+      "remote": "https://github.com/belentani7/belentani-omega-core.git"
+    },
+    {
+      "name": "Documents__01_PROYECTOS__manos-abiertas",
+      "path": "C:\\Users\\USER\\buquet\\2026-09-24\\2026-09-15\\Documents__01_PROYECTOS__manos-abiertas",
+      "remote": "https://github.com/belentani7/manos-abiertas-2026.git"
+    },
+    {
+      "name": "Documents__01_PROYECTOS__william-game",
+      "path": "C:\\Users\\USER\\buquet\\2026-09-24\\2026-09-15\\Documents__01_PROYECTOS__william-game",
+      "remote": "https://github.com/belentani7/william-game-cuarentena.git"
+    },
+    {
+      "name": "Documents__belentani-unified",
+      "path": "C:\\Users\\USER\\buquet\\2026-09-24\\2026-09-15\\Documents__belentani-unified",
+      "remote": "https://github.com/belentani7/belentani-unified-map.git"
+    },
+    {
+      "name": "manos-abiertas-2026",
+      "path": "C:\\Users\\USER\\MANOS-ABIERTAS-UNIFICADO\\_repos-github\\manos-abiertas-2026",
+      "remote": "https://github.com/belentani7/manos-abiertas-2026.git"
+    },
+    {
+      "name": "aider",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\01-CORE-AI-CLI\\aider",
+      "remote": "https://github.com/Aider-AI/aider.git"
+    },
+    {
+      "name": "aider",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\05-AI-TOOLS-LOCAL\\aider",
+      "remote": "https://github.com/Aider-AI/aider.git"
+    },
+    {
+      "name": "belentani-visual-engine",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\06-PROJECTS-BELENTANI\\belentani-visual-engine",
+      "remote": "https://github.com/belentani7/belentani-visual-engine.git"
+    },
+    {
+      "name": "deepseek-harness",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\01-CORE-AI-CLI\\deepseek-harness",
+      "remote": "https://github.com/deepseek-ai/deepseek-harness.git"
+    },
+    {
+      "name": "dir_deepseek-harness",
+      "path": "C:\\Users\\USER\\Documents\\RESCATE-SYSTEM32-2026-09-23\\dir_deepseek-harness",
+      "remote": "https://github.com/deepseek-ai/deepseek-harness"
+    },
+    {
+      "name": "eso-ai",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\eso-ai",
+      "remote": "https://github.com/belentani7/eso-ai.git"
+    },
+    {
+      "name": "google-generative-ai",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\02-API-SDKS\\google-generative-ai",
+      "remote": "https://github.com/google/generative-ai-python.git"
+    },
+    {
+      "name": "lms",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\05-AI-TOOLS-LOCAL\\lms",
+      "remote": "https://github.com/lmstudio-ai/lms.git"
+    },
+    {
+      "name": "lumen-local-studio",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\lumen-local-studio",
+      "remote": "https://github.com/belentani7/lumen-local-studio.git"
+    },
+    {
+      "name": "manosabiertas-repo",
+      "path": "C:\\Users\\USER\\MANOS-ABIERTAS-UNIFICADO\\_repos-github\\manosabiertas-repo",
+      "remote": "https://github.com/belentani7/manosabiertas-repo.git"
+    },
+    {
+      "name": "Myopenhands",
+      "path": "C:\\Users\\USER\\MANOS-ABIERTAS-UNIFICADO\\_repos-github\\Myopenhands",
+      "remote": "https://github.com/belentani7/Myopenhands.git"
+    },
+    {
+      "name": "radix-ui",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\03-FRONTEND-FRAMEWORKS\\radix-ui",
+      "remote": "https://github.com/radix-ui/primitives.git"
+    },
+    {
+      "name": "stable-diffusion-webui",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\05-AI-TOOLS-LOCAL\\stable-diffusion-webui",
+      "remote": "https://github.com/AUTOMATIC1111/stable-diffusion-webui.git"
+    },
+    {
+      "name": "svelte",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\03-FRONTEND-FRAMEWORKS\\svelte",
+      "remote": "https://github.com/sveltejs/svelte.git"
+    },
+    {
+      "name": "tailwindcss",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\03-FRONTEND-FRAMEWORKS\\tailwindcss",
+      "remote": "https://github.com/tailwindlabs/tailwindcss.git"
+    },
+    {
+      "name": "aPlan de Adquisición de Información y Ejecución Automatizada",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\aPlan de Adquisición de Información y Ejecución Automatizada",
+      "remote": "https://github.com/belentani7/aPlan-de-Adquisici-n-de-Informaci-n-y-Ejecuci-n-Automatizada.git"
+    },
+    {
+      "name": "aReview uploaded workspace archive",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\aReview uploaded workspace archive",
+      "remote": "https://github.com/belentani7/aReview-uploaded-workspace-archive.git"
+    },
+    {
+      "name": "belentani-visual-engine-judas",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\06-PROJECTS-BELENTANI\\belentani-visual-engine-judas",
+      "remote": "https://github.com/belentani7/belentani-visual-engine-judas.git"
+    },
+    {
+      "name": "Construye Belentani_ Coder Local Independiente de API y IA",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\Construye Belentani_ Coder Local Independiente de API y IA",
+      "remote": "https://github.com/belentani7/Construye-Belentani_-Coder-Local-Independiente-de-API-y-IA.git"
+    },
+    {
+      "name": "coqui_tts",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\05-AI-TOOLS-LOCAL\\text-generation-webui\\extensions\\coqui_tts",
+      "remote": "https://github.com/belentani7/coqui_tts.git"
+    },
+    {
+      "name": "Crear un Prompt para Rellenar Vacíos en el Plan",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\Crear un Prompt para Rellenar Vacíos en el Plan",
+      "remote": "https://github.com/belentani7/Crear-un-Prompt-para-Rellenar-Vac-os-en-el-Plan.git"
+    },
+    {
+      "name": "customer-agent",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\omega-max-universal\\src\\agents\\customer-agent\\customer-agent",
+      "remote": "https://github.com/belentani7/customer-agent.git"
+    },
+    {
+      "name": "Cybersecurity Course Document Overview",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\Cybersecurity Course Document Overview",
+      "remote": "https://github.com/belentani7/Cybersecurity-Course-Document-Overview.git"
+    },
+    {
+      "name": "Documents_MIGRADOS-USER_belentani-monorepo",
+      "path": "C:\\Users\\USER\\buquet\\2026-09-24\\2026-09-15-obsoletos\\Documents_MIGRADOS-USER_belentani-monorepo",
+      "remote": "https://github.com/belentani7/belentani-monorepo.git"
+    },
+    {
+      "name": "Documents_MIGRADOS-USER_linguaforge",
+      "path": "C:\\Users\\USER\\buquet\\2026-09-24\\2026-09-15-obsoletos\\Documents_MIGRADOS-USER_linguaforge",
+      "remote": "https://github.com/belentani7/linguaforge.git"
+    },
+    {
+      "name": "duck-studio-platform",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\duck-studio-platform",
+      "remote": "https://github.com/belentani7/duck-studio-platform.git"
+    },
+    {
+      "name": "google_translate",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\05-AI-TOOLS-LOCAL\\text-generation-webui\\extensions\\google_translate",
+      "remote": "https://github.com/belentani7/google_translate.git"
+    },
+    {
+      "name": "judas-evolved",
+      "path": "C:\\Users\\USER\\USO\\imports\\judas-evolved",
+      "remote": "https://github.com/belentani7/judas-evolved.git"
+    },
+    {
+      "name": "ManosAbiertas",
+      "path": "C:\\Users\\USER\\MANOS-ABIERTAS-UNIFICADO\\_repos-github\\ManosAbiertas",
+      "remote": "https://github.com/belentani7/ManosAbiertas.git"
+    },
+    {
+      "name": "ManosAbiertas-backup-v1",
+      "path": "C:\\Users\\USER\\MANOS-ABIERTAS-UNIFICADO\\_repos-github\\ManosAbiertas-backup-v1",
+      "remote": "https://github.com/belentani7/ManosAbiertas-backup-v1.git"
+    },
+    {
+      "name": "maod-abertas",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\maod-abertas",
+      "remote": "https://github.com/belentani7/maod-abertas.git"
+    },
+    {
+      "name": "maos-abertas-linguaforge",
+      "path": "C:\\Users\\USER\\MANOS-ABIERTAS-UNIFICADO\\_repos-github\\maos-abertas-linguaforge",
+      "remote": "https://github.com/belentani7/maos-abertas-linguaforge.git"
+    },
+    {
+      "name": "ngrok",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\05-AI-TOOLS-LOCAL\\text-generation-webui\\extensions\\ngrok",
+      "remote": "https://github.com/belentani7/ngrok.git"
+    },
+    {
+      "name": "shadcn-ui",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\03-FRONTEND-FRAMEWORKS\\shadcn-ui",
+      "remote": "https://github.com/shadcn-ui/ui.git"
+    },
+    {
+      "name": "strategic-agent",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\omega-max-universal\\src\\agents\\strategic-agent\\strategic-agent",
+      "remote": "https://github.com/belentani7/strategic-agent.git"
+    },
+    {
+      "name": "trpc",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\04-BACKEND-SERVICES\\trpc",
+      "remote": "https://github.com/tRPC/trpc.git"
+    },
+    {
+      "name": "Unifica y Analiza Mis Repositorios en un Nuevo Privado",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\Unifica y Analiza Mis Repositorios en un Nuevo Privado",
+      "remote": "https://github.com/belentani7/Unifica-y-Analiza-Mis-Repositorios-en-un-Nuevo-Privado.git"
+    },
+    {
+      "name": "voice-ai-agency",
+      "path": "C:\\Users\\USER\\_ORDENAR\\fixes\\voice-ai-agency",
+      "remote": "https://github.com/belentani7/voice-ai-agency.git"
+    },
+    {
+      "name": "vue",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\03-FRONTEND-FRAMEWORKS\\vue",
+      "remote": "https://github.com/vuejs/core.git"
+    },
+    {
+      "name": "belentani-core",
+      "path": "C:\\Users\\USER\\buquet\\2026-09-24\\2026-09-15\\belentani-core",
+      "remote": "https://github.com/belentani7/belentani-core.git"
+    },
+    {
+      "name": "belentani-judas-web",
+      "path": "C:\\Users\\USER\\buquet\\2026-09-24\\2026-09-15\\belentani-judas-web",
+      "remote": "https://github.com/belentani7/belentani-judas-web.git"
+    },
+    {
+      "name": "cohere-python",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\02-API-SDKS\\cohere-python",
+      "remote": "https://github.com/cohere-ai/cohere-python.git"
+    },
+    {
+      "name": "Documents__01_PROYECTOS__lingua-aberta-empresa",
+      "path": "C:\\Users\\USER\\buquet\\2026-09-24\\2026-09-15\\Documents__01_PROYECTOS__lingua-aberta-empresa",
+      "remote": "https://github.com/belentani7/lingua-aberta-empresa.git"
+    },
+    {
+      "name": "Documents__secure-t",
+      "path": "C:\\Users\\USER\\buquet\\2026-09-24\\2026-09-15\\Documents__secure-t",
+      "remote": "https://github.com/belentani7/secure-t.git"
+    },
+    {
+      "name": "fastapi",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\04-BACKEND-SERVICES\\fastapi",
+      "remote": "https://github.com/fastapi/fastapi.git"
+    },
+    {
+      "name": "judas-experience",
+      "path": "C:\\Users\\USER\\Documents\\01_PROYECTOS\\judas-experience",
+      "remote": "https://github.com/belentani7/judas-experience.git"
+    },
+    {
+      "name": "mistral-python",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\02-API-SDKS\\mistral-python",
+      "remote": "https://github.com/mistralai/client-python.git"
+    },
+    {
+      "name": "sqlmodel",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\04-BACKEND-SERVICES\\sqlmodel",
+      "remote": "https://github.com/tiangolo/sqlmodel.git"
+    },
+    {
+      "name": "anthropic-sdk-python",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\02-API-SDKS\\anthropic-sdk-python",
+      "remote": "https://github.com/anthropics/anthropic-sdk-python.git"
+    },
+    {
+      "name": "Belentani.cv-ai",
+      "path": "C:\\Users\\USER\\MANOS-ABIERTAS-UNIFICADO\\_repos-github\\Belentani.cv-ai",
+      "remote": "https://github.com/belentani7/Belentani.cv-ai.git"
+    },
+    {
+      "name": "groq-python",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\02-API-SDKS\\groq-python",
+      "remote": "https://github.com/groq/groq-python.git"
+    },
+    {
+      "name": "huggingface-hub",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\02-API-SDKS\\huggingface-hub",
+      "remote": "https://github.com/huggingface/huggingface_hub.git"
+    },
+    {
+      "name": "manos-abiertas",
+      "path": "C:\\Users\\USER\\USO\\imports\\manos-abiertas",
+      "remote": "https://github.com/belentani7/manos-abiertas.git"
+    },
+    {
+      "name": "mimo_patch",
+      "path": "C:\\Users\\USER\\USO\\imports\\mimo-patch\\mimo_patch",
+      "remote": "https://github.com/belentani7/mimo_patch.git"
+    },
+    {
+      "name": "mimo_patch",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\mimo_patch\\mimo_patch",
+      "remote": "https://github.com/belentani7/mimo_patch.git"
+    },
+    {
+      "name": "money-machine-24h",
+      "path": "C:\\Users\\USER\\USO\\imports\\belentani-agency-omega\\money-machine-24h",
+      "remote": "https://github.com/belentani7/money-machine-24h.git"
+    },
+    {
+      "name": "money-machine-24h",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\_DESCARGAS_EXTRAIDAS\\workspace (16)\\money-machine-24h",
+      "remote": "https://github.com/belentani7/money-machine-24h.git"
+    },
+    {
+      "name": "ollama-python",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\02-API-SDKS\\ollama-python",
+      "remote": "https://github.com/ollama/ollama-python.git"
+    },
+    {
+      "name": "openai-python",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\02-API-SDKS\\openai-python",
+      "remote": "https://github.com/openai/openai-python.git"
+    },
+    {
+      "name": "securetea",
+      "path": "C:\\Users\\USER\\Desktop\\factory\\securetea",
+      "remote": "https://github.com/belentani7/securetea.git"
+    },
+    {
+      "name": "securetea",
+      "path": "C:\\Users\\USER\\repos\\_ORGANIZED\\06-PROJECTS-BELENTANI\\belentani-repos-master\\securetea",
+      "remote": "https://github.com/belentani7/securetea"
+    },
+    {
+      "name": "system-one-unified",
+      "path": "C:\\Users\\USER\\_PROYECTOS\\system-one-unified",
+      "remote": "https://github.com/belentani7/system-one-unified.git"
+    }
+  ]
+}

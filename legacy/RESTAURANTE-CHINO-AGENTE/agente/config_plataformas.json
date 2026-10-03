@@ -1,0 +1,138 @@
+{
+  "whatsapp": {
+    "descripcion": "Bot de WhatsApp para Dragón de Jade",
+    "proveedores": {
+      "evolution_api": {
+        "url": "https://evo.yourserver.com",
+        "api_key": "TU_API_KEY",
+        "webhook": "/webhook/whatsapp"
+      },
+      "baileys": {
+        "descripcion": "Alternativa gratuita (no oficial)",
+        "instalacion": "npm install @whiskeysockets/baileys"
+      },
+      "twilio": {
+        "account_sid": "TU_ACCOUNT_SID",
+        "auth_token": "TU_AUTH_TOKEN",
+        "whatsapp_number": "whatsapp:+34612345678"
+      },
+      "360dialog": {
+        "api_key": "TU_API_KEY",
+        "webhook_url": "https://tu-dominio.com/webhook/whatsapp"
+      }
+    },
+    "funciones": [
+      "Responder mensajes automaticamente",
+      "Enviar menu completo",
+      "Recibir pedidos",
+      "Confirmar reservas",
+      "Enviar ubicacion",
+      "Botones interactivos",
+      "Mensajes multimedia (imagenes, documentos)",
+      "Horario de atencion automatico",
+      "Transferir a humano si no resuelve"
+    ],
+    "configuracion_recomendada": {
+      "webhook": "https://tu-dominio.com/webhook/whatsapp",
+      "horario_respuesta": "24/7 automatico, humano 12:00-23:00",
+      "idiomas": ["es", "ca", "en", "zh"],
+      "max_mensajes_por_segundo": 10
+    }
+  },
+  "telegram": {
+    "descripcion": "Bot de Telegram para Dragón de Jade",
+    "token": "TU_BOT_TOKEN (obtener de @BotFather)",
+    "webhook": "/webhook/telegram",
+    "funciones": [
+      "Comando /menu - Muestra carta completa",
+      "Comando /reserva - Inicia reserva",
+      "Comando /pedido - Hace pedido",
+      "Comando /ubicacion - Muestra direccion",
+      "Comando /horario - Muestra horarios",
+      "Comando /evento - Info para eventos",
+      "Botones inline interactivos",
+      "Enviar fotos de platos",
+      "Pagina de pedidos inline"
+    ],
+    "comandos": {
+      "/start": "Bienvenida y menu principal",
+      "/menu": "Carta completa",
+      "/reservar": "Reservar mesa",
+      "/pedir": "Hacer pedido",
+      "/ubicacion": "Direccion y mapa",
+      "/horario": "Horarios del restaurante",
+      "/eventos": "Informacion para celebraciones",
+      "/help": "Ayuda general"
+    },
+    "configuracion_recomendada": {
+      "bot_username": "@DragonDeJadeBot",
+      "descripcion": "🐉 Dragón de Jade — Reservas, menú y pedidos",
+      "webhook_url": "https://tu-dominio.com/webhook/telegram"
+    }
+  },
+  "email": {
+    "descripcion": "Sistema de email para Dragón de Jade",
+    "configuracion_smtp": {
+      "host": "smtp.gmail.com",
+      "port": 587,
+      "user": "info@dragondejade.es",
+      "password": "TU_PASSWORD_APP",
+      "use_tls": true
+    },
+    "configuracion_imap": {
+      "host": "imap.gmail.com",
+      "port": 993,
+      "user": "info@dragondejade.es",
+      "password": "TU_PASSWORD_APP"
+    },
+    "plantillas_email": {
+      "bienvenida": {
+        "asunto": "🐉 Bienvenido a Dragón de Jade 龍玉",
+        "cuerpo_html": "plantillas/email_bienvenida.html"
+      },
+      "reserva_confirmada": {
+        "asunto": "✅ Reserva confirmada — Dragón de Jade",
+        "cuerpo_html": "plantillas/email_reserva.html"
+      },
+      "pedido_confirmado": {
+        "asunto": "📦 Tu pedido — Dragón de Jade",
+        "cuerpo_html": "plantillas/email_pedido.html"
+      },
+      "evento": {
+        "asunto": "🎉 Información para tu evento — Dragón de Jade",
+        "cuerpo_html": "plantillas/email_evento.html"
+      },
+      "newsletter": {
+        "asunto": "🐉 Novedades Dragón de Jade",
+        "cuerpo_html": "plantillas/email_newsletter.html"
+      }
+    },
+    "autorespuestas": {
+      "fuera_horario": "Gracias por escribirnos. Nuestro horario es Lu-Do 12:00-23:00. Responderemos pronto.",
+      "feriados": "Estamos de descanso hoy. Mañana estaremos encantados de atenderte.",
+      "error_pedido": "Ha habido un problema con tu pedido. Por favor, llámanos al +34 933 456 789."
+    }
+  },
+  "plataformas_delivery": {
+    "glovo": {
+      "url": "https://www.glovoapp.com/es/es/barcelona/dragon-de-jade",
+      "comision": "25-35%",
+      "activado": false
+    },
+    "uber_eats": {
+      "url": "https://www.ubereats.com/store/dragon-de-jade",
+      "comision": "30%",
+      "activado": false
+    },
+    "just_eat": {
+      "url": "https://www.just-eat.es/restaurants/dragon-de-jade",
+      "comision": "25-30%",
+      "activado": false
+    },
+    "pedido_directo": {
+      "url": "https://www.dragondejade.es/pedidos",
+      "comision": "0%",
+      "activado": true
+    }
+  }
+}

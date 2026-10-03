@@ -1,0 +1,6 @@
+{
+  "name": "Manos Abiertas - Plataforma Integral de Inclusión & Formación",
+  "description": "Ecosistema integral y gratuito de 15 nodos de aprendizaje, derechos, cursos de IA y Office, creador de CV ATS, simulador DELE/CCSE, inclusión financiera y recursos de acogida para la comunidad migrante.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

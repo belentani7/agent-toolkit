@@ -1,0 +1,161 @@
+import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, json } from "drizzle-orm/mysql-core";
+
+/**
+ * Core user table backing auth flow.
+ */
+export const users = mysqlTable("users", {
+  id: int("id").autoincrement().primaryKey(),
+  openId: varchar("openId", { length: 64 }).notNull().unique(),
+  name: text("name"),
+  email: varchar("email", { length: 320 }),
+  loginMethod: varchar("loginMethod", { length: 64 }),
+  role: mysqlEnum("role", ["user", "admin"]).default("user").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+  lastSignedIn: timestamp("lastSignedIn").defaultNow().notNull(),
+});
+
+export type User = typeof users.$inferSelect;
+export type InsertUser = typeof users.$inferInsert;
+
+/**
+ * PVC-U Tenants table for Multi-Tenant isolation
+ */
+export const pvcTenants = mysqlTable("pvc_tenants", {
+  id: int("id").autoincrement().primaryKey(),
+  tenantKey: varchar("tenantKey", { length: 64 }).notNull().unique(),
+  ownerOpenId: varchar("ownerOpenId", { length: 64 }).notNull(),
+  name: varchar("name", { length: 255 }).notNull(),
+  tier: mysqlEnum("tier", ["individual", "business", "enterprise"]).default("business").notNull(),
+  status: mysqlEnum("status", ["active", "suspended", "quarantine"]).default("active").notNull(),
+  config: json("config"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type PVCTenant = typeof pvcTenants.$inferSelect;
+export type InsertPVCTenant = typeof pvcTenants.$inferInsert;
+
+/**
+ * PVC-U Validation Profiles table
+ */
+export const pvcProfiles = mysqlTable("pvc_profiles", {
+  id: int("id").autoincrement().primaryKey(),
+  tenantKey: varchar("tenantKey", { length: 64 }).notNull(),
+  profileId: varchar("profileId", { length: 128 }).notNull(),
+  version: varchar("version", { length: 32 }).notNull(),
+  riskClass: mysqlEnum("riskClass", ["low", "medium", "high", "critical"]).notNull(),
+  domain: varchar("domain", { length: 64 }).notNull(),
+  definition: json("definition").notNull(),
+  status: mysqlEnum("status", ["draft", "active", "deprecated", "archived"]).default("active").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type PVCProfile = typeof pvcProfiles.$inferSelect;
+export type InsertPVCProfile = typeof pvcProfiles.$inferInsert;
+
+/**
+ * PVC-U Validation Runs & Evidence table
+ */
+export const pvcValidations = mysqlTable("pvc_validations", {
+  id: int("id").autoincrement().primaryKey(),
+  validationId: varchar("validationId", { length: 64 }).notNull().unique(),
+  tenantKey: varchar("tenantKey", { length: 64 }).notNull(),
+  profileId: varchar("profileId", { length: 128 }).notNull(),
+  artifactType: varchar("artifactType", { length: 64 }).notNull(), // request, event, response, action, model
+  riskClass: varchar("riskClass", { length: 32 }).notNull(),
+  status: mysqlEnum("status", ["approved", "rejected", "quarantine", "degraded", "human_review"]).notNull(),
+  spheresPassed: json("spheresPassed"),
+  failedSphere: varchar("failedSphere", { length: 64 }),
+  failureReason: text("failureReason"),
+  evidenceHash: varchar("evidenceHash", { length: 128 }).notNull(),
+  metadata: json("metadata"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type PVCValidation = typeof pvcValidations.$inferSelect;
+export type InsertPVCValidation = typeof pvcValidations.$inferInsert;
+
+/**
+ * PVC-U Exceptions table
+ */
+export const pvcExceptions = mysqlTable("pvc_exceptions", {
+  id: int("id").autoincrement().primaryKey(),
+  exceptionId: varchar("exceptionId", { length: 64 }).notNull().unique(),
+  tenantKey: varchar("tenantKey", { length: 64 }).notNull(),
+  profileId: varchar("profileId", { length: 128 }).notNull(),
+  reason: text("reason").notNull(),
+  compensatingControls: text("compensatingControls").notNull(),
+  expiresAt: timestamp("expiresAt").notNull(),
+  approvedBy: varchar("approvedBy", { length: 128 }).notNull(),
+  status: mysqlEnum("status", ["active", "expired", "revoked"]).default("active").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type PVCException = typeof pvcExceptions.$inferSelect;
+export type InsertPVCException = typeof pvcExceptions.$inferInsert;
+
+/**
+ * PVC-U immutable evidence metadata. Payload bytes remain outside the database;
+ * this table stores only digest, provenance and retention metadata.
+ */
+export const pvcEvidence = mysqlTable("pvc_evidence", {
+  id: int("id").autoincrement().primaryKey(),
+  evidenceId: varchar("evidenceId", { length: 96 }).notNull().unique(),
+  validationId: varchar("validationId", { length: 64 }).notNull(),
+  tenantKey: varchar("tenantKey", { length: 64 }).notNull(),
+  evidenceHash: varchar("evidenceHash", { length: 128 }).notNull(),
+  algorithm: varchar("algorithm", { length: 32 }).default("sha256").notNull(),
+  provenance: json("provenance"),
+  retentionUntil: timestamp("retentionUntil"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type PVCEvidence = typeof pvcEvidence.$inferSelect;
+export type InsertPVCEvidence = typeof pvcEvidence.$inferInsert;
+
+/**
+ * Transactional outbox for durable PVC-U domain events.
+ * The validation, evidence and outbox row are committed together.
+ */
+export const pvcOutbox = mysqlTable("pvc_outbox", {
+  id: int("id").autoincrement().primaryKey(),
+  eventId: varchar("eventId", { length: 96 }).notNull().unique(),
+  tenantKey: varchar("tenantKey", { length: 64 }).notNull(),
+  aggregateType: varchar("aggregateType", { length: 64 }).notNull(),
+  aggregateId: varchar("aggregateId", { length: 96 }).notNull(),
+  eventType: varchar("eventType", { length: 128 }).notNull(),
+  payload: json("payload").notNull(),
+  eventHash: varchar("eventHash", { length: 128 }).notNull(),
+  status: mysqlEnum("status", ["pending", "published", "failed"]).default("pending").notNull(),
+  attempts: int("attempts").default(0).notNull(),
+  availableAt: timestamp("availableAt").defaultNow().notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  publishedAt: timestamp("publishedAt"),
+});
+
+export type PVCOutboxEvent = typeof pvcOutbox.$inferSelect;
+export type InsertPVCOutboxEvent = typeof pvcOutbox.$inferInsert;
+
+/**
+ * Human-in-the-loop dual approval gates for high-impact validation actions.
+ */
+export const pvcApprovalGates = mysqlTable("pvc_approval_gates", {
+  id: int("id").autoincrement().primaryKey(),
+  approvalId: varchar("approvalId", { length: 96 }).notNull().unique(),
+  tenantKey: varchar("tenantKey", { length: 64 }).notNull(),
+  validationId: varchar("validationId", { length: 64 }).notNull().unique(),
+  requiredApprovals: int("requiredApprovals").default(2).notNull(),
+  status: mysqlEnum("status", ["pending", "approved", "rejected", "expired"]).default("pending").notNull(),
+  firstApprover: varchar("firstApprover", { length: 128 }),
+  firstApprovedAt: timestamp("firstApprovedAt"),
+  secondApprover: varchar("secondApprover", { length: 128 }),
+  secondApprovedAt: timestamp("secondApprovedAt"),
+  decisionHash: varchar("decisionHash", { length: 128 }),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type PVCApprovalGate = typeof pvcApprovalGates.$inferSelect;
+export type InsertPVCApprovalGate = typeof pvcApprovalGates.$inferInsert;

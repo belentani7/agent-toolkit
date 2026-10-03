@@ -1,0 +1,104 @@
+﻿diff --git a/src/transformers/pipelines/__init__.py b/src/transformers/pipelines/__init__.py
+index d4a033d..9714b02 100755
+--- a/src/transformers/pipelines/__init__.py
++++ b/src/transformers/pipelines/__init__.py
+@@ -454,6 +454,41 @@ def _load_pipeline_component(load_flag, component, loader):
+         return None
+ 
+ 
++def _validate_pipeline_device(device):
++    """
++    Fail fast on an obviously invalid `device` argument before any model is downloaded or loaded.
++
++    Historically an invalid string (e.g. `device="mpx"` instead of `"mps"`) only surfaced when the
++    model was moved to the device, i.e. after downloading and loading the full weights. This check
++    validates the value upfront and raises a `ValueError` pointing at the typo.
++
++    Accepted values:
++        - `None` (device inferred later)
++        - an `int` device ordinal (including `-1` for CPU)
++        - a `torch.device` instance
++        - a string parseable by `torch.device` (e.g. `"cpu"`, `"cuda:0"`, `"mps"`)
++    """
++    if device is None or isinstance(device, int) or isinstance(device, torch.device):
++        return device
++
++    if isinstance(device, str):
++        try:
++            torch.device(device)
++        except (RuntimeError, ValueError):
++            raise ValueError(
++                f"Invalid device '{device}'. Expected a valid device string (e.g. 'cpu', "
++                "'cuda', 'cuda:0', 'mps', 'npu', 'xpu', 'hpu'), an integer device ordinal "
++                "(e.g. 0), or a `torch.device` instance."
++            )
++        return device
++
++    raise ValueError(
++        f"Invalid device {device!r} of type {type(device).__name__}. Expected a valid device "
++        "string (e.g. 'cpu', 'cuda:0', 'mps'), an integer device ordinal (e.g. 0), or a "
++        "`torch.device` instance."
++    )
++
++
+ def _infer_pipeline_component(
+     component,
+     model_name,
+@@ -838,6 +873,11 @@ def pipeline(
+     >>> tokenizer = AutoTokenizer.from_pretrained("google-bert/bert-base-cased")
+     >>> recognizer = pipeline("ner", model=model, tokenizer=tokenizer)
+     ```"""
++    # Validate the device before any download/load happens (#47869): an invalid device string
++    # should fail immediately instead of after fetching the full model weights.
++    if is_torch_available():
++        _validate_pipeline_device(device)
++
+     if model_kwargs is None:
+         model_kwargs = {}
+ 
+diff --git a/tests/pipelines/test_pipelines_common.py b/tests/pipelines/test_pipelines_common.py
+index 5763a98..77a8cca 100644
+--- a/tests/pipelines/test_pipelines_common.py
++++ b/tests/pipelines/test_pipelines_common.py
+@@ -1060,3 +1060,41 @@ class DynamicPipelineTester(unittest.TestCase):
+         self.assertListEqual(
+             nested_simplify([{"label": results["label"], "score": results["score"]}]), nested_simplify(new_results)
+         )
++
++
++class PipelineDeviceValidationTest(unittest.TestCase):
++    """Tests for early `device` validation in `pipeline()` (#47869).
++
++    An invalid device string must raise immediately ÔÇö before any model download
++    or weight loading ÔÇö instead of crashing later at tensor placement.
++    """
++
++    def test_invalid_device_string_raises_before_download(self):
++        from transformers.pipelines import _validate_pipeline_device
++
++        with self.assertRaises(ValueError) as ctx:
++            _validate_pipeline_device("mpx")
++        self.assertIn("mpx", str(ctx.exception))
++
++        # A garbage device string must also be rejected by `pipeline()` itself,
++        # and the failure must happen before any Hub interaction.
++        with self.assertRaises(ValueError):
++            pipeline("text-classification", model="hf-internal-testing/tiny-random-distilbert", device="mpx")
++
++    def test_valid_device_values_pass_validation(self):
++        import torch
++
++        from transformers.pipelines import _validate_pipeline_device
++
++        self.assertIsNone(_validate_pipeline_device(None))
++        self.assertEqual(_validate_pipeline_device(0), 0)
++        self.assertEqual(_validate_pipeline_device(-1), -1)
++        self.assertEqual(_validate_pipeline_device("cpu"), "cpu")
++        self.assertEqual(_validate_pipeline_device("cuda:0"), "cuda:0")
++        self.assertEqual(_validate_pipeline_device(torch.device("cpu")), torch.device("cpu"))
++
++    def test_invalid_device_type_raises(self):
++        from transformers.pipelines import _validate_pipeline_device
++
++        with self.assertRaises(ValueError):
++            _validate_pipeline_device([0])

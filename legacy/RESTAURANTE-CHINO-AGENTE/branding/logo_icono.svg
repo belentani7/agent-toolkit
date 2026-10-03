@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F0D860"/>
+      <stop offset="100%" style="stop-color:#8B6914"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="#0A0A0A" rx="64"/>
+  <circle cx="256" cy="220" r="120" fill="url(#gold)" opacity="0.1"/>
+  <text x="256" y="260" font-size="120" text-anchor="middle">🐉</text>
+  <text x="256" y="340" font-family="serif" font-size="36" font-weight="bold" text-anchor="middle" fill="url(#gold)">龍玉</text>
+  <line x1="180" y1="370" x2="332" y2="370" stroke="url(#gold)" stroke-width="1" opacity="0.5"/>
+  <text x="256" y="395" font-family="sans-serif" font-size="10" text-anchor="middle" fill="#666" letter-spacing="3">DRAGÓN DE JADE</text>
+</svg>

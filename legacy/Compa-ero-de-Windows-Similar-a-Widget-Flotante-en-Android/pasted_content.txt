@@ -1,0 +1,513 @@
+Reflection.app logo
+Features
+About Us
+What’s New
+Guides
+Log In
+Start Today
+
+4.8 Stars · 3,000+ Reviews
+A journal that listens, and talks back.
+Reflection coaches you in real time, and turns your journal entries into insights — all in a beautiful and private app.
+Start Journaling Today
+
+
+
+
+Web App
+Web
+Sign in
+
+iOS
+Get App
+
+Scan for Mobile
+
+Android
+Get App
+
+Scan for Mobile
+
+macOS
+Download
+Real-Time Voice CoachComing soon
+Real-Time Voice Coach
+→
+Talk it out, real-time, with your Coach.
+Some days you’d rather talk than type. Tap the mic and have a real back-and-forth — Reflection listens, responds out loud, and saves the full transcript to your journal.
+Depth — AI CompanionComing soon
+Depth — AI Companion
+→
+Go deeper, right as you write.
+As you journal, Depth asks the gentle follow-up questions a good listener would — nudging you past the surface so each entry actually moves you forward.
+Ask Your JournalComing soon
+Ask Your Journal
+→
+Ask your journal anything.
+Your journal remembers what you’ve written so you don’t have to. Ask about patterns, people, or how you felt last spring — Reflection searches your history and answers in plain language.
+Guided JourneysComing soon
+Guided Journeys
+→
+100+ guided journeys from wellness experts.
+Not sure what to write? Follow a structured journey on gratitude, anxiety, relationships, productivity, and more — 100+ programs created with wellness and personal growth experts, each taking you somewhere one prompt at a time.
+FEATURES
+Everything you need, none of the clutter.
+devices
+open in new window
+Available Everywhere
+iPhone, iPad, Mac, Android, and web — always in sync.
+mic
+open in new window
+Voice Journaling
+Speak your entry out loud — we’ll transcribe it for you.
+add_photo_alternate
+open in new window
+Photos & Rich Text
+Add photos and format your words however you like.
+lock
+open in new window
+Advanced Privacy
+Lock your journal with Face ID, biometrics, or a passcode.
+description
+open in new window
+Journaling Templates
+Start fast with a structure for gratitude, goals, and more.
+notifications
+open in new window
+Daily Reminders
+A gentle nudge at the right time keeps the habit alive.
+document_scanner
+open in new window
+Scan Written Text
+Snap a photo of your handwriting and AI turns it into an entry.
+palette
+Coming soon
+
+open in new window
+Beautiful Themes
+Light, dark, and a color theme that’s truly yours.
+import_export
+open in new window
+Import & Export
+Import from Day One or CSV; export to PDF, JSON, or CSV.
+insights
+open in new window
+Weekly & Monthly Reviews
+Auto-magical recaps that surface what mattered most.
+link
+open in new window
+Private Share Links
+Selectively share a secure link to any entry you choose.
+hub
+open in new window
+Reflection MCP
+Read and write your journal through Claude, ChatGPT, and more.
+View All Features
+PRIVATE BY DESIGN
+Your data is private and secure.
+
+Encrypted Everywhere
+Your entries are encrypted with AES-256 at rest, and TLS in transit.
+
+No AI Training
+Your data and journal entries are never used to train AI models — not even on our free plan.
+
+Powered by You
+We are funded by our users. No ads, and we never sell any data.
+
+You Own Your Data
+Full PDF, JSON & CSV exports. MCP, biometric lock, passcode, private entries, and more.
+Google Cloud infrastructure  ·  ISO/IEC 27001  ·  SOC 1 & 2  ·  GDPR compliant
+REAL REVIEWS
+Over a million entries, and a whole lotta love.
+Read thousands of reviews from the App Store and Google Play.
+
+truly the best app for journaling, it's simple, effective, and well-organised. aesthetically pleasing. truly helpful for someone who likes journaling.
+
+nightsbleed
+
+App Store
+
+Exactly what I was looking for in a journaling app! I use the journal prompts daily. Love that I can use it for my gratitude journaling but also can use the guides for deeper reflection. Generous free offering, and the premium is a great value. Bonus: The support team is quick and friendly!
+
+Baby girls6
+
+App Store
+
+Just want to say this app is so refreshingly Simple but effective and behind the scenes, has the most amazing, giant-hearted people who care more about helping people And not fixated on profiting every chance possible. I am beyond impressed and blessed. Thx guys!
+
+MeganMarie80!
+
+App Store
+
+I love this app. Journaling is really important to my mental health, and using Reflection has really helped me to be more mindful and consistent. It has changed the game for me.
+
+Blabbey321
+
+App Store
+
+As a mental health therapist I’m always looking for new tools to help clients process their experience. I try each tool myself before recommending to anyone and this is by far my favorite so far. I like that it is web based as well. It’s easy to use and has fantastic prompts to help folks begin the writing process. I highly recommend this app for anyone looking to use writing as a tool to reflect or process their thoughts and experiences. Truly well done.
+
+IrishStorm07
+
+App Store
+
+Better than the best journaling app. The interface keeps it distraction-free and makes me look forward to entering my journal entry. The prompts are thought-provoking and helps me reflect deeply. I use the prompts as conversation starters too.
+
+howwwww21
+
+App Store
+
+I find myself being able to journal almost every day now with the app. I am 50 years old I am set in my ways I love the smell of paper and I love the way the pen flows and I love to see the ink marks on my hand. But in this busy world that we are in I don’t get time to fully write what I want to write whereas this way I’m actually not even writing when I’m journaling I get to talk and express my thoughts through words with the app. The guides that they offer wonderful for when you just wanna journal about something the insides are amazing the membership is invaluable and the community of people are just amazing people get the app become a part of the community you will not regret it.
+
+Willowravyncat
+
+App Store
+
+Spent the last couple of days checking out a lot of journaling aps. Yours is the first that works easily across interfaces- Iphone, chrome book, and work computer. I am so pleased. I have wanted to journal for a while but it seems like my paper journal is always in the wrong place. Now I will always have my journal within reach. ❤️❤️
+
+Susanb33
+
+App Store
+
+I use this and recommend it to my clients. In combination with voice dictation it’s the most effective way to get my thoughts down.
+
+Lukas Weichselbaum
+
+App Store
+
+Incredible app. They helped me get started on my journaling journey, taking it as a habit. It has guides and daily prompts which can be food for thought to write about when the day ends. I love the app
+
+feglo
+
+App Store
+
+I rarely leave reviews, mainly because not all applications are life-changing, but this one definitely is life-changing and worthy of one. The app's mechanism allows you type out all of your thoughts and feelings in a very clean, blank screen that is quite peaceful, conducive for reflection, and not hurtful to the eyes (as it is in, well, plain back). The default font style is not heavy on the eyes to read, and it seems rather fancy when I first encountered and used this app (great job on this by the way). This usually prompts me to leave more comprehensive details on my experiences, which are essential for more effective personal reflections. Furthermore, after having typed down your reflection for a certain day, a monthly review will be made available to you after, well, a month. This allows you to have a greater view of what had happened in the past, and how you may have changed your attitude or tune about your past experience. In short: it is a FANTASTIC reflection application. I fell in love with this application the first time I used this, and will continue to do so until the end of my journey in medical school. Kudos to all behind this application!
+
+Renz Ang
+
+App Store
+
+Reflection app is astonishing. 
+
+I absolutely love it. I can't explain the benefits it has to really opening a person up their inner existence.
+
+Kaycee Brown
+
+Play Store
+
+I’m a believer. I was not great at journaling, but this app has made it so simple and actually enjoyable.
+
+jakej1990
+
+App Store
+
+The minimalist experience I was looking for! …the Reflection.app mobile app and desktop app are well designed and get out of your way so that can quickly reflect on your day.
+
+Jordan
+
+Play Store
+
+This is a powerful tool to help you truly connect with yourself, and decide what you want and need out of your life!
+
+Elizabeth
+
+Play Store
+
+I like the guided programs a lot, they are a good way to jump in to journaling if you don't know where to start…this app has made it easier to make journaling an enjoyable habit!
+
+Emma S.
+
+Play Store
+
+I look forward to journaling everyday. This takes personal reflection and gives it contextual meaning. Love it!!!
+
+Mike
+
+App Store
+
+I tried out several journaling apps, looking for a free one, but was so impressed by the features included that I was happy to pay the £20 annual subscription. It functions smoothly, does really helpful summaries and prompts, and the layout works for me really well. I've used it for a week now and feel I've already got my money's worth in refreshing perspective and analysis of what's happening in my world!
+
+Robert Burgess
+
+Play Store
+
+I've tested several (voice)-journaling apps and kept with Reflection. I can talk to it in several languages and the transcription work very well. It keeps very good track of the essences of my entries and refers to them accurately. I can definitely recommend it! 
+
+Well done!!
+
+KenenOne
+
+App Store
+
+wonderful and a life changing app really adding "growth opportunities" is the best update you have made guys it helps to be more self aware, thank u
+
+Perehan Mahmoud Ahmed Lotfy
+
+Play Store
+
+truly the best app for journaling, it's simple, effective, and well-organised. aesthetically pleasing. truly helpful for someone who likes journaling.
+
+nightsbleed
+
+App Store
+
+Exactly what I was looking for in a journaling app! I use the journal prompts daily. Love that I can use it for my gratitude journaling but also can use the guides for deeper reflection. Generous free offering, and the premium is a great value. Bonus: The support team is quick and friendly!
+
+Baby girls6
+
+App Store
+
+Just want to say this app is so refreshingly Simple but effective and behind the scenes, has the most amazing, giant-hearted people who care more about helping people And not fixated on profiting every chance possible. I am beyond impressed and blessed. Thx guys!
+
+MeganMarie80!
+
+App Store
+
+I love this app. Journaling is really important to my mental health, and using Reflection has really helped me to be more mindful and consistent. It has changed the game for me.
+
+Blabbey321
+
+App Store
+
+As a mental health therapist I’m always looking for new tools to help clients process their experience. I try each tool myself before recommending to anyone and this is by far my favorite so far. I like that it is web based as well. It’s easy to use and has fantastic prompts to help folks begin the writing process. I highly recommend this app for anyone looking to use writing as a tool to reflect or process their thoughts and experiences. Truly well done.
+
+IrishStorm07
+
+App Store
+
+Better than the best journaling app. The interface keeps it distraction-free and makes me look forward to entering my journal entry. The prompts are thought-provoking and helps me reflect deeply. I use the prompts as conversation starters too.
+
+howwwww21
+
+App Store
+
+I find myself being able to journal almost every day now with the app. I am 50 years old I am set in my ways I love the smell of paper and I love the way the pen flows and I love to see the ink marks on my hand. But in this busy world that we are in I don’t get time to fully write what I want to write whereas this way I’m actually not even writing when I’m journaling I get to talk and express my thoughts through words with the app. The guides that they offer wonderful for when you just wanna journal about something the insides are amazing the membership is invaluable and the community of people are just amazing people get the app become a part of the community you will not regret it.
+
+Willowravyncat
+
+App Store
+
+Spent the last couple of days checking out a lot of journaling aps. Yours is the first that works easily across interfaces- Iphone, chrome book, and work computer. I am so pleased. I have wanted to journal for a while but it seems like my paper journal is always in the wrong place. Now I will always have my journal within reach. ❤️❤️
+
+Susanb33
+
+App Store
+
+I use this and recommend it to my clients. In combination with voice dictation it’s the most effective way to get my thoughts down.
+
+Lukas Weichselbaum
+
+App Store
+
+Incredible app. They helped me get started on my journaling journey, taking it as a habit. It has guides and daily prompts which can be food for thought to write about when the day ends. I love the app
+
+feglo
+
+App Store
+
+I rarely leave reviews, mainly because not all applications are life-changing, but this one definitely is life-changing and worthy of one. The app's mechanism allows you type out all of your thoughts and feelings in a very clean, blank screen that is quite peaceful, conducive for reflection, and not hurtful to the eyes (as it is in, well, plain back). The default font style is not heavy on the eyes to read, and it seems rather fancy when I first encountered and used this app (great job on this by the way). This usually prompts me to leave more comprehensive details on my experiences, which are essential for more effective personal reflections. Furthermore, after having typed down your reflection for a certain day, a monthly review will be made available to you after, well, a month. This allows you to have a greater view of what had happened in the past, and how you may have changed your attitude or tune about your past experience. In short: it is a FANTASTIC reflection application. I fell in love with this application the first time I used this, and will continue to do so until the end of my journey in medical school. Kudos to all behind this application!
+
+Renz Ang
+
+App Store
+
+Reflection app is astonishing. 
+
+I absolutely love it. I can't explain the benefits it has to really opening a person up their inner existence.
+
+Kaycee Brown
+
+Play Store
+
+I’m a believer. I was not great at journaling, but this app has made it so simple and actually enjoyable.
+
+jakej1990
+
+App Store
+
+The minimalist experience I was looking for! …the Reflection.app mobile app and desktop app are well designed and get out of your way so that can quickly reflect on your day.
+
+Jordan
+
+Play Store
+
+This is a powerful tool to help you truly connect with yourself, and decide what you want and need out of your life!
+
+Elizabeth
+
+Play Store
+
+I like the guided programs a lot, they are a good way to jump in to journaling if you don't know where to start…this app has made it easier to make journaling an enjoyable habit!
+
+Emma S.
+
+Play Store
+
+I look forward to journaling everyday. This takes personal reflection and gives it contextual meaning. Love it!!!
+
+Mike
+
+App Store
+
+I tried out several journaling apps, looking for a free one, but was so impressed by the features included that I was happy to pay the £20 annual subscription. It functions smoothly, does really helpful summaries and prompts, and the layout works for me really well. I've used it for a week now and feel I've already got my money's worth in refreshing perspective and analysis of what's happening in my world!
+
+Robert Burgess
+
+Play Store
+
+I've tested several (voice)-journaling apps and kept with Reflection. I can talk to it in several languages and the transcription work very well. It keeps very good track of the essences of my entries and refers to them accurately. I can definitely recommend it! 
+
+Well done!!
+
+KenenOne
+
+App Store
+
+wonderful and a life changing app really adding "growth opportunities" is the best update you have made guys it helps to be more self aware, thank u
+
+Perehan Mahmoud Ahmed Lotfy
+
+Play Store
+See All Reviews
+Frequently Asked Questions
+Everything you need to know to start journaling with clarity and confidence.
+What is Reflection?
+Reflection is an AI-powered journaling app and mental wellness coach designed to help you build a consistent self-reflection habit. Available on iOS, Android, Mac, and Web, our app combines guided prompts and AI insights to make journaling easy and impactful. Whether you need a gratitude journal, a therapy companion, or a tool for personal growth, Reflection adapts to you.
+
+How is Reflection different from other journaling apps?
+
+What does the AI Coach actually do?
+
+Is Reflection free to use?
+
+Is my journal actually private and secure?
+
+
+
+
+How does journaling improve mental health?
+
+What kind of journaling guides do you offer?
+
+Can I use Reflection as an online journal?
+
+Can I use this on all my devices?
+
+SEE What’s NEW
+We’re growing with you.
+New features and app improvements are shipped consistently and driven by your feedback — we can’t wait to hear from you!
+v
+6.28
+•
+August 15, 2026
+
+The All-New Insights Page, Profile Photos, and Search Shortcuts
+Reflection 6.28 introduces the all-new Insights page — explore your sentiment, emotional landscape, and life domains across any time range, with personalized growth opportunities grounded in what you've written — plus profile photos, a Search shortcut from your home screen, and reliability improvements throughout.
+v
+6.27
+•
+July 28, 2026
+iOS Delights, Coaching That Fits You, and Smoother Voice
+Reflection 6.27 makes capturing a thought effortless — start an entry straight from iOS Spotlight or by sharing text into the app — plus coaching that stays true to what you wrote, smoother voice journaling, more reliable imports and exports, and a bunch of everyday polish.
+v
+6.26
+•
+July 1, 2026
+
+Reflection MCP, a Smoother Coaching, and Improved Voice & Scan
+Reflection 6.26 introduces the Reflection MCP — connect your journal to Claude to add entries, surface patterns, and organize your writing with AI — plus a smoother inline coach, voice journaling that understands spoken formatting, sharper handwriting scan, and big gains in sign-in and sync reliability.
+Visit Changelog
+FROM THE BLOG
+The latest from our blog
+Practical guides, journaling science, and behind-the-scenes notes on building Reflection.
+
+Journaling Tips & Resources
+AI Journaling with MCP: Connect Your Journal to Claude, ChatGPT, and Any AI You Trust
+
+Product Updates
+Introducing the Reflection MCP: Connect Your Journal to Claude, ChatGPT, and More
+
+Product Updates
+Building Real-Time Voice AI with Gemini Live API and Flutter
+Read More on our Blog
+ADDITIONAL RESOURCES
+How to Start Journaling
+What is Self-Reflection?
+⁠How to Start Journaling
+Science-Backed Benefits of Journaling
+Start a Gratitude Journal
+Journaling Techniques
+The Best Journaling Apps
+Diary vs. Journal
+Journaling for Mental Wellness
+Journaling for ADHD
+Journaling for Couples
+Shadow Work Journaling
+Trauma & PTSD Journal Prompts
+Journaling for Anxiety
+Self-Love Journal with Prompts
+Journal with a Coach and Therapist
+Top Journal Guides & Topics
+Journal Guides & Prompt Library
+Morning Pages Guide
+Write to Your Future Self
+How to Keep a Dream Journal
+Reflective Journal Guide
+AI Journal Apps Compared
+Free Online Journal Tools
+Five star rating
+4.8 Stars · 3,000+ Reviews
+Gain clarity and peace of mind.
+Free on every device, private by design.
+The Reflection Today screenThe Reflection journal screenThe Reflection Insights screen
+Create Your First Entry
+Web App
+Web
+Sign in
+
+iOS
+Get App
+
+Scan for Mobile
+
+Android
+Get App
+
+Scan for Mobile
+
+macOS
+Download
+
+
+Reflection is a private journaling app with an AI-powered coach to help you flourish.
+
+Journal Better Inc. © 2026
+Our App
+Login to Journal Online
+Create Account
+Premium
+Our Story
+Our Blog
+Reviews
+Press
+Resources
+Support & FAQ
+Changelog
+Join Our Beta
+AI Journaling App
+Import Your Journal
+Nominate a Guide
+Become a Guide
+Affiliate Program
+‍
+Connect
+YouTube
+LinkedIn
+Instagram
+Twitter
+Download
+iOS App
+Android App
+macOS App
+Reflection.app

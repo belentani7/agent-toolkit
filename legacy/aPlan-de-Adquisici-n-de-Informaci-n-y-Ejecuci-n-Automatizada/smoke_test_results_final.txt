@@ -1,0 +1,12 @@
+200 /
+200 /api/health
+200 /api/stats
+200 /api/skills
+200 /api/repos
+200 /api/phases
+200 /api/audit
+200 /api/simulate
+--- health body ---
+{"status":"ok","database":"ok","latencyMs":1,"timestamp":"2026-09-04T10:33:00.924Z"}--- lexical validation ---
+200 /api/repos/search POST
+{"query":"agent","terms":["agent"],"total":31,"shown":5,"threshold":0.05,"mode":"lexical","results":[{"id":"cmtmq1cb80050np57i5j491my","name":"agentbox","language":"Go","description":"Disposable cloud sandboxes for AI agents. Spin up isolated VMs for Claude, Aider, Codex, Qwen. $4/month, Terraform-powered.","topics":[],"embeddingStatus":"INDEXADO","chunkCount":141,"score":0.61,"matchedOn":["nombre","descripción"]},{"id":"cmtmq1cbb0051np578ntef6f3","name":"agentguard","language":"Go","description":"The firewall for your AI budget. Monitor spending, enforce limits, auto-pause agents, route overflow to cheaper models. Go daemon.","topics":[],"embeddingStatus":"INDEXADO","chunkCount":73,"score":0.61,"matchedOn":["nombre","descripción"]},{"id":"cmtmq1cfc00denp57ynl6se3s","name":"NOIACORE","language":"HTML","description":"Multi-agent intelligence system ÔÇö concept, architecture, and orchestration framework for autonomous AI agents","topics":["ai-agents","multi-agent","orchestration"],"embeddingStatus":"INDEXADO","chunkCount":146,"score":0.53,"matchedOn":["topics","descripción"]},{"id":"cmtmq1cgq00finp57fyrcnz6w","name":"meta-skill","language":"HTML","description":"Zero-token skill router for Claude Code and Qwen Code. Routes agent requests to the right skill without burning LLM tokens.","topics":["ai-agents","ai-coding","claude-code","cost-control"],"embeddingStatus":"INDEXADO","chunkCount":163,"score":0.53,"matchedOn":["topics","descripción"]},{"id":"cmtmq1cb7004wnp570ye36qi1","name":"agent-browser-mcp","language":"Python","description":"Backup local PC 2026-08-29","topics":[],"embeddingStatus":"EMBEDDING","chunkCount":0,"score":0.48,"matchedOn":["nombre"]}],"latencyMs":8}

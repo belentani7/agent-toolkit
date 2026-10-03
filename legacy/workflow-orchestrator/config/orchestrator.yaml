@@ -1,0 +1,87 @@
+# config/orchestrator.yaml
+orchestrator:
+  name: "Workflow Orchestrator"
+  version: "1.0.0"
+  owner: "Pedro Belentani (Noiacore)"
+
+  priority_engine:
+    enabled: true
+    data_source: "~/meta_projects.json"
+    shared_context: "~/.belentani/shared-context/projects.json"
+    refresh_interval_hours: 6
+    output_path: "config/priority_queue.json"
+
+  router:
+    enabled: true
+    omniroute_endpoint: "http://localhost:20128/v1"
+    metaskill_archetypes: 16
+    complexity_tiers: 4
+    output_path: "config/routing_plan.json"
+
+  executor:
+    enabled: true
+    provider: "agentbox"
+    default_image: "ubuntu:22.04"
+    cleanup_on_complete: true
+    max_concurrent_sandboxes: 3
+
+  agentguard:
+    enabled: true
+    plan_limit_usd: 100
+    threshold_percent: 80
+    auto_pause: true
+    budget_log: "config/budget_log.json"
+
+  secure_t:
+    enabled: true
+    pipeline_phases: 9
+    auto_deploy: true
+    deploy_targets: ["vercel", "cloudflare_pages"]
+    branch_protection: true
+    dependabot: true
+    codeql: true
+
+  validator:
+    enabled: true
+    validation_types: ["type_check", "build", "test", "security"]
+    auto_retry: true
+    max_retries: 2
+
+  monitor:
+    enabled: true
+    targets:
+      repos: 5
+      pages: 3
+      apis: 3
+      domains: 2
+    refresh_interval_seconds: 300
+    health_report_path: "config/health_report.json"
+
+  kanban:
+    enabled: true
+    board_path: ".kanban/kanban.yaml"
+    auto_update: true
+    wip_limits:
+      p0_critical: 2
+      p1_high: 3
+      in_progress: 2
+      validating: 1
+
+  multi_cli:
+    enabled: true
+    max_concurrent: 4
+    token_efficient_mode: true
+    opencode_max_turns: 5
+
+  logging:
+    level: "INFO"
+    path: "config/orchestrator.log"
+    max_size_mb: 10
+
+deploy:
+  platform: ["vercel", "cloudflare_pages"]
+  auto_deploy_on_merge: true
+  branch: "main"
+  pages_branch: "gh-pages"
+  vercel_config: "vercel.json"
+  wrangler_config: "wrangler.toml"

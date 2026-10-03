@@ -1,0 +1,9 @@
+docs: translate assisted decoding guide to Spanish
+
+Adds `docs/source/es/assisted_decoding.md`, a faithful translation of the
+English "Assisted decoding" guide (speculative decoding, prompt lookup,
+self-speculative decoding, MTP, universal assisted decoding and static
+ensemble verification), and registers it in the Spanish `_toctree.yml`.
+
+Code samples, model ids, and doc-builder references are preserved verbatim;
+only prose and tab titles are translated.

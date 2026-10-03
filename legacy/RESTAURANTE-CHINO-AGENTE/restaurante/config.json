@@ -1,0 +1,33 @@
+{
+  "restaurante": {
+    "nombre": "Dragón de Jade 龍玉",
+    "lema": "Sabor auténtico, tradición milenaria",
+    "direccion": {
+      "calle": "Calle Gran Vía de los Chinos, 42",
+      "ciudad": "Barcelona",
+      "cp": "08015",
+      "pais": "España",
+      "referencia": "Junto al Mercado de Sant Antoni, bajo el arco naranja"
+    },
+    "telefono": "+34 933 456 789",
+    "whatsapp": "+34 612 345 678",
+    "email": "info@dragondejade.es",
+    "web": "https://www.dragondejade.es",
+    "horario": {
+      "lunes_a_jueves": "12:00 - 23:00",
+      "viernes_sabado": "12:00 - 00:00",
+      "domingos_festivos": "12:00 - 22:00"
+    },
+    "redes": {
+      "instagram": "@dragondejade_bcn",
+      "facebook": "Dragon de Jade Barcelona",
+      "tiktok": "@dragondejade"
+    },
+    "capacidad": 85,
+    "estilo": "Chino cantonés con toque moderno",
+    "founded": 2018,
+    "idiomas": ["Español", "Catalán", "Chino Mandarín", "Inglés"],
+    "metodos_pago": ["Efectivo", "Tarjeta", "Bizum", "Apple Pay", "Google Pay"],
+    "extras": ["Terraza", "Wifi gratis", "Parking cercano", "Menú infantil", "Aceptamos reservas para eventos"]
+  }
+}

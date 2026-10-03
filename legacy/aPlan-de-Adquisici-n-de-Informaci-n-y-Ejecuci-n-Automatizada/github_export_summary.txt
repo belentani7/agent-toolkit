@@ -1,0 +1,17 @@
+top_type: dict
+top_keys: ['meta', 'user', 'profileExtended', 'repositories', 'privateReposCount', 'gists', 'followers', 'following', 'starredRepos', 'organizations']
+repository_count: 470
+declared_count: 470
+language: [('TypeScript', 155), ('HTML', 95), ('Python', 86), ('JavaScript', 18), ('PowerShell', 11), ('Go', 5), ('CSS', 4), ('Shell', 3), ('Java', 3), ('Jupyter Notebook', 2), ('Rust', 1), ('C', 1), ('Makefile', 1), ('Batchfile', 1), ('C++', 1)]
+primary_language: []
+visibility: [('private', 365), ('public', 105)]
+fork: [(False, 469), (True, 1)]
+name_count: 470 sample: ['.mimocode-audited', '08-AION-WORKFORCE', '11-PORTAL-CLIENTES-audited']
+full_name_count: 470 sample: ['belentani7/.mimocode-audited', 'belentani7/08-AION-WORKFORCE', 'belentani7/11-PORTAL-CLIENTES-audited']
+size_count: 470 sample: [0, 1, 28905]
+stargazers_count_count: 470 sample: [0, 0, 0]
+open_issues_count_count: 470 sample: [0, 0, 0]
+updated_at_count: 470 sample: ['2026-08-31T08:46:11Z', '2026-08-16T15:41:58Z', '2026-08-29T08:11:06Z']
+private_repos_count: 365
+organizations_count: 0
+gists_count: 0

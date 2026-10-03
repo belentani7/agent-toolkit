@@ -1,0 +1,35 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Temporales
+*.tmp
+*.bak
+*.old
+*.log
+
+# Secretos y credenciales (nunca commitear)
+.env
+.env.*
+*.pem
+*.key
+*credentials*
+*secret*
+deploy-secrets.env
+.azure/
+*.tfvars

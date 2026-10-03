@@ -1,0 +1,4 @@
+﻿[20:08:06] === send_all_emails.ps1 iniciado ===
+[20:08:06] Config: C:\Users\USER\.openclaw\workspace\projects\belentani-nexus\setup\email_config.json
+[20:08:06] Emails dir: C:\Users\USER\.openclaw\workspace\projects\belentani-nexus\setup\emails
+[20:08:06] [ERROR] Falta la App Password en C:\Users\USER\.openclaw\workspace\projects\belentani-nexus\setup\email_config.json (o define la variable de entorno GMAIL_APP_PASSWORD).

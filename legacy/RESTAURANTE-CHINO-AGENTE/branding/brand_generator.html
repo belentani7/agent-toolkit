@@ -1,0 +1,488 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ðŸ‰ DragÃ³n de Jade â€” Logo & Branding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #0a0a0a; color: #fff; font-family: 'Inter', sans-serif; }
+
+        .logo-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            padding: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo-card {
+            background: #1a1a1a;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+
+        .logo-card h3 {
+            color: #D4AF37;
+            margin-bottom: 20px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .logo-display {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .logo-dragon {
+            font-size: 80px;
+            filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.5));
+        }
+
+        .logo-nombre {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #D4AF37;
+            margin-top: 10px;
+        }
+
+        .logo-chino {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 16px;
+            color: #8B6914;
+            margin-top: 5px;
+        }
+
+        .logo-slogan {
+            font-size: 12px;
+            color: #666;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* Logo variations */
+        .logo-light .logo-dragon { filter: none; }
+        .logo-light .logo-nombre { color: #8B6914; }
+        .logo-light .logo-chino { color: #D4AF37; }
+
+        .logo-dark-bg {
+            background: linear-gradient(135deg, #D4AF37, #8B6914);
+            border-radius: 20px;
+        }
+        .logo-dark-bg .logo-nombre { color: #000; }
+        .logo-dark-bg .logo-chino { color: #1a1a1a; }
+        .logo-dark-bg .logo-slogan { color: #333; }
+
+        /* Color palette */
+        .palette {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .color-swatch {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            border: 2px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            text-align: center;
+        }
+
+        .color-swatch span {
+            display: block;
+            margin-top: 5px;
+        }
+
+        /* Branding elements */
+        .brand-section {
+            background: #111;
+            padding: 60px 40px;
+            margin: 40px 0;
+        }
+
+        .brand-section h2 {
+            color: #D4AF37;
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .brand-item {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 4px solid #D4AF37;
+        }
+
+        .brand-item h4 {
+            color: #D4AF37;
+            margin-bottom: 10px;
+        }
+
+        .brand-item p {
+            color: #888;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Mockup cards */
+        .mockup-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .mockup-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            color: #000;
+        }
+
+        .mockup-header {
+            background: linear-gradient(135deg, #D4AF37, #8B6914);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .mockup-header h3 {
+            color: #000;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .mockup-body {
+            padding: 20px;
+        }
+
+        .mockup-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .mockup-item:last-child { border-bottom: none; }
+
+        .mockup-price {
+            color: #D4AF37;
+            font-weight: 700;
+        }
+
+        /* Social media preview */
+        .social-preview {
+            background: #1a1a1a;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+
+        .social-preview .post-frame {
+            background: linear-gradient(135deg, #1a1a1a, #2d1f0e);
+            border-radius: 10px;
+            padding: 40px;
+            margin: 15px 0;
+        }
+
+        .social-preview .post-frame h4 {
+            color: #D4AF37;
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+        }
+
+        .social-preview .post-frame p {
+            color: #888;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .social-preview .hashtags {
+            color: #D4AF37;
+            font-size: 12px;
+            margin-top: 15px;
+        }
+
+        /* Print-ready indicators */
+        .print-ready {
+            display: inline-block;
+            background: #2D5A27;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            margin: 5px;
+        }
+
+        .format-badge {
+            display: inline-block;
+            background: #333;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            margin: 5px;
+        }
+    @media(max-width:768px){.container{width:95%!important}}</style>
+<meta property="og:title" content="Proyecto"><meta property="og:description" content="Proyecto completado">
+</head>
+<body>
+
+<div class="brand-section">
+    <h2>ðŸ‰ Brand Identity â€” DragÃ³n de Jade é¾çŽ‰</h2>
+
+    <div class="logo-showcase">
+        <!-- Logo principal -->
+        <div class="logo-card">
+            <h3>Logo Principal</h3>
+            <div class="logo-display">
+                <div class="logo-dragon">ðŸ‰</div>
+                <div class="logo-nombre">DragÃ³n de Jade</div>
+                <div class="logo-chino">é¾çŽ‰</div>
+                <div class="logo-slogan">Sabor autÃ©ntico, tradiciÃ³n milenaria</div>
+            </div>
+            <div>
+                <span class="print-ready">âœ“ Print Ready</span>
+                <span class="format-badge">SVG</span>
+                <span class="format-badge">PNG 2048px</span>
+            </div>
+        </div>
+
+        <!-- Logo sobre fondo claro -->
+        <div class="logo-card logo-light">
+            <h3>VersiÃ³n Clara</h3>
+            <div class="logo-display">
+                <div class="logo-dragon">ðŸ‰</div>
+                <div class="logo-nombre">DragÃ³n de Jade</div>
+                <div class="logo-chino">é¾çŽ‰</div>
+                <div class="logo-slogan">Sabor autÃ©ntico, tradiciÃ³n milenaria</div>
+            </div>
+            <div>
+                <span class="print-ready">âœ“ Papel</span>
+                <span class="format-badge">PNG</span>
+            </div>
+        </div>
+
+        <!-- Logo sobre dorado -->
+        <div class="logo-card logo-dark-bg">
+            <h3>VersiÃ³n Dorada</h3>
+            <div class="logo-display">
+                <div class="logo-dragon">ðŸ‰</div>
+                <div class="logo-nombre">DragÃ³n de Jade</div>
+                <div class="logo-chino">é¾çŽ‰</div>
+                <div class="logo-slogan">Sabor autÃ©ntico, tradiciÃ³n milenaria</div>
+            </div>
+            <div>
+                <span class="print-ready">âœ“ Redes Sociales</span>
+                <span class="format-badge">JPG</span>
+            </div>
+        </div>
+
+        <!-- Icono solamente -->
+        <div class="logo-card">
+            <h3>Icono / Favicon</h3>
+            <div class="logo-display">
+                <div class="logo-dragon" style="font-size:100px;">ðŸ‰</div>
+            </div>
+            <p style="color:#666; font-size:12px;">Para favicon, app icon, avatar</p>
+            <div>
+                <span class="format-badge">ICO 32px</span>
+                <span class="format-badge">PNG 512px</span>
+                <span class="format-badge">SVG</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Paleta de colores -->
+<div class="brand-section">
+    <h2>ðŸŽ¨ Paleta de Colores Corporativa</h2>
+    <div class="palette" style="max-width:800px; margin:0 auto;">
+        <div class="color-swatch" style="background:#D4AF37; color:#000;">
+            <div><strong>#D4AF37</strong><span>Oro Principal</span></div>
+        </div>
+        <div class="color-swatch" style="background:#8B6914; color:#fff;">
+            <div><strong>#8B6914</strong><span>Oro Oscuro</span></div>
+        </div>
+        <div class="color-swatch" style="background:#C41E3A; color:#fff;">
+            <div><strong>#C41E3A</strong><span>Rojo Chino</span></div>
+        </div>
+        <div class="color-swatch" style="background:#0A0A0A; color:#fff;">
+            <div><strong>#0A0A0A</strong><span>Fondo</span></div>
+        </div>
+        <div class="color-swatch" style="background:#1A1A1A; color:#fff;">
+            <div><strong>#1A1A1A</strong><span>Cards</span></div>
+        </div>
+        <div class="color-swatch" style="background:#FFFFFF; color:#000;">
+            <div><strong>#FFFFFF</strong><span>Texto</span></div>
+        </div>
+    </div>
+</div>
+
+<!-- Mockups de documentos -->
+<div class="brand-section">
+    <h2>ðŸ“„ Documentos Corporativos</h2>
+    <div class="mockup-grid">
+
+        <!-- MenÃº -->
+        <div class="mockup-card">
+            <div class="mockup-header">
+                <div style="font-size:40px;">ðŸ‰</div>
+                <h3>DragÃ³n de Jade é¾çŽ‰</h3>
+                <p style="color:#333; font-size:12px;">Calle Gran VÃ­a de los Chinos, 42 â€” Barcelona</p>
+            </div>
+            <div class="mockup-body">
+                <div class="mockup-item"><span>ðŸ¥Ÿ Har Gow (6 uds)</span><span class="mockup-price">6.50â‚¬</span></div>
+                <div class="mockup-item"><span>ðŸ¦† Pato PekÃ­n (Â½)</span><span class="mockup-price">14.00â‚¬</span></div>
+                <div class="mockup-item"><span>ðŸœ Chow Mein</span><span class="mockup-price">9.00â‚¬</span></div>
+                <div class="mockup-item"><span>ðŸš Arroz del DragÃ³n</span><span class="mockup-price">9.50â‚¬</span></div>
+                <div class="mockup-item"><span>ðŸ¥© Cerdo Agridulce</span><span class="mockup-price">12.50â‚¬</span></div>
+                <div class="mockup-item"><span>ðŸ° Mochi Matcha</span><span class="mockup-price">5.00â‚¬</span></div>
+            </div>
+            <div style="padding:10px; text-align:center; font-size:11px; color:#999;">
+                <span class="format-badge">A4</span>
+                <span class="format-badge">PDF</span>
+                <span class="print-ready">âœ“ Imprimible</span>
+            </div>
+        </div>
+
+        <!-- Tarjeta de presentaciÃ³n -->
+        <div class="mockup-card" style="max-width:400px; margin:0 auto;">
+            <div style="background: linear-gradient(135deg, #0A0A0A, #1A1A1A); padding: 30px; border-radius: 10px; border: 1px solid #D4AF37;">
+                <div style="text-align:center;">
+                    <div style="font-size:40px;">ðŸ‰</div>
+                    <h3 style="color:#D4AF37; font-family:'Playfair Display',serif;">DragÃ³n de Jade</h3>
+                    <p style="color:#8B6914; font-size:14px;">é¾çŽ‰</p>
+                </div>
+                <hr style="border-color:#333; margin:15px 0;">
+                <div style="font-size:12px; color:#888; line-height:1.8;">
+                    ðŸ“ Calle Gran VÃ­a de los Chinos, 42<br>
+                    ðŸ“ž +34 933 456 789<br>
+                    ðŸ“± +34 612 345 678<br>
+                    âœ‰ï¸ info@dragondejade.es<br>
+                    ðŸŒ www.dragondejade.es
+                </div>
+                <div style="text-align:center; margin-top:15px;">
+                    <span class="format-badge">90x50mm</span>
+                    <span class="print-ready">âœ“ Listo para imprimir</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Post Instagram -->
+        <div class="social-preview">
+            <h3 style="color:#D4AF37; margin-bottom:15px;">ðŸ“± Post Instagram</h3>
+            <div class="post-frame">
+                <div style="font-size:60px;">ðŸ‰</div>
+                <h4>MenÃº del DÃ­a</h4>
+                <p>Entrante + Principal + Postre + Bebida</p>
+                <p style="color:#D4AF37; font-size:24px; font-weight:700; margin-top:10px;">Solo 12.50â‚¬</p>
+                <p style="font-size:11px; color:#666;">Lunes a Viernes | 12:00 - 16:00</p>
+            </div>
+            <div class="hashtags">#DragonDeJade #ComidaChina #Barcelona #MenÃºDelDÃ­a #DimSum #YumCha</div>
+            <div style="margin-top:10px;">
+                <span class="format-badge">1080x1080</span>
+                <span class="format-badge">Square</span>
+            </div>
+        </div>
+
+        <!-- Flyer delivery -->
+        <div class="mockup-card">
+            <div style="background: linear-gradient(135deg, #C41E3A, #8B0000); padding: 20px; text-align:center;">
+                <div style="font-size:50px;">ðŸ›µ</div>
+                <h3 style="color:#fff; font-size:18px;">Â¡PIDE A DOMICILIO!</h3>
+            </div>
+            <div class="mockup-body">
+                <div style="text-align:center; padding:10px;">
+                    <p style="color:#333; font-size:14px;">DragÃ³n de Jade é¾çŽ‰</p>
+                    <p style="color:#D4AF37; font-size:24px; font-weight:700;">10% DESCUENTO</p>
+                    <p style="color:#666; font-size:12px;">pidiendo directo</p>
+                    <hr style="margin:15px 0;">
+                    <p style="color:#333; font-size:13px;">
+                        ðŸ“± WhatsApp: 612 345 678<br>
+                        ðŸŒ dragondejade.es/pedidos<br>
+                        ðŸ“ž 933 456 789
+                    </p>
+                    <p style="color:#666; font-size:11px; margin-top:10px;">EnvÃ­o gratuito en radio de 3km</p>
+                </div>
+            </div>
+            <div style="padding:10px; text-align:center; font-size:11px;">
+                <span class="format-badge">A5</span>
+                <span class="format-badge">PDF</span>
+                <span class="print-ready">âœ“ Imprimible</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- TipografÃ­a -->
+<div class="brand-section">
+    <h2>âœï¸ TipografÃ­a Corporativa</h2>
+    <div class="brand-grid" style="max-width:800px; margin:0 auto;">
+        <div class="brand-item">
+            <h4 style="font-family:'Playfair Display',serif; font-size:24px;">Playfair Display</h4>
+            <p>Para tÃ­tulos y logo. Elegancia clÃ¡sica con estilo oriental.</p>
+            <p style="color:#D4AF37;">Uso: Logo, H1, Carta</p>
+        </div>
+        <div class="brand-item">
+            <h4 style="font-family:'Noto Serif SC',serif; font-size:24px;">Noto Serif SC</h4>
+            <p>Para caracteres chinos. Soporte completo CJK.</p>
+            <p style="color:#D4AF37;">Uso: é¾çŽ‰, caracteres especiales</p>
+        </div>
+        <div class="brand-item">
+            <h4 style="font-family:'Inter',sans-serif; font-size:24px;">Inter</h4>
+            <p>Para cuerpo de texto. Moderna y legible.</p>
+            <p style="color:#D4AF37;">Uso: MenÃº, descripciones, web</p>
+        </div>
+    </div>
+</div>
+
+<!-- Voice branding -->
+<div class="brand-section">
+    <h2>ðŸ”Š Branding de Voz</h2>
+    <div class="brand-grid" style="max-width:800px; margin:0 auto;">
+        <div class="brand-item">
+            <h4>ðŸ—£ï¸ Nombre de la voz: Jade</h4>
+            <p>Asistente femenina, tono cÃ¡lido y profesional. Idioma principal: espaÃ±ol.</p>
+        </div>
+        <div class="brand-item">
+            <h4>ðŸŽµ Tono de llamada</h4>
+            <p>Ringtone personalizado con notas de sitar y flauta china. 4 tonos.</p>
+        </div>
+        <div class="brand-item">
+            <h4>ðŸ“ž Mensaje de bienvenida</h4>
+            <p>"Â¡Buenas! Gracias por llamar a DragÃ³n de Jade. Â¿En quÃ© puedo ayudarle?"</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,13 @@
+fix(tools): report the real cancel reason in ask_user_question (#9011)
+
+ask_user_question returned "User declined to answer the questions." whenever
+it never received a positive confirmation outcome, even when the confirmation
+pipeline auto-cancelled the dialog (no interactive approval surface, policy
+denial, timeout). The pipeline-supplied cancelMessage was discarded, so a
+pipeline failure was misreported as a conscious user decline.
+
+Capture payload.cancelMessage on Cancel and surface it as
+"The question could not be answered: <reason>". The "User declined…" message
+is now reserved for genuine user declines.
+
+Adds a regression test covering the auto-cancel path.

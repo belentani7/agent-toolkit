@@ -1,0 +1,76 @@
+# AgentBox Default Configuration
+# ──────────────────────────────────────────────────────────
+# Each sandbox is a pocket dimension — a parallel universe
+# where your code evolves in isolation.
+
+# ─── Cloud Provider ──────────────────────────────────────
+provider: digitalocean     # digitalocean | hetzner | oci
+region: nyc1               # provider-specific region
+size: s-1vcpu-1gb          # VM size (1 vCPU, 1GB RAM)
+
+# ─── AI CLI ──────────────────────────────────────────────
+ai_cli: claude             # claude | aider | codex
+
+# ─── Sandbox Lifecycle ──────────────────────────────────
+auto_destroy: 4h           # self-destruct timer (0 = disabled)
+max_sandboxes: 5           # max concurrent pocket dimensions
+
+# ─── Budget ──────────────────────────────────────────────
+budget_monthly: 5.00       # USD — alert when approaching limit
+budget_action: warn        # warn | block (block prevents new sandboxes)
+
+# ─── SSH ─────────────────────────────────────────────────
+ssh:
+  key_type: ed25519        # ed25519 (recommended) | rsa
+  port: 22                 # SSH port on the VM
+  agent_forwarding: false  # forward local SSH agent
+
+# ─── Sync ────────────────────────────────────────────────
+sync:
+  method: rsync            # rsync | git-bundle | scp
+  ignore:
+    - .env
+    - .env.*
+    - "*.pem"
+    - "*.key"
+    - node_modules/
+    - __pycache__/
+    - .terraform/
+    - vendor/
+    - .venv/
+    - dist/
+    - build/
+
+# ─── Provider Credentials ───────────────────────────────
+# Set via environment variables (preferred) or fill in below.
+# Environment variables:
+#   DO_TOKEN        — DigitalOcean API token
+#   HETZNER_TOKEN   — Hetzner Cloud API token
+#   OCI_TENANCY_OCID, OCI_COMPARTMENT_OCID, OCI_USER_OCID,
+#   OCI_FINGERPRINT, OCI_KEY_FILE, OCI_REGION
+providers:
+  digitalocean:
+    token: ""
+    regions:
+      - nyc1
+      - nyc3
+      - sfo3
+      - ams3
+      - lon1
+      - blr1
+
+  hetzner:
+    token: ""
+    regions:
+      - fsn1      # Falkenstein, DE
+      - nbg1      # Nuremberg, DE
+      - hel1      # Helsinki, FI
+      - ash        # Ashburn, US
+
+  oci:
+    tenancy_ocid: ""
+    compartment_ocid: ""
+    user_ocid: ""
+    fingerprint: ""
+    key_file: ""
+    region: us-ashburn-1

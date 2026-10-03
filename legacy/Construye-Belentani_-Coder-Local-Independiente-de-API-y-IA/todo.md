@@ -1,0 +1,32 @@
+# Auditoría rigurosa de Belentani
+
+- [x] Confirmar que el frontend no requiere API keys ni endpoints de IA para arrancar.
+- [x] Revisar dependencias y detectar paquetes o scripts que impliquen servicios remotos.
+- [x] Buscar referencias a Ollama, llama.cpp, OpenAI, Anthropic, Google, modelos, webhooks o claves.
+- [x] Validar que las operaciones de escritura requieren interacción explícita.
+- [x] Validar que la interfaz funciona con datos locales de demostración y sin red.
+- [x] Añadir una pantalla o indicador de auditoría que muestre las garantías locales.
+- [x] Ejecutar comprobación de tipos y build de producción.
+- [x] Ejecutar pruebas automatizadas de lógica de seguridad y filtrado.
+- [x] Comprobar la vista en escritorio y móvil.
+- [x] Documentar límites: la web estática es una interfaz local-first; el acceso real al sistema de archivos requiere un runtime local adicional.
+- [x] Crear un nuevo checkpoint únicamente después de pasar las verificaciones.
+- [x] Eliminar estados que se presenten como verificados si proceden de datos estáticos.
+- [x] Construir un contrato de herramientas con nombre, permiso, nivel de riesgo y resultado verificable.
+- [x] Implementar una capa local para analizar archivos seleccionados por el usuario sin acceso implícito al sistema.
+- [x] Crear un registro observable de acciones, comandos, duración, salida y estado.
+- [x] Implementar plan de tareas con estados `NOT_IMPLEMENTED`, `PARTIAL`, `FAILED` y `VERIFIED`.
+- [x] Añadir control de aprobación para operaciones de riesgo y bloquear operaciones destructivas o de red.
+- [x] Crear pruebas unitarias e integración para workspace, política de comandos, contrato de herramienta y registro.
+- [x] Ejecutar auditoría de dependencias, build, tipos, pruebas y comprobación visual final.
+- [x] Documentar arquitectura, instalación, seguridad y capacidades verificadas frente a no implementadas.
+- [x] Analizar el núcleo CLI para detectar escapes de seguridad, errores de argumentos y procesos huérfanos.
+- [x] Revisar empaquetado, scripts de inicio, documentación y compatibilidad declarada.
+- [x] Validar que la interfaz no muestra capacidades que el núcleo no puede ejecutar.
+- [x] Corregir errores reproducibles y cubrirlos mediante pruebas de regresión.
+- [x] Ejecutar pruebas, tipos, build, análisis estático y comprobación visual final.
+- [x] Actualizar el informe de auditoría y guardar un checkpoint solo tras pasar las verificaciones.
+- [x] Revisar que el repositorio no contenga secretos, builds ni registros locales antes de publicar.
+- [x] Crear el repositorio privado `belentani-local` sin modificar `Belentani`, que permanece público.
+- [x] Verificar la rama remota, visibilidad privada y URL de la publicación.
+- [x] Registrar que `Belentani` no se publicó: ya existía como repositorio público y fue preservado sin cambios.

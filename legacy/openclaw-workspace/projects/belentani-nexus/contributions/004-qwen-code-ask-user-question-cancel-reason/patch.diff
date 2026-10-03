@@ -1,0 +1,86 @@
+﻿diff --git a/packages/core/src/tools/askUserQuestion.test.ts b/packages/core/src/tools/askUserQuestion.test.ts
+index 8d13fc8..e6d42b1 100644
+--- a/packages/core/src/tools/askUserQuestion.test.ts
++++ b/packages/core/src/tools/askUserQuestion.test.ts
+@@ -312,6 +312,42 @@ describe('AskUserQuestionTool', () => {
+       expect(result.llmContent).toContain('declined to answer');
+     });
+ 
++    it('should surface the pipeline cancellation reason instead of a false decline', async () => {
++      const params = {
++        questions: [
++          {
++            question: 'Test?',
++            header: 'Test',
++            options: [
++              { label: 'A', description: 'Option A' },
++              { label: 'B', description: 'Option B' },
++            ],
++            multiSelect: false,
++          },
++        ],
++      };
++
++      const invocation = tool.build(params);
++      const confirmation = await invocation.getConfirmationDetails(
++        new AbortController().signal,
++      );
++
++      // Simulate the permission pipeline auto-cancelling the dialog because no
++      // interactive approval surface is available (see #9011).
++      await confirmation.onConfirm(ToolConfirmationOutcome.Cancel, {
++        cancelMessage: 'requires an explicit interactive approval surface',
++      });
++
++      const result = await invocation.execute(new AbortController().signal);
++      expect(result.llmContent).toContain(
++        'requires an explicit interactive approval surface',
++      );
++      expect(result.llmContent).not.toContain('declined to answer');
++      expect(result.returnDisplay).toContain(
++        'requires an explicit interactive approval surface',
++      );
++    });
++
+     it('should return formatted answers when user provides them', async () => {
+       const params = {
+         questions: [
+diff --git a/packages/core/src/tools/askUserQuestion.ts b/packages/core/src/tools/askUserQuestion.ts
+index e2bd503..2cb2008 100644
+--- a/packages/core/src/tools/askUserQuestion.ts
++++ b/packages/core/src/tools/askUserQuestion.ts
+@@ -159,6 +159,7 @@ class AskUserQuestionToolInvocation extends BaseToolInvocation<
+ > {
+   private userAnswers: Record<string, string> = {};
+   private wasAnswered = false;
++  private cancelReason?: string;
+ 
+   constructor(
+     private readonly _config: Config,
+@@ -249,6 +250,11 @@ class AskUserQuestionToolInvocation extends BaseToolInvocation<
+             break;
+           case ToolConfirmationOutcome.Cancel:
+             this.wasAnswered = false;
++            // Preserve the pipeline-supplied cancellation reason (e.g. "requires an
++            // explicit interactive approval surface"). Without it, execute() cannot
++            // tell a real user decline apart from an auto-cancel and misreports the
++            // latter as a user choice (#9011).
++            this.cancelReason = payload?.cancelMessage;
+             break;
+           default:
+             this.wasAnswered = true;
+@@ -274,7 +280,13 @@ class AskUserQuestionToolInvocation extends BaseToolInvocation<
+       }
+ 
+       if (!this.wasAnswered) {
+-        const cancellationMessage = 'User declined to answer the questions.';
++        // Only report "User declinedÔÇª" when the user actually declined.
++        // When the confirmation pipeline auto-cancelled the dialog (no approval
++        // surface, policy denial, timeout, ÔÇª) surface the real reason instead so
++        // the agent does not treat an infrastructure failure as a user choice.
++        const cancellationMessage = this.cancelReason
++          ? `The question could not be answered: ${this.cancelReason}`
++          : 'User declined to answer the questions.';
+         return {
+           llmContent: cancellationMessage,
+           returnDisplay: cancellationMessage,

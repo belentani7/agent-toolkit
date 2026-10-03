@@ -1,0 +1,161 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // ============================================
+    // USUARIOS - Protección de Datos (RGPD)
+    // ============================================
+    match /users/{userId} {
+      // Lectura: Solo el propietario
+      allow read: if request.auth.uid == userId;
+      
+      // Creación: Solo usuarios autenticados
+      allow create: if request.auth.uid == userId &&
+                       request.resource.data.tier == 'free' &&
+                       request.resource.data.email == request.auth.token.email &&
+                       request.resource.data.uid == userId &&
+                       request.resource.data.createdAt == request.time;
+      
+      // Actualización: Solo el propietario, no puede cambiar tier sin admin
+      allow update: if request.auth.uid == userId &&
+                       (request.resource.data.tier == resource.data.tier ||
+                        request.auth.token.email == 'belentani7pedro@gmail.com') &&
+                       request.resource.data.uid == userId;
+      
+      // Eliminación: Solo el propietario (Derecho al olvido RGPD)
+      allow delete: if request.auth.uid == userId;
+      
+      // Subcollection: Historial de consentimiento RGPD
+      match /consent_log/{consentId} {
+        allow read: if request.auth.uid == userId;
+        allow create: if request.auth.uid == userId;
+      }
+      
+      // Subcollection: Datos de privacidad
+      match /privacy_settings/{settingId} {
+        allow read: if request.auth.uid == userId;
+        allow write: if request.auth.uid == userId;
+      }
+    }
+    
+    // ============================================
+    // PLAYLISTS - Propiedad y Privacidad
+    // ============================================
+    match /playlists/{playlistId} {
+      // Lectura: Propietario y admin
+      allow read: if request.auth.uid == resource.data.userId ||
+                     request.auth.token.email == 'belentani7pedro@gmail.com';
+      
+      // Creación: Usuario autenticado
+      allow create: if request.auth.uid == request.resource.data.userId &&
+                       request.resource.data.createdAt == request.time;
+      
+      // Actualización: Solo propietario
+      allow update: if request.auth.uid == resource.data.userId;
+      
+      // Eliminación: Solo propietario
+      allow delete: if request.auth.uid == resource.data.userId;
+    }
+    
+    // ============================================
+    // PARTIES - Modo Fiesta Colaborativo
+    // ============================================
+    match /parties/{partyId} {
+      // Lectura: Miembros de la party
+      allow read: if request.auth.uid in resource.data.members[*].uid;
+      
+      // Creación: Usuario autenticado
+      allow create: if request.auth.uid == request.resource.data.hostUid;
+      
+      // Actualización: Host o miembros
+      allow update: if request.auth.uid == resource.data.hostUid ||
+                       request.auth.uid in resource.data.members[*].uid;
+      
+      // Eliminación: Solo host
+      allow delete: if request.auth.uid == resource.data.hostUid;
+    }
+    
+    // ============================================
+    // CONFIGURACIÓN GLOBAL - Admin Only
+    // ============================================
+    match /config/{document=**} {
+      // Lectura pública: CEO Strategy
+      allow read: if document == 'ceo_strategy' ||
+                     request.auth.token.email == 'belentani7pedro@gmail.com';
+      
+      // Escritura: Solo admin
+      allow write: if request.auth.token.email == 'belentani7pedro@gmail.com';
+    }
+    
+    // ============================================
+    // LOGS DE AUDITORÍA - Cumplimiento Legal
+    // ============================================
+    match /audit_logs/{logId} {
+      // Lectura: Solo admin
+      allow read: if request.auth.token.email == 'belentani7pedro@gmail.com';
+      
+      // Creación: Sistema (backend)
+      allow create: if request.auth.uid != null;
+    }
+    
+    // ============================================
+    // CONSENTIMIENTO DE COOKIES - RGPD
+    // ============================================
+    match /cookie_consents/{userId} {
+      // Lectura: Usuario propietario
+      allow read: if request.auth.uid == userId;
+      
+      // Escritura: Usuario propietario
+      allow write: if request.auth.uid == userId;
+    }
+    
+    // ============================================
+    // SOLICITUDES DE DATOS - RGPD (Derecho de Acceso)
+    // ============================================
+    match /data_requests/{requestId} {
+      // Lectura: Usuario propietario y admin
+      allow read: if request.auth.uid == resource.data.userId ||
+                     request.auth.token.email == 'belentani7pedro@gmail.com';
+      
+      // Creación: Usuario autenticado
+      allow create: if request.auth.uid == request.resource.data.userId &&
+                       request.resource.data.requestType in ['access', 'deletion', 'portability'] &&
+                       request.resource.data.status == 'pending' &&
+                       request.resource.data.createdAt == request.time;
+    }
+    
+    // ============================================
+    // DENUNCIAS DE CONTENIDO - DSA
+    // ============================================
+    match /content_reports/{reportId} {
+      // Lectura: Admin
+      allow read: if request.auth.token.email == 'belentani7pedro@gmail.com';
+      
+      // Creación: Usuario autenticado
+      allow create: if request.auth.uid != null &&
+                       request.resource.data.reportType in ['illegal', 'harmful', 'spam'] &&
+                       request.resource.data.status == 'pending';
+    }
+    
+    // ============================================
+    // TRANSACCIONES - PSD2 Compliance
+    // ============================================
+    match /transactions/{transactionId} {
+      // Lectura: Usuario propietario
+      allow read: if request.auth.uid == resource.data.userId;
+      
+      // Creación: Backend only
+      allow create: if false;
+      
+      // Actualización: Backend only
+      allow update: if false;
+    }
+    
+    // ============================================
+    // REGLA POR DEFECTO - Denegar Todo
+    // ============================================
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

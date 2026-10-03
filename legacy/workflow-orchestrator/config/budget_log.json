@@ -1,0 +1,205 @@
+{
+  "monthly_usage": {
+    "2026-09": 2026.08
+  },
+  "total_spent": 2026.08,
+  "last_month": "",
+  "alerts": [
+    {
+      "type": "budget_exceeded",
+      "month": "2026-09",
+      "spent": 2001.0,
+      "limit": 200.0,
+      "timestamp": "2026-09-12T11:03:35.572516"
+    },
+    {
+      "type": "budget_exceeded",
+      "month": "2026-09",
+      "spent": 2001.0,
+      "limit": 200.0,
+      "timestamp": "2026-09-12T11:05:20.987037"
+    },
+    {
+      "type": "budget_exceeded",
+      "month": "2026-09",
+      "spent": 2002.0,
+      "limit": 200.0,
+      "timestamp": "2026-09-12T11:05:21.183967"
+    },
+    {
+      "type": "budget_exceeded",
+      "month": "2026-09",
+      "spent": 2003.0,
+      "limit": 100.0,
+      "timestamp": "2026-09-12T11:11:17.297663"
+    },
+    {
+      "type": "budget_exceeded",
+      "month": "2026-09",
+      "spent": 2004.0,
+      "limit": 100.0,
+      "timestamp": "2026-09-12T11:12:23.538962"
+    },
+    {
+      "type": "budget_exceeded",
+      "month": "2026-09",
+      "spent": 2005.0,
+      "limit": 100.0,
+      "timestamp": "2026-09-12T11:12:23.538962"
+    },
+    {
+      "type": "budget_exceeded",
+      "month": "2026-09",
+      "spent": 2005.885,
+      "limit": 100.0,
+      "timestamp": "2026-09-12T11:12:23.538962"
+    },
+    {
+      "type": "budget_exceeded",
+      "month": "2026-09",
+      "spent": 2006.885,
+      "limit": 100.0,
+      "timestamp": "2026-09-12T11:13:30.503370"
+    },
+    {
+      "type": "budget_exceeded",
+      "month": "2026-09",
+      "spent": 2007.885,
+      "limit": 100.0,
+      "timestamp": "2026-09-12T11:13:30.507403"
+    },
+    {
+      "type": "budget_exceeded",
+      "month": "2026-09",
+      "spent": 2008.77,
+      "limit": 100.0,
+      "timestamp": "2026-09-12T11:13:30.507403"
+    },
+    {
+      "type": "budget_exceeded",
+      "month": "2026-09",
+      "spent": 2009.77,
+      "limit": 100.0,
+      "timestamp": "2026-09-12T11:15:06.045731"
+    },
+    {
+      "type": "budget_exceeded",
+      "month": "2026-09",
+      "spent": 2010.77,
+      "limit": 100.0,
+      "timestamp": "2026-09-12T11:15:06.045731"
+    },
+    {
+      "type": "budget_exceeded",
+      "month": "2026-09",
+      "spent": 2011.655,
+      "limit": 100.0,
+      "timestamp": "2026-09-12T11:15:06.045731"
+    },
+    {
+      "type": "budget_exceeded",
+      "month": "2026-09",
+      "spent": 2012.655,
+      "limit": 100.0,
+      "timestamp": "2026-09-12T11:16:26.896360"
+    },
+    {
+      "type": "budget_exceeded",
+      "month": "2026-09",
+      "spent": 2013.655,
+      "limit": 100.0,
+      "timestamp": "2026-09-12T11:16:26.898373"
+    },
+    {
+      "type": "budget_exceeded",
+      "month": "2026-09",
+      "spent": 2014.54,
+      "limit": 100.0,
+      "timestamp": "2026-09-12T11:16:26.902397"
+    },
+    {
+      "type": "budget_exceeded",
+      "month": "2026-09",
+      "spent": 2015.54,
+      "limit": 100.0,
+      "timestamp": "2026-09-12T11:17:38.190764"
+    },
+    {
+      "type": "budget_exceeded",
+      "month": "2026-09",
+      "spent": 2016.54,
+      "limit": 100.0,
+      "timestamp": "2026-09-12T11:17:38.193259"
+    },
+    {
+      "type": "budget_exceeded",
+      "month": "2026-09",
+      "spent": 2017.425,
+      "limit": 100.0,
+      "timestamp": "2026-09-12T11:17:38.195806"
+    },
+    {
+      "type": "budget_exceeded",
+      "month": "2026-09",
+      "spent": 2018.425,
+      "limit": 100.0,
+      "timestamp": "2026-09-12T11:22:44.037267"
+    },
+    {
+      "type": "budget_exceeded",
+      "month": "2026-09",
+      "spent": 2019.425,
+      "limit": 100.0,
+      "timestamp": "2026-09-12T11:22:44.037267"
+    },
+    {
+      "type": "budget_exceeded",
+      "month": "2026-09",
+      "spent": 2020.31,
+      "limit": 100.0,
+      "timestamp": "2026-09-12T11:22:44.037267"
+    },
+    {
+      "type": "budget_exceeded",
+      "month": "2026-09",
+      "spent": 2021.31,
+      "limit": 100.0,
+      "timestamp": "2026-09-12T11:26:44.578444"
+    },
+    {
+      "type": "budget_exceeded",
+      "month": "2026-09",
+      "spent": 2022.31,
+      "limit": 100.0,
+      "timestamp": "2026-09-12T11:26:44.578444"
+    },
+    {
+      "type": "budget_exceeded",
+      "month": "2026-09",
+      "spent": 2023.195,
+      "limit": 100.0,
+      "timestamp": "2026-09-12T11:26:44.582541"
+    },
+    {
+      "type": "budget_exceeded",
+      "month": "2026-09",
+      "spent": 2024.195,
+      "limit": 100.0,
+      "timestamp": "2026-09-12T11:27:38.255962"
+    },
+    {
+      "type": "budget_exceeded",
+      "month": "2026-09",
+      "spent": 2025.195,
+      "limit": 100.0,
+      "timestamp": "2026-09-12T11:27:38.257960"
+    },
+    {
+      "type": "budget_exceeded",
+      "month": "2026-09",
+      "spent": 2026.08,
+      "limit": 100.0,
+      "timestamp": "2026-09-12T11:27:38.261257"
+    }
+  ]
+}

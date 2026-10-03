@@ -1,0 +1,34 @@
+{
+  "name": "acompanante-investigacion-local",
+  "version": "0.1.0",
+  "description": "Acompañante local de investigación con simulaciones matemáticas sintéticas.",
+  "main": "src/main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "lint": "node --check src/main.js && node --check src/preload.js && node --check src/renderer.js && node --check src/simulations.js && node --check src/vault-crypto.js && node --check src/protocol.js",
+    "test": "node tests/simulations.test.js && node tests/vault-crypto.test.js && node tests/protocol.test.js",
+    "package:win": "electron-builder --win nsis"
+  },
+  "build": {
+    "appId": "local.acompanante.investigacion",
+    "productName": "Acompañante",
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "devDependencies": {
+    "electron": "^39.2.6",
+    "electron-builder": "^26.3.1"
+  }
+}

@@ -1,0 +1,33 @@
+# Secrets - never commit
+.env
+*.env
+*.key
+*KR*.txt
+.secrets*
+credentials*.json
+chat-export*.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Swarm runtime local state
+swarm/context/
+swarm/queue/
+swarm/*.log
+.work/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/settings.json
+.azd/
+
+**/swarm/context/
+**/swarm/queue/
+**/.work/
+CONTEXT_HANDOFF.md
+

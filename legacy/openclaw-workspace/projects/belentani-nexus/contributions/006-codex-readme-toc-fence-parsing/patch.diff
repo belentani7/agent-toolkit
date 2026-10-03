@@ -1,0 +1,117 @@
+diff --git a/scripts/readme_toc.py b/scripts/readme_toc.py
+index f37a69d..9dba7ea 100755
+--- a/scripts/readme_toc.py
++++ b/scripts/readme_toc.py
+@@ -37,16 +37,41 @@ def main() -> int:
+ def generate_toc_lines(content: str) -> List[str]:
+     """
+     Generate markdown list lines for headings (## to ######) in content.
++
++    Headings inside fenced code blocks are ignored. Both backtick (```) and
++    tilde (~~~) fences are tracked: a fence stays open until a closing fence
++    that uses the same character and is at least as long as the opener, so a
++    literal ``` line cannot prematurely close a longer ```` fence and tilde
++    fences are not mistaken for content.
+     """
+     lines = content.splitlines()
+     headings = []
+-    in_code = False
++    fence_char = None  # "`" or "~" while inside a fence, else None
++    fence_len = 0  # length of the opening fence marker
+     for line in lines:
+-        if line.strip().startswith("```"):
+-            in_code = not in_code
+-            continue
+-        if in_code:
++        stripped = line.strip()
++        if fence_char is None:
++            # Detect a fence opener: 3+ of the same character. A backtick
++            # opener's info string must not contain a backtick (CommonMark).
++            if stripped.startswith("```"):
++                fence_len = len(stripped) - len(stripped.lstrip("`"))
++                if "`" not in stripped[fence_len:]:
++                    fence_char = "`"
++                continue
++            if stripped.startswith("~~~"):
++                fence_len = len(stripped) - len(stripped.lstrip("~"))
++                fence_char = "~"
++                continue
++        else:
++            # Only a fence closer with the same character and at least the
++            # same length closes the current fence.
++            closer = fence_char * 3
++            if stripped.startswith(closer) and stripped.rstrip(fence_char) == "":
++                if len(stripped) >= fence_len:
++                    fence_char = None
++                    fence_len = 0
+             continue
++
+         m = re.match(r"^(#{2,6})\s+(.*)$", line)
+         if not m:
+             continue
+diff --git a/scripts/test_readme_toc_fences.py b/scripts/test_readme_toc_fences.py
+new file mode 100644
+index 0000000..6fa6bcd
+--- /dev/null
++++ b/scripts/test_readme_toc_fences.py
+@@ -0,0 +1,60 @@
++#!/usr/bin/env python3
++"""Regression tests for scripts/readme_toc.py fence handling (#41077)."""
++
++import sys
++from pathlib import Path
++
++sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
++
++from readme_toc import generate_toc_lines
++
++
++def test_tilde_fenced_headings_are_excluded():
++    content = "\n".join(
++        [
++            "## Before",
++            "~~~markdown",
++            "## Not a heading",
++            "~~~",
++            "## After",
++        ]
++    )
++    toc = generate_toc_lines(content)
++    assert toc == ["- [Before](#before)", "- [After](#after)"], toc
++
++
++def test_longer_backtick_fence_is_not_closed_by_triple_backtick():
++    content = "\n".join(
++        [
++            "## Outside",
++            "````markdown",
++            "```",
++            "## Inside is not a heading",
++            "```",
++            "````",
++            "## Also outside",
++        ]
++    )
++    toc = generate_toc_lines(content)
++    assert toc == ["- [Outside](#outside)", "- [Also outside](#also-outside)"], toc
++
++
++def test_backtick_fences_still_work():
++    content = "\n".join(
++        [
++            "## One",
++            "```py",
++            "## commented code, not a heading",
++            "```",
++            "## Two",
++        ]
++    )
++    toc = generate_toc_lines(content)
++    assert toc == ["- [One](#one)", "- [Two](#two)"], toc
++
++
++if __name__ == "__main__":
++    test_tilde_fenced_headings_are_excluded()
++    test_longer_backtick_fence_is_not_closed_by_triple_backtick()
++    test_backtick_fences_still_work()
++    print("all readme_toc fence tests passed")

@@ -1,0 +1,36 @@
+{
+  "task_id": "action_critical",
+  "overall_passed": true,
+  "overall_score": 0.8625,
+  "generated_at": "2026-09-12T11:27:39.360420",
+  "results": [
+    {
+      "type": "type_check",
+      "passed": true,
+      "score": 0.8,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "type": "build",
+      "passed": true,
+      "score": 0.9,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "type": "test",
+      "passed": true,
+      "score": 0.8,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "type": "security",
+      "passed": true,
+      "score": 0.95,
+      "errors": [],
+      "warnings": []
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+# ═══════════════════════════════════════════════════════════════
+#  notebook-lite default configuration
+#  Copy to ~/.notebook-lite/config.yaml and customize
+# ═══════════════════════════════════════════════════════════════
+
+# Embedding model (sentence-transformers)
+# all-MiniLM-L6-v2: 80MB, 384 dims, fast, good quality
+# all-mpnet-base-v2: 420MB, 768 dims, slower, better quality
+embedding_model: all-MiniLM-L6-v2
+
+# Chunking parameters
+chunk_size: 512        # Max tokens per chunk
+chunk_overlap: 50      # Overlap tokens between consecutive chunks
+
+# Search parameters
+top_k: 5               # Number of chunks to retrieve per query
+
+# LLM configuration
+llm:
+  # Provider: ollama, openai, qwen, claude, none
+  provider: ollama
+  model: llama3.2
+  url: http://localhost:11434
+
+  # For API providers (openai, qwen, claude):
+  # api_key: sk-your-key-here
+
+  # Generation parameters
+  temperature: 0.3
+  max_tokens: 1024
+
+# Search settings
+search:
+  hybrid: true           # Combine vector + keyword search
+  keyword_weight: 0.3    # Weight for keyword component (0-1)

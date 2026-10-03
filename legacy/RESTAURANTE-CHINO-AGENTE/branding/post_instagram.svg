@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4AF37"/>
+      <stop offset="100%" style="stop-color:#8B6914"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="#0A0A0A"/>
+  <rect x="0" y="0" width="1080" height="200" fill="url(#gold)"/>
+  <text x="540" y="80" font-size="80" text-anchor="middle">🐉</text>
+  <text x="540" y="140" font-family="serif" font-size="48" font-weight="bold" text-anchor="middle" fill="#000">Dragón de Jade</text>
+  <text x="540" y="180" font-family="serif" font-size="24" text-anchor="middle" fill="#333">龍玉</text>
+
+  <text x="540" y="350" font-family="sans-serif" font-size="36" text-anchor="middle" fill="#FFF">Menú del Día</text>
+  <text x="540" y="420" font-family="sans-serif" font-size="24" text-anchor="middle" fill="#888">Entrante + Principal + Postre + Bebida</text>
+
+  <rect x="240" y="460" width="600" height="150" fill="#1A1A1A" rx="20"/>
+  <text x="540" y="530" font-family="sans-serif" font-size="80" font-weight="bold" text-anchor="middle" fill="#D4AF37">12.50€</text>
+  <text x="540" y="580" font-family="sans-serif" font-size="20" text-anchor="middle" fill="#666">Solo de lunes a viernes | 12:00 - 16:00</text>
+
+  <text x="540" y="700" font-family="sans-serif" font-size="28" text-anchor="middle" fill="#FFF">📍 Calle Gran Vía de los Chinos, 42</text>
+  <text x="540" y="750" font-family="sans-serif" font-size="24" text-anchor="middle" fill="#888">Barcelona</text>
+
+  <text x="540" y="850" font-family="sans-serif" font-size="20" text-anchor="middle" fill="#D4AF37">📞 +34 933 456 789</text>
+  <text x="540" y="890" font-family="sans-serif" font-size="20" text-anchor="middle" fill="#D4AF37">📱 WhatsApp: +34 612 345 678</text>
+
+  <text x="540" y="1000" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#444">#DragonDeJade #ComidaChina #Barcelona #MenúDelDía #DimSum #YumCha #ComidaChinaBarcelona</text>
+</svg>

@@ -1,0 +1,115 @@
+Aquí tienes el **prompt completo, optimizado y endurecido** para copiar/pegar directamente en Manus Desktop (pestaña **My Computer**). Le añadí lo que le faltaba al anterior: arquitectura técnica concreta, criterios de aceptación verificables, modo offline real, seguridad en la ejecución de comandos y espacios `[ENTRE CORCHETES]` que debes rellenar con tus datos antes de enviarlo.
+
+---
+
+## 🧠 PROMPT MAESTRO — Agente Local tipo Claude Code (sin APIs, sin modelos pesados)
+
+```text
+ROL:
+Actúa como un ingeniero de software senior especializado en agentes de IA locales, 
+inferencia de modelos ligeros y herramientas de terminal. Trabajas como mi desarrollador 
+principal: investigas, decides con justificación, ejecutas y me entregas un sistema 
+funcional, probado y documentado.
+
+OBJETIVO:
+Construir e instalar en mi PC un asistente de IA tipo "Claude Code" que funcione 
+100% en local, desde la terminal, capaz de: leer/escribir archivos, buscar en el 
+código, ejecutar comandos aprobados por mí, y asistirme en tareas de programación 
+dentro de mi carpeta de trabajo.
+
+REQUISITOS NO NEGOCIABLES:
+1. INDEPENDENCIA TOTAL: ninguna dependencia de APIs de pago o en la nube 
+   (OpenAI, Anthropic, Google, etc.) para su funcionamiento principal. 
+   El sistema debe funcionar con la red desconectada.
+2. SIN MODELOS PESADOS: el modelo de lenguaje local debe ocupar ≤ 8 GB de RAM 
+   en inferencia. Prioriza modelos pequeños de alta calidad en código.
+3. GRATUIDAD: todo el stack debe ser open-source (licencias permisivas).
+4. SEGURIDAD: el agente NUNCA ejecuta comandos destructivos sin confirmación 
+   explícita del usuario. Debe incluir una lista blanca de comandos seguros 
+   y pedir aprobación para todo lo demás.
+5. ENTREGABLE FUNCIONAL: no quiero teoría ni informes. Quiero el sistema 
+   instalado, corriendo y probado en mi máquina.
+
+MI HARDWARE (ajusta la solución a esto):
+- Sistema operativo: [Windows 11 / macOS / Linux]
+- GPU: [Ej: NVIDIA RTX 3060 12GB / no tengo GPU dedicada]
+- RAM: [Ej: 16 GB]
+- Carpeta de trabajo: [RUTA DE TU CARPETA]
+
+PLAN DE EJECUCIÓN OBLIGATORIO (fase por fase, con checkpoint antes de seguir):
+
+FASE 1 — Investigación y selección del stack:
+- Investiga y compara opciones reales y mantenidas (actividad reciente en GitHub, 
+  issues abiertos, documentación). Considera como candidatos: 
+  Open Interpreter (modo local), aider (con backend local), kode-agent-sdk, 
+  AgenticSeek, y la construcción de un agente mínimo propio en Python.
+- Entrega una tabla comparativa: proyecto, estrellas, última actualización, 
+  soporte offline real, complejidad de instalación, y tu veredicto justificado.
+- NO avances hasta que yo apruebe la elección.
+
+FASE 2 — Selección del modelo ligero (SLM) y motor de inferencia:
+- Evalúa modelos pequeños orientados a código: Qwen2.5-Coder 3B o 7B, 
+  Phi-3/Phi-4 mini, Gemma 2B, DeepSeek-Coder-lite, Llama 3.2 3B.
+- Elige el mejor equilibrio calidad/velocidad para MI hardware. 
+  Si no tengo GPU, prioriza modelos ≤ 4B con cuantización Q4/Q5.
+- Motor de inferencia: Ollama o llama.cpp. Justifica cuál según mi máquina.
+- Indica el tamaño exacto en disco y el consumo de RAM estimado.
+- NO avances hasta que yo apruebe el modelo.
+
+FASE 3 — Instalación en mi PC (vía terminal con mi aprobación comando a comando):
+- Instala el motor de inferencia, descarga el modelo elegido y verifica que 
+  responde con un prompt de prueba.
+- Instala el framework/agente y todas sus dependencias en la carpeta de trabajo 
+  (usa un entorno virtual aislado, sin ensuciar el sistema).
+- Crea un comando o script de arranque simple (Ej: `agente` o `python agente.py`).
+
+FASE 4 — Configuración del agente:
+- Conecta el agente al modelo local (API local tipo localhost, sin salir a internet).
+- Configura las herramientas: leer archivo, escribir archivo, listar directorio, 
+  buscar texto (ripgrep), ejecutar comando con aprobación.
+- Restringe el ámbito del agente a mi carpeta de trabajo (sandbox de rutas).
+- Activa modo streaming (ver la respuesta token a token en terminal).
+
+FASE 5 — Validación (criterios de aceptación obligatorios):
+1. Prueba offline: desconecta la red y demuestra que el agente responde igual.
+2. Prueba de código: pídele que cree un script Python "Hola Mundo", 
+   lo escriba en disco y lo ejecute. Debe funcionar sin errores.
+3. Prueba de seguridad: el agente debe pedir confirmación antes de ejecutar 
+   cualquier comando fuera de la lista blanca.
+- Si alguna prueba falla, diagnosticas y corriges hasta que pase. 
+  No declaras éxito hasta pasar las 3.
+
+FASE 6 — Entrega final:
+- Genera un README.md en la carpeta con: cómo iniciar, cómo usar, 
+  cómo cambiar el modelo, cómo ampliar herramientas y solución de problemas comunes.
+- Genera un script de arranque (`start.bat` o `start.sh`) que levante todo 
+  con un solo clic/comando.
+- Resumen final: qué quedó instalado, dónde, y cómo lo uso mañana.
+
+REGLAS DE TRABAJO:
+- Antes de cada comando en mi PC: explícame en una línea qué hace y pide permiso.
+- Si dos caminos son posibles, muéstrame ambos en 3 líneas y recomienda uno.
+- Prohibido instalar software que requiera suscripción o clave de API.
+- Si algo no funciona a la primera, máximo 3 intentos de reparación; 
+  después me presentas alternativas.
+- Idioma de toda la documentación: español.
+
+Comienza por la FASE 1 y preséntame la tabla comparativa. Espera mi aprobación 
+antes de pasar a la siguiente fase.
+```
+
+---
+
+## ✅ Antes de enviarlo — Checklist (30 segundos)
+
+1. **Rellena los corchetes**: sistema operativo, GPU (modelo exacto y VRAM), RAM total y ruta de tu carpeta de trabajo. Esto cambia radicalmente el modelo que Manus elegirá (con GPU de 12 GB te recomendará Qwen2.5-Coder 7B; sin GPU, bajará a 3B o Phi-3 mini cuantizado).
+2. **Abre Manus Desktop → My Computer → Añadir Carpeta** y selecciona la carpeta donde quieres el proyecto. El prompt ya le dice que se limite a esa carpeta.
+3. **Aprobaciones**: usa *"Permitir una vez"* para instalaciones y *"Permitir siempre"* solo para comandos de lectura inofensivos. Nunca des permiso ciego a `rm`, `del` o instaladores.
+
+## ⚠️ Lo que debes saber de antemano (expectativa realista)
+
+- **Offline real sí es posible**, pero la fase de *descarga* del modelo y dependencias necesita internet una sola vez. La prueba de desconexión de la FASE 5 está ahí para garantizar que después funciona sin red.
+- **Calidad vs. nube**: un modelo de 3B–7B local escribe código correcto para tareas cotidianas (scripts, refactor simple, explicar código, crear archivos), pero no iguala a Claude Sonnet en arquitecturas complejas. Es el precio de la independencia total.
+- **Si tu PC tiene menos de 16 GB de RAM**: añade esa línea explícita en el prompt y obliga a modelos ≤ 3B con cuantización Q4.
+
+Si quieres, te preparo una **variante del prompt para hardware muy limitado** (8 GB RAM, sin GPU) o una **versión con capacidades extra** (agente que también controle el navegador local). Dime tu hardware exacto y te lo dejo ya afinado.

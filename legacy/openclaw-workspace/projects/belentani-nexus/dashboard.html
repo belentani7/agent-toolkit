@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BELENTANI NEXUS - Dashboard</title>
+  <style>
+    :root {
+      --green: #10b981;
+      --green-light: #34d399;
+      --purple: #7c3aed;
+      --purple-dark: #2a1245;
+      --bg: #0b0614;
+      --text: #d1fae5;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'JetBrains Mono', monospace;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    h1 {
+      font-size: 3rem;
+      background: linear-gradient(135deg, var(--green), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+    
+    .subtitle {
+      color: var(--green-light);
+      font-size: 1.2rem;
+    }
+    
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .card {
+      background: rgba(124, 58, 237, 0.1);
+      border: 1px solid var(--purple);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.3s;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+    }
+    
+    .card h2 {
+      color: var(--green);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    
+    .card p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: var(--green);
+      color: var(--bg);
+      border: none;
+      border-radius: 8px;
+      font-family: inherit;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+    
+    .btn:hover {
+      background: var(--green-light);
+      transform: scale(1.05);
+    }
+    
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .stat {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid var(--green);
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+    }
+    
+    .stat-value {
+      font-size: 2rem;
+      color: var(--green);
+      font-weight: bold;
+    }
+    
+    .stat-label {
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+    
+    .terminal {
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid var(--purple);
+      border-radius: 8px;
+      padding: 1.5rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      overflow-x: auto;
+    }
+    
+    .terminal-line {
+      margin-bottom: 0.5rem;
+    }
+    
+    .prompt {
+      color: var(--green);
+    }
+    
+    .comment {
+      color: #6d5a9c;
+    }
+    
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--purple);
+      color: var(--text);
+    }
+    
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background: var(--purple);
+      border-radius: 12px;
+      font-size: 0.8rem;
+      margin: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🦞 BELENTANI NEXUS</h1>
+      <p class="subtitle">Ecosistema IA Unificado - MODO LEGADO ACTIVADO</p>
+    </header>
+    
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-value">50+</div>
+        <div class="stat-label">APIs Integradas</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">100+</div>
+        <div class="stat-label">Modelos Disponibles</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">~€0</div>
+        <div class="stat-label">Costo Mensual</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">4</div>
+        <div class="stat-label">Proyectos Completos</div>
+      </div>
+    </div>
+    
+    <div class="grid">
+      <div class="card">
+        <h2>🎬 Judas Videoclip</h2>
+        <p>Producción completa del videoclip "Judas" con IA: storyboard, assets visuales, video musical y material promocional.</p>
+        <div>
+          <span class="badge">Cyberpunk</span>
+          <span class="badge">Cinematográfico</span>
+          <span class="badge">Automatizado</span>
+        </div>
+        <br>
+        <button class="btn" onclick="runProject('judas')">Ejecutar</button>
+      </div>
+      
+      <div class="card">
+        <h2>🎥 IMAX Album Engine</h2>
+        <p>Convierte canciones en videos musicales automatizados con análisis de estructura, storyboard y animación IA.</p>
+        <div>
+          <span class="badge">Videos Musicales</span>
+          <span class="badge">4K</span>
+          <span class="badge">Automatizado</span>
+        </div>
+        <br>
+        <button class="btn" onclick="runProject('imax')">Ejecutar</button>
+      </div>
+      
+      <div class="card">
+        <h2>📸 Cyberpunk Extraction</h2>
+        <p>Genera sesiones de fotos cyberpunk profesionales con 5 estilos: neon, dystopian, retro, minimal, glitch.</p>
+        <div>
+          <span class="badge">Fotos IA</span>
+          <span class="badge">5 Estilos</span>
+          <span class="badge">Profesional</span>
+        </div>
+        <br>
+        <button class="btn" onclick="runProject('cyberpunk')">Ejecutar</button>
+      </div>
+      
+      <div class="card">
+        <h2>🎵 Duck Studio OS</h2>
+        <p>Estudio de producción musical local con motor de audio Web Audio API, 8 micrófonos y secuenciador.</p>
+        <div>
+          <span class="badge">Audio</span>
+          <span class="badge">Web Audio</span>
+          <span class="badge">Secuenciador</span>
+        </div>
+        <br>
+        <button class="btn" onclick="runProject('duck')">Ejecutar</button>
+      </div>
+    </div>
+    
+    <div class="terminal">
+      <div class="terminal-line"><span class="prompt">$</span> npm run setup <span class="comment"># Configurar API keys</span></div>
+      <div class="terminal-line"><span class="prompt">$</span> npm run demo <span class="comment"># Probar APIs</span></div>
+      <div class="terminal-line"><span class="prompt">$</span> npm run judas <span class="comment"># Producir videoclip</span></div>
+      <div class="terminal-line"><span class="prompt">$</span> npm run imax <span class="comment"># Generar video musical</span></div>
+      <div class="terminal-line"><span class="prompt">$</span> npm run cyberpunk <span class="comment"># Sesión de fotos</span></div>
+    </div>
+    
+    <footer>
+      <p><strong>🔥 MODO LEGADO ACTIVADO 🔥</strong></p>
+      <p>Construyendo el legado digital del arte cyberpunk con IA</p>
+      <p style="margin-top: 1rem;">
+        <a href="https://github.com/belentani7/belentani-nexus" style="color: var(--green);">GitHub</a> |
+        <a href="https://belentani7.github.io" style="color: var(--green);">Portal</a> |
+        <a href="mailto:belentani7pedro@gmail.com" style="color: var(--green);">Contacto</a>
+      </p>
+    </footer>
+  </div>
+  
+  <script>
+    function runProject(project) {
+      alert(`Ejecutando: npm run ${project}\n\nEn terminal:\ncd projects/belentani-nexus\nnpm run ${project}`);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invoice — Belentani Corp</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;background:#f5f5f5;color:#1a1a1a;padding:2rem}
+.invoice{max-width:800px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.header{background:#09090b;color:#fff;padding:2rem;display:flex;justify-content:space-between;align-items:start}
+.header .brand{font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;color:#00ff88}
+.header .invoice-title{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;text-align:right}
+.header .invoice-meta{text-align:right;font-size:.75rem;color:#a1a1aa;margin-top:.5rem}
+.body{padding:2rem}
+.parties{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2rem}
+.party h4{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:.5rem}
+.party p{font-size:.85rem;line-height:1.6}
+.party .name{font-weight:700;font-size:1rem}
+.items{width:100%;border-collapse:collapse;margin-bottom:2rem}
+.items th{text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#888;padding:.8rem 0;border-bottom:2px solid #eee}
+.items td{padding:.8rem 0;border-bottom:1px solid #f0f0f0;font-size:.85rem}
+.items .amount{text-align:right;font-family:'JetBrains Mono',monospace;font-weight:600}
+.totals{display:flex;justify-content:flex-end}
+.totals-box{width:250px}
+.totals-row{display:flex;justify-content:space-between;padding:.4rem 0;font-size:.85rem}
+.totals-row.total{font-weight:700;font-size:1.1rem;border-top:2px solid #09090b;padding-top:.8rem;margin-top:.5rem}
+.footer{background:#f8f8f8;padding:1.5rem 2rem;font-size:.75rem;color:#888;text-align:center}
+.footer .payment{margin-bottom:.5rem}
+.payment-details{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;padding:1rem;background:#fff;border-radius:8px;border:1px solid #eee}
+.payment-details dt{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#888}
+.payment-details dd{font-size:.85rem;font-family:'JetBrains Mono',monospace;margin-top:.2rem}
+
+@media print{
+  body{background:#fff;padding:0}
+  .invoice{box-shadow:none}
+}
+</style>
+</head>
+<body>
+
+<div class="invoice">
+  <div class="header">
+    <div>
+      <div class="brand">BELENTANI</div>
+      <div style="font-size:.75rem;color:#a1a1aa;margin-top:.3rem">estudi digital</div>
+    </div>
+    <div>
+      <div class="invoice-title">FACTURA</div>
+      <div class="invoice-meta">
+        Nº: INV-2026-001<br>
+        Fecha: 25/07/2026<br>
+        Vencimiento: 25/08/2026
+      </div>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="parties">
+      <div class="party">
+        <h4>De</h4>
+        <p class="name">Pedro Marcos Santos Belentani</p>
+        <p>NIF: [YOUR_NIF]<br>
+        L'Hospitalet de Llobregat, 08902<br>
+        Barcelona, España<br>
+        belentani7pedro@gmail.com<br>
+        +34 631 816 810</p>
+      </div>
+      <div class="party">
+        <h4>Para</h4>
+        <p class="name">[CLIENT_NAME]</p>
+        <p>[CLIENT_ADDRESS]<br>
+        [CLIENT_CITY, POSTAL]<br>
+        [CLIENT_COUNTRY]<br>
+        [CLIENT_EMAIL]</p>
+      </div>
+    </div>
+
+    <table class="items">
+      <thead>
+        <tr>
+          <th>Descripción</th>
+          <th>Cantidad</th>
+          <th>Precio Unitario</th>
+          <th style="text-align:right">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Desarrollo de aplicación web full-stack</td>
+          <td>1</td>
+          <td>€3,500.00</td>
+          <td class="amount">€3,500.00</td>
+        </tr>
+        <tr>
+          <td>Integración de sistema de voz IA (5 idiomas)</td>
+          <td>1</td>
+          <td>€2,000.00</td>
+          <td class="amount">€2,000.00</td>
+        </tr>
+        <tr>
+          <td>Consultoría AI Safety (40h × €100/h)</td>
+          <td>40</td>
+          <td>€100.00</td>
+          <td class="amount">€4,000.00</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="totals">
+      <div class="totals-box">
+        <div class="totals-row"><span>Subtotal</span><span style="font-family:'JetBrains Mono',monospace">€9,500.00</span></div>
+        <div class="totals-row"><span>IVA (21%)</span><span style="font-family:'JetBrains Mono',monospace">€1,995.00</span></div>
+        <div class="totals-row total"><span>TOTAL</span><span style="font-family:'JetBrains Mono',monospace;color:#00ff88">€11,495.00</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="payment">Método de pago: Transferencia bancaria</div>
+    <div>Plazo de pago: 30 días desde la fecha de factura</div>
+    <dl class="payment-details">
+      <div><dt>Banco</dt><dd>[BANK_NAME]</dd></div>
+      <div><dt>IBAN</dt><dd>[YOUR_IBAN]</dd></div>
+      <div><dt>BIC/SWIFT</dt><dd>[YOUR_BIC]</dd></div>
+      <div><dt>Concepto</dt><dd>INV-2026-001</dd></div>
+    </dl>
+  </div>
+</div>
+
+</body>
+</html>

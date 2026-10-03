@@ -1,0 +1,33 @@
+{
+  "name": "belentani-nexus",
+  "version": "2.0.0",
+  "description": "Belentani Nexus - Ecosistema IA unificado para producción musical, visual y cinematográfica",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "demo": "node demo.js",
+    "judas": "node demo.js --project=judas",
+    "imax": "node demo.js --project=imax",
+    "cyberpunk": "node demo.js --project=cyberpunk",
+    "test": "node test-api.js"
+  },
+  "keywords": [
+    "ai",
+    "music",
+    "video",
+    "cyberpunk",
+    "belentani",
+    "imax",
+    "judas"
+  ],
+  "author": "Pedro Belentani",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "fluent-ffmpeg": "^2.1.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

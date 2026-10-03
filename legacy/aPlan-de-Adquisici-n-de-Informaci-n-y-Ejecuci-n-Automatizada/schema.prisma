@@ -1,0 +1,154 @@
+// NEXUS-Ω · Ecosistema Agéntico Multi-Stack
+// Modelo de persistencia local (espejo del esquema objetivo Supabase/PostgreSQL)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ─────────────────────────────────────────────────────────────
+// A. TAXONOMÍA DE SKILLS AGÉNTICOS
+// ─────────────────────────────────────────────────────────────
+
+model SkillCategory {
+  id          String  @id @default(cuid())
+  code        String  @unique // RAZ, FSE, INF, MCP, SEG, DEV, WSC, FIN, SOP
+  name        String
+  description String
+  colorKey    String  // token de color del sub-dominio
+  order       Int
+  skills      Skill[]
+}
+
+model Skill {
+  id             String        @id @default(cuid())
+  code           String        @unique // RAZ-01 … SOP-04
+  name           String
+  description    String
+  executionLogic String // lógica de ejecución (núcleo algorítmico)
+  tooling        String // herramientas / runtime asociado
+  complexity     String // BÁSICA | MEDIA | ALTA | EXTREMA
+  phase          Int // fase del ciclo de vida en la que se activa
+  criticality    String // NÚCLEO | ALTA | MEDIA | BAJA
+  status         String        @default("ESPECIFICADA") // ESPECIFICADA | IMPLEMENTADA | VALIDADA
+  categoryId     String
+  category       SkillCategory @relation(fields: [categoryId], references: [id])
+
+  @@index([categoryId])
+  @@index([complexity])
+  @@index([phase])
+}
+
+// ─────────────────────────────────────────────────────────────
+// B. CICLO DE VIDA DEL PROYECTO (4 FASES)
+// ─────────────────────────────────────────────────────────────
+
+model Phase {
+  id           String     @id @default(cuid())
+  number       Int        @unique
+  name         String
+  objective    String
+  duration     String
+  status       String     @default("EN_PLAN") // EN_PLAN | EN_CURSO | COMPLETADA
+  deliverables String // JSON array serializado
+  risks        String
+  milestones   Milestone[]
+}
+
+model Milestone {
+  id          String @id @default(cuid())
+  code        String @unique // F1-M1 …
+  title       String
+  description String
+  week        String
+  status      String @default("PENDIENTE")
+  phaseId     String
+  phase       Phase  @relation(fields: [phaseId], references: [id])
+
+  @@index([phaseId])
+}
+
+// ─────────────────────────────────────────────────────────────
+// C. ÍNDICE DE REPOSITORIOS (corpus real: export GitHub)
+// ─────────────────────────────────────────────────────────────
+
+model RepoSource {
+  id              String    @id @default(cuid())
+  name            String
+  fullName        String
+  language        String?
+  visibility      String
+  fork            Boolean   @default(false)
+  sizeKb          Int       @default(0)
+  stars           Int       @default(0)
+  openIssues      Int       @default(0)
+  description     String?
+  topics          String    @default("") // CSV
+  updatedAt       DateTime?
+  embeddingStatus String    @default("PENDIENTE") // PENDIENTE | CHUNKING | EMBEDDING | INDEXADO
+  chunkCount      Int       @default(0)
+  indexedAt       DateTime?
+
+  @@index([language])
+  @@index([embeddingStatus])
+  @@index([name])
+}
+
+// ─────────────────────────────────────────────────────────────
+// D. AUDITORÍA LEGAL INMUTABLE (cadena hash local)
+// ─────────────────────────────────────────────────────────────
+
+model AuditEvent {
+  id          String   @id @default(cuid())
+  agentCode   String   @default("ORQUESTADOR-01")
+  action      String
+  entity      String
+  entityId    String?
+  severity    String   @default("INFO") // INFO | WARN | CRITICAL
+  payloadHash String
+  createdAt   DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([severity])
+}
+
+// ─────────────────────────────────────────────────────────────
+// E. SIMULACIONES DEL ORQUESTADOR (consola LLM)
+// ─────────────────────────────────────────────────────────────
+
+model SimulationRun {
+  id         String   @id @default(cuid())
+  objective  String
+  model      String   @default("glm-4.7")
+  status     String   @default("COMPLETADO")
+  plan       String // JSON serializado del plan de ejecución
+  skillsUsed String   @default("") // CSV de códigos de skill
+  steps      Int      @default(0)
+  durationMs Int      @default(0)
+  createdAt  DateTime @default(now())
+
+  @@index([createdAt])
+}
+
+// ─────────────────────────────────────────────────────────────
+// F. DEBATES MULTI-AGENTE (RAZ-03: adversariales + juez)
+// ─────────────────────────────────────────────────────────────
+
+model DebateRun {
+  id          String   @id @default(cuid())
+  topic       String
+  proText     String
+  conText     String
+  verdictText String
+  winner      String // PRO | CONTRA | EMPATE
+  confidence  Float    @default(0.5)
+  keyPoints   String   @default("") // CSV
+  durationMs  Int      @default(0)
+  createdAt   DateTime @default(now())
+
+  @@index([createdAt])
+}

@@ -1,0 +1,250 @@
+name: Deploy BELENTANI
+
+on:
+  push:
+    branches: [main, production]
+  pull_request:
+    branches: [main]
+
+env:
+  NODE_VERSION: '18'
+  REGISTRY: ghcr.io
+
+jobs:
+  # ============================================
+  # Build & Test
+  # ============================================
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run linter
+        run: npm run lint
+      
+      - name: Build project
+        run: npm run build
+        env:
+          VITE_GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          VITE_FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
+      
+      - name: Run tests
+        run: npm test -- --coverage
+      
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./coverage/coverage-final.json
+
+  # ============================================
+  # Security Scan
+  # ============================================
+  security-scan:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run npm audit
+        run: npm audit --audit-level=moderate
+      
+      - name: Run Snyk scan
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --severity-threshold=high
+
+  # ============================================
+  # Deploy to Vercel
+  # ============================================
+  deploy-vercel:
+    needs: [build-and-test, security-scan]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Deploy to Vercel
+        uses: vercel/actions/deploy-production@main
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+        env:
+          VITE_GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          VITE_FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
+
+  # ============================================
+  # Deploy to Firebase
+  # ============================================
+  deploy-firebase:
+    needs: [build-and-test, security-scan]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/production' && github.event_name == 'push'
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Build project
+        run: npm run build
+        env:
+          VITE_GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          VITE_FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
+      
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
+          projectId: belentani-prod
+
+  # ============================================
+  # Build Android APK
+  # ============================================
+  build-android:
+    needs: [build-and-test, security-scan]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/production' && github.event_name == 'push'
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+      
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v2
+        with:
+          api-level: 35
+          build-tools-version: '35.0.0'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Build web
+        run: npm run build
+        env:
+          VITE_GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          VITE_FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
+      
+      - name: Add Capacitor
+        run: |
+          npm install @capacitor/core @capacitor/cli
+          npx cap add android
+      
+      - name: Build Android Bundle
+        working-directory: ./android
+        run: |
+          chmod +x gradlew
+          ./gradlew bundleRelease
+        env:
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+      
+      - name: Upload to Google Play
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJsonPlainText: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT }}
+          packageName: com.belentani.app
+          releaseFiles: android/app/build/outputs/bundle/release/app-release.aab
+          track: production
+          status: inProgress
+
+  # ============================================
+  # Lighthouse Audit
+  # ============================================
+  lighthouse-audit:
+    needs: [build-and-test]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Build project
+        run: npm run build
+        env:
+          VITE_GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          VITE_FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
+      
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v9
+        with:
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+
+  # ============================================
+  # Notify Deployment
+  # ============================================
+  notify:
+    needs: [deploy-vercel, deploy-firebase]
+    runs-on: ubuntu-latest
+    if: always()
+    
+    steps:
+      - name: Slack Notification
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          payload: |
+            {
+              "text": "BELENTANI Deployment Status",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*BELENTANI Deployment*\nStatus: ${{ job.status }}\nRef: ${{ github.ref }}\nCommit: ${{ github.sha }}"
+                  }
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}

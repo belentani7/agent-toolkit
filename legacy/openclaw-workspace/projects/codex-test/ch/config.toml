@@ -1,0 +1,9 @@
+﻿model = "gpt-5.5"
+model_provider = "openai"
+
+[model_providers.token-plan]
+name = "Token Plan ModelStudio"
+base_url = "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1"
+wire_api = "responses"
+env_key = "TOKENPLAN_API_KEY"
+

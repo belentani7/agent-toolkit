@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Models (downloaded embedding models)
+models/
+*.bin
+*.safetensors
+*.pt
+*.onnx
+
+# Data (local databases and indexed data)
+data/
+*.db
+*.db-wal
+*.db-shm
+
+# Exports
+exports/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Config (user-specific)
+config.local.yaml

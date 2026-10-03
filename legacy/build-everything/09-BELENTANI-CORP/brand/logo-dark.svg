@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <rect width="200" height="200" rx="40" fill="#fafafa"/>
+  <text x="100" y="115" text-anchor="middle" font-family="system-ui" font-size="72" font-weight="800" fill="#09090b" letter-spacing="-4">BC</text>
+  <rect x="30" y="150" width="140" height="2" rx="1" fill="#09090b" opacity="0.15"/>
+</svg>

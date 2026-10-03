@@ -1,0 +1,57 @@
+{
+  "brand": {
+    "nombre": "Dragón de Jade 龍玉",
+    "slogan": "Sabor auténtico, tradición milenaria",
+    "colores": {
+      "primario": "#D4AF37",
+      "secundario": "#8B6914",
+      "fondo_oscuro": "#0A0A0A",
+      "fondo_cards": "#1A1A1A",
+      "texto_principal": "#FFFFFF",
+      "texto_secundario": "#888888",
+      "acento_rojo": "#C41E3A",
+      "acento_verde": "#2D5A27"
+    },
+    "tipografia": {
+      "principal": "Noto Serif SC",
+      "secundaria": "Inter",
+      "display": "Playfair Display"
+    },
+    "logo": {
+      "version_completa": "logo_completo.png",
+      "icono": "logo_icono.png",
+      "white": "logo_blanco.png",
+      "dark": "logo_oscuro.png"
+    },
+    "redes": {
+      "instagram": {
+        "usuario": "@dragondejade_bcn",
+        "url": "https://instagram.com/dragondejade_bcn",
+        "formato_post": "1080x1080",
+        "formato_story": "1080x1920",
+        "formato_reel": "1080x1920"
+      },
+      "facebook": {
+        "pagina": "Dragon de Jade Barcelona",
+        "url": "https://facebook.com/dragondejade",
+        "formato_post": "1200x630",
+        "formato_cover": "820x312"
+      },
+      "tiktok": {
+        "usuario": "@dragondejade",
+        "url": "https://tiktok.com/@dragondejade"
+      },
+      "google_business": {
+        "nombre": "Dragón de Jade 龍玉",
+        "formato_logo": "720x720",
+        "formato_cover": "1024x576"
+      }
+    },
+    "documentos": {
+      "carta": "carta_v1.pdf",
+      "flyer_delivery": "flyer_delivery.pdf",
+      "tarjeta_presentacion": "tarjeta_v1.pdf",
+      "menu_dia": "menu_del_dia.pdf"
+    }
+  }
+}

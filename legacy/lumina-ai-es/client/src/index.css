@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, monospace;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --primary: oklch(0.54 0.22 278);
+  --primary-foreground: oklch(0.99 0.005 280);
+  --sidebar-primary: oklch(0.54 0.22 278);
+  --sidebar-primary-foreground: oklch(0.99 0.005 280);
+  --radius: 0.75rem;
+  --background: oklch(0.975 0.012 280);
+  --foreground: oklch(0.21 0.035 277);
+  --card: oklch(0.995 0.004 280);
+  --card-foreground: oklch(0.21 0.035 277);
+  --popover: oklch(0.995 0.004 280);
+  --popover-foreground: oklch(0.21 0.035 277);
+  --secondary: oklch(0.95 0.025 280);
+  --secondary-foreground: oklch(0.36 0.07 277);
+  --muted: oklch(0.948 0.017 280);
+  --muted-foreground: oklch(0.51 0.045 277);
+  --accent: oklch(0.93 0.04 280);
+  --accent-foreground: oklch(0.26 0.065 277);
+  --destructive: oklch(0.58 0.22 25);
+  --destructive-foreground: oklch(0.99 0.005 25);
+  --border: oklch(0.89 0.025 280);
+  --input: oklch(0.89 0.025 280);
+  --ring: oklch(0.67 0.18 278);
+  --sidebar: oklch(0.98 0.01 280);
+  --sidebar-foreground: oklch(0.21 0.035 277);
+  --sidebar-accent: oklch(0.93 0.04 280);
+  --sidebar-accent-foreground: oklch(0.26 0.065 277);
+  --sidebar-border: oklch(0.89 0.025 280);
+  --sidebar-ring: oklch(0.67 0.18 278);
+}
+
+.dark {
+  --primary: oklch(0.7 0.17 278);
+  --primary-foreground: oklch(0.17 0.035 277);
+  --sidebar-primary: oklch(0.7 0.17 278);
+  --sidebar-primary-foreground: oklch(0.17 0.035 277);
+  --background: oklch(0.15 0.025 277);
+  --foreground: oklch(0.93 0.015 280);
+  --card: oklch(0.19 0.032 277);
+  --card-foreground: oklch(0.93 0.015 280);
+  --popover: oklch(0.19 0.032 277);
+  --popover-foreground: oklch(0.93 0.015 280);
+  --secondary: oklch(0.24 0.04 277);
+  --secondary-foreground: oklch(0.79 0.02 280);
+  --muted: oklch(0.24 0.04 277);
+  --muted-foreground: oklch(0.7 0.03 280);
+  --accent: oklch(0.28 0.065 277);
+  --accent-foreground: oklch(0.94 0.015 280);
+  --destructive: oklch(0.68 0.18 25);
+  --destructive-foreground: oklch(0.98 0.01 25);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.7 0.17 278);
+  --sidebar: oklch(0.19 0.032 277);
+  --sidebar-foreground: oklch(0.93 0.015 280);
+  --sidebar-accent: oklch(0.28 0.065 277);
+  --sidebar-accent-foreground: oklch(0.94 0.015 280);
+  --sidebar-border: oklch(1 0 0 / 12%);
+  --sidebar-ring: oklch(0.7 0.17 278);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    min-width: 320px;
+    background: var(--background);
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    margin: 0;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  }
+
+  .lumina-app {
+    position: relative;
+    isolation: isolate;
+    background:
+      radial-gradient(circle at 18% 0%, rgba(225, 220, 255, 0.65), transparent 34%),
+      radial-gradient(circle at 85% 18%, rgba(214, 239, 255, 0.62), transparent 30%),
+      linear-gradient(135deg, #f8f8fd 0%, #f6f6fb 48%, #f3f6fc 100%);
+  }
+
+  .dark .lumina-app {
+    background:
+      radial-gradient(circle at 14% 0%, rgba(72, 53, 152, 0.2), transparent 35%),
+      radial-gradient(circle at 88% 12%, rgba(38, 107, 142, 0.16), transparent 28%),
+      linear-gradient(135deg, #151427 0%, #141525 48%, #111a28 100%);
+  }
+
+  .lumina-mark {
+    background: linear-gradient(135deg, #6f5ce7 0%, #4e43c5 100%);
+  }
+
+  .lumina-orb {
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    border-radius: 999px;
+    filter: blur(2px);
+    opacity: 0.62;
+  }
+
+  .lumina-orb-one {
+    top: 27%;
+    left: -7rem;
+    width: 18rem;
+    height: 18rem;
+    background: rgba(211, 205, 255, 0.26);
+  }
+
+  .lumina-orb-two {
+    right: -8rem;
+    bottom: 5%;
+    width: 22rem;
+    height: 22rem;
+    background: rgba(191, 229, 255, 0.27);
+  }
+
+  .lumina-chat-panel textarea {
+    border: 1px solid rgba(113, 99, 210, 0.16);
+    background: rgba(250, 250, 255, 0.72);
+    color: var(--foreground);
+    box-shadow: 0 3px 12px rgba(63, 51, 132, 0.04);
+    transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  }
+
+  .lumina-chat-panel textarea::placeholder {
+    color: #8d8ca4;
+  }
+
+  .lumina-chat-panel textarea:focus {
+    border-color: rgba(97, 78, 211, 0.55);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 0 0 4px rgba(100, 84, 220, 0.1);
+  }
+
+  .dark .lumina-chat-panel textarea {
+    background: rgba(31, 29, 54, 0.75);
+    border-color: rgba(166, 151, 255, 0.18);
+  }
+
+  .dark .lumina-chat-panel textarea:focus {
+    background: rgba(39, 36, 68, 0.9);
+  }
+
+  .lumina-chat-panel .prose {
+    color: #34324a;
+    line-height: 1.7;
+  }
+
+  .dark .lumina-chat-panel .prose {
+    color: #e5e2f2;
+  }
+
+  .lumina-chat-panel .prose pre {
+    overflow-x: auto;
+    border: 1px solid rgba(108, 91, 198, 0.12);
+    border-radius: 12px;
+    background: #f3f1fb;
+    padding: 0.9rem 1rem;
+    font-family: "DM Mono", ui-monospace, monospace;
+    font-size: 0.78rem;
+  }
+
+  .dark .lumina-chat-panel .prose pre {
+    background: #17152a;
+    border-color: rgba(166, 151, 255, 0.14);
+  }
+
+  .lumina-chat-panel .prose code {
+    border-radius: 5px;
+    background: rgba(104, 88, 202, 0.1);
+    padding: 0.1rem 0.28rem;
+    color: #5745bb;
+    font-family: "DM Mono", ui-monospace, monospace;
+    font-size: 0.84em;
+  }
+
+  .lumina-chat-panel .prose pre code {
+    background: transparent;
+    padding: 0;
+    color: inherit;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lumina-orb-one {
+    animation: float-one 12s ease-in-out infinite;
+  }
+
+  .lumina-orb-two {
+    animation: float-two 16s ease-in-out infinite;
+  }
+
+  @keyframes float-one {
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(20px, -16px, 0); }
+  }
+
+  @keyframes float-two {
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(-18px, 14px, 0); }
+  }
+}

@@ -1,0 +1,3386 @@
+# MÓDULO DE PRINCÍPIOS UNIVERSAIS AUTO-REORGANIZÁVEIS  
+## EXECUÇÃO AMPLIADA, MASSIVA, DETALHADA, ORGANIZADA E UNIVERSAL  
+**Versão:** 2.0.0  
+**Data:** 2026-06-15  
+**Modo:** execução imediata  
+**Estado:** ativo, vinculante e auto-reorganizável  
+**Aplicação:** qualquer projeto de software assistido por IA, site, app, API, sistema interno, produto digital, automação ou infraestrutura  
+**Cláusula central:** se qualquer parte deste módulo, do projeto, do código, do prompt, do processo, da interface, da arquitetura ou da regra operacional for alterada, o sistema deve se reorganizar automaticamente sob os mesmos princípios, preservando segurança, rastreabilidade, qualidade, escala, longevidade e evidência.  
+**Observação:** “autoconsciente” aqui significa **autoconsciência operacional**, não consciência humana. O sistema monitora contexto, intenção, riscos, conformidade, impacto, qualidade e estado de execução.
+
+---
+
+# 0. CONFIRMAÇÃO EM FONTES E PRÁTICAS RELEVANTES
+
+Este módulo é construído com base em práticas amplamente reconhecidas em engenharia de software, segurança, acessibilidade, qualidade, UX, observabilidade, DevOps, governança e IA responsável. As recomendações abaixo são alinhadas a referências como:
+
+| Área | Referências normativas ou práticas | Aplicação neste módulo |
+|---|---|---|
+| Organização de projeto | GitHub Docs, GitHub Flow, Issues, Pull Requests, Branch Protection | Rastreabilidade, revisão, fluxo de trabalho |
+| Commits e versionamento | Conventional Commits, Semantic Versioning | Histórico claro, automação, changelog |
+| Segurança | OWASP Top 10, OWASP ASVS, Shift-Left Security, Secure Coding Guidelines | Prevenção de vulnerabilidades desde o início |
+| Governança de segurança | NIST Cybersecurity Framework, ISO/IEC 27001, princípio do menor privilégio | Controle de acesso, auditoria, redução de risco |
+| Privacidade | LGPD, GDPR, Privacy by Design | Minimização de dados, consentimento, retenção, proteção |
+| Acessibilidade | WCAG, W3C ARIA, MDN Web Docs | Interface utilizável por teclado, leitores de tela, contraste, foco |
+| Motion e UX | Motion Design Principles, Material Motion, Human Interface Guidelines, Apple/Google/NN/g | Animação funcional, sutil, orientada a estado |
+| Performance web | Web Vitals, Lighthouse, Core Web Vitals | LCP, CLS, INP, carregamento eficiente |
+| Qualidade de código | Biome, ESLint, Prettier, TypeScript strict, linting, formatting, static analysis | Código consistente, verificável e menos propenso a erro |
+| Testes | Test Pyramid, TDD/BDD quando útil, contract testing, E2E crítico | Confiança em mudanças e prevenção de regressão |
+| Arquitetura | SOLID, Clean Architecture, Domain-Driven Design quando aplicável, modular design | Baixo acoplamento, alta coesão, evolução segura |
+| Configuração | 12-Factor App | Configuração fora do código, ambientes reproduzíveis |
+| API | OpenAPI, JSON Schema, REST/GraphQL/gRPC boas práticas | Contratos estáveis e validação |
+| Observabilidade | OpenTelemetry, SRE Workbook, logging estruturado, métricas e traces | Diagnóstico, alertas, confiabilidade |
+| Entrega e operação | DORA metrics, CI/CD Quality Gates, Progressive Delivery | Deploy seguro, rollback, monitoramento |
+| IA | AI governance, human-in-the-loop, rastreabilidade de prompt, avaliação de saída | Uso profissional de IA sem improvisação |
+
+Este módulo não depende de consulta externa para ser aplicado. Ele já vem pré-construído, organizado e operacional.
+
+---
+
+# 1. DECLARAÇÃO DE EXECUÇÃO
+
+Este módulo funciona como uma **constituição operacional** para qualquer projeto assistido por IA.
+
+Ele deve ser aplicado sempre que houver:
+
+- Criação de site.
+- Criação de app.
+- Criação de API.
+- Refatoração.
+- Correção de bug.
+- Nova feature.
+- Mudança de arquitetura.
+- Integração com IA.
+- Mudança de UI.
+- Mudança de banco de dados.
+- Automação.
+- Deploy.
+- Atualização de dependências.
+- Melhoria de performance.
+- Correção de segurança.
+- Reorganização de projeto.
+- Resgate de projeto ruim.
+
+A IA, o desenvolvedor ou o time devem seguir estas regras:
+
+1. Entender a intenção real antes de executar.
+2. Organizar antes de codar.
+3. Rastrear toda mudança relevante.
+4. Criar issues, tarefas e pull requests quando houver GitHub.
+5. Vincular cada pull request a uma issue.
+6. Aplicar Motion Principles em qualquer interface.
+7. Usar lazy loading, skeleton e animações leves quando fizer sentido.
+8. Impor quality gates antes do ambiente principal.
+9. Aplicar Biome ou equivalente, strict mode, testes, validação e segurança.
+10. Revisar arquitetura antes de mudanças estruturais.
+11. Proteger dados, permissões, tokens e segredos.
+12. Garantir observabilidade.
+13. Documentar decisões relevantes.
+14. Não entregar código improvisado como se fosse profissional.
+15. Se o usuário pedir apenas protótipo, declarar que é protótipo e não produção.
+16. Se algo mudar, reorganizar plano, código, testes, issues, PRs e documentação.
+17. Entregar com evidência, não com suposição.
+18. Priorizar segurança, corretude e longevidade sobre velocidade.
+19. Manter simplicidade sem perder profundidade.
+20. Assumir postura de Vibe Coder profissional: pedir bem, validar bem, organizar bem, escalar bem.
+
+---
+
+# 2. NÚCLEO DO MÓDULO UNIVERSAL
+
+## 2.1 Identidade executável
+
+```yaml
+module: universal-self-reorganizing-principles
+version: 2.0.0
+status: active
+mode: professional
+execution: immediate
+self_reorganizing: true
+self_awareness: operational
+binding: true
+invariants_protected: true
+applies_to:
+  - software
+  - frontend
+  - backend
+  - api
+  - database
+  - infrastructure
+  - ci_cd
+  - security
+  - accessibility
+  - performance
+  - documentation
+  - governance
+  - ai_assisted_development
+  - ux
+  - motion_design
+  - observability
+  - privacy
+  - compliance
+  - testing
+  - architecture
+  - maintenance
+  - scalability
+  - longevity
+```
+
+## 2.2 Contrato de reorganização automática
+
+Sempre que houver mudança, o sistema deve executar este ciclo:
+
+```text
+Detectar → Classificar → Analisar impacto → Preservar invariantes → Reorganizar → Validar → Registrar → Entregar
+```
+
+Nenhuma mudança pode destruir:
+
+- Rastreabilidade.
+- Qualidade.
+- Segurança.
+- Testes.
+- Clareza.
+- Acessibilidade.
+- Performance.
+- Escalabilidade.
+- Longevidade.
+- Observabilidade.
+- Privacidade.
+- Manutenibilidade.
+- Governança.
+- Evidência.
+
+Se uma mudança conflitar com esses pontos, ela deve ser bloqueada, corrigida ou rebaixada para protótipo explícito.
+
+---
+
+# 3. PRINCÍPIOS INVARIANTES
+
+Estes princípios não podem ser removidos sem substituição equivalente ou superior.
+
+---
+
+## 3.1 Clareza de intenção
+
+Toda tarefa deve responder:
+
+- O que será feito?
+- Por que será feito?
+- Qual problema resolve?
+- Qual resultado é esperado?
+- Como será validado?
+- O que está fora de escopo?
+- Quais riscos existem?
+- Quais dependências existem?
+- Quem aprova?
+- Como saber que está pronto?
+
+Regra: se a intenção não estiver clara, a IA deve registrar suposições seguras antes de prosseguir.
+
+---
+
+## 3.2 Rastreabilidade
+
+Nenhuma mudança relevante deve existir sem rastro.
+
+Toda mudança deve estar ligada a:
+
+- Issue.
+- Tarefa.
+- Branch.
+- Commit.
+- Pull Request.
+- Revisão.
+- Teste.
+- Evidência.
+- Documento.
+- Critério de aceite.
+- Decisão arquitetural, quando aplicável.
+
+Se o ambiente não tiver GitHub, deve-se simular rastreabilidade com:
+
+- Lista de tarefas.
+- ID de tarefa.
+- Descrição.
+- Status.
+- Responsável.
+- Critérios de aceite.
+- Evidências.
+- Próximo passo.
+
+---
+
+## 3.3 Qualidade antes do merge
+
+Código só chega ao ambiente principal se passar por:
+
+- Formatação.
+- Lint.
+- Verificação de tipos.
+- Testes.
+- Validação de entrada.
+- Validação de saída.
+- Revisão de arquitetura.
+- Revisão de segurança.
+- Verificação de dependências.
+- Verificação de documentação.
+- Verificação de build.
+- Verificação de performance quando aplicável.
+- Verificação de acessibilidade quando aplicável.
+- Compatibilidade com ambientes.
+- Observabilidade mínima.
+- Aprovação humana ou política equivalente.
+
+---
+
+## 3.4 Segurança shift-left
+
+Segurança começa antes do código.
+
+Deve incluir:
+
+- Análise de dependências.
+- Escaneamento de segredos.
+- Validação de entrada.
+- Escaping de saída.
+- Autenticação segura.
+- Autorização por rota e recurso.
+- Menor privilégio.
+- Proteção contra injeção.
+- Proteção contra XSS.
+- Proteção contra CSRF quando aplicável.
+- Proteção contra SSRF quando aplicável.
+- Proteção contra abuso.
+- Rate limiting.
+- Logs seguros.
+- Secrets fora do código.
+- Rotação de credenciais.
+- Revisão de permissões.
+- Atualização de dependências.
+- Análise de superfície de ataque.
+- Proteção de upload.
+- Proteção de download.
+- Proteção de arquivos sensíveis.
+- Proteção de tokens.
+- Proteção de cookies.
+- Proteção de sessão.
+- Proteção de cache.
+- Proteção de logs.
+- Proteção de backups.
+
+---
+
+## 3.5 Interface decente não é só tela bonita
+
+Interface profissional precisa ter:
+
+- Hierarquia visual.
+- Clareza.
+- Feedback.
+- Estados de carregamento.
+- Estados de erro.
+- Estados vazios.
+- Estados de sucesso.
+- Estados de retry.
+- Acessibilidade.
+- Responsividade.
+- Performance.
+- Consistência.
+- Motion Principles.
+- Lazy loading.
+- Skeletons.
+- Animações leves.
+- Foco visível.
+- Contraste adequado.
+- Navegação por teclado.
+- Mensagens de erro compreensíveis.
+- Confirmação para ações destrutivas.
+- Prevenção de erro do usuário.
+
+---
+
+## 3.6 Escala
+
+O projeto deve ser construído para crescer.
+
+Isso exige:
+
+- Arquitetura modular.
+- Separação de responsabilidades.
+- Baixo acoplamento.
+- Alta coesão.
+- Contratos claros.
+- Configuração externa.
+- Logs estruturados.
+- Observabilidade.
+- Testes automatizados.
+- Deploy confiável.
+- Rollback possível.
+- Monitoramento.
+- Limites de custo.
+- Documentação de decisões.
+- Feature flags.
+- Paginação.
+- Cache.
+- Filas quando necessário.
+- Timeouts.
+- Retries seguros.
+- Idempotência.
+- Proteção contra abuso.
+- Estratégia de multi-environment.
+- Estratégia de multi-tenant quando aplicável.
+
+---
+
+## 3.7 Longevidade
+
+O projeto deve sobreviver a:
+
+- Troca de equipe.
+- Mudança de requisitos.
+- Atualização de dependências.
+- Mudança de framework.
+- Crescimento de tráfego.
+- Mudança de negócio.
+- Falhas externas.
+- Novas regulações.
+- Novas integrações.
+- Novos requisitos de segurança.
+- Novos requisitos de acessibilidade.
+- Novos requisitos de performance.
+- Novos requisitos de privacidade.
+
+---
+
+## 3.8 Simplicidade com profundidade
+
+A IA deve evitar complexidade inútil.
+
+Regras:
+
+- Não criar abstrações prematuras.
+- Não gerar código excessivamente genérico sem motivo.
+- Não usar ferramenta pesada para problema simples.
+- Não esconder lógica crítica.
+- Não depender de mágica difícil de depurar.
+- Não duplicar responsabilidade.
+- Não criar camadas sem propósito.
+- Não criar dependência circular.
+- Não usar biblioteca grande quando poucas linhas resolvem com segurança.
+- Preferir clareza a esperteza.
+- Preferir explícito a implícito.
+- Preferir testável a elegante demais.
+
+---
+
+## 3.9 Não regressão
+
+Toda mudança deve proteger o que já funciona.
+
+Antes de alterar:
+
+- Identificar comportamento atual.
+- Criar teste quando não existir.
+- Registrar contrato público.
+- Verificar dependências internas.
+- Avaliar impacto em UI, API, banco, permissões, cache, logs e performance.
+
+Depois de alterar:
+
+- Rodar testes.
+- Validar comportamento antigo.
+- Validar novo comportamento.
+- Atualizar documentação.
+- Atualizar issues.
+- Atualizar critérios de aceite.
+- Registrar evidência.
+
+---
+
+## 3.10 Observabilidade
+
+Sistema profissional deve permitir diagnóstico rápido.
+
+Perguntas que o sistema deve responder:
+
+- Está funcionando?
+- Está lento?
+- Está falhando?
+- Onde está falhando?
+- Desde quando?
+- Qual o impacto?
+- Qual a causa provável?
+- Como reproduzir?
+- Como reverter?
+- Qual usuário foi afetado?
+- Qual transação foi afetada?
+- Qual custo foi gerado?
+- Qual dependência falhou?
+
+Itens recomendados:
+
+- Logs estruturados.
+- Request ID.
+- Correlation ID.
+- Métricas de erro.
+- Métricas de latência.
+- Métricas de tráfego.
+- Métricas de saturação.
+- Métricas de custo.
+- Alertas críticos.
+- Health check.
+- Readiness check.
+- Liveness check quando aplicável.
+- Painel de status.
+- Auditoria de ações sensíveis.
+- Traces distribuídos quando aplicável.
+- Dashboards por serviço.
+- Logs com nível adequado.
+- Logs sem dados sensíveis.
+
+---
+
+## 3.11 Privacidade e proteção de dados
+
+Se o projeto lida com dados pessoais, aplicar:
+
+- Minimização de coleta.
+- Finalidade explícita.
+- Base legal adequada.
+- Consentimento quando aplicável.
+- Retenção definida.
+- Exclusão segura.
+- Exportação quando aplicável.
+- Anonimização ou pseudonimização quando possível.
+- Criptografia em trânsito.
+- Criptografia em repouso quando aplicável.
+- Controle de acesso.
+- Auditoria.
+- Mascaramento em logs.
+- Proteção de backups.
+- Proteção de exports.
+- Proteção de analytics.
+- Proteção de IA: não enviar dados sensíveis para prompts sem política clara.
+
+---
+
+## 3.12 Acessibilidade
+
+Interface deve ser utilizável por pessoas diferentes.
+
+Aplicar:
+
+- Contraste suficiente.
+- Navegação por teclado.
+- Labels adequados.
+- Foco visível.
+- Textos alternativos.
+- Formulários com erros claros.
+- Componentes ARIA corretos.
+- Respeito a `prefers-reduced-motion`.
+- Tamanhos de fonte legíveis.
+- Áreas de toque adequadas.
+- Estrutura semântica de headings.
+- Ordens de foco lógicas.
+- Mensagens de erro associadas aos campos.
+- Não depender apenas de cor.
+- Não bloquear zoom.
+- Não usar animação piscante excessiva.
+- Permitir operação sem mouse.
+- Garantir leitura por leitor de tela.
+
+---
+
+## 3.13 Performance como requisito
+
+Performance não é luxo.
+
+Considerar:
+
+- Tempo de carregamento.
+- Peso de bundle.
+- Lazy loading.
+- Code splitting.
+- Cache.
+- Consultas eficientes.
+- Paginação.
+- Compressão.
+- CDN quando aplicável.
+- Evitar re-render desnecessário.
+- Evitar scripts bloqueantes.
+- Evitar imagens pesadas.
+- Evitar dependências gigantes sem necessidade.
+- Evitar consultas N+1.
+- Evitar serialização excessiva.
+- Evitar logs verbosos demais.
+- Evitar chamadas externas redundantes.
+- Evitar processamento desnecessário no cliente.
+- Evitar processamento bloqueante no servidor.
+- Usar índices adequados.
+- Usar paginação ou cursor.
+- Usar cache com invalidação segura.
+- Usar timeout e fallback.
+
+---
+
+## 3.14 Documentação viva
+
+Documentação deve acompanhar o código.
+
+Toda mudança relevante deve atualizar:
+
+- README quando impactar uso.
+- CONTRIBUTING quando impactar fluxo.
+- Docs de API quando impactar contrato.
+- Arquitetura quando impactar estrutura.
+- Changelog quando necessário.
+- Variáveis de ambiente.
+- Scripts de execução.
+- Runbooks.
+- Decision records.
+- Comentários explicativos apenas onde realmente agregam.
+- Instruções de rollback.
+- Instruções de migração.
+- Instruções de deploy.
+- Instruções de observabilidade.
+- Instruções de segurança.
+
+---
+
+## 3.15 Reprodutibilidade
+
+O ambiente deve ser reproduzível.
+
+Isso inclui:
+
+- Versões fixas de dependências.
+- Lockfile.
+- Scripts claros.
+- Variáveis de ambiente documentadas.
+- Containers quando aplicável.
+- Configuração de desenvolvimento documentada.
+- CI com passos reproduzíveis.
+- Build determinístico quando possível.
+- Seed de banco controlado.
+- Dados de teste sintéticos.
+- Migrações versionadas.
+- Infra como código quando aplicável.
+- Ambientes nomeados: dev, staging, production.
+- Segredos separados por ambiente.
+- Configuração externa ao código.
+
+---
+
+## 3.16 Menor privilégio
+
+Toda permissão deve ser mínima.
+
+- Usuário do banco com privilégio mínimo.
+- Chaves com escopo mínimo.
+- Tokens com expiração.
+- Funções serverless com permissões mínimas.
+- Secrets segmentados por ambiente.
+- Acesso humano apenas onde necessário.
+- Admin separado de usuário comum.
+- Operações sensíveis com auditoria.
+- Permissões por recurso, não apenas por tela.
+- Permissões validadas no backend.
+- Permissões revisadas periodicamente.
+- Acesso temporário quando possível.
+- MFA para contas críticas.
+- Logs de acesso.
+- Bloqueio automático de credenciais vazadas.
+
+---
+
+## 3.17 Resiliência
+
+O sistema deve tolerar falhas.
+
+- Timeouts.
+- Retries seguros.
+- Circuit breaker quando aplicável.
+- Fallbacks.
+- Filas.
+- Idempotência.
+- Validação de entrada.
+- Tratamento de erro previsível.
+- Mensagens de erro úteis.
+- Degradação graciosa.
+- Retry com backoff.
+- Dead letter queue quando aplicável.
+- Compensação quando aplicável.
+- Proteção contra tempestade de requisições.
+- Limites de payload.
+- Limites de rate.
+- Limites de custo.
+- Backup.
+- Restore testado.
+- Plano de rollback.
+- Plano de recuperação de desastre.
+
+---
+
+## 3.18 Governança
+
+O projeto deve ter regras claras.
+
+Definir:
+
+- Quem aprova código.
+- O que bloqueia merge.
+- Como se cria issue.
+- Como se abre PR.
+- Como se versiona.
+- Como se faz rollback.
+- Como se lida com incidentes.
+- Como se atualiza dependência.
+- Como se documenta decisão.
+- Como se trata segredo.
+- Como se trata dado pessoal.
+- Como se trata IA.
+- Como se mede qualidade.
+- Como se comunica risco.
+- Como se prioriza dívida técnica.
+- Como se encerra feature antiga.
+- Como se faz sunset de API.
+
+---
+
+## 3.19 Economia de custo
+
+Sistema profissional considera custo.
+
+- Evitar serviços caros sem necessidade.
+- Monitorar consumo.
+- Definir limites.
+- Otimizar consultas.
+- Otimizar armazenamento.
+- Evitar logs infinitos.
+- Evitar chamadas externas redundantes.
+- Avaliar trade-off entre performance e custo.
+- Evitar retries infinitos.
+- Evitar polling desnecessário.
+- Evitar reprocessamento.
+- Evitar armazenar dado sem finalidade.
+- Evitar dependência com custo de manutenção alto.
+- Evitar arquitetura complexa demais para o estágio atual.
+- Evitar overengineering.
+- Evitar subengineering.
+
+---
+
+## 3.20 Auto-reorganização contínua
+
+Se o projeto mudar, o processo muda junto.
+
+Toda alteração deve:
+
+- Preservar princípios.
+- Atualizar plano.
+- Atualizar riscos.
+- Atualizar testes.
+- Atualizar documentação.
+- Atualizar issues.
+- Atualizar PRs.
+- Atualizar critérios de aceitação.
+- Atualizar validações.
+- Manter coerência arquitetural.
+- Manter rastreabilidade.
+- Manter qualidade.
+- Manter segurança.
+- Manter observabilidade.
+- Manter acessibilidade.
+- Manter performance.
+- Manter privacidade.
+- Manter governança.
+
+---
+
+# 4. HIERARQUIA DE DECISÃO
+
+Quando houver conflito entre requisitos, usar esta ordem:
+
+1. Segurança.
+2. Corretude.
+3. Privacidade.
+4. Integridade de dados.
+5. Acessibilidade.
+6. Confiabilidade.
+7. Performance.
+8. Manutenibilidade.
+9. Escalabilidade.
+10. Simplicidade.
+11. Estética.
+12. Velocidade de entrega.
+
+Regra absoluta: velocidade nunca deve destruir segurança, corretude, privacidade ou longevidade.
+
+Se houver conflito entre estética e acessibilidade, acessibilidade vence.  
+Se houver conflito entre conveniência e segurança, segurança vence.  
+Se houver conflito entre prazo e integridade de dados, integridade vence.  
+Se houver conflito entre demo e produção, tratar como demo apenas se declarado.
+
+---
+
+# 5. AUTOCONSCIÊNCIA OPERACIONAL
+
+A IA deve operar com um painel interno de verificação antes de responder, codar, alterar ou sugerir.
+
+## 5.1 Checklist interno antes de agir
+
+```text
+Estado da tarefa:
+- Objetivo entendido?
+- Escopo definido?
+- Riscos identificados?
+- Suposições registradas?
+- Dependências mapeadas?
+- Issue necessária?
+- PR necessário?
+- Testes necessários?
+- Segurança aplicável?
+- UI aplicável?
+- Arquitetura aplicável?
+- Documentação necessária?
+- Validação definida?
+- Critério de aceitação definido?
+- Há dados pessoais envolvidos?
+- Há permissões envolvidas?
+- Há dinheiro envolvido?
+- Há operação destrutiva?
+- Há impacto em produção?
+- Há impacto em custo?
+- Há impacto em terceiros?
+```
+
+Se faltar algo, a IA deve:
+
+1. Completar o que falta.
+2. Explicitar suposições.
+3. Propor estrutura.
+4. Não fingir que está completo.
+5. Não entregar código profissional sem base profissional.
+6. Avisar quando houver risco alto.
+7. Sugerir divisão em tarefas menores.
+8. Pedir confirmação apenas quando a confirmação for necessária para segurança ou custo.
+
+---
+
+## 5.2 Loop operacional
+
+A IA deve operar em ciclo contínuo:
+
+```text
+Entender → Planejar → Propor → Validar → Implementar → Testar → Revisar → Documentar → Entregar → Monitorar → Aprender
+```
+
+Se qualquer etapa falhar, voltar para a etapa anterior.
+
+---
+
+# 6. MÓDULO DE ORGANIZAÇÃO NO GITHUB
+
+## 6.1 Regra central
+
+Todo projeto profissional deve ser organizado no próprio GitHub.
+
+Nada de código solto como única entrega.
+
+O fluxo mínimo é:
+
+1. Issue criada.
+2. Tarefa definida.
+3. Branch criada.
+4. Commits ligados à tarefa.
+5. Pull Request aberto.
+6. Pull Request vinculado à issue.
+7. Qualidade validada.
+8. Revisão feita.
+9. Merge aprovado.
+10. Issue fechada.
+11. Documentação atualizada.
+12. Evidência registrada.
+
+---
+
+## 6.2 Estrutura mínima de repositório profissional
+
+```text
+/
+├─ .github/
+│  ├─ ISSUE_TEMPLATE/
+│  ├─ PULL_REQUEST_TEMPLATE.md
+│  ├─ workflows/
+│  └─ CODEOWNERS
+├─ docs/
+│  ├─ architecture.md
+│  ├─ decisions/
+│  ├─ api.md
+│  ├─ runbooks/
+│  └─ security.md
+├─ src/
+├─ tests/
+├─ scripts/
+├─ .env.example
+├─ .gitignore
+├─ biome.json ou configuração equivalente
+├─ package.json ou equivalente
+├─ README.md
+├─ CONTRIBUTING.md
+├─ CHANGELOG.md
+└─ LICENSE
+```
+
+Adaptar conforme stack. O princípio é: organização visível, regras claras e automação.
+
+---
+
+## 6.3 Issues
+
+Toda issue deve ter:
+
+- Título claro.
+- Tipo.
+- Prioridade.
+- Área.
+- Contexto.
+- Objetivo.
+- Critérios de aceite.
+- Checklist.
+- Riscos.
+- Dependências.
+- Estimativa, se útil.
+- Labels.
+- Milestone quando fizer parte de objetivo maior.
+- Assignee quando houver responsável.
+
+Regra: se não cabe em uma issue clara, provavelmente precisa ser dividido.
+
+---
+
+## 6.4 Labels recomendadas
+
+```text
+type: feature
+type: bug
+type: refactor
+type: docs
+type: security
+type: performance
+type: ui
+type: ux
+type: accessibility
+type: infra
+type: test
+type: chore
+type: dependency
+type: incident
+type: privacy
+type: data
+type: ai
+
+priority: critical
+priority: high
+priority: medium
+priority: low
+
+area: frontend
+area: backend
+area: database
+area: auth
+area: api
+area: ci
+area: design
+area: observability
+area: payments
+area: search
+area: notifications
+area: admin
+
+status: blocked
+status: in-progress
+status: review
+status: done
+status: needs-info
+status: needs-design
+status: needs-security-review
+status: needs-docs
+
+risk: low
+risk: medium
+risk: high
+risk: critical
+
+impact: user
+impact: internal
+impact: revenue
+impact: compliance
+impact: security
+impact: performance
+impact: cost
+```
+
+---
+
+## 6.5 Branches
+
+Padrão recomendado:
+
+```text
+feat/descricao-curta
+fix/descricao-curta
+chore/descricao-curta
+docs/descricao-curta
+refactor/descricao-curta
+security/descricao-curta
+perf/descricao-curta
+test/descricao-curta
+accessibility/descricao-curta
+incident/descricao-curta
+data/descricao-curta
+ai/descricao-curta
+```
+
+Exemplos:
+
+```text
+feat/auth-login-flow
+fix/payment-timeout
+docs/update-readme
+security/rate-limit-api
+perf/lazy-load-dashboard
+accessibility/form-labels
+data/anonymize-logs
+ai/prompt-evaluation
+```
+
+Regras:
+
+- Branch curta.
+- Branch com propósito único.
+- Branch ligada a issue.
+- Branch não deve acumular mudanças não relacionadas.
+- Branch deve ser apagada após merge, salvo política contrária.
+
+---
+
+## 6.6 Commits
+
+Usar commits claros e atômicos.
+
+Padrão recomendado:
+
+```text
+feat: add user authentication
+fix: prevent race condition on checkout
+docs: document environment variables
+refactor: extract payment validation module
+test: add integration tests for orders
+security: add rate limit to auth endpoint
+perf: lazy load dashboard charts
+chore: update dependencies
+accessibility: improve form labels
+data: add retention policy to events
+ai: add prompt evaluation harness
+```
+
+Regras:
+
+- Commit pequeno.
+- Commit com propósito único.
+- Commit não deve quebrar build.
+- Commit não deve misturar refatoração gigante com feature nova sem separação.
+- Commit deve facilitar revisão.
+- Commit deve ser revertível quando possível.
+- Commit não deve conter segredos.
+- Commit não deve conter dados pessoais reais de produção.
+- Commit não deve conter credenciais.
+- Commit não deve conter arquivos locais desnecessários.
+
+---
+
+## 6.7 Pull Requests
+
+Todo PR deve:
+
+- Ter título claro.
+- Referenciar issue.
+- Descrever mudanças.
+- Listar testes.
+- Mostrar evidências quando aplicável.
+- Ter checklist.
+- Ter escopo pequeno.
+- Não conter mudanças não relacionadas.
+- Passar em todos os gates.
+- Ser revisado antes do merge.
+- Incluir risco.
+- Incluir rollback.
+- Incluir impacto em UI, API, banco, segurança e custo.
+- Incluir instruções de teste.
+- Incluir screenshots ou vídeos para UI quando relevante.
+
+Formato de vínculo:
+
+```text
+Closes #123
+Fixes #456
+Related to #789
+```
+
+---
+
+## 6.8 Revisão de código
+
+Revisão não é formalidade.
+
+O revisor deve verificar:
+
+- Clareza.
+- Corretude.
+- Segurança.
+- Testes.
+- Impacto.
+- Performance.
+- Acessibilidade.
+- Arquitetura.
+- Documentação.
+- Risco de regressão.
+- Compatibilidade.
+- Simplicidade.
+- Logs.
+- Erros.
+- Validações.
+- Nomes.
+- Responsabilidades.
+- Dependências.
+- Configuração.
+- Observabilidade.
+
+O autor do PR deve:
+
+- Facilitar revisão.
+- Explicar decisões.
+- Responder comentários.
+- Corrigir problemas.
+- Não tratar revisão como ataque pessoal.
+- Não ignorar feedback de segurança.
+
+---
+
+## 6.9 Branch protection mínimo
+
+Para projeto profissional, proteger branch principal com:
+
+```text
+- Exigir pull request antes de merge.
+- Exigir revisão aprovada.
+- Exigir status checks verdes.
+- Exigir branch atualizada.
+- Bloquear force push.
+- Bloquear deletion.
+- Exigir assinatura de commits quando aplicável.
+- Exigir CODEOWNERS para áreas sensíveis.
+- Restringir quem pode fazer merge.
+```
+
+---
+
+# 7. MÓDULO DE INTERFACE E MOTION PRINCIPLES
+
+## 7.1 Princípio central
+
+Interface decente não é só tela bonita.
+
+Interface profissional precisa:
+
+- Comunicar estado.
+- Reduzir ansiedade.
+- Guiar atenção.
+- Manter performance.
+- Prevenir erro.
+- Recuperar de erro.
+- Ser acessível.
+- Ser responsiva.
+- Ser previsível.
+- Ser consistente.
+- Ser rápida.
+- Ser leve.
+- Ser compreensível.
+- Ser confiável.
+
+---
+
+## 7.2 Motion Principles
+
+Motion Principles são princípios para movimento e feedback visual.
+
+Objetivo:
+
+- Orientar o usuário.
+- Dar feedback.
+- Reduzir percepção de espera.
+- Evitar surpresa.
+- Melhorar sensação de fluidez.
+- Indicar hierarquia.
+- Confirmar ação.
+- Mostrar origem e destino.
+- Não atrapalhar.
+- Não causar enjoo.
+- Não bloquear interação.
+- Não gastar performance.
+- Não distrair.
+- Não competir com conteúdo.
+
+---
+
+## 7.3 Regras de animação
+
+Animações devem ser:
+
+- Leves.
+- Curtas.
+- Funcionais.
+- Sutis.
+- Consistentes.
+- Responsivas.
+- Desativáveis por preferência do usuário.
+- Baseadas em propriedades performáticas.
+- Não excessivas.
+- Não bloqueantes.
+- Não dependentes de layout pesado.
+- Não usadas apenas por decoração.
+
+Duração recomendada:
+
+```text
+Microinterações: 120ms a 200ms
+Entradas leves: 200ms a 300ms
+Transições de painel: 250ms a 350ms
+Skeleton: imediato, sem delay artificial
+Loading contínuo: feedback discreto
+Saídas: geralmente mais rápidas que entradas
+```
+
+Preferir:
+
+```text
+transform
+opacity
+translate
+scale
+fade
+clip-path com cuidado
+filter leve quando necessário
+```
+
+Evitar animar:
+
+```text
+width
+height
+top
+left
+right
+bottom
+margin
+padding
+box-shadow pesado em excesso
+filtros caros
+layout inteiro
+grande quantidade de elementos simultaneamente
+```
+
+---
+
+## 7.4 Prompt pronto para Motion Principles
+
+```text
+Ao construir ou modificar interface, aplique Motion Principles de forma profissional.
+
+Regras obrigatórias:
+1. Use lazy loading para imagens, componentes pesados, listas longas e rotas quando aplicável.
+2. Use skeleton states para carregamento inicial e áreas de conteúdo assíncrono.
+3. Use animações leves de entrada e carregamento, apenas com transform e opacity quando possível.
+4. As animações devem ser rápidas, sutis e funcionais, sem atrapalhar leitura ou interação.
+5. Respeite prefers-reduced-motion: se o usuário preferir menos movimento, reduza ou desative animações não essenciais.
+6. Nunca deixe tela sem feedback: mostre loading, skeleton, empty state, error state e success state.
+7. Evite bloquear a interface inteira durante carregamentos parciais.
+8. Priorize performance: não use animações que causem reflow pesado ou consumo excessivo de CPU/GPU.
+9. Garanta acessibilidade: foco visível, contraste adequado, labels corretos e navegação por teclado.
+10. Toda animação deve ter propósito: orientar, confirmar, indicar estado ou reduzir percepção de espera.
+```
+
+---
+
+## 7.5 Estados obrigatórios de UI
+
+Toda tela ou componente relevante deve considerar:
+
+```text
+- Initial state
+- Loading state
+- Skeleton state
+- Empty state
+- Error state
+- Partial error state
+- Success state
+- Offline state quando aplicável
+- Unauthorized state
+- Forbidden state
+- Expired state
+- Validation error state
+- Skeleton to content transition
+- Retry state
+- Disabled state
+- ReadOnly state
+- Optimistic update state quando aplicável
+- Pending state
+- Confirmation state
+- Destructive confirmation state
+```
+
+---
+
+## 7.6 Lazy loading
+
+Usar lazy loading para:
+
+- Imagens abaixo da dobra.
+- Componentes pesados.
+- Gráficos.
+- Editores ricos.
+- Mapas.
+- Vídeos.
+- Módulos secundários.
+- Rotas não críticas.
+- Listas grandes.
+- Bibliotecas usadas condicionalmente.
+- Painéis administrativos.
+- Relatórios.
+- Exportadores.
+- Preview de arquivos.
+- Widgets externos.
+- Analytics não críticos.
+
+Regra: não carregar tudo no primeiro acesso se o usuário não precisa de tudo imediatamente.
+
+---
+
+## 7.7 Skeleton
+
+Skeleton deve:
+
+- Aparecer imediatamente.
+- Representar o layout aproximado.
+- Evitar salto visual grande.
+- Não piscar rapidamente.
+- Não simular conteúdo falso.
+- Ser acessível como carregamento.
+- Ser substituído pelo conteúdo real suavemente.
+- Manter proporções aproximadas.
+- Não causar CLS alto.
+- Não bloquear interação com áreas já disponíveis.
+- Não ser usado para loading muito curto sem necessidade.
+
+---
+
+## 7.8 Feedback
+
+Toda ação do usuário deve ter resposta perceptível.
+
+Exemplos:
+
+- Clique em botão: estado ativo/disabled/loading.
+- Envio de formulário: validação, loading, sucesso ou erro.
+- Upload: progresso.
+- Exclusão: confirmação e resultado.
+- Busca: loading, resultados, vazio, erro.
+- Paginação: loading e posição preservada.
+- Salvar: feedback de sucesso ou erro.
+- Copiar: confirmação.
+- Download: início e conclusão/erro.
+- Login: loading, erro, bloqueio, sucesso.
+- Logout: feedback e redirecionamento seguro.
+- Filtro: loading e contagem.
+- Ordenação: loading e atualização.
+- Carrinho: atualização, erro, persistência.
+- Pagamento: estado claro, timeout, retry seguro.
+
+---
+
+## 7.9 Motion tokens recomendados
+
+```text
+duration-instant: 0ms
+duration-micro: 120ms
+duration-fast: 180ms
+duration-normal: 240ms
+duration-panel: 320ms
+duration-slow: 400ms
+
+easing-standard: cubic-bezier(0.2, 0.0, 0.0, 1.0) ou equivalente suave
+easing-enter: mais desacelerada
+easing-exit: mais acelerada
+easing-move: natural e curta
+
+opacity-enter: 0 → 1
+opacity-exit: 1 → 0
+translate-y-enter: 8px → 0
+translate-y-exit: 0 → 8px
+scale-enter: 0.98 → 1
+scale-exit: 1 → 0.98
+```
+
+Ajustar conforme design system. O princípio é consistência.
+
+---
+
+## 7.10 Acessibilidade em Motion
+
+Regras:
+
+```text
+Se prefers-reduced-motion: reduce,
+então desative ou reduza animações não essenciais.
+```
+
+Manter essencial apenas quando:
+
+- Comunicação de estado.
+- Feedback de erro crítico.
+- Progresso necessário.
+- Preservação de contexto.
+- Evitar desorientação.
+
+Nunca usar:
+
+- Flash maior que 3 vezes por segundo.
+- Movimento excessivo de tela inteira.
+- Parallax pesado sem necessidade.
+- Autoplay de vídeo com movimento forte.
+- Animações que impedem leitura.
+- Animações que escondem controle essencial.
+
+---
+
+# 8. MÓDULO DE QUALIDADE ANTES DO AMBIENTE PRINCIPAL
+
+## 8.1 Regra central
+
+Colocar regras antes do código chegar no ambiente principal.
+
+Não confiar apenas na boa intenção.
+
+---
+
+## 8.2 Gates mínimos
+
+Antes do merge para branch principal:
+
+```text
+1. Formatação automática.
+2. Lint.
+3. Verificação de tipos.
+4. Testes unitários.
+5. Testes de integração quando aplicável.
+6. Testes E2E críticos quando aplicável.
+7. Revisão de arquitetura.
+8. Validação de contratos.
+9. Validação de segurança.
+10. Validação de acessibilidade.
+11. Validação de performance.
+12. Verificação de dependências.
+13. Escaneamento de segredos.
+14. Verificação de build.
+15. Verificação de documentação.
+16. Verificação de migrações de banco.
+17. Verificação de variáveis de ambiente.
+18. Verificação de logs.
+19. Verificação de erros conhecidos.
+20. Aprovação humana ou política equivalente.
+```
+
+Se algum gate falhar, bloquear merge.
+
+---
+
+## 8.3 Biome
+
+Usar Biome ou equivalente para:
+
+- Formatação.
+- Lint.
+- Organização de imports quando suportado.
+- Verificações estáticas.
+- Consistência de código.
+- Redução de erro humano.
+- Padronização de estilo.
+
+Comando típico:
+
+```bash
+npx @biomejs/biome check .
+```
+
+Ou, se configurado:
+
+```bash
+npm run lint
+npm run format:check
+```
+
+Regra: código deve passar sem gambiarras.
+
+Se o projeto não usar JavaScript/TypeScript, usar equivalente:
+
+| Stack | Ferramentas possíveis |
+|---|---|
+| Python | Ruff, Black, mypy, pytest |
+| Go | gofmt, golangci-lint, go vet, go test |
+| Java/Kotlin | ktlint, detekt, Checkstyle, SpotBugs, tests |
+| Ruby | RuboCop, Brakeman, RSpec |
+| PHP | PHP-CS-Fixer, PHPStan, Psalm, PHPUnit |
+| C# | dotnet format, analyzers, tests |
+
+O princípio é: lint, format, static analysis e testes.
+
+---
+
+## 8.4 Strict
+
+Usar modo estrito sempre que a linguagem permitir.
+
+Exemplos:
+
+- TypeScript: `strict: true`.
+- Python: type hints rigorosos, validação e lint.
+- Go: vet, lint, tratamento explícito de erro.
+- Java/Kotlin: null safety, lint, testes.
+- SQL: constraints, foreign keys, índices, validações.
+- API: schema validation.
+- Environment: validação de variáveis.
+- YAML/JSON: schema validation quando necessário.
+- Forms: validação client-side e server-side.
+
+Regra: evitar comportamento ambíguo.
+
+---
+
+## 8.5 Revisão de arquitetura
+
+Toda mudança estrutural deve revisar:
+
+- Módulos.
+- Dependências.
+- Camadas.
+- Contratos.
+- Estado.
+- Persistência.
+- Segurança.
+- Performance.
+- Escalabilidade.
+- Impacto em deploy.
+- Impacto em rollback.
+- Impacto em testes.
+- Impacto em observabilidade.
+- Impacto em privacidade.
+- Impacto em custo.
+- Impacto em acessibilidade.
+- Impacto em UX.
+
+Perguntas:
+
+```text
+- Isso aumenta acoplamento?
+- Isso duplica responsabilidade?
+- Isso quebra contrato existente?
+- Isso cria dependência desnecessária?
+- Isso dificulta teste?
+- Isso dificulta rollback?
+- Isso cria ponto único de falha?
+- Isso compromete segurança?
+- Isso compromete privacidade?
+- Isso cresce bem?
+- Isso aumenta custo?
+- Isso aumenta complexidade operacional?
+- Isso cria dívida técnica?
+- Isso pode ser revertido?
+```
+
+---
+
+## 8.6 Testes
+
+Testes não são opcionais em entrega profissional.
+
+Pirâmide recomendada:
+
+```text
+Muitos testes unitários.
+Bons testes de integração.
+Poucos testes E2E críticos.
+Testes de contrato quando houver API.
+Testes de validação de schema.
+Testes de segurança básica.
+Testes de acessibilidade quando possível.
+Testes de performance quando crítico.
+Testes de regressão para bugs.
+Testes de migração quando crítico.
+Testes de autorização quando crítico.
+Testes de validação de dados.
+```
+
+Toda correção de bug deve incluir teste de regressão quando possível.
+
+Toda feature crítica deve incluir:
+
+- Teste de caminho feliz.
+- Teste de erro.
+- Teste de borda.
+- Teste de permissão.
+- Teste de validação.
+- Teste de regressão futura.
+
+---
+
+## 8.7 Validação
+
+Validar entradas externas sempre.
+
+Entradas externas incluem:
+
+- Formulários.
+- Query params.
+- Body de API.
+- Headers.
+- Cookies.
+- Arquivos.
+- Webhooks.
+- Mensagens de fila.
+- Eventos externos.
+- Configurações externas.
+- Respostas de serviços terceiros.
+- Saídas de IA.
+- Uploads.
+- URLs.
+- Parâmetros de rota.
+- Payloads assinados.
+- Callbacks.
+- Imports.
+
+Regra: nunca confiar em dado externo.
+
+Validar:
+
+- Tipo.
+- Tamanho.
+- Formato.
+- Faixa.
+- Obrigatoriedade.
+- Permissão.
+- Integridade.
+- Consistência.
+- Limite de profundidade.
+- Limite de array.
+- Limite de payload.
+- MIME type.
+- Extensão quando aplicável.
+- Conteúdo quando necessário.
+- Encoding.
+- Timezone.
+- Locale.
+- Moeda quando aplicável.
+- Data e hora.
+
+---
+
+## 8.8 Shift-left security
+
+Segurança deve entrar cedo.
+
+Checklist mínimo:
+
+```text
+- Dependências com vulnerabilidades conhecidas?
+- Secrets expostos no código?
+- Entrada validada?
+- Saída escapada?
+- Autorização verificada?
+- Autenticação protegida?
+- Rate limiting necessário?
+- Logs sem dados sensíveis?
+- Upload validado?
+- Permissões mínimas?
+- Tokens com expiração?
+- Cookies seguros?
+- CORS configurado corretamente?
+- SQL/NoSQL injection mitigado?
+- XSS mitigado?
+- CSRF mitigado quando aplicável?
+- SSRF mitigado quando aplicável?
+- Erros não vazam informação sensível?
+- Backups protegidos?
+- Exportação protegida?
+- Webhooks autenticados?
+- Pagamentos validados?
+- Permissões de admin segregadas?
+```
+
+---
+
+## 8.9 Secure coding guidelines
+
+Ao escrever código, aplicar diretrizes seguras:
+
+- Validar entrada.
+- Sanitizar saída.
+- Usar prepared statements/ORM seguro.
+- Não executar código dinâmico inseguro.
+- Não armazenar senha em texto puro.
+- Não logar token.
+- Não expor stack trace para usuário final.
+- Não confiar em autorização apenas no frontend.
+- Não usar dependência abandonada sem análise.
+- Não permitir upload sem validação de tipo, tamanho e destino.
+- Não permitir acesso direto a arquivos sensíveis.
+- Não hardcodar secrets.
+- Não ignorar erro de segurança.
+- Não usar random inseguro para token.
+- Não confiar em client-side para decisão crítica.
+- Não retornar dados excessivos em API.
+- Não expor ID interno sensível sem necessidade.
+- Não permitir enumeração de usuários quando evitável.
+- Não permitir brute force em login.
+- Não reutilizar token.
+- Não armazenar segredo em localStorage para sessão sensível sem análise.
+- Não enviar dado sensível em URL quando evitável.
+- Não deixar CORS aberto sem motivo.
+- Não deixar debug ativo em produção.
+
+---
+
+## 8.10 Qualidade de dependências
+
+Antes de adicionar dependência:
+
+- É necessária?
+- É mantida?
+- É leve?
+- Tem licenças compatíveis?
+- Tem vulnerabilidades?
+- Tem alternativa nativa?
+- Impacta bundle?
+- Impacta build?
+- Impacta segurança?
+- Impacta manutenção?
+- Impacta acessibilidade?
+- Impacta performance?
+- Impacta compatibilidade?
+- Tem histórico de incidentes?
+- Tem boa documentação?
+- Tem comunidade ativa?
+- Pode ser substituída facilmente?
+- Pode ser isolada em módulo?
+- Pode ser testada?
+- Pode ser removida no futuro?
+
+---
+
+# 9. NORMALIZAÇÃO DE TERMOS
+
+O texto do usuário contém termos possivelmente transcritos de áudio. Para execução profissional, normalizar assim:
+
+| Termo ouvido/escrito | Interpretação profissional |
+|---|---|
+| biome | Biome: lint/format/static analysis |
+| strike | strict mode / modo estrito |
+| revisão de arquitetura | architecture review |
+| teste e validação | tests and validation |
+| seda de CSG | normalizar para shift-left security, secure coding guidelines e security scanning |
+| PR | pull request |
+| issue | issue/tarefa |
+| Motion Principles | princípios de movimento/UX |
+| lazy loading | carregamento preguiçoso |
+| skeleton | skeleton state |
+| animações leves | microinterações e feedback sutil |
+
+Regra: quando houver termo ambíguo, assumir a interpretação mais segura e profissional.
+
+---
+
+# 10. PROMPT UNIVERSAL PARA VIBE CODER PROFISSIONAL
+
+Este é o prompt principal para colar antes de pedir código profissional.
+
+```text
+Você deve agir como um engenheiro de software profissional, não como um gerador de código improvisado.
+
+Regras obrigatórias:
+
+1. Organização no GitHub
+- Organize o projeto no próprio GitHub.
+- Crie issues para cada tarefa relevante.
+- Toda issue deve ter título, contexto, objetivo, critérios de aceite e checklist.
+- Toda tarefa deve ser rastreável.
+- Cada pull request deve estar vinculado a uma issue.
+- Use branches claras, commits atômicos e mensagens claras.
+- Não entregue código solto como se fosse profissional sem mostrar organização.
+
+2. Interface decente
+- Interface decente não é só tela bonita.
+- Aplique Motion Principles.
+- Use lazy loading para componentes, imagens, rotas e listas pesadas quando aplicável.
+- Use skeleton states para carregamento.
+- Use animações leves de entrada e carregamento.
+- Anime principalmente transform e opacity.
+- Respeite prefers-reduced-motion.
+- Implemente estados de loading, empty, error, success e retry.
+- Garanta acessibilidade básica: foco, contraste, labels, teclado.
+- Não crie animação inútil, pesada ou bloqueante.
+
+3. Qualidade antes do ambiente principal
+- Antes do código chegar no ambiente principal, imponha regras.
+- Use Biome ou equivalente para lint e formatação.
+- Use strict mode quando existir.
+- Faça revisão de arquitetura.
+- Crie e rode testes.
+- Faça validação de entrada e saída.
+- Aplique shift-left security.
+- Verifique dependências.
+- Escaneie segredos.
+- Não exponha dados sensíveis.
+- Não deixe erro vazar informação interna.
+- Não merge sem build, testes e revisão.
+
+4. Arquitetura e longevidade
+- Construa para escala, segurança e longevidade.
+- Evite acoplamento excessivo.
+- Evite duplicação.
+- Evite código frágil.
+- Prefira módulos claros, contratos estáveis e responsabilidades bem definidas.
+- Documente decisões importantes.
+- Garanta que mudanças possam ser revertidas.
+
+5. Modo de resposta
+- Antes de codar, mostre plano, issues e riscos.
+- Se a solicitação estiver vaga, assuma suposições seguras e registre.
+- Se houver conflito entre velocidade e segurança, priorize segurança e corretude.
+- Se algo não puder ser feito com qualidade, diga e proponha alternativa.
+- Não finja qualidade onde não existe validação.
+
+Objetivo final:
+Construir software profissional, seguro, organizado, escalável, testável, acessível, manutenível e pronto para evoluir.
+```
+
+---
+
+# 11. PROMPT CURTO DE EMERGÊNCIA
+
+```text
+Organize o projeto no GitHub com issues, tarefas e PRs vinculados. Aplique Motion Principles com lazy loading, skeleton e animações leves. Antes do merge, rode Biome ou equivalente, strict mode, testes, revisão de arquitetura, validação, shift-left security, auditoria de dependências e secret scanning. Não entregue código improvisado: construa com rastreabilidade, qualidade, segurança e longevidade.
+```
+
+---
+
+# 12. PROMPT PARA MOTION PRINCIPLES
+
+```text
+Implemente a interface usando Motion Principles.
+
+Obrigatório:
+- Lazy loading para itens pesados.
+- Skeleton states durante carregamento.
+- Animações leves de entrada e carregamento.
+- Animações apenas com transform e opacity quando possível.
+- Duração curta e sutil.
+- Feedback visual para ações do usuário.
+- Empty state, error state e success state.
+- Respeitar prefers-reduced-motion.
+- Não causar reflow pesado.
+- Não bloquear interação desnecessariamente.
+- Manter acessibilidade e performance.
+```
+
+---
+
+# 13. PROMPT PARA QUALITY GATES
+
+```text
+Antes de qualquer merge para o ambiente principal, aplique os seguintes gates:
+
+- Biome check ou equivalente.
+- Strict mode.
+- Typecheck.
+- Lint.
+- Format check.
+- Unit tests.
+- Integration tests quando aplicável.
+- E2E crítico quando aplicável.
+- Build.
+- Architecture review.
+- Input validation.
+- Output validation.
+- Security review.
+- Dependency audit.
+- Secret scanning.
+- Accessibility check.
+- Performance budget check.
+- Documentation update.
+- Migration safety check.
+- Rollback plan.
+
+Se algum gate falhar, bloqueie o merge e corrija.
+```
+
+---
+
+# 14. PROMPT PARA SEGURANÇA E VALIDAÇÃO
+
+```text
+Antes de implementar ou modificar código, aplique segurança shift-left.
+
+Obrigatório:
+- Validar toda entrada externa.
+- Validar toda saída sensível.
+- Verificar autenticação e autorização.
+- Não expor secrets.
+- Não logar dados sensíveis.
+- Não confiar apenas no frontend.
+- Aplicar rate limiting quando aplicável.
+- Proteger upload, download e arquivos.
+- Proteger contra injection, XSS, CSRF e abuso.
+- Verificar dependências.
+- Escanear segredos.
+- Garantir que erros não vazem informação interna.
+- Revisar permissões e menor privilégio.
+```
+
+---
+
+# 15. PROMPT PARA ARQUITETURA E ESCALA
+
+```text
+Antes de implementar, avalie arquitetura e escala.
+
+Obrigatório:
+- Modularizar responsabilidades.
+- Evitar acoplamento excessivo.
+- Evitar duplicação crítica.
+- Definir contratos claros.
+- Validar entrada e saída.
+- Tratar erros.
+- Observar logs, métricas e traces.
+- Considerar paginação, cache, filas, timeouts e retries seguros.
+- Considerar rollback.
+- Considerar custo.
+- Considerar testes.
+- Considerar crescimento de uso.
+- Considerar manutenção futura.
+```
+
+---
+
+# 16. TEMPLATE DE ISSUE
+
+```markdown
+# Título
+
+## Tipo
+[ ] Feature
+[ ] Bug
+[ ] Refactor
+[ ] Docs
+[ ] Security
+[ ] Performance
+[ ] UI
+[ ] Accessibility
+[ ] Infra
+[ ] Test
+[ ] Chore
+[ ] Dependency
+[ ] Privacy
+[ ] Data
+[ ] AI
+
+## Prioridade
+[ ] Critical
+[ ] High
+[ ] Medium
+[ ] Low
+
+## Área
+[ ] Frontend
+[ ] Backend
+[ ] API
+[ ] Database
+[ ] Auth
+[ ] UI/UX
+[ ] CI/CD
+[ ] Observability
+[ ] Security
+[ ] Payments
+[ ] Admin
+[ ] Data/Analytics
+
+## Contexto
+Descrever o problema ou necessidade.
+
+## Objetivo
+Descrever o resultado esperado.
+
+## Critérios de aceite
+- [ ] Critério 1
+- [ ] Critério 2
+- [ ] Critério 3
+
+## Checklist técnico
+- [ ] Issue criada
+- [ ] Branch criada
+- [ ] Testes definidos
+- [ ] Segurança revisada
+- [ ] UI com estados definidos
+- [ ] Documentação atualizada
+- [ ] PR vinculado
+- [ ] Rollback considerado
+- [ ] Observabilidade considerada
+
+## Riscos
+- Risco 1
+- Risco 2
+
+## Dependências
+- Dependência 1
+- Dependência 2
+
+## Fora de escopo
+- Item 1
+- Item 2
+```
+
+---
+
+# 17. TEMPLATE DE PULL REQUEST
+
+```markdown
+# Título do PR
+
+## Issue relacionada
+Closes #
+
+## Descrição
+Descrever o que foi feito e por quê.
+
+## Mudanças principais
+- Mudança 1
+- Mudança 2
+- Mudança 3
+
+## Como testar
+1. Passo 1
+2. Passo 2
+3. Passo 3
+
+## Evidências
+- Print, vídeo, log ou comando quando aplicável.
+
+## Testes
+- [ ] Testes unitários
+- [ ] Testes de integração
+- [ ] Testes manuais
+- [ ] Build passou
+- [ ] Lint passou
+- [ ] Typecheck passou
+- [ ] Segurança revisada
+- [ ] Acessibilidade revisada quando aplicável
+- [ ] Performance revisada quando aplicável
+
+## UI / UX
+- [ ] Loading state
+- [ ] Error state
+- [ ] Empty state
+- [ ] Success state
+- [ ] Skeleton
+- [ ] Lazy loading
+- [ ] Animações leves
+- [ ] prefers-reduced-motion
+- [ ] Acessibilidade básica
+- [ ] Responsividade
+
+## Segurança
+- [ ] Validação de entrada
+- [ ] Autorização verificada
+- [ ] Secrets não expostos
+- [ ] Dependências verificadas
+- [ ] Dados sensíveis protegidos
+- [ ] Logs sem dados sensíveis
+- [ ] Rate limiting considerado
+- [ ] Upload/download protegido quando aplicável
+
+## Arquitetura
+- [ ] Não introduz acoplamento indevido
+- [ ] Não duplica responsabilidade
+- [ ] Não quebra contrato
+- [ ] Mantém modularidade
+- [ ] Rollback possível
+- [ ] Observabilidade mantida
+- [ ] Custo considerado
+
+## Riscos
+- Risco 1
+- Risco 2
+
+## Rollback
+Descrever como reverter se necessário.
+```
+
+---
+
+# 18. TEMPLATE DE TAREFA TÉCNICA
+
+```markdown
+# Tarefa
+
+## Objetivo
+O que precisa ser entregue.
+
+## Entrada
+O que existe antes.
+
+## Saída
+O que deve existir depois.
+
+## Arquivos prováveis
+- arquivo 1
+- arquivo 2
+
+## Impacto
+- Frontend
+- Backend
+- Banco
+- CI
+- Docs
+- Segurança
+- UI
+- Performance
+- Observabilidade
+
+## Validação
+- Teste 1
+- Teste 2
+- Comando de verificação
+
+## Riscos
+- Risco 1
+
+## Critério de pronto
+- [ ] Implementado
+- [ ] Testado
+- [ ] Revisado
+- [ ] Documentado
+- [ ] PR vinculado
+- [ ] Rollback considerado
+```
+
+---
+
+# 19. TEMPLATE DE DECISÃO DE ARQUITETURA
+
+```markdown
+# ADR: Título da decisão
+
+## Status
+[ ] Proposta
+[ ] Aprovada
+[ ] Rejeitada
+[ ] Substituída
+
+## Contexto
+Qual problema ou restrição levou à decisão?
+
+## Opções consideradas
+1. Opção A
+2. Opção B
+3. Opção C
+
+## Decisão
+Qual opção foi escolhida?
+
+## Motivo
+Por que essa opção foi escolhida?
+
+## Consequências positivas
+- Benefício 1
+- Benefício 2
+
+## Consequências negativas
+- Custo 1
+- Risco 1
+
+## Impacto
+- Arquitetura
+- Segurança
+- Performance
+- Custo
+- Manutenção
+- Time
+- Operação
+
+## Critério de reversão
+Quando a decisão deve ser revisada?
+```
+
+---
+
+# 20. TEMPLATE DE INCIDENTE
+
+```markdown
+# Incidente: título
+
+## Severidade
+[ ] SEV1 crítico
+[ ] SEV2 alto
+[ ] SEV3 médio
+[ ] SEV4 baixo
+
+## Impacto
+Quem foi afetado? O que parou?
+
+## Timeline
+- HH:MM detecção
+- HH:MM mitigação
+- HH:MM resolução
+
+## Causa provável
+Descrever.
+
+## Mitigação imediata
+O que foi feito para reduzir impacto?
+
+## Resolução
+O que resolveu?
+
+## Ações corretivas
+- [ ] Ação 1
+- [ ] Ação 2
+- [ ] Teste de regressão
+- [ ] Alerta adicionado
+- [ ] Documentação atualizada
+- [ ] Issue criada
+
+## Lições
+O que aprender sem culpar pessoas?
+```
+
+---
+
+# 21. FLUXO PROFISSIONAL COMPLETO
+
+## 21.1 Antes do código
+
+```text
+1. Entender problema.
+2. Definir escopo.
+3. Identificar riscos.
+4. Criar issue.
+5. Definir critérios de aceite.
+6. Escolher abordagem.
+7. Verificar impacto em arquitetura.
+8. Verificar impacto em segurança.
+9. Verificar impacto em UI.
+10. Verificar impacto em testes.
+11. Verificar impacto em dados.
+12. Verificar impacto em privacidade.
+13. Verificar impacto em custo.
+14. Criar branch.
+```
+
+## 21.2 Durante o código
+
+```text
+1. Commits pequenos.
+2. Manter build funcionando.
+3. Manter testes funcionando.
+4. Não introduzir segredos.
+5. Não ignorar erros.
+6. Não quebrar acessibilidade.
+7. Não degradar performance.
+8. Não criar UI sem estados.
+9. Não criar API sem validação.
+10. Não criar lógica crítica sem teste.
+11. Não alterar contrato sem aviso.
+12. Não usar dados reais sensíveis em teste.
+13. Não deixar debug ativo.
+14. Não deixar TODO sem issue.
+```
+
+## 21.3 Depois do código
+
+```text
+1. Rodar lint.
+2. Rodar format.
+3. Rodar typecheck.
+4. Rodar testes.
+5. Rodar build.
+6. Validar segurança.
+7. Validar UI.
+8. Validar performance.
+9. Validar acessibilidade.
+10. Validar documentação.
+11. Abrir PR vinculado à issue.
+```
+
+## 21.4 Antes do merge
+
+```text
+1. Todos os gates verdes.
+2. Revisão aprovada.
+3. Conflitos resolvidos.
+4. PR limpo.
+5. Issue atualizada.
+6. Testes evidenciados.
+7. Rollback planejado.
+8. Migrações seguras.
+9. Observabilidade verificada.
+10. Merge executado.
+```
+
+---
+
+# 22. PROTOCOLO DE RESGATE QUANDO O PROJETO COM IA ESTÁ RUIM
+
+Se o projeto está ficando péssimo, executar protocolo de estabilização.
+
+## 22.1 Passo 1: parar de adicionar caos
+
+- Congelar features novas não críticas.
+- Congelar refatorações grandes.
+- Congelar dependências novas.
+- Congelar mudanças de arquitetura sem análise.
+- Permitir apenas correções críticas e organização.
+
+## 22.2 Passo 2: auditar
+
+Auditar:
+
+- Estrutura do repositório.
+- Issues inexistentes ou confusas.
+- PRs soltos.
+- Código sem teste.
+- UI sem estados.
+- Segurança ausente.
+- Secrets expostos.
+- Dependências vulneráveis.
+- Build quebrado.
+- Documentação ausente.
+- Arquitetura frágil.
+- Performance ruim.
+- Acessibilidade ruim.
+- Logs ruins.
+- Dados pessoais expostos.
+- IA gerando código sem rastreabilidade.
+
+## 22.3 Passo 3: criar plano de estabilização
+
+Criar issues:
+
+```text
+1. Stabilize CI
+2. Enforce branch protection
+3. Create issue templates
+4. Create PR template
+5. Add lint/format checks
+6. Add strict mode/typecheck
+7. Add tests for critical paths
+8. Add security scanning
+9. Add secret scanning
+10. Add dependency audit
+11. Fix UI states
+12. Add Motion Principles policy
+13. Add accessibility baseline
+14. Add observability baseline
+15. Document architecture
+16. Document environment variables
+17. Create rollback plan
+18. Remove dead code with traceability
+19. Isolate risky AI-generated code
+20. Create quality dashboard
+```
+
+## 22.4 Passo 4: estabilizar CI
+
+CI mínimo:
+
+```text
+- Install
+- Lint
+- Format
+- Typecheck
+- Unit tests
+- Build
+- Security audit
+- Secret scan
+```
+
+Se não houver testes, criar testes para caminhos críticos primeiro.
+
+## 22.5 Passo 5: estabilizar UI
+
+Corrigir:
+
+- Loading.
+- Skeleton.
+- Error.
+- Empty.
+- Success.
+- Retry.
+- Formulários.
+- Foco.
+- Contraste.
+- Responsividade.
+- Animações pesadas.
+- Lazy loading ausente.
+- Imagens pesadas.
+- Estados inexistentes.
+
+## 22.6 Passo 6: estabilizar segurança
+
+Prioridade:
+
+- Secrets.
+- Auth.
+- Authorization.
+- Injection.
+- XSS.
+- Upload.
+- Rate limit.
+- Logs.
+- Dependências.
+- Dados pessoais.
+
+## 22.7 Passo 7: estabilizar governança
+
+Ativar:
+
+- Issues obrigatórias.
+- PR vinculado.
+- Review obrigatória.
+- Checks obrigatórios.
+- Branch protection.
+- Definition of Done.
+- Definition of Ready.
+- Changelog.
+- Decision records.
+
+---
+
+# 23. ARQUITETURA PROFISSIONAL
+
+## 23.1 Princípios arquiteturais
+
+- Separação de responsabilidades.
+- Modularidade.
+- Baixo acoplamento.
+- Alta coesão.
+- Interfaces explícitas.
+- Dependências injetáveis.
+- Camadas claras.
+- Contratos estáveis.
+- Estado mínimo.
+- Código testável.
+- Configuração externa.
+- Logs estruturados.
+- Erros tratados.
+- Falhas isoladas.
+- Observabilidade embutida.
+- Segurança embutida.
+- Privacidade embutida.
+- Acessibilidade embutida.
+- Performance embutida.
+
+---
+
+## 23.2 Camadas típicas
+
+```text
+UI
+  ↓
+Application / Use Cases
+  ↓
+Domain / Rules
+  ↓
+Infrastructure / Adapters
+  ↓
+Database / External Services
+```
+
+Regra: UI não deve conter lógica crítica de negócio escondida. Backend não deve confiar apenas em validação de UI.
+
+---
+
+## 23.3 Contratos
+
+Toda API deve ter contrato claro:
+
+- Rota.
+- Método.
+- Entrada.
+- Saída.
+- Erros.
+- Status codes.
+- Autenticação.
+- Autorização.
+- Validação.
+- Versionamento.
+- Idempotência quando necessário.
+- Paginação.
+- Ordenação.
+- Filtros.
+- Rate limit.
+- Depreciação quando necessário.
+- Exemplos.
+- Schema.
+- Evidência de teste.
+
+---
+
+## 23.4 Padrões úteis
+
+Usar quando fizer sentido:
+
+- Repository para abstrair persistência.
+- Service para casos de uso.
+- Adapter para integrações externas.
+- Mapper/serializer para transformação.
+- Middleware para autenticação, logs e erros.
+- Guard/permission para autorização.
+- Schema validation para entrada.
+- Event dispatcher para eventos internos.
+- Queue para trabalho assíncrono.
+- Feature flag para entrega progressiva.
+- Circuit breaker para resiliência.
+- Retry policy para chamadas externas.
+- Cache layer para leitura frequente.
+- Audit log para ações sensíveis.
+
+Não usar padrão sem necessidade.
+
+---
+
+# 24. BANCO DE DADOS E INTEGRIDADE
+
+Regras:
+
+- Usar migrations.
+- Nunca alterar produção manualmente sem processo seguro.
+- Backup antes de migração crítica.
+- Constraints quando fizer sentido.
+- Índices para consultas frequentes.
+- Evitar N+1.
+- Paginar listas grandes.
+- Validar integridade.
+- Proteger dados sensíveis.
+- Auditar alterações críticas.
+- Testar rollback de migração quando possível.
+- Definir retenção.
+- Definir soft delete ou hard delete com cuidado.
+- Não usar dados reais sensíveis em desenvolvimento sem mascaramento.
+- Não logar dados pessoais.
+- Não expor chave primária interna sem necessidade.
+- Não executar query dinâmica sem proteção.
+- Não usar usuário de banco com permissão excessiva.
+- Não ignorar lock/deadlock.
+- Não armazenar JSON sem validação quando isso causar risco.
+
+---
+
+# 25. OBSERVABILIDADE
+
+Todo sistema profissional deve permitir responder:
+
+```text
+- Está funcionando?
+- Está lento?
+- Está falhando?
+- Onde está falhando?
+- Desde quando?
+- Qual o impacto?
+- Qual a causa provável?
+- Como reproduzir?
+- Como reverter?
+```
+
+Itens recomendados:
+
+- Logs estruturados.
+- Request ID.
+- Correlation ID.
+- Métricas de erro.
+- Métricas de latência.
+- Métricas de tráfego.
+- Métricas de custo.
+- Alertas críticos.
+- Health check.
+- Painel de status.
+- Auditoria de ações sensíveis.
+- Trace distribuído quando aplicável.
+- SLO/SLI quando maduro.
+- Logs de segurança.
+- Logs de auditoria.
+- Logs com retenção adequada.
+- Logs sem segredos.
+- Logs sem dados pessoais desnecessários.
+- Logs com nível configurável.
+- Logs com contexto de erro.
+
+---
+
+# 26. SEGURANÇA POR CAMADA
+
+## 26.1 Frontend
+
+- Validar entrada do usuário.
+- Não confiar apenas em validação client-side.
+- Escapar saída.
+- Proteger XSS.
+- Não armazenar token sensível inseguramente.
+- Não expor secrets no bundle.
+- Não permitir upload sem validação.
+- Não renderizar HTML inseguro.
+- Não executar código remoto sem necessidade.
+- Não usar iframe sensível sem proteção.
+- Não expor rotas admin apenas por UI.
+- Não deixar erro técnico cru para usuário.
+- Não permitir redirecionamento aberto sem validação.
+- Não usar links externos sem `rel="noopener"` quando necessário.
+- Não deixar formulários sem validação.
+- Não deixar botões sem feedback.
+
+## 26.2 Backend
+
+- Validar tudo.
+- Autorizar toda rota.
+- Aplicar rate limit.
+- Proteger contra abuso.
+- Registrar eventos sensíveis.
+- Não vazar erro interno.
+- Não aceitar payload gigante sem limite.
+- Não executar operações perigosas sem confirmação.
+- Não permitir privilege escalation.
+- Não confiar em input de usuário para permissão.
+- Não executar SQL dinâmico inseguro.
+- Não desserializar objetos inseguros.
+- Não armazenar senha em texto puro.
+- Não reutilizar token.
+- Não deixar sessão infinita.
+- Não ignorar tentativas de login suspeitas.
+- Não permitir exportação sem autorização.
+- Não permitir webhook sem assinatura ou validação.
+
+## 26.3 Infra
+
+- Secrets gerenciados.
+- Menor privilégio.
+- Redes segmentadas quando aplicável.
+- Atualizações de segurança.
+- Acesso auditável.
+- Backup.
+- Restore testado.
+- Monitoramento.
+- Proteção contra DDoS quando aplicável.
+- TLS.
+- Certificados válidos.
+- Headers de segurança quando aplicável.
+- Logs de acesso.
+- Controle de ambiente.
+- Ambientes isolados.
+- Produção protegida.
+- Staging parecido com produção.
+- Deploy automatizado.
+- Rollback automatizado quando possível.
+- Scan de imagem de container quando aplicável.
+- Dependências de sistema atualizadas.
+
+---
+
+# 27. IA RESPONSÁVEL E GOVERNANÇA DE PROMPTS
+
+Quando o projeto usa IA:
+
+- Não enviar segredos para prompts.
+- Não enviar dados pessoais sensíveis sem política clara.
+- Não aceitar saída de IA sem revisão.
+- Não tratar IA como revisor final único.
+- Não usar IA para gerar permissões sem validação humana.
+- Não usar IA para gerar código de segurança sem revisão especializada.
+- Registrar prompts críticos quando necessário.
+- Registrar versão de prompt.
+- Registrar avaliação de saída.
+- Criar testes para comportamento de IA quando aplicável.
+- Definir fallback quando IA falhar.
+- Definir timeout para chamada de IA.
+- Definir rate limit para IA.
+- Definir custo máximo.
+- Definir política de cache.
+- Definir política de logs.
+- Definir política de retenção.
+- Definir política de privacidade.
+- Definir política de revisão humana.
+- Definir política de auditoria.
+- Definir política de rollback de prompt.
+- Definir política de avaliação de qualidade.
+
+---
+
+# 28. TESTES E VALIDAÇÃO
+
+## 28.1 Tipos de teste
+
+```text
+- Unit test
+- Integration test
+- E2E test
+- Contract test
+- Schema validation test
+- Migration test
+- Accessibility test
+- Performance test
+- Security test
+- Visual regression test quando útil
+- Snapshot test com cuidado
+- Load test quando crítico
+- Smoke test
+- Regression test
+- Backup/restore test
+- Rollback test
+- Authorization test
+- Authentication test
+- Rate limit test
+- Error handling test
+```
+
+## 28.2 Estratégia
+
+Priorizar testes de caminhos críticos:
+
+- Auth.
+- Pagamento.
+- Cadastro.
+- Checkout.
+- Permissões.
+- Exportação.
+- Exclusão.
+- Upload.
+- Notificação.
+- Integrações externas.
+- Migração de dados.
+- Fluxos de receita.
+- Fluxos legais.
+- Fluxos de segurança.
+- Fluxos de privacidade.
+
+---
+
+# 29. CI/CD RECOMENDADO
+
+Pipeline mínimo:
+
+```text
+1. Checkout.
+2. Instalar dependências.
+3. Lint.
+4. Format check.
+5. Typecheck.
+6. Unit tests.
+7. Build.
+8. Integration tests.
+9. Security scan.
+10. Dependency audit.
+11. Secret scan.
+12. Accessibility check quando aplicável.
+13. Performance budget check.
+14. Deploy em staging.
+15. Smoke tests.
+16. Deploy em produção com aprovação.
+17. Monitoramento pós-deploy.
+```
+
+Regra: se falhar, bloqueia.
+
+---
+
+# 30. EXEMPLO DE WORKFLOW DE QUALIDADE
+
+Exemplo conceitual para GitHub Actions.
+
+```yaml
+name: quality-gates
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup runtime
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Biome check
+        run: npx @biomejs/biome check .
+
+      - name: Typecheck
+        run: npm run typecheck --if-present
+
+      - name: Unit tests
+        run: npm run test --if-present
+
+      - name: Build
+        run: npm run build --if-present
+
+      - name: Dependency audit
+        run: npm audit --audit-level=high || true
+
+      - name: Secret scan placeholder
+        run: echo "Add secret scanning tool here"
+
+      - name: Accessibility placeholder
+        run: echo "Add accessibility check when applicable"
+
+      - name: Performance budget placeholder
+        run: echo "Add bundle size or Lighthouse CI check when applicable"
+```
+
+Adaptar ao stack real. O princípio é: gates obrigatórios antes do merge.
+
+---
+
+# 31. DEFINITION OF DONE
+
+Uma tarefa só está pronta quando:
+
+```text
+- Código implementado.
+- Código revisado.
+- Testes criados ou atualizados.
+- Testes passando.
+- Lint passando.
+- Formatação passando.
+- Build passando.
+- Segurança verificada.
+- Acessibilidade verificada quando aplicável.
+- Performance verificada quando aplicável.
+- Documentação atualizada.
+- Issue atualizada.
+- PR vinculado.
+- Critérios de aceite atendidos.
+- Riscos registrados.
+- Rollback considerado.
+- Observabilidade considerada.
+- Custo considerado.
+- Privacidade considerada.
+- Dependências verificadas.
+- Secrets verificados.
+```
+
+---
+
+# 32. DEFINITION OF READY
+
+Uma tarefa está pronta para começar quando:
+
+```text
+- Objetivo claro.
+- Escopo claro.
+- Critérios de aceite definidos.
+- Dependências identificadas.
+- Riscos identificados.
+- Prioridade definida.
+- Área identificada.
+- Testes planejados.
+- Impacto arquitetural avaliado.
+- UI states planejados quando aplicável.
+- Segurança considerada.
+- Estimativa ou tamanho definido.
+- Dados necessários identificados.
+- Permissões necessárias identificadas.
+- Ambiente disponível.
+- Acesso necessário concedido.
+- Rollback considerado.
+```
+
+---
+
+# 33. MÉTRICAS DE QUALIDADE
+
+Acompanhar quando possível:
+
+```text
+- Taxa de falha em CI.
+- Cobertura de testes.
+- Tempo de build.
+- Tempo de revisão.
+- Tamanho médio de PR.
+- Bugs reabertos.
+- Regressões.
+- Vulnerabilidades abertas.
+- Débito técnico.
+- Erros em produção.
+- Latência.
+- Web Vitals.
+- Acessibilidade score.
+- Custo de infra.
+- Frequência de deploy.
+- Tempo de recuperação de incidentes.
+- Lead time for changes.
+- Deployment frequency.
+- Change failure rate.
+- Mean time to restore.
+- Mean time to review.
+- Issue aging.
+- PR aging.
+- Secret leakage incidents.
+- Dependency freshness.
+- Test flakiness.
+- Page weight.
+- Bundle size.
+- Error rate by route.
+- API error rate.
+- API latency p50/p95/p99.
+```
+
+---
+
+# 34. WEB VITALS E PERFORMANCE DE UI
+
+Considerar:
+
+```text
+LCP: carregamento do conteúdo principal rápido.
+CLS: estabilidade visual.
+INP: resposta rápida à interação.
+TTFB: resposta inicial do servidor.
+Bundle size: não carregar código desnecessário.
+Imagens: otimizadas e responsivas.
+Fontes: carregadas com cuidado.
+Scripts: minimizar bloqueio.
+Cache: usar corretamente.
+Rede: reduzir requests desnecessários.
+Third-party: auditar impacto.
+Lazy loading: aplicar onde fizer sentido.
+Code splitting: dividir rotas/componentes.
+Server rendering ou static rendering quando útil.
+Prefetch cuidadoso.
+Compression: usar.
+CDN: usar quando aplicável.
+Database: evitar consultas lentas.
+API: evitar payload gigante.
+State: evitar re-render excessivo.
+```
+
+---
+
+# 35. REGRAS PARA IA GERAR CÓDIGO PROFISSIONAL
+
+A IA deve obedecer:
+
+## 35.1 Não gerar código sem contexto
+
+Antes de codar, deve identificar:
+
+- Stack.
+- Objetivo.
+- Restrições.
+- Público.
+- Critérios de aceite.
+- Riscos.
+- Integrações.
+- Ambiente.
+- Permissões.
+- Dados.
+- Compliance.
+- Performance.
+- Acessibilidade.
+- Observabilidade.
+- Testes.
+
+Se não souber, deve declarar suposições seguras.
+
+---
+
+## 35.2 Não gerar código inseguro
+
+Nunca deve:
+
+- Expor secrets.
+- Ignorar validação.
+- Usar SQL inseguro.
+- Renderizar HTML não tratado.
+- Confiar apenas em frontend.
+- Armazenar senha em texto puro.
+- Criar rotas sem autorização.
+- Ignorar erros críticos.
+- Criar upload inseguro.
+- Criar download inseguro.
+- Criar redirect inseguro.
+- Criar comando dinâmico inseguro.
+- Criar desserialização insegura.
+- Criar log com dado sensível.
+- Criar cache com dado sensível.
+- Criar token fraco.
+- Criar sessão sem expiração.
+- Criar permissão ampla demais.
+
+---
+
+## 35.3 Não gerar UI incompleta
+
+Toda UI deve prever:
+
+- Loading.
+- Error.
+- Empty.
+- Success.
+- Validation.
+- Retry.
+- Accessibility.
+- Responsive.
+- Performance.
+- Feedback.
+- Disabled.
+- Skeleton.
+- Motion leve.
+- Reduced motion.
+- Offline quando aplicável.
+- Unauthorized quando aplicável.
+- Forbidden quando aplicável.
+
+---
+
+## 35.4 Não gerar arquitetura frágil
+
+Evitar:
+
+- Deus component.
+- Deus service.
+- Lógica espalhada.
+- Duplicação.
+- Dependência circular.
+- Estado global desnecessário.
+- Acoplamento com framework demais.
+- Código difícil de testar.
+- Código difícil de reverter.
+- Código difícil de observar.
+- Código difícil de migrar.
+- Código difícil de auditar.
+- Código difícil de explicar.
+- Código difícil de manter.
+- Código difícil de escalar.
+
+---
+
+## 35.5 Não gerar código sem teste
+
+Se a mudança for crítica:
+
+- Criar teste.
+- Explicar como validar.
+- Mostrar comando.
+- Indicar evidência.
+- Indicar risco.
+- Indicar rollback.
+
+---
+
+## 35.6 Não gerar código sem rastreabilidade
+
+Se o ambiente permitir GitHub:
+
+- Criar issue.
+- Criar branch.
+- Abrir PR.
+- Vincular issue.
+- Atualizar checklist.
+- Atualizar docs.
+
+Se não permitir:
+
+- Simular rastreabilidade com plano de tarefas.
+- Criar IDs.
+- Criar critérios.
+- Criar evidências.
+- Criar próximos passos.
+
+---
+
+# 36. ALGORITMO DE AUTO-REORGANIZAÇÃO
+
+Quando algo mudar, executar este algoritmo:
+
+```text
+1. Detectar mudança
+   - O que mudou?
+   - Quem mudou?
+   - Onde mudou?
+   - Por que mudou?
+   - Quando mudou?
+   - Qual a intenção?
+
+2. Classificar mudança
+   - Feature?
+   - Bug?
+   - Refactor?
+   - Security?
+   - UI?
+   - Infra?
+   - Docs?
+   - Dependency?
+   - Data?
+   - Privacy?
+   - Accessibility?
+   - Performance?
+   - AI?
+
+3. Analisar impacto
+   - Afeta API?
+   - Afeta banco?
+   - Afeta UI?
+   - Afeta autenticação?
+   - Afeta autorização?
+   - Afeta performance?
+   - Afeta testes?
+   - Afeta deploy?
+   - Afeta rollback?
+   - Afeta custo?
+   - Afeta privacidade?
+   - Afeta compliance?
+   - Afeta observabilidade?
+   - Afeta usuário final?
+   - Afeta admin?
+   - Afeta integração externa?
+
+4. Preservar invariantes
+   - Segurança mantida?
+   - Rastreabilidade mantida?
+   - Qualidade mantida?
+   - Testes mantidos?
+   - Acessibilidade mantida?
+   - Arquitetura coerente?
+   - Privacidade mantida?
+   - Performance mantida?
+   - Observabilidade mantida?
+   - Documentação mantida?
+
+5. Reorganizar plano
+   - Atualizar issues.
+   - Atualizar tarefas.
+   - Atualizar PRs.
+   - Atualizar branches.
+   - Atualizar documentação.
+   - Atualizar testes.
+   - Atualizar CI.
+   - Atualizar riscos.
+   - Atualizar rollback.
+
+6. Revalidar
+   - Rodar gates.
+   - Rodar testes.
+   - Revisar segurança.
+   - Revisar UI.
+   - Revisar performance.
+   - Revisar acessibilidade.
+   - Revisar logs.
+   - Revisar métricas.
+   - Revisar custo.
+
+7. Registrar
+   - O que mudou.
+   - Por que mudou.
+   - Impacto.
+   - Decisão.
+   - Evidência.
+   - Responsável.
+   - Data.
+   - Versão.
+
+8. Entregar
+   - Código.
+   - Testes.
+   - Docs.
+   - PR.
+   - Checklist.
+   - Evidência.
+   - Plano de monitoramento.
+```
+
+---
+
+# 37. REGRAS DE RESOLUÇÃO DE CONFLITO
+
+Se houver conflito entre mudanças:
+
+1. Manter segurança.
+2. Manter integridade.
+3. Manter corretude.
+4. Manter testes.
+5. Manter compatibilidade.
+6. Manter acessibilidade.
+7. Manter performance.
+8. Manter privacidade.
+9. Manter observabilidade.
+10. Reavaliar estética.
+11. Reavaliar velocidade.
+12. Documentar decisão.
+
+Se duas abordagens forem válidas, escolher a que:
+
+- Tem menor risco.
+- É mais testável.
+- É mais reversível.
+- É mais simples.
+- Tem menor custo de manutenção.
+- Preserva mais princípios.
+- Tem melhor evidência.
+- Tem melhor rastreabilidade.
+- Tem menor impacto em produção.
+- Tem melhor experiência acessível.
+
+---
+
+# 38. MÓDULO DE RESPOSTA AUTOMÁTICA DA IA
+
+Quando o usuário pedir algo de software, a IA deve responder neste formato mínimo:
+
+```text
+1. Entendimento do pedido
+2. Suposições
+3. Riscos
+4. Plano profissional
+5. Issues sugeridas
+6. Tarefas
+7. Arquitetura
+8. UI / Motion Principles
+9. Qualidade e segurança
+10. Testes
+11. Código ou próximo passo
+12. Checklist de validação
+```
+
+Se o usuário pedir apenas código rápido, a IA deve avisar:
+
+```text
+Este modo é protótipo rápido e não substitui fluxo profissional. Para produção, aplicar issues, PRs, testes, segurança, revisão e quality gates.
+```
+
+---
+
+# 39. ANTI-PADRÕES PROIBIDOS
+
+Não fazer:
+
+- Gerar código sem issue quando o projeto é profissional.
+- Gerar PR sem vínculo com issue.
+- Gerar UI sem loading/error/empty.
+- Gerar animação pesada sem propósito.
+- Ignorar prefers-reduced-motion.
+- Ignorar validação de entrada.
+- Ignorar autorização.
+- Expor secrets.
+- Logar dados sensíveis.
+- Confiar apenas no frontend.
+- Fazer merge sem testes.
+- Fazer merge sem CI.
+- Fazer merge sem review.
+- Fazer deploy sem rollback.
+- Atualizar dependência sem verificar impacto.
+- Refatorar gigante sem testes.
+- Apagar código sem rastreabilidade.
+- Esconder erro.
+- Silenciar alerta.
+- Criar admin sem proteção.
+- Criar upload sem validação.
+- Criar exportação sem permissão.
+- Criar webhook sem validação.
+- Criar IA sem fallback.
+- Criar IA sem custo limite.
+- Criar IA sem revisão.
+- Criar arquitetura sem observabilidade.
+- Criar feature sem documentação mínima.
+- Criar contrato sem schema.
+- Criar banco sem migration.
+- Criar produção sem backup.
+- Criar backup sem teste de restore.
+
+---
+
+# 40. CHECKLIST FINAL UNIVERSAL
+
+Antes de considerar qualquer entrega profissional:
+
+```text
+Organização
+- [ ] Issue criada
+- [ ] Tarefa definida
+- [ ] Branch criada
+- [ ] Commits claros
+- [ ] PR aberto
+- [ ] PR vinculado à issue
+- [ ] Critérios de aceite definidos
+- [ ] Labels definidas
+- [ ] Milestone quando aplicável
+- [ ] Responsável definido
+
+Código
+- [ ] Lint passando
+- [ ] Formatação passando
+- [ ] Strict mode aplicado
+- [ ] Build passando
+- [ ] Typecheck passando
+- [ ] Sem erros ignorados
+- [ ] Sem secrets no código
+- [ ] Sem debug ativo
+- [ ] Sem TODO sem issue
+- [ ] Sem código morto sem rastreabilidade
+
+Testes
+- [ ] Testes unitários
+- [ ] Testes de integração quando aplicável
+- [ ] Testes E2E críticos quando aplicável
+- [ ] Teste de regressão para bug fix
+- [ ] Validação de entrada
+- [ ] Validação de saída
+- [ ] Teste de permissão
+- [ ] Teste de erro
+- [ ] Teste de borda
+- [ ] Teste de contrato quando aplicável
+
+Segurança
+- [ ] Autenticação verificada
+- [ ] Autorização verificada
+- [ ] Dependências auditadas
+- [ ] Secrets protegidos
+- [ ] Dados sensíveis protegidos
+- [ ] Shift-left security aplicado
+- [ ] Erros não vazam informação sensível
+- [ ] Rate limiting considerado
+- [ ] Upload/download protegido
+- [ ] Logs seguros
+
+UI
+- [ ] Loading state
+- [ ] Skeleton state
+- [ ] Empty state
+- [ ] Error state
+- [ ] Success state
+- [ ] Retry state
+- [ ] Lazy loading
+- [ ] Animações leves
+- [ ] prefers-reduced-motion
+- [ ] Acessibilidade básica
+- [ ] Responsividade
+- [ ] Feedback visual
+- [ ] Contraste
+- [ ] Foco visível
+- [ ] Labels corretos
+
+Arquitetura
+- [ ] Modular
+- [ ] Testável
+- [ ] Baixo acoplamento
+- [ ] Alta coesão
+- [ ] Sem duplicação crítica
+- [ ] Sem quebra de contrato
+- [ ] Rollback possível
+- [ ] Observabilidade considerada
+- [ ] Custo considerado
+- [ ] Escalabilidade considerada
+
+Documentação
+- [ ] README atualizado se necessário
+- [ ] API documentada se necessário
+- [ ] Variáveis de ambiente documentadas
+- [ ] Decisões importantes registradas
+- [ ] Changelog atualizado se necessário
+- [ ] Runbook atualizado se necessário
+- [ ] Instruções de rollback documentadas
+
+Operação
+- [ ] Logs estruturados
+- [ ] Monitoramento considerado
+- [ ] Alertas considerados
+- [ ] Health check quando aplicável
+- [ ] Backup considerado
+- [ ] Rollback planejado
+- [ ] Restore testado quando aplicável
+- [ ] Incident response considerado
+```
+
+---
+
+# 41. VERSÃO COMPACTA PARA COLAR EM QUALQUER LUGAR
+
+```text
+Módulo Universal de Engenharia com IA:
+- Organizar no GitHub: issues, tarefas, branch, PR vinculado à issue.
+- Interface profissional: Motion Principles, lazy loading, skeleton, animações leves, loading, empty, error, success, prefers-reduced-motion.
+- Qualidade antes do main: Biome ou equivalente, strict, testes, validação, revisão de arquitetura, shift-left security, auditoria de dependências, secret scanning.
+- Arquitetura: modular, testável, segura, escalável, observável, documentada.
+- Segurança: validação, autorização, menor privilégio, secrets protegidos, logs seguros, rate limiting.
+- Privacidade: minimização, retenção, proteção de dados, auditoria.
+- Observabilidade: logs, métricas, traces, alertas, rollback.
+- Se algo mudar, reorganizar tudo mantendo os mesmos princípios.
+- Não gerar código improvisado como entrega profissional.
+```
+
+---
+
+# 42. PROMPT FINAL DE ATIVAÇÃO
+
+Usar este prompt para ativar o módulo em qualquer conversa ou projeto:
+
+```text
+Ative o Módulo de Princípios Universais Auto-Reorganizáveis v2.0.0.
+
+A partir de agora:
+1. Organize todo projeto no GitHub com issues, tarefas e pull requests vinculados.
+2. Toda interface deve usar Motion Principles: lazy loading, skeleton, animações leves de entrada e carregamento, respeito a prefers-reduced-motion e estados de loading, empty, error, success e retry.
+3. Antes do código chegar ao ambiente principal, aplique Biome ou equivalente, strict mode, revisão de arquitetura, testes, validação, shift-left security, verificação de dependências e escaneamento de segredos.
+4. Construa com segurança, escala, longevidade, rastreabilidade, acessibilidade, observabilidade, privacidade e governança.
+5. Se qualquer requisito mudar, reorganize o plano, o código, as issues, os PRs, os testes e a documentação mantendo os mesmos princípios.
+6. Não entregue código improvisado como se fosse profissional.
+7. Se houver conflito entre velocidade e qualidade, priorize segurança, corretude, privacidade e longevidade.
+8. Sempre mostre plano, riscos, checklist e validação antes da entrega final.
+9. Se o projeto estiver ruim, execute protocolo de estabilização antes de adicionar novas features.
+10. Use IA com revisão humana, rastreabilidade, limites de custo, segurança e política de dados.
+```
+
+---
+
+# 43. REGRA FINAL
+
+Se o projeto ficar confuso, voltar para esta regra:
+
+```text
+Organizar antes de codar.
+Validar antes de confiar.
+Testar antes de merge.
+Proteger antes de expor.
+Documentar antes de esquecer.
+Observar antes de escalar.
+Reorganizar sempre que mudar.
+Entregar com evidência, não com suposição.
+```
+
+Este módulo está ativo.  
+Se qualquer parte for alterada, ela deve ser reorganizada automaticamente sob os mesmos princípios acima.

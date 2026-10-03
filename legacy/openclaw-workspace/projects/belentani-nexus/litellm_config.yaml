@@ -1,0 +1,105 @@
+# LiteLLM Proxy Configuration - BELENTANI NEXUS
+# Proxy unificado para 35+ APIs de IA gratuitas
+
+model_list:
+  # === APIs Sin API Key (Gratis Ilimitado) ===
+  
+  # Pollinations - Imágenes ilimitadas sin key
+  - model_name: pollinations/flux
+    litellm_params:
+      model: openai/flux
+      api_base: https://image.pollinations.ai
+      api_key: "no-key-needed"
+  
+  # Kilo Code - 200 req/hora sin key
+  - model_name: kilo/gpt-4o-mini
+    litellm_params:
+      model: openai/gpt-4o-mini
+      api_base: https://api.kilocode.ai/v1
+      api_key: "no-key-needed"
+  
+  # === APIs con Free Tier Generoso ===
+  
+  # Gemini - 1M contexto, 1500 req/día
+  - model_name: gemini/gemini-3-flash
+    litellm_params:
+      model: gemini/gemini-3-flash
+      api_key: os.environ/GEMINI_API_KEY
+  
+  # Groq - 1000 req/día, ultra rápido
+  - model_name: groq/llama-3.3-70b
+    litellm_params:
+      model: groq/llama-3.3-70b-versatile
+      api_key: os.environ/GROQ_API_KEY
+  
+  # DeepSeek - Free tier generoso
+  - model_name: deepseek/deepseek-v3
+    litellm_params:
+      model: deepseek/deepseek-chat
+      api_key: os.environ/DEEPSEEK_API_KEY
+  
+  # HuggingFace - Modelos open source
+  - model_name: huggingface/qwen-2.5-72b
+    litellm_params:
+      model: huggingface/Qwen/Qwen2.5-72B-Instruct
+      api_key: os.environ/HUGGINGFACE_API_KEY
+  
+  # === APIs Chinas ===
+  
+  # Z.AI GLM - Gratis permanente
+  - model_name: zai/glm-4.7-flash
+    litellm_params:
+      model: openai/glm-4.7-flash
+      api_base: https://api.z.ai/api/paas/v4
+      api_key: os.environ/ZAI_API_KEY
+  
+  # Qwen Token Plan (ya tienes)
+  - model_name: qwen/qwen3.8-max
+    litellm_params:
+      model: openai/qwen3.8-max
+      api_base: https://coding.dashscope.aliyuncs.com/v1
+      api_key: os.environ/QWEN_API_KEY
+  
+  # === Audio ===
+  
+  # Fish Audio TTS - Gratis ilimitado
+  - model_name: fish-audio/tts
+    litellm_params:
+      model: openai/s2.1-pro-free
+      api_base: https://api.fish.audio/v1
+      api_key: os.environ/FISH_AUDIO_API_KEY
+  
+  # CosyVoice - 10K caracteres gratis
+  - model_name: cosyvoice/tts
+    litellm_params:
+      model: openai/cosyvoice-v1
+      api_base: https://dashscope-intl.aliyuncs.com/api/v1
+      api_key: os.environ/QWEN_API_KEY
+
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY
+  database_url: "sqlite:///belentani_nexus.db"
+
+litellm_settings:
+  drop_params: true
+  set_verbose: false
+  cache: true
+  cache_params:
+    type: redis
+    host: localhost
+    port: 6379
+    ttl: 3600
+
+environment_variables:
+  # APIs sin key
+  POLLINATIONS_API_KEY: "no-key-needed"
+  KILO_API_KEY: "no-key-needed"
+  
+  # APIs con key (configurar en .env)
+  GEMINI_API_KEY: "your-gemini-key-here"
+  GROQ_API_KEY: "your-groq-key-here"
+  DEEPSEEK_API_KEY: "your-deepseek-key-here"
+  HUGGINGFACE_API_KEY: "your-huggingface-key-here"
+  ZAI_API_KEY: "your-zai-key-here"
+  QWEN_API_KEY: os.environ/QWEN_API_KEY
+  FISH_AUDIO_API_KEY: "your-fish-audio-key-here"

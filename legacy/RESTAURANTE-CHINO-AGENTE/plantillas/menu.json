@@ -1,0 +1,76 @@
+{
+  "menu_completo": {
+    "secciones": [
+      {
+        "nombre": "🥟 Entrantes / YumCha",
+        "items": [
+          {"nombre": "Har Gow", "descripcion": "Gambas al vapor, 6 piezas", "precio": 6.50, "emoji": "🦐"},
+          {"nombre": "Siu Mai", "descripcion": "Cerdo y camarón, 6 piezas", "precio": 6.00, "emoji": "🥟"},
+          {"nombre": "Cheung Fun", "descripcion": "Rollos de arroz, 4 piezas", "precio": 5.50, "emoji": "🍚"},
+          {"nombre": "Spring Rolls", "descripcion": "Rollitos primavera, 6 piezas", "precio": 5.00, "emoji": "🌯"},
+          {"nombre": "Kung Pao", "descripcion": "Pollo picante con cacahuetes", "precio": 7.50, "emoji": "🌶️"},
+          {"nombre": "Pato Pekín", "descripcion": "½ pato con panqueques", "precio": 14.00, "emoji": "🦆"},
+          {"nombre": "Sopa Wonton", "descripcion": "8 wontons en caldo", "precio": 5.00, "emoji": "🍜"},
+          {"nombre": "Edamames", "descripcion": "Soja verde al vapor", "precio": 4.00, "emoji": "🫛"}
+        ]
+      },
+      {
+        "nombre": "🍜 Sopas",
+        "items": [
+          {"nombre": "Wonton picante", "descripcion": "Wontons de cerdo en caldo chile", "precio": 7.50},
+          {"nombre": "Hot & Sour", "descripcion": "Tofu, setas, bambú, huevo", "precio": 6.50},
+          {"nombre": "Pepino con algas", "descripcion": "Ligera y refrescante", "precio": 5.50},
+          {"nombre": "Congee de pollo", "descripcion": "Arroz congee con jengibre", "precio": 6.00}
+        ]
+      },
+      {
+        "nombre": "🍚 Arroces y Fideos",
+        "items": [
+          {"nombre": "Arroz del dragón", "descripcion": "Camarón, huevo, cebolleta", "precio": 9.50},
+          {"nombre": "Arroz vegetales", "descripcion": "5 verduras salteadas", "precio": 7.00},
+          {"nombre": "Chow Mein", "descripcion": "Fideos de trigo con pollo", "precio": 9.00},
+          {"nombre": "Fideos ternera", "descripcion": "Arroz con ternera y brotes", "precio": 10.00},
+          {"nombre": "Arroz con pato", "descripcion": "Pato desmenuzado", "precio": 12.00}
+        ]
+      },
+      {
+        "nombre": "🥩 Carnes",
+        "items": [
+          {"nombre": "Cerdo agridulce", "descripcion": "Piña y pimiento", "precio": 12.50},
+          {"nombre": "Pollo almendras", "descripcion": "Con almendras tostadas", "precio": 11.00},
+          {"nombre": "Ternera brócoli", "descripcion": "Salsa ostra", "precio": 13.00},
+          {"nombre": "Pato laqueado", "descripcion": "Receta tradicional", "precio": 15.00},
+          {"nombre": "Costillas BBQ", "descripcion": "8 costillas caseras", "precio": 14.50}
+        ]
+      },
+      {
+        "nombre": "🐟 Pescados",
+        "items": [
+          {"nombre": "Bacalao vapor", "descripcion": "Con jengibre y soja", "precio": 14.00},
+          {"nombre": "Gambas ajo", "descripcion": "Gigantes con vino Shaoxing", "precio": 13.50},
+          {"nombre": "Pulpo salteado", "descripcion": "Sésamo y chile", "precio": 15.00},
+          {"nombre": "Lubina ostra", "descripcion": "Entera", "precio": 16.00}
+        ]
+      },
+      {
+        "nombre": "🥬 Verduras y Tofu",
+        "items": [
+          {"nombre": "Brócoli ajo", "descripcion": "Crujiente", "precio": 7.50},
+          {"nombre": "Tofu seda curry", "descripcion": "Con coco", "precio": 8.00},
+          {"nombre": "Berenjenas miso", "descripcion": "Glaseadas", "precio": 8.50},
+          {"nombre": "Setas shiitake", "descripcion": "Al wok", "precio": 7.00}
+        ]
+      },
+      {
+        "nombre": "🍰 Postres",
+        "items": [
+          {"nombre": "Tarta lichi", "descripcion": "Crema de lichi", "precio": 5.50},
+          {"nombre": "Dorayaki", "descripcion": "Tortita japonesa", "precio": 4.50},
+          {"nombre": "Mochi matcha", "descripcion": "4 piezas, helado", "precio": 5.00},
+          {"nombre": "Plátano frito", "descripcion": "Con miel de azahar", "precio": 4.00},
+          {"nombre": "Sésamo negro", "descripcion": "Helado, 2 bolas", "precio": 4.50}
+        ]
+      }
+    ]
+  }
+}

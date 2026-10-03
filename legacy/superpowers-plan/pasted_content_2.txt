@@ -1,0 +1,1351 @@
+# ITERACIÓN 2 — DE BASELINE TÉCNICO A PRODUCTO REAL DE PRODUCCIÓN
+
+Has completado correctamente la primera iteración técnica.
+
+Ahora NO quiero otra auditoría superficial ni otro informe.
+
+## OBJETIVO
+
+Continúa trabajando directamente sobre el proyecto real.
+
+El objetivo de esta iteración es convertir el baseline actual en un **producto operativo real**, no en una demostración técnica.
+
+La frase:
+
+> “La siguiente iteración será implementar ingesta idempotente real, auditoría encadenada y el primer flujo de automatización productivo sobre los 470 repositorios autorizados.”
+
+DEBE convertirse ahora en trabajo ejecutado dentro del proyecto.
+
+---
+
+# 1. INGESTA REAL
+
+Implementa la ingesta real de los repositorios autorizados.
+
+Debe ser:
+
+* idempotente
+* reproducible
+* segura
+* incremental
+* tolerante a errores
+* observable
+
+No simules los repositorios.
+
+No hardcodees resultados.
+
+No inventes datos.
+
+Si existe una integración GitHub existente, utilízala y fortalécela.
+
+Si falta alguna credencial o permiso externo imprescindible, deja el sistema preparado correctamente y documenta exactamente qué variable/configuración necesita, pero implementa todo lo que pueda hacerse localmente.
+
+---
+
+# 2. 470 REPOSITORIOS
+
+El sistema debe estar arquitectónicamente preparado para trabajar con los **470 repositorios autorizados** sin convertirlos en datos ficticios.
+
+Implementa:
+
+* descubrimiento
+* identificación única
+* sincronización
+* estado
+* timestamps
+* errores
+* reintentos
+* última sincronización
+* cambios detectados
+
+Evita cargas completas innecesarias.
+
+Utiliza sincronización incremental cuando sea posible.
+
+---
+
+# 3. AUDITORÍA ENCADENADA REAL
+
+Implementa la auditoría encadenada.
+
+Cada evento relevante debe poder relacionarse criptográficamente con el anterior.
+
+Quiero:
+
+* hash del evento
+* referencia al evento anterior
+* timestamp
+* actor/origen
+* acción
+* recurso afectado
+* resultado
+* metadata necesaria
+
+El sistema debe poder detectar alteraciones de la cadena.
+
+No basta con guardar logs normales.
+
+---
+
+# 4. AUTOMATIZACIÓN PRODUCTIVA
+
+Construye el primer flujo de automatización REAL.
+
+No quiero:
+
+`simulate()`
+
+presentado como automatización productiva.
+
+Quiero un pipeline real con:
+
+1. descubrimiento
+2. análisis
+3. decisión
+4. ejecución
+5. validación
+6. registro
+7. resultado
+
+Cada paso debe tener estado observable.
+
+---
+
+# 5. DASHBOARD
+
+Ahora pasa del backend al producto.
+
+El dashboard debe permitir comprender realmente:
+
+* estado general
+* repositorios
+* fases
+* auditorías
+* actividad
+* errores
+* automatizaciones
+* ejecuciones
+* resultados
+
+La interfaz NO debe parecer un template administrativo genérico.
+
+Debe sentirse como un **control plane de software/IA de nivel enterprise**.
+
+---
+
+# 6. UX PREMIUM
+
+Haz una revisión completa de la interfaz.
+
+No quiero simplemente “más bonita”.
+
+Quiero:
+
+* jerarquía visual
+* navegación clara
+* información priorizada
+* estados claros
+* feedback inmediato
+* responsive real
+* loading states
+* empty states
+* error states
+* success states
+* keyboard navigation
+* accesibilidad
+* reduced motion
+
+El diseño debe comunicar:
+
+**CONTROL + INTELIGENCIA + CONFIANZA + PRECISIÓN**
+
+No llenes la pantalla de efectos.
+
+---
+
+# 7. DISEÑO VISUAL
+
+Elimina cualquier elemento visual que parezca:
+
+* plantilla
+* dashboard genérico
+* decoración automática
+* placeholder
+* UI generada sin dirección artística
+
+No quiero:
+
+* blobs
+* círculos decorativos gratuitos
+* gradientes sin función
+* glassmorphism excesivo
+* partículas gratuitas
+* iconos inconsistentes
+* gráficos falsos
+* números inventados
+
+Todo elemento visual debe representar información o mejorar la interacción.
+
+---
+
+# 8. DATOS
+
+Audita todos los datos mostrados en frontend.
+
+Regla absoluta:
+
+**NO MOSTRAR DATOS FALSOS COMO SI FUERAN REALES.**
+
+Si una métrica no existe:
+
+muestra estado vacío.
+
+Si está pendiente:
+
+muestra pendiente.
+
+Si es simulación:
+
+identifícala inequívocamente como simulación.
+
+No maquilles la ausencia de datos.
+
+---
+
+# 9. API
+
+Audita todas las APIs existentes:
+
+* `/api/stats`
+* `/api/skills`
+* `/api/repos`
+* `/api/phases`
+* `/api/audit`
+* `/api/simulate`
+* `/api/repos/search`
+
+Determina cuáles son:
+
+* producción
+* soporte
+* legacy
+* simulación
+* incompletas
+
+Elimina endpoints engañosos o renómbralos correctamente.
+
+Las APIs productivas deben tener:
+
+* validación
+* errores consistentes
+* status codes correctos
+* seguridad
+* logging
+* tipos
+* contratos claros
+
+---
+
+# 10. IA / AGENTS
+
+Si el proyecto pretende funcionar como sistema gobernado por IA/agentes:
+
+NO simules inteligencia.
+
+Diseña una arquitectura donde cada agente/skill tenga:
+
+* input
+* contexto
+* permisos
+* herramienta
+* acción
+* resultado
+* error
+* trazabilidad
+
+Debe existir separación entre:
+
+**PLAN → EXECUTE → VERIFY → AUDIT**
+
+Nunca permitir que una acción crítica quede sin trazabilidad.
+
+---
+
+# 11. SEGURIDAD
+
+Haz una revisión de seguridad completa.
+
+Busca:
+
+* secrets expuestos
+* variables mal configuradas
+* endpoints inseguros
+* inputs sin validar
+* permisos insuficientes
+* ejecución arbitraria
+* dependencias vulnerables
+* datos sensibles en logs
+
+Corrige los problemas encontrados.
+
+---
+
+# 12. TESTING REAL
+
+No basta con:
+
+`build = OK`
+
+Crea o amplía pruebas para:
+
+* ingesta
+* idempotencia
+* repositorios
+* auditoría
+* hash chain
+* APIs
+* errores
+* automatización
+* estados
+* persistencia
+
+Ejecuta las pruebas.
+
+Corrige los fallos.
+
+---
+
+# 13. PRUEBA DE RECUPERACIÓN
+
+Simula fallos reales:
+
+* repositorio inaccesible
+* API que falla
+* timeout
+* datos duplicados
+* proceso interrumpido
+* reinicio del servidor
+* registro corrupto
+* operación parcialmente completada
+
+El sistema debe recuperarse sin dejar estados inconsistentes.
+
+---
+
+# 14. PERFORMANCE
+
+Prueba el sistema con volumen realista.
+
+Especialmente:
+
+**470 repositorios.**
+
+No optimices solamente para 5 registros de ejemplo.
+
+Busca:
+
+* N+1 queries
+* consultas innecesarias
+* payloads gigantes
+* renders innecesarios
+* llamadas duplicadas
+* memory leaks
+* bloqueo del servidor
+
+---
+
+# 15. PRODUCCIÓN
+
+Comprueba nuevamente:
+
+* build
+* standalone
+* database
+* migrations
+* environment
+* startup
+* health
+* APIs
+* frontend
+* assets
+* errores
+* logs
+
+Después de las modificaciones vuelve a ejecutar todos los smoke tests.
+
+---
+
+# 16. NO ME ENTREGUES SOLO UN INFORME
+
+ESTA ES UNA ORDEN DE EJECUCIÓN.
+
+Quiero que:
+
+**MODIFIQUES LOS ARCHIVOS.**
+
+**IMPLEMENTES LAS FUNCIONES.**
+
+**CREES LOS COMPONENTES NECESARIOS.**
+
+**CORRIJAS EL CÓDIGO.**
+
+**EJECUTES LAS PRUEBAS.**
+
+**VALIDES EL RESULTADO.**
+
+No respondas simplemente explicando cómo hacerlo.
+
+HAZLO.
+
+---
+
+# 17. CRITERIO DE FINALIZACIÓN
+
+No cierres la tarea hasta haber intentado completar todo lo anterior.
+
+Al finalizar proporciona:
+
+### IMPLEMENTADO
+
+Lista concreta de funcionalidades realmente implementadas.
+
+### ARCHIVOS MODIFICADOS
+
+Lista de los principales archivos modificados/creados.
+
+### TESTS
+
+Tests ejecutados y resultado.
+
+### PRODUCCIÓN
+
+Estado del build y runtime.
+
+### DATOS
+
+Qué datos son reales y cuáles requieren credenciales/integraciones externas.
+
+### BLOQUEOS REALES
+
+Solo problemas que realmente requieran intervención externa.
+
+### SIGUIENTE PASO
+
+Solo si existe un bloqueo real.
+
+---
+
+# REGLA FINAL
+
+No confundas:
+
+**“compila”**
+
+con
+
+**“producto terminado”.**
+
+No confundas:
+
+**“API responde 200”**
+
+con
+
+**“sistema productivo”.**
+
+No confundas:
+
+**“dashboard bonito”**
+
+con
+
+**“producto terminado”.**
+
+La misión ahora es:
+
+# BASELINE → PRODUCTO OPERATIVO REAL
+
+Trabaja directamente sobre el proyecto.
+
+No hagas una demo.
+
+No hagas una maqueta.
+
+No hagas una presentación.
+
+**CONSTRUYE EL PRODUCTO.**
+# NEXUS-Ω — ECOSYSTEM INTEGRATION MAXIMUM
+
+## GITHUB + HUGGING FACE + SUPABASE + OPEN BANKING
+
+La arquitectura actual ya tiene un baseline técnico funcional.
+
+Ahora quiero una expansión seria del sistema utilizando al máximo, de forma REAL y verificable, los ecosistemas que puedan aportar capacidades al producto.
+
+NO quiero integraciones decorativas.
+
+NO quiero logos.
+
+NO quiero botones falsos.
+
+NO quiero mocks.
+
+NO quiero APIs simuladas.
+
+NO quiero simplemente instalar SDKs.
+
+Quiero convertir estos ecosistemas en capacidades reales del producto.
+
+---
+
+# PRINCIPIO FUNDAMENTAL
+
+Antes de implementar:
+
+**AUDITA QUÉ PUEDE HACER REALMENTE CADA PLATAFORMA EN LA FECHA ACTUAL.**
+
+Utiliza documentación oficial y APIs reales.
+
+No asumas funcionalidades.
+
+No inventes endpoints.
+
+No implementes capacidades que el proveedor no ofrece.
+
+Diferencia siempre:
+
+* disponible sin coste
+* disponible con cuenta
+* disponible con token
+* disponible con OAuth
+* disponible mediante GitHub App
+* disponible mediante API
+* disponible únicamente en determinados planes
+* disponible únicamente en determinados países/bancos
+* requiere infraestructura externa
+* requiere credenciales del usuario
+
+---
+
+# 1. GITHUB — CONTROL PLANE DEL CÓDIGO
+
+Integra GitHub como fuente real de información y ejecución.
+
+## Implementar cuando sea posible:
+
+### Repositorios
+
+* discovery
+* metadata
+* branches
+* commits
+* releases
+* tags
+* contributors
+* languages
+* files
+* repository health
+
+### Pull Requests
+
+* discovery
+* estado
+* reviews
+* reviewers
+* comments
+* checks
+* merge status
+
+### Issues
+
+* issues
+* labels
+* milestones
+* assignments
+* comments
+* estado
+
+### GitHub Actions
+
+* workflows
+* runs
+* jobs
+* status
+* logs cuando los permisos lo permitan
+* dispatch de workflows cuando proceda
+
+### Webhooks
+
+Implementa eventos reales para evitar polling innecesario.
+
+Considera:
+
+* push
+* pull_request
+* issues
+* workflow_run
+* release
+* repository
+* security events
+
+### Seguridad
+
+Integra cuando los permisos/licencias lo permitan:
+
+* Dependabot alerts
+* secret scanning
+* push protection
+* code scanning / CodeQL
+* security advisories
+
+GitHub dispone de APIs para consultar y gestionar alertas de secret scanning. No simularlas.
+
+### Arquitectura
+
+Preferir:
+
+**GitHub App + permisos mínimos necesarios**
+
+sobre una credencial global con acceso excesivo.
+
+---
+
+# 2. 470 REPOSITORIOS
+
+La arquitectura debe escalar al conjunto real de repositorios autorizados.
+
+Crear un modelo:
+
+Repository
+→ Source
+→ Snapshot
+→ Commit
+→ Branch
+→ Workflow
+→ Security
+→ Audit
+→ Intelligence
+
+Cada repositorio debe tener:
+
+* external_id
+* owner
+* name
+* URL
+* default branch
+* visibility
+* permissions
+* last sync
+* sync status
+* error state
+
+No almacenar duplicados.
+
+La ingesta debe ser:
+
+**IDEMPOTENTE + INCREMENTAL + RECUPERABLE**
+
+---
+
+# 3. HUGGING FACE — AI MODEL PLANE
+
+Utiliza Hugging Face como catálogo y capa de inteligencia.
+
+El sistema debe poder descubrir y utilizar modelos compatibles cuando tenga sentido.
+
+Considerar:
+
+### Modelos
+
+* LLM
+* embeddings
+* clasificación
+* reranking
+* visión
+* audio
+* multimodal
+* generación de imágenes
+* speech
+* código
+
+### Model metadata
+
+Registrar:
+
+* model ID
+* author
+* license
+* task
+* pipeline
+* downloads
+* provider
+* capabilities
+* status
+* version/revision
+
+No usar automáticamente un modelo sin evaluar:
+
+* licencia
+* coste
+* latencia
+* calidad
+* seguridad
+* tamaño
+* hardware
+* privacidad
+
+---
+
+# 4. HUGGING FACE INFERENCE
+
+Implementar una abstracción:
+
+AIProvider
+
+para poder cambiar entre modelos/proveedores sin reescribir el sistema.
+
+Ejemplo conceptual:
+
+AI Gateway
+→ Model Router
+→ Hugging Face Inference Provider
+→ modelo seleccionado
+
+El router debe poder considerar:
+
+* coste
+* latencia
+* disponibilidad
+* capacidad
+* modelo
+* tarea
+
+Si Hugging Face permite seleccionar proveedor por coste/rendimiento, aprovecharlo.
+
+No bloquear toda la arquitectura a un único modelo.
+
+---
+
+# 5. EMBEDDINGS + VECTOR SEARCH
+
+Si resulta apropiado:
+
+Hugging Face
+→ embeddings
+→ Supabase pgvector
+→ semantic search
+
+Usarlo para:
+
+* repositorios
+* documentación
+* código
+* issues
+* PRs
+* auditorías
+* conocimiento interno
+
+Crear separación entre:
+
+**RAW DATA**
+
+y
+
+**EMBEDDED KNOWLEDGE**
+
+Nunca sustituir los datos originales por embeddings.
+
+---
+
+# 6. SUPABASE — DATA PLANE
+
+Evaluar migrar la persistencia actual SQLite hacia PostgreSQL/Supabase si el análisis demuestra que es beneficioso para producción.
+
+No migrar por moda.
+
+Migrar si aporta:
+
+* concurrencia
+* escalabilidad
+* backups
+* RLS
+* realtime
+* queues
+* APIs
+* vector search
+* operaciones distribuidas
+
+Mantener SQLite como modo local/portable si resulta útil.
+
+La arquitectura ideal debe permitir:
+
+LOCAL
+→ SQLite
+
+PRODUCTION
+→ PostgreSQL/Supabase
+
+sin romper el dominio de aplicación.
+
+---
+
+# 7. SUPABASE AUTH
+
+Si existe autenticación:
+
+integrar:
+
+* email/password
+* OAuth
+* proveedores necesarios
+* sesiones
+* roles
+* permisos
+
+Implementar autorización real.
+
+No confiar exclusivamente en el frontend.
+
+---
+
+# 8. ROW LEVEL SECURITY
+
+Si Supabase entra en producción:
+
+diseñar RLS correctamente.
+
+Cada usuario/rol debe poder acceder solamente a los recursos autorizados.
+
+Auditar:
+
+* repositories
+* audits
+* executions
+* users
+* secrets metadata
+* financial data
+
+---
+
+# 9. SUPABASE REALTIME
+
+Utilizar Realtime donde aporte valor.
+
+Ejemplos:
+
+Dashboard
+← repository sync
+
+Dashboard
+← workflow execution
+
+Dashboard
+← automation state
+
+Dashboard
+← security alert
+
+Dashboard
+← agent execution
+
+No hacer polling cada segundo si Realtime puede resolverlo correctamente.
+
+---
+
+# 10. SUPABASE QUEUES / CRON
+
+Crear arquitectura de jobs:
+
+INGEST
+→ QUEUE
+→ WORKER
+→ PROCESS
+→ VERIFY
+→ AUDIT
+
+Usar scheduling para:
+
+* sincronizaciones
+* security scans
+* embeddings
+* health checks
+* mantenimiento
+* reconciliaciones
+
+Todo job debe tener:
+
+* ID
+* estado
+* inicio
+* fin
+* retries
+* error
+* resultado
+* audit reference
+
+---
+
+# 11. SUPABASE STORAGE
+
+Si existen:
+
+* artefactos
+* informes
+* exports
+* datasets
+* logs grandes
+* resultados de agentes
+
+evaluar Storage.
+
+No almacenar archivos pesados directamente en tablas.
+
+---
+
+# 12. OPEN BANKING
+
+Investiga e integra únicamente capacidades reales de Open Banking disponibles para el entorno objetivo.
+
+No inventes acceso bancario.
+
+No almacenes credenciales bancarias directamente.
+
+Diseña:
+
+Financial Provider
+→ Account Connection
+→ Accounts
+→ Transactions
+→ Balances
+→ Categorization
+→ Reconciliation
+→ Audit
+
+Debe existir una separación absoluta entre:
+
+FINANCIAL DATA
+
+y
+
+APPLICATION DATA.
+
+---
+
+# 13. OPEN BANKING — USO PRODUCTIVO
+
+Si las APIs disponibles lo permiten:
+
+* conexión de cuentas
+* cuentas
+* saldos
+* transacciones
+* fechas
+* merchant
+* categorías
+* moneda
+* reconciliación
+
+Implementar normalización:
+
+Provider transaction
+→ canonical transaction
+
+para poder soportar varios proveedores.
+
+---
+
+# 14. FINANCIAL SECURITY
+
+La capa financiera debe tener máxima protección.
+
+Nunca:
+
+* guardar passwords bancarias
+* guardar secretos innecesarios
+* exponer tokens al frontend
+* registrar credenciales en logs
+
+Utilizar:
+
+* encryption
+* secret management
+* least privilege
+* audit trail
+* token rotation
+* revocation
+* data minimization
+
+---
+
+# 15. UNIFICAR TODO EN NEXUS
+
+La arquitectura final debe parecerse conceptualmente a:
+
+```
+                NEXUS-Ω
+                   │
+      ┌────────────┼────────────┐
+      │            │            │
+   GITHUB       HUGGING FACE  OPEN BANKING
+      │            │            │
+      └────────────┼────────────┘
+                   │
+               AI CONTROL
+                   │
+              SUPABASE DATA
+                   │
+      ┌────────────┼────────────┐
+      │            │            │
+   AUDIT        QUEUES       REALTIME
+      │            │            │
+      └────────────┼────────────┘
+                   │
+               DASHBOARD
+```
+
+---
+
+# 16. AI GOVERNANCE
+
+Toda acción realizada por un agente debe quedar registrada.
+
+Pipeline:
+
+DISCOVER
+↓
+ANALYZE
+↓
+PLAN
+↓
+AUTHORIZE
+↓
+EXECUTE
+↓
+VERIFY
+↓
+AUDIT
+
+No permitir:
+
+AI
+→ acción irreversible
+
+sin:
+
+policy
+→ permission
+→ authorization
+→ audit
+
+---
+
+# 17. AI MODEL ROUTING
+
+Crear una capa de abstracción:
+
+ModelRegistry
+
+con:
+
+* provider
+* model
+* task
+* cost
+* latency
+* capability
+* license
+* availability
+
+Así el sistema puede elegir:
+
+modelo rápido
+modelo barato
+modelo preciso
+modelo especializado
+
+sin cambiar la aplicación.
+
+---
+
+# 18. REALITY-FIRST
+
+Todo dato debe tener origen.
+
+Ejemplo:
+
+Repository:
+GitHub
+
+Model:
+Hugging Face
+
+Transaction:
+Open Banking Provider
+
+User:
+Auth Provider
+
+Database:
+Supabase/Postgres
+
+Execution:
+Nexus
+
+Audit:
+Nexus Audit Chain
+
+Nunca mezclar datos reales con datos ficticios sin etiquetarlos.
+
+---
+
+# 19. OBSERVABILITY
+
+Implementar trazabilidad end-to-end:
+
+Request
+→ Agent
+→ Tool
+→ Provider
+→ Database
+→ Result
+→ Audit
+
+Cada ejecución debe poder responder:
+
+**qué ocurrió**
+
+**quién lo inició**
+
+**qué agente participó**
+
+**qué herramienta utilizó**
+
+**qué proveedor externo intervino**
+
+**qué datos modificó**
+
+**qué resultado produjo**
+
+---
+
+# 20. COST CONTROL
+
+Crear control de costes de infraestructura/IA.
+
+Registrar cuando sea posible:
+
+* provider
+* model
+* requests
+* tokens
+* duración
+* coste estimado
+* resultado
+
+Crear budget guardrails.
+
+No permitir que un agente entre en loops infinitos.
+
+---
+
+# 21. FAILOVER
+
+Si un proveedor falla:
+
+NO debe caer todo el sistema.
+
+Diseñar:
+
+Provider A
+↓
+failure
+↓
+Provider B
+↓
+failure
+↓
+safe degraded mode
+
+Nunca cambiar automáticamente a un proveedor que implique una política de privacidad incompatible.
+
+---
+
+# 22. PRODUCTO, NO DEMO
+
+Todas estas integraciones deben aparecer únicamente cuando exista funcionalidad real detrás.
+
+No quiero:
+
+“GitHub Connected”
+
+si no existe conexión real.
+
+No quiero:
+
+“AI Online”
+
+si no hay inferencia.
+
+No quiero:
+
+“470 repositories”
+
+si no se han ingerido realmente.
+
+No quiero:
+
+“Bank connected”
+
+si no existe conexión bancaria real.
+
+---
+
+# 23. TESTS DE INTEGRACIÓN
+
+Crear pruebas para:
+
+GitHub
+→ ingest
+
+GitHub
+→ webhook
+
+GitHub
+→ security
+
+Hugging Face
+→ model discovery
+
+Hugging Face
+→ inference
+
+Hugging Face
+→ embeddings
+
+Supabase
+→ database
+
+Supabase
+→ realtime
+
+Supabase
+→ queue
+
+Open Banking
+→ provider abstraction
+
+Audit
+→ chain integrity
+
+---
+
+# 24. CREDENCIALES
+
+Nunca hardcodear:
+
+* GitHub tokens
+* HF tokens
+* Supabase keys privadas
+* banking credentials
+* secrets
+
+Crear `.env.example`.
+
+Documentar exactamente:
+
+* nombre
+* propósito
+* permisos mínimos
+* dónde obtenerlo
+* si es obligatorio u opcional
+
+---
+
+# 25. ENTREGA
+
+NO quiero una explicación de arquitectura solamente.
+
+Quiero:
+
+**IMPLEMENTACIÓN REAL EN EL PROYECTO.**
+
+Modifica los archivos.
+
+Crea los módulos.
+
+Integra los SDK/API necesarios.
+
+Implementa las abstracciones.
+
+Implementa los tests.
+
+Ejecuta las pruebas.
+
+Corrige los errores.
+
+Actualiza la documentación.
+
+---
+
+# 26. INFORME FINAL
+
+Al terminar entrega:
+
+## GITHUB
+
+Qué capacidades reales fueron integradas.
+
+## HUGGING FACE
+
+Qué modelos/inference/embeddings fueron integrados.
+
+## SUPABASE
+
+Qué servicios fueron integrados.
+
+## OPEN BANKING
+
+Qué capacidades son realmente operativas y cuáles requieren proveedor/credenciales.
+
+## SEGURIDAD
+
+Qué permisos/secrets existen.
+
+## TESTS
+
+Resultados reales.
+
+## PRODUCCIÓN
+
+Qué funciona realmente.
+
+## BLOQUEOS
+
+Solo bloqueos externos reales.
+
+---
+
+# ORDEN FINAL
+
+No maximices la cantidad de integraciones.
+
+Maximiza:
+
+**CAPACIDAD REAL DEL SISTEMA.**
+
+Una integración pequeña pero funcional vale más que diez botones falsos.
+
+Construye una arquitectura donde:
+
+GITHUB = SOFTWARE
+
+HUGGING FACE = INTELLIGENCE
+
+SUPABASE = DATA / REALTIME / BACKEND
+
+OPEN BANKING = FINANCE
+
+NEXUS = ORCHESTRATION / GOVERNANCE / AUDIT
+
+Y el resultado sea un **sistema operativo real para agentes y automatización**, no una demo visual.

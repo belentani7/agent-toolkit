@@ -1,0 +1,103 @@
+[
+  {
+    "id": "office-word",
+    "titulo": "Word para documentos oficiales",
+    "duracion_min": 45,
+    "formulas": [],
+    "atajos": [
+      "Ctrl+C",
+      "Ctrl+V",
+      "Ctrl+Z",
+      "Ctrl+S"
+    ]
+  },
+  {
+    "id": "office-excel",
+    "titulo": "Excel para presupuestos y nóminas",
+    "duracion_min": 60,
+    "formulas": [
+      "=SUMA()",
+      "=PROMEDIO()",
+      "=CONTAR.SI()",
+      "=BUSCARV()"
+    ],
+    "atajos": [
+      "Ctrl+C",
+      "Ctrl+V",
+      "Ctrl+Z",
+      "Ctrl+S"
+    ]
+  },
+  {
+    "id": "office-powerpoint",
+    "titulo": "PowerPoint para presentaciones",
+    "duracion_min": 40,
+    "formulas": [],
+    "atajos": [
+      "Ctrl+C",
+      "Ctrl+V",
+      "Ctrl+Z",
+      "Ctrl+S"
+    ]
+  },
+  {
+    "id": "office-gdocs",
+    "titulo": "Google Docs colaborativo",
+    "duracion_min": 35,
+    "formulas": [],
+    "atajos": [
+      "Ctrl+C",
+      "Ctrl+V",
+      "Ctrl+Z",
+      "Ctrl+S"
+    ]
+  },
+  {
+    "id": "office-gsheets",
+    "titulo": "Google Sheets para datos",
+    "duracion_min": 50,
+    "formulas": [],
+    "atajos": [
+      "Ctrl+C",
+      "Ctrl+V",
+      "Ctrl+Z",
+      "Ctrl+S"
+    ]
+  },
+  {
+    "id": "office-gslides",
+    "titulo": "Google Slides profesional",
+    "duracion_min": 35,
+    "formulas": [],
+    "atajos": [
+      "Ctrl+C",
+      "Ctrl+V",
+      "Ctrl+Z",
+      "Ctrl+S"
+    ]
+  },
+  {
+    "id": "office-gmail",
+    "titulo": "Gmail para comunicación formal",
+    "duracion_min": 30,
+    "formulas": [],
+    "atajos": [
+      "Ctrl+C",
+      "Ctrl+V",
+      "Ctrl+Z",
+      "Ctrl+S"
+    ]
+  },
+  {
+    "id": "office-clave",
+    "titulo": "Cl@ve y trámites digitales",
+    "duracion_min": 25,
+    "formulas": [],
+    "atajos": [
+      "Ctrl+C",
+      "Ctrl+V",
+      "Ctrl+Z",
+      "Ctrl+S"
+    ]
+  }
+]

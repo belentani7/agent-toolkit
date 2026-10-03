@@ -1,0 +1,115 @@
+{
+  "generated": "2026-08-31",
+  "baseCommits": {
+    "QwenLM/qwen-code": "3a0c4c61081bc8e956f531404a20e6d232048832",
+    "huggingface/transformers": "e2b35502af756b9ad0f50ff667ffcccfac2d6293",
+    "openai/codex": "d58d0e5841e0de08e251673db2d5af8cf3a1ad51",
+    "anthropics/claude-code": "f1af9b1f4b1fd4c776135381606edada82ef638e"
+  },
+  "policyNotes": {
+    "openai/codex": "docs/contributing.md: no external code PRs accepted. Packages prepared for issue-thread sharing.",
+    "anthropics/claude-code": "Repo currently rejects external CreatePullRequest (FORBIDDEN per issue #90065). Packages ready for when/if this changes."
+  },
+  "contributions": [
+    {
+      "id": "001",
+      "dir": "001-transformers-es-grad-accumulation",
+      "repo": "huggingface/transformers",
+      "type": "translation",
+      "title": "docs: translate gradient accumulation guide to Spanish",
+      "issue": null,
+      "branch": "docs/es-grad-accumulation",
+      "dependsOn": null
+    },
+    {
+      "id": "002",
+      "dir": "002-transformers-es-cache-explanation",
+      "repo": "huggingface/transformers",
+      "type": "translation",
+      "title": "docs: translate caching guide to Spanish",
+      "issue": null,
+      "branch": "docs/es-cache-explanation",
+      "dependsOn": "001"
+    },
+    {
+      "id": "003",
+      "dir": "003-transformers-es-assisted-decoding",
+      "repo": "huggingface/transformers",
+      "type": "translation",
+      "title": "docs: translate assisted decoding guide to Spanish",
+      "issue": null,
+      "branch": "docs/es-assisted-decoding",
+      "dependsOn": "002"
+    },
+    {
+      "id": "004",
+      "dir": "004-qwen-code-ask-user-question-cancel-reason",
+      "repo": "QwenLM/qwen-code",
+      "type": "bugfix",
+      "title": "fix(tools): report the real cancel reason in ask_user_question",
+      "issue": "https://github.com/QwenLM/qwen-code/issues/9011",
+      "branch": "fix/ask-user-question-cancel-reason",
+      "dependsOn": null
+    },
+    {
+      "id": "005",
+      "dir": "005-transformers-pipeline-device-validation",
+      "repo": "huggingface/transformers",
+      "type": "bugfix",
+      "title": "fix(pipelines): validate the device argument before downloading model weights",
+      "issue": "https://github.com/huggingface/transformers/issues/47869",
+      "branch": "fix/pipeline-device-validation",
+      "dependsOn": null
+    },
+    {
+      "id": "006",
+      "dir": "006-codex-readme-toc-fence-parsing",
+      "repo": "openai/codex",
+      "type": "bugfix",
+      "title": "fix(scripts): track fence character and length in readme_toc.py",
+      "issue": "https://github.com/openai/codex/issues/41077",
+      "branch": "fix/readme-toc-fence-parsing",
+      "dependsOn": null
+    },
+    {
+      "id": "007",
+      "dir": "007-claude-code-plugins-readme-security-guidance",
+      "repo": "anthropics/claude-code",
+      "type": "docs-improvement",
+      "title": "docs(plugins): fix stale security-guidance entry in plugins/README.md",
+      "issue": "https://github.com/anthropics/claude-code/issues/89728",
+      "branch": "docs/plugins-readme-security-guidance",
+      "dependsOn": null
+    },
+    {
+      "id": "008",
+      "dir": "008-codex-mcp-model-schema-refresh",
+      "repo": "openai/codex",
+      "type": "docs-improvement",
+      "title": "docs(mcp-server): refresh stale model ids in the codex tool schema",
+      "issue": "https://github.com/openai/codex/issues/40986",
+      "branch": "docs/mcp-model-schema-refresh",
+      "dependsOn": null
+    },
+    {
+      "id": "009",
+      "dir": "009-claude-code-settings-context-cost-example",
+      "repo": "anthropics/claude-code",
+      "type": "example",
+      "title": "docs(examples): add settings example reclaiming per-request context cost",
+      "issue": "https://github.com/anthropics/claude-code/issues/90065",
+      "branch": "examples/settings-context-cost",
+      "dependsOn": null
+    },
+    {
+      "id": "010",
+      "dir": "010-claude-code-auto-format-hook-example",
+      "repo": "anthropics/claude-code",
+      "type": "example",
+      "title": "docs(examples): add safe auto-format PostToolUse hook example",
+      "issue": "https://github.com/anthropics/claude-code/issues/88188",
+      "branch": "examples/auto-format-hook",
+      "dependsOn": null
+    }
+  ]
+}

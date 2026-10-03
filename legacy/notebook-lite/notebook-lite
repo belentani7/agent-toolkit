@@ -1,0 +1,337 @@
+#!/usr/bin/env python3
+"""
+notebook-lite — Your docs. Your questions. No cloud. No tracking.
+
+A terminal-based research assistant that lets you chat with your documents.
+Upload PDFs, markdown, code, text files. Ask questions. Get cited answers.
+"""
+
+import sys
+import os
+import argparse
+import json
+from pathlib import Path
+from datetime import datetime
+
+# Resolve paths
+SCRIPT_DIR = Path(__file__).parent.resolve()
+sys.path.insert(0, str(SCRIPT_DIR))
+
+NOTEBOOK_DIR = Path.home() / ".notebook-lite"
+
+
+def get_config():
+    """Load configuration from ~/.notebook-lite/config.yaml or defaults."""
+    import yaml  # noqa: optional
+    config_path = NOTEBOOK_DIR / "config.yaml"
+    defaults = {
+        "embedding_model": "all-MiniLM-L6-v2",
+        "chunk_size": 512,
+        "chunk_overlap": 50,
+        "top_k": 5,
+        "llm": {
+            "provider": "ollama",
+            "model": "llama3.2",
+            "url": "http://localhost:11434",
+        },
+        "search": {"hybrid": True, "keyword_weight": 0.3},
+    }
+    if config_path.exists():
+        try:
+            import yaml
+            with open(config_path) as f:
+                user_cfg = yaml.safe_load(f) or {}
+            # Merge (shallow for now)
+            for k, v in user_cfg.items():
+                if isinstance(v, dict) and k in defaults and isinstance(defaults[k], dict):
+                    defaults[k].update(v)
+                else:
+                    defaults[k] = v
+        except ImportError:
+            pass  # yaml not installed, use defaults
+    return defaults
+
+
+def print_banner():
+    """Print ASCII banner."""
+    banner_path = SCRIPT_DIR / "ascii" / "notebook.txt"
+    if banner_path.exists():
+        print(banner_path.read_text())
+    else:
+        print("""
+  ╔══════════════════════════════════════╗
+  ║          n o t e b o o k             ║
+  ║            — l i t e —               ║
+  ╚══════════════════════════════════════╝""")
+    print()
+
+
+def cmd_add(args):
+    """Add documents to the notebook."""
+    from engine.indexer import Indexer
+    from display.progress import Progress
+
+    config = get_config()
+    indexer = Indexer(str(NOTEBOOK_DIR), config)
+
+    target = Path(args.path)
+    if not target.exists():
+        print(f"✗ Path not found: {target}")
+        sys.exit(1)
+
+    files = []
+    extensions = None
+    if args.ext:
+        extensions = [e.strip() for e in args.ext.split(",")]
+
+    if target.is_file():
+        files.append(target)
+    elif target.is_dir():
+        for f in target.rglob("*"):
+            if f.is_file():
+                if extensions is None or f.suffix in extensions:
+                    files.append(f)
+
+    if not files:
+        print("✗ No files found to index.")
+        sys.exit(1)
+
+    print(f"📁 Found {len(files)} file(s) to index.\n")
+
+    total_chunks = 0
+    total_pages = 0
+    progress = Progress(len(files))
+
+    for f in files:
+        try:
+            result = indexer.index_file(str(f))
+            chunks = result.get("chunks", 0)
+            pages = result.get("pages", 0)
+            total_chunks += chunks
+            total_pages += pages
+            progress.tick(f"Indexed: {f.name} ({chunks} chunks)")
+        except Exception as e:
+            progress.tick(f"✗ Skipped: {f.name} — {e}")
+
+    progress.done()
+    print(f"\n✓ Indexed {len(files)} file(s), {total_chunks} chunks, {total_pages} pages.")
+    indexer.close()
+
+
+def cmd_list(args):
+    """List indexed documents."""
+    from engine.documents import DocumentStore
+
+    store = DocumentStore(str(NOTEBOOK_DIR))
+    docs = store.list_documents()
+
+    if not docs:
+        print("📭 No documents indexed yet.")
+        print("   Add some: notebook-lite add <file-or-directory>")
+        return
+
+    print(f"📚 Indexed Documents ({len(docs)}):\n")
+    print(f"  {'ID':<4} {'Title':<40} {'Chunks':<8} {'Added':<12}")
+    print(f"  {'─' * 4} {'─' * 40} {'─' * 8} {'─' * 12}")
+    for doc in docs:
+        title = doc["title"][:38] + ".." if len(doc["title"]) > 40 else doc["title"]
+        added = doc["added_at"][:10] if doc.get("added_at") else "—"
+        print(f"  {doc['id']:<4} {title:<40} {doc.get('chunks_count', 0):<8} {added:<12}")
+
+    store.close()
+
+
+def cmd_ask(args):
+    """Ask a question about your documents."""
+    from engine.search import SearchEngine
+    from engine.chat import ChatEngine
+    from display.response import ResponseFormatter
+    from display.progress import Progress
+
+    config = get_config()
+    question = args.question
+
+    # Search
+    searcher = SearchEngine(str(NOTEBOOK_DIR), config)
+    results = searcher.search(question, top_k=config.get("top_k", 5))
+    searcher.close()
+
+    if not results:
+        print("🔍 No relevant content found in your documents.")
+        print("   Try adding more documents or rephrasing your question.")
+        return
+
+    # Generate response
+    formatter = ResponseFormatter()
+
+    if args.no_llm:
+        # Search-only mode
+        formatter.print_search_results(results)
+        return
+
+    chat = ChatEngine(str(NOTEBOOK_DIR), config)
+    response = chat.answer(question, results)
+    chat.close()
+
+    formatter.print_answer(question, response)
+
+
+def cmd_chat(args):
+    """Interactive chat mode."""
+    from display.chat import InteractiveChat
+
+    config = get_config()
+    chat_ui = InteractiveChat(config, str(NOTEBOOK_DIR))
+    chat_ui.run()
+
+
+def cmd_search(args):
+    """Keyword and semantic search."""
+    from engine.search import SearchEngine
+    from display.response import ResponseFormatter
+
+    config = get_config()
+    searcher = SearchEngine(str(NOTEBOOK_DIR), config)
+    results = searcher.search(args.query, top_k=config.get("top_k", 5))
+    searcher.close()
+
+    formatter = ResponseFormatter()
+    if not results:
+        print("🔍 No results found.")
+        return
+
+    formatter.print_search_results(results)
+
+
+def cmd_remove(args):
+    """Remove a document from the notebook."""
+    from engine.documents import DocumentStore
+    from engine.indexer import Indexer
+
+    config = get_config()
+    store = DocumentStore(str(NOTEBOOK_DIR))
+
+    doc = store.get_by_title(args.document)
+    if not doc:
+        doc = store.get_by_id(args.document)
+    if not doc:
+        print(f"✗ Document not found: {args.document}")
+        store.close()
+        sys.exit(1)
+
+    indexer = Indexer(str(NOTEBOOK_DIR), config)
+    indexer.remove_document(doc["id"])
+    indexer.close()
+
+    print(f"✓ Removed: {doc['title']}")
+    store.close()
+
+
+def cmd_stats(args):
+    """Show notebook statistics."""
+    from engine.documents import DocumentStore
+
+    store = DocumentStore(str(NOTEBOOK_DIR))
+    stats = store.get_stats()
+    store.close()
+
+    db_path = NOTEBOOK_DIR / "data" / "notebook.db"
+    db_size = db_path.stat().st_size if db_path.exists() else 0
+    size_mb = db_size / (1024 * 1024)
+
+    print("\n  📊 Notebook Statistics\n")
+    print(f"  📚 Documents:  {stats['documents']}")
+    print(f"  📄 Pages:      {stats['pages']}")
+    print(f"  🧩 Chunks:     {stats['chunks']}")
+    print(f"  💾 DB size:    {size_mb:.1f} MB")
+    print(f"  📁 Data dir:   {NOTEBOOK_DIR}")
+    print()
+
+
+def cmd_export(args):
+    """Export conversation history."""
+    from engine.documents import DocumentStore
+
+    store = DocumentStore(str(NOTEBOOK_DIR))
+    conversations = store.get_conversations()
+    store.close()
+
+    if not conversations:
+        print("📭 No conversations to export.")
+        return
+
+    output_dir = NOTEBOOK_DIR / "exports"
+    output_dir.mkdir(exist_ok=True)
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    output_path = output_dir / f"conversation_{timestamp}.json"
+
+    with open(output_path, "w") as f:
+        json.dump(conversations, f, indent=2, ensure_ascii=False)
+
+    print(f"✓ Exported {len(conversations)} exchanges to {output_path}")
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        prog="notebook-lite",
+        description="📚 Chat with your documents — terminal-style",
+    )
+    subparsers = parser.add_subparsers(dest="command", help="Command to run")
+
+    # add
+    p_add = subparsers.add_parser("add", help="Add documents to notebook")
+    p_add.add_argument("path", help="File or directory to add")
+    p_add.add_argument("--ext", help="File extensions to include (e.g. .py,.js)")
+
+    # list
+    subparsers.add_parser("list", help="List indexed documents")
+
+    # ask
+    p_ask = subparsers.add_parser("ask", help="Ask a question")
+    p_ask.add_argument("question", help="Your question")
+    p_ask.add_argument("--no-llm", action="store_true", help="Search only, no LLM")
+
+    # chat
+    subparsers.add_parser("chat", help="Interactive chat mode")
+
+    # search
+    p_search = subparsers.add_parser("search", help="Search documents")
+    p_search.add_argument("query", help="Search query")
+
+    # remove
+    p_remove = subparsers.add_parser("remove", help="Remove a document")
+    p_remove.add_argument("document", help="Document title or ID")
+
+    # stats
+    subparsers.add_parser("stats", help="Show notebook statistics")
+
+    # export
+    subparsers.add_parser("export", help="Export conversation history")
+
+    args = parser.parse_args()
+
+    if not args.command:
+        print_banner()
+        parser.print_help()
+        return
+
+    commands = {
+        "add": cmd_add,
+        "list": cmd_list,
+        "ask": cmd_ask,
+        "chat": cmd_chat,
+        "search": cmd_search,
+        "remove": cmd_remove,
+        "stats": cmd_stats,
+        "export": cmd_export,
+    }
+
+    cmd_func = commands.get(args.command)
+    if cmd_func:
+        cmd_func(args)
+    else:
+        parser.print_help()
+
+
+if __name__ == "__main__":
+    main()

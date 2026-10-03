@@ -1,0 +1,34 @@
+# Belentani Academy - Git Ignore
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (if needed for build tools)
+node_modules/
+npm-debug.log
+
+# Cache
+.cache/
+*.log
+
+# Environment
+.env
+.env.local
+
+# Build output (if any)
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp

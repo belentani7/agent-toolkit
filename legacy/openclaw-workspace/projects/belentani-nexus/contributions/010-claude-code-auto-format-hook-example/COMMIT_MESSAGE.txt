@@ -1,0 +1,10 @@
+docs(examples): add safe auto-format PostToolUse hook example
+
+Adds examples/hooks/auto_format_hook_example.py, a PostToolUse hook for
+Edit/Write/MultiEdit that formats edited Python files with black (falling
+back to ruff format).
+
+Fixes the two failure modes reported in #88188 for formatter hook examples:
+paths with spaces are passed via an argv list (no shell parsing), and
+unsupported files or formatter failures never exit 2 — they report a
+non-blocking systemMessage and exit 0 so the tool call is never blocked.

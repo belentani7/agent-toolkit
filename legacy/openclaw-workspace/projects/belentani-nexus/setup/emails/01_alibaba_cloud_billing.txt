@@ -1,0 +1,47 @@
+To: billing@service.alibaba.com
+Cc: 
+Subject: Billing Inquiry - Unexpected Pay-As-You-Go Charges on Account (belentani7pedro@gmail.com)
+
+Dear Alibaba Cloud Billing Team,
+
+My name is Pedro Belentani, and I am writing regarding unexpected charges that appeared on my Alibaba Cloud account associated with the email belentani7pedro@gmail.com.
+
+BACKGROUND
+
+I am subscribed to the Model Studio (Bailian / DashScope) Coding Plan Pro, a fixed monthly subscription (~USD/EUR 200) that covers approximately 90,000 requests per month across 10 models. My usage is exclusively through coding-focused tools (Qwen Code CLI, Claude Code, and similar coding assistants) configured against the coding endpoint (coding.dashscope.aliyuncs.com).
+
+In addition, I use the free trial quotas provided for new users (image generation, video generation, and TTS quotas valid for 90 days).
+
+THE ISSUE
+
+Despite being on a fixed-price subscription plan and staying within the free quotas, I have observed unexpected pay-as-you-go charges of approximately USD 50 appearing on my account that I did not anticipate or authorize.
+
+I suspect one of the following causes:
+
+1. One of my tools may have been misconfigured to call the standard endpoint (dashscope-intl.aliyuncs.com) instead of the subscription endpoint (coding.dashscope.aliyuncs.com), causing token usage to be billed at pay-as-you-go rates outside my subscription coverage.
+
+2. A free quota may have expired or been exceeded without a clear warning.
+
+3. There may be a billing configuration issue where subscription usage is not being correctly attributed to my plan.
+
+WHAT I AM REQUESTING
+
+1. A detailed breakdown of the charges in question: which service, which endpoint/API, dates, and usage volumes that generated the pay-as-you-go charges.
+
+2. Confirmation of whether my Coding Plan Pro subscription was correctly applied to my usage during the billing period, and whether any requests that should have been covered by the plan were instead billed at standard rates.
+
+3. As a loyal customer and active member of the developer community (I am applying to the Qwen Ambassador Program and contribute regularly to Qwen open-source projects), I kindly request that you consider waiving or crediting these charges if they resulted from the ambiguity between subscription endpoints and standard endpoints.
+
+4. Guidance on how to configure billing alerts and spending limits so this situation cannot recur, and confirmation of how to verify that my tools are hitting only the subscription endpoint.
+
+I am happy to provide my account ID, billing statements, or any logs needed to investigate. This matter is important to me because I plan to continue using Alibaba Cloud services long-term and recommend them within my developer community.
+
+Thank you very much for your attention. I look forward to your response.
+
+Kind regards,
+
+Pedro Marcos Santos Belentani
+Email: belentani7pedro@gmail.com
+GitHub: https://github.com/belentani7
+Website: https://belentani.eu
+Barcelona, Spain

@@ -1,0 +1,8 @@
+docs: translate caching guide to Spanish
+
+Adds `docs/source/es/cache_explanation.md`, a faithful translation of the
+English "How caching works" guide (attention matrices, the `Cache` class and
+cache storage implementations), and registers it in the Spanish
+`_toctree.yml`.
+
+Math blocks and code samples are preserved verbatim from the English source.

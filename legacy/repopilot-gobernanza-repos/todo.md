@@ -1,0 +1,35 @@
+# Project TODO
+
+- [x] Autenticación privada y espacio de trabajo personal protegido.
+- [ ] Conexión segura a GitHub con permisos explícitos y estado de conexión visible.
+- [ ] Listado, búsqueda y selección de repositorios del usuario.
+- [ ] Creación de nuevos repositorios desde el espacio de trabajo.
+- [ ] Explorador con árbol de archivos y navegación por carpetas.
+- [ ] Visor de contenido para archivos del repositorio.
+- [ ] Carga de archivos al espacio de trabajo o repositorio seleccionado.
+- [ ] Editor de código con archivo activo y cambios locales visibles.
+- [ ] Flujo de cambios pendientes con diff y revisión antes de escribir.
+- [ ] Confirmación explícita antes de crear commits o publicar cambios en GitHub.
+- [ ] Panel de chat de IA con contexto del repositorio y archivo abierto.
+- [ ] Configuración preparada para proveedores oficiales ChatGPT, Gemini, Qwen y DeepSeek mediante API.
+- [ ] Propuestas de edición de código generadas por IA, separadas de la aplicación automática.
+- [ ] Revisión y aplicación manual de una propuesta al archivo seleccionado.
+- [ ] Vista de previsualización web para proyectos compatibles sin depender de iframes bloqueados.
+- [ ] Accesos rápidos a servicios externos de IA mediante enlaces seguros en nueva pestaña.
+- [x] Interfaz de escritorio moderna, densa y pulida inspirada en herramientas de desarrollo actuales.
+- [ ] Paneles redimensionables para repositorio, editor, chat y previsualización.
+- [x] Estados de carga, error, vacío y permisos claramente comunicados.
+- [x] Pruebas Vitest para los flujos principales y validación de tipos.
+- [x] Verificación visual responsive y revisión final antes de crear el checkpoint.
+- [x] Implementar inicio de sesión real usando startLogin y bloquear el workspace sensible detrás de autenticación efectiva.
+- [x] Añadir manejo visual de errores de autenticación e integración, incluyendo permisos denegados.
+- [x] Modelar proyectos como contenedores independientes de repositorios, archivos abiertos, historial de chat, proveedor de IA y previsualización.
+- [ ] Añadir selector global de proyectos con creación, cambio y archivo de proyectos.
+- [ ] Garantizar que el cambio de proyecto limpie el contexto activo y no mezcle conversaciones, diffs ni previsualizaciones.
+- [ ] Mostrar una ficha de proyecto con repositorio vinculado, rama, cambios pendientes y última actividad.
+- [x] Añadir pruebas Vitest específicas para bloqueo de autenticación, creación/cambio de proyecto y aislamiento de contexto.
+- [ ] Añadir al proyecto el proveedor de IA seleccionado y sus preferencias por proyecto.
+- [ ] Integrar ProjectContext en el estado real del workspace para aislar archivo, chat y preview por proyecto.
+- [ ] Definir la persistencia del contexto por proyecto y documentar qué estado es temporal o persistente.
+- [ ] Guardar la versión actual en un repositorio Git/GitHub accesible para el usuario.
+- [ ] Crear y subir una copia ZIP de la versión actual a Google Drive.

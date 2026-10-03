@@ -1,0 +1,26 @@
+{
+  "version": "2.0.0",
+  "proyecto": "Manos Abiertas",
+  "descripcion": "Ecosistema pedagógico de 15 nodos para inclusión y formación en España",
+  "licencia": "100% Libre y Gratuito · Código Abierto",
+  "modulos_incluidos": [
+    "1. Currículo de IA (14-26 lecciones)",
+    "2. Suite Ofimática & Productividad (Word, Excel, PowerPoint, Google, SEPE)",
+    "3. Constructor de CV ATS y cartas de presentación en formato A4",
+    "4. Directorio de recursos de acogida, ONGs y servicios sociales",
+    "5. Marco jurídico de extranjería y derechos fundamentales en España",
+    "6. Simulador oficial de exámenes DELE A2 y CCSE (Instituto Cervantes)",
+    "7. Gestor inteligente de citas previas y exportación de recordatorios .ICS",
+    "8. Compañero con tutoría por voz en 39 idiomas con voces diferenciadas",
+    "9. Itinerarios universitarios globales (Harvard, MIT, Coursera, UNED)",
+    "10. Inclusión financiera, cuenta bancaria básica y prevención de estafas",
+    "11. Empleo digno, derechos laborales y procedimiento Acredita",
+    "12. Sanidad universal y tramitación de tarjeta sanitaria individual",
+    "13. Derecho a la vivienda, empadronamiento y contratos de alquiler",
+    "14. Red comunitaria, voluntariado y asociaciones de apoyo",
+    "15. Pasaporte de competencias digitales y portabilidad de datos"
+  ],
+  "idiomas_soportados": 39,
+  "voces_humanas_unicas": 39,
+  "garantia_privacidad": "Cero telemetría externa. Almacenamiento 100% local."
+}

@@ -1,0 +1,134 @@
+"""
+🐉 DRAGÓN DE JADE — Logo SVG Detallado
+Versión premium con gradientes, sombras y detalles artísticos
+"""
+import os
+from pathlib import Path
+
+def crear_logo_detallado():
+    """Crea el logo más detallado posible en SVG."""
+
+    svg = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <!-- Gradientes -->
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F0D860"/>
+      <stop offset="50%" style="stop-color:#D4AF37"/>
+      <stop offset="100%" style="stop-color:#8B6914"/>
+    </linearGradient>
+    <linearGradient id="gold-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B6914"/>
+      <stop offset="100%" style="stop-color:#5A4510"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:0"/>
+    </radialGradient>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A0A0A"/>
+      <stop offset="50%" style="stop-color:#111111"/>
+      <stop offset="100%" style="stop-color:#0A0A0A"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#D4AF37" flood-opacity="0.3"/>
+    </filter>
+    <filter id="glow-filter">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Fondo -->
+  <rect width="800" height="800" fill="url(#bg-gradient)"/>
+
+  <!-- Borde decorativo exterior -->
+  <rect x="20" y="20" width="760" height="760" fill="none" stroke="url(#gold)" stroke-width="1" rx="10" opacity="0.3"/>
+  <rect x="30" y="30" width="740" height="740" fill="none" stroke="url(#gold)" stroke-width="0.5" rx="8" opacity="0.2"/>
+
+  <!-- Marco decorativo chino -->
+  <path d="M 100 100 Q 400 80 700 100 Q 720 400 700 700 Q 400 720 100 700 Q 80 400 100 100" fill="none" stroke="url(#gold)" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Círculos decorativos -->
+  <circle cx="150" cy="150" r="80" fill="url(#gold)" opacity="0.05"/>
+  <circle cx="650" cy="150" r="80" fill="url(#gold)" opacity="0.05"/>
+  <circle cx="150" cy="650" r="80" fill="url(#gold)" opacity="0.05"/>
+  <circle cx="650" cy="650" r="80" fill="url(#gold)" opacity="0.05"/>
+
+  <!-- Glow central -->
+  <ellipse cx="400" cy="350" rx="200" ry="150" fill="url(#glow)"/>
+
+  <!-- Dragón detallado ( Unicode con estilo) -->
+  <text x="400" y="320" font-size="160" text-anchor="middle" filter="url(#glow-filter)" fill="url(#gold)">🐉</text>
+
+  <!-- Línea decorativa bajo el dragón -->
+  <line x1="250" y1="380" x2="550" y2="380" stroke="url(#gold)" stroke-width="1" opacity="0.5"/>
+
+  <!-- Nombre principal -->
+  <text x="400" y="440" font-family="'Playfair Display', serif" font-size="48" font-weight="900" text-anchor="middle" fill="url(#gold)" filter="url(#shadow)">Dragón de Jade</text>
+
+  <!-- Caracteres chinos -->
+  <text x="400" y="490" font-family="'Noto Serif SC', serif" font-size="36" text-anchor="middle" fill="url(#gold-dark)">龍玉</text>
+
+  <!-- Línea decorativa -->
+  <line x1="300" y1="510" x2="500" y2="510" stroke="url(#gold)" stroke-width="0.5" opacity="0.6"/>
+
+  <!-- Slogan -->
+  <text x="400" y="540" font-family="'Inter', sans-serif" font-size="14" text-anchor="middle" fill="#888" letter-spacing="4" font-style="italic">SABOR AUTÉNTICO, TRADICIÓN MILENARIA</text>
+
+  <!-- Iconos decorativos de ramas -->
+  <text x="280" y="580" font-size="20" opacity="0.3">🍃</text>
+  <text x="380" y="590" font-size="16" opacity="0.2">🍃</text>
+  <text x="480" y="580" font-size="20" opacity="0.3">🍃</text>
+
+  <!-- Información inferior -->
+  <text x="400" y="640" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle" fill="#555" letter-spacing="3">RESTAURANTE CHINO CANTONÉS</text>
+  <text x="400" y="660" font-family="'Inter', sans-serif" font-size="10" text-anchor="middle" fill="#444" letter-spacing="2">CALLE GRAN VÍA DE LOS CHINOS, 42 — BARCELONA</text>
+
+  <!-- Sello decorativo -->
+  <circle cx="650" cy="650" r="35" fill="none" stroke="url(#gold)" stroke-width="1" opacity="0.4"/>
+  <text x="650" y="658" font-family="'Noto Serif SC', serif" font-size="20" text-anchor="middle" fill="url(#gold)" opacity="0.5">玉</text>
+
+  <!-- Año de fundación -->
+  <text x="400" y="720" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle" fill="#333" letter-spacing="5">EST. 2018</text>
+
+  <!-- Borde final -->
+  <rect x="20" y="20" width="760" height="760" fill="none" stroke="url(#gold)" stroke-width="2" rx="10" opacity="0.6"/>
+</svg>"""
+
+    output_path = Path(__file__).parent / 'logo_premium.svg'
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write(svg)
+    print(f"Logo premium creado: {output_path}")
+    return output_path
+
+
+def crear_logo_minimal():
+    """Logo minimalista para favicon/icono."""
+    svg = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F0D860"/>
+      <stop offset="100%" style="stop-color:#8B6914"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="#0A0A0A" rx="64"/>
+  <circle cx="256" cy="220" r="120" fill="url(#gold)" opacity="0.1"/>
+  <text x="256" y="260" font-size="120" text-anchor="middle">🐉</text>
+  <text x="256" y="340" font-family="serif" font-size="36" font-weight="bold" text-anchor="middle" fill="url(#gold)">龍玉</text>
+  <line x1="180" y1="370" x2="332" y2="370" stroke="url(#gold)" stroke-width="1" opacity="0.5"/>
+  <text x="256" y="395" font-family="sans-serif" font-size="10" text-anchor="middle" fill="#666" letter-spacing="3">DRAGÓN DE JADE</text>
+</svg>"""
+
+    output_path = Path(__file__).parent / 'logo_icono.svg'
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write(svg)
+    print(f"Logo icono creado: {output_path}")
+    return output_path
+
+
+if __name__ == "__main__":
+    crear_logo_detallado()
+    crear_logo_minimal()

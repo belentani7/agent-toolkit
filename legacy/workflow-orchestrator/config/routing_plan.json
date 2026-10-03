@@ -1,0 +1,116 @@
+{
+  "generated_at": "2026-09-12T11:27:38.253858",
+  "total_routes": 10,
+  "routes": [
+    {
+      "task_id": "action_critical",
+      "task_name": "Send email to Alibaba Cloud",
+      "archetype": "unknown",
+      "complexity": "tier_1_simple",
+      "model": "openai/gpt-4o-mini",
+      "cli": "codex",
+      "sandbox": false,
+      "estimated_cost": 0.5,
+      "estimated_time": 5
+    },
+    {
+      "task_id": "action_critical",
+      "task_name": "Send email to Kling AI",
+      "archetype": "unknown",
+      "complexity": "tier_1_simple",
+      "model": "openai/gpt-4o-mini",
+      "cli": "codex",
+      "sandbox": false,
+      "estimated_cost": 0.5,
+      "estimated_time": 5
+    },
+    {
+      "task_id": "belentani-core",
+      "task_name": "Belentani Core",
+      "archetype": "backend",
+      "complexity": "tier_1_simple",
+      "model": "openai/gpt-4o",
+      "cli": "codex",
+      "sandbox": true,
+      "estimated_cost": 0.5,
+      "estimated_time": 5
+    },
+    {
+      "task_id": "belentani-judas-web",
+      "task_name": "Belentani Judas Web",
+      "archetype": "frontend",
+      "complexity": "tier_1_simple",
+      "model": "openai/gpt-4o-mini",
+      "cli": "codex",
+      "sandbox": true,
+      "estimated_cost": 0.5,
+      "estimated_time": 5
+    },
+    {
+      "task_id": "belentani-unified",
+      "task_name": "Belentani Unified",
+      "archetype": "frontend",
+      "complexity": "tier_1_simple",
+      "model": "openai/gpt-4o-mini",
+      "cli": "codex",
+      "sandbox": true,
+      "estimated_cost": 0.5,
+      "estimated_time": 5
+    },
+    {
+      "task_id": "newbelentani-judas",
+      "task_name": "newbelentani-judas",
+      "archetype": "frontend",
+      "complexity": "tier_1_simple",
+      "model": "openai/gpt-4o-mini",
+      "cli": "codex",
+      "sandbox": true,
+      "estimated_cost": 0.5,
+      "estimated_time": 5
+    },
+    {
+      "task_id": "belentani7-profile",
+      "task_name": "Belentani7 Profile",
+      "archetype": "frontend",
+      "complexity": "tier_1_simple",
+      "model": "openai/gpt-4o-mini",
+      "cli": "codex",
+      "sandbox": true,
+      "estimated_cost": 0.5,
+      "estimated_time": 5
+    },
+    {
+      "task_id": "newbelentani",
+      "task_name": "Secuencia de Acceso Judas",
+      "archetype": "unknown",
+      "complexity": "tier_1_simple",
+      "model": "openai/gpt-4o-mini",
+      "cli": "codex",
+      "sandbox": false,
+      "estimated_cost": 0.5,
+      "estimated_time": 5
+    },
+    {
+      "task_id": "belentani-campaign-repo",
+      "task_name": "Belentani Campaign Repo",
+      "archetype": "voice",
+      "complexity": "tier_1_simple",
+      "model": "openai/whisper-large-v3",
+      "cli": "claude",
+      "sandbox": true,
+      "estimated_cost": 0.5,
+      "estimated_time": 5
+    },
+    {
+      "task_id": "Belentani-Agency-AI-Omega",
+      "task_name": "Belentani Agency AI Omega",
+      "archetype": "unknown",
+      "complexity": "tier_1_simple",
+      "model": "openai/gpt-4o-mini",
+      "cli": "codex",
+      "sandbox": false,
+      "estimated_cost": 0.5,
+      "estimated_time": 5
+    }
+  ]
+}

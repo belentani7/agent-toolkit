@@ -1,0 +1,15 @@
+fix(pipelines): validate the device argument before downloading model weights
+
+pipeline() used to accept any string as `device` and only fail when the model
+was moved to it, i.e. after downloading and loading the full weights. An
+invalid string like device="mpx" therefore burned bandwidth and RAM before
+crashing at tensor placement.
+
+Add _validate_pipeline_device() which checks the argument upfront (int,
+torch.device, or a string parseable by torch.device) and raises a ValueError
+pointing at the typo before any Hub interaction.
+
+Adds PipelineDeviceValidationTest covering invalid strings, valid values, and
+non-string invalid types.
+
+Fixes #47869

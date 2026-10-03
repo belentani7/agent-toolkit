@@ -1,0 +1,8 @@
+docs: translate gradient accumulation guide to Spanish
+
+Adds `docs/source/es/grad_accumulation.md`, a faithful translation of the
+English "Gradient accumulation" guide, and registers it in the Spanish
+`_toctree.yml` under the performance section.
+
+Code blocks, argument names, and link targets are kept identical to the
+English source, per the documentation translation conventions.

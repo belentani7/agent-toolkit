@@ -1,0 +1,9 @@
+name: Investigación técnica de fuentes públicas
+objective: Extraer evidencia pública, tecnología detectada, metadatos SEO y enlaces relevantes sin inventar resultados.
+urls:
+  - https://example.com
+  - https://github.com
+maxConcurrency: 2
+rateLimitMs: 500
+retries: 2
+timeoutMs: 15000

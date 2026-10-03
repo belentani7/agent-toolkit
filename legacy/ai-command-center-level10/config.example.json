@@ -1,0 +1,27 @@
+{
+  "companion": {
+    "host": "127.0.0.1",
+    "port": 8788,
+    "url": "http://127.0.0.1:8788"
+  },
+  "localProviders": {
+    "ollama": {
+      "baseUrl": "http://127.0.0.1:11434",
+      "model": "llama3.2"
+    },
+    "lmstudio": {
+      "baseUrl": "http://127.0.0.1:1234/v1",
+      "model": "local-model"
+    },
+    "llamacpp": {
+      "baseUrl": "http://127.0.0.1:8080/v1",
+      "model": "local-model"
+    }
+  },
+  "remoteProviders": {
+    "openai": { "envKey": "OPENAI_API_KEY", "model": "gpt-4o-mini" },
+    "anthropic": { "envKey": "ANTHROPIC_API_KEY", "model": "claude-3-5-haiku-latest" },
+    "google": { "envKey": "GOOGLE_AI_API_KEY", "model": "gemini-2.0-flash" },
+    "openrouter": { "envKey": "OPENROUTER_API_KEY", "model": "openai/gpt-4o-mini" }
+  }
+}

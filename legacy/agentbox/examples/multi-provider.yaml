@@ -1,0 +1,161 @@
+# AgentBox Multi-Provider Configuration Example
+# ──────────────────────────────────────────────────────────
+# Spawn pocket dimensions across multiple cloud providers.
+# Use this for redundancy, cost optimization, or when you
+# want to compare how code evolves across parallel universes.
+
+# ─── Default Provider ────────────────────────────────────
+# When you run `agentbox up`, this provider is used unless
+# you specify one with --provider.
+default_provider: digitalocean
+
+# ─── Provider Configurations ─────────────────────────────
+providers:
+
+  # ── DigitalOcean ───────────────────────────────────────
+  # Best for: quick experiments, US-based workloads
+  # Min cost: $4/month (s-1vcpu-1gb)
+  digitalocean:
+    enabled: true
+    token: "${DO_TOKEN}"           # env var reference
+    default_region: nyc1
+    default_size: s-1vcpu-1gb
+    regions:
+      nyc1:                        # New York
+        preferred: true
+      sfo3:                        # San Francisco
+      ams3:                        # Amsterdam
+      lon1:                        # London
+      blr1:                        # Bangalore
+    sizes:
+      s-1vcpu-1gb:                 # $4/mo
+        vcpus: 1
+        memory: 1GB
+        recommended: true
+      s-1vcpu-2gb:                 # $6/mo
+        vcpus: 1
+        memory: 2GB
+      s-2vcpu-4gb:                 # $24/mo
+        vcpus: 2
+        memory: 4GB
+
+  # ── Hetzner Cloud ──────────────────────────────────────
+  # Best for: European workloads, best price/performance
+  # Min cost: €3.79/month (CX11)
+  hetzner:
+    enabled: true
+    token: "${HETZNER_TOKEN}"
+    default_region: fsn1
+    default_size: s-1vcpu-1gb
+    regions:
+      fsn1:                        # Falkenstein, Germany
+        preferred: true
+      nbg1:                        # Nuremberg, Germany
+      hel1:                        # Helsinki, Finland
+      ash:                         # Ashburn, USA
+    sizes:
+      s-1vcpu-1gb:                 # €3.79/mo → CX11
+        vcpus: 1
+        memory: 2GB
+        recommended: true
+      s-2vcpu-4gb:                 # €8.90/mo → CX31
+        vcpus: 2
+        memory: 4GB
+
+  # ── Oracle Cloud (OCI) ─────────────────────────────────
+  # Best for: free tier sandboxes ($0/month!)
+  # Always Free: 2x ARM A1.Flex with 24GB RAM total
+  oci:
+    enabled: true
+    tenancy_ocid: "${OCI_TENANCY_OCID}"
+    compartment_ocid: "${OCI_COMPARTMENT_OCID}"
+    user_ocid: "${OCI_USER_OCID}"
+    fingerprint: "${OCI_FINGERPRINT}"
+    key_file: "${OCI_KEY_FILE}"
+    default_region: us-ashburn-1
+    default_size: arm-flex
+    regions:
+      us-ashburn-1:
+        preferred: true
+      us-phoenix-1:
+      eu-frankfurt-1:
+      uk-london-1:
+    sizes:
+      arm-flex:                    # FREE (Always Free tier)
+        shape: VM.Standard.A1.Flex
+        ocpus: 1
+        memory: 6GB
+        free: true
+        recommended: true
+      micro:                       # FREE (Always Free tier)
+        shape: VM.Standard.E2.1.Micro
+        ocpus: 1
+        memory: 1GB
+        free: true
+
+# ─── AI CLI Profiles ─────────────────────────────────────
+# Different sandboxes can use different AI tools
+ai_cli_profiles:
+  claude:
+    install: "curl -fsSL https://claude.ai/install.sh | bash"
+    env_passthrough:
+      - ANTHROPIC_API_KEY
+  aider:
+    install: "pip3 install aider-chat"
+    env_passthrough:
+      - OPENAI_API_KEY
+      - ANTHROPIC_API_KEY
+  codex:
+    install: "npm install -g @openai/codex"
+    env_passthrough:
+      - OPENAI_API_KEY
+
+# ─── Multiverse Mode ─────────────────────────────────────
+# When running `agentbox --multiverse`, these settings apply
+multiverse:
+  enabled: true
+  providers:
+    - digitalocean
+    - hetzner
+    - oci
+  budget_total: 10.00              # total budget across all providers
+  max_per_provider: 3              # max sandboxes per provider
+
+# ─── Cost Alerts ─────────────────────────────────────────
+cost_alerts:
+  enabled: true
+  thresholds:
+    - 50%
+    - 80%
+    - 95%
+  notification: terminal           # terminal | webhook | email
+  webhook_url: ""                  # for webhook notifications
+
+# ─── Security ────────────────────────────────────────────
+security:
+  ssh_key_type: ed25519
+  auto_destroy_default: 4h
+  never_sync:
+    - .env
+    - .env.*
+    - "*.pem"
+    - "*.key"
+    - credentials/
+    - secrets/
+
+# ─── Usage Examples ──────────────────────────────────────
+#
+# Spawn on default provider:
+#   agentbox up my-experiment
+#
+# Spawn on specific provider:
+#   agentbox up --provider hetzner my-experiment
+#
+# Spawn on free tier:
+#   agentbox up --provider oci my-free-sandbox
+#
+# Spawn on all providers at once:
+#   agentbox --multiverse parallel-test
+#
+# Compare costs:
+#   agentbox cost

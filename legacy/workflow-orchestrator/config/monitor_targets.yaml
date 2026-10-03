@@ -1,0 +1,33 @@
+repos:
+  - name: NOIACORE
+    url: https://github.com/belentani7/NOIACORE
+  - name: secure-t
+    url: https://github.com/belentani7/secure-t
+  - name: skills-registry
+    url: https://github.com/belentani7/skills-registry
+  - name: belentani-core
+    url: https://github.com/belentani7/belentani-core
+  - name: manus-ai-skill-pack
+    url: https://github.com/belentani7/manus-ai-skill-pack
+
+pages:
+  - name: Belentani OS
+    url: https://belentani7.github.io/belentani_Omega/
+  - name: Judas Experience
+    url: https://belentani7.github.io/judas-experience/
+  - name: ManosAbiertas
+    url: https://belentani7.github.io/ManosAbiertas/
+
+apis:
+  - name: OpenRouter
+    url: https://openrouter.ai/api/v1
+  - name: HuggingFace
+    url: https://api-inference.huggingface.co/models
+  - name: OmniRoute
+    url: http://localhost:20128/v1
+
+domains:
+  - name: belentani.vercel.app
+    url: https://belentani.vercel.app
+  - name: belentani.eu
+    url: https://belentani.eu

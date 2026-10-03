@@ -1,0 +1,11 @@
+{
+  "name": "BELENTANI OMNI",
+  "short_name": "BELENTANI",
+  "description": "Centro autónomo de coherencia musical e inteligencia personal.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0c0c0e",
+  "theme_color": "#d9a85d",
+  "lang": "es",
+  "icons": []
+}

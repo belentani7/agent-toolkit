@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bellacore — Lead Extraction Platform</title>
+<meta name="description" content="Bellacore · Extracción de leads inteligente. Scraping, verificación de emails y exportación CSV.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#07070c;--bg2:#0d0d16;--bg3:#12121d;
+  --accent:#7c7cf5;--accent2:#a5b4fc;--accent-dim:rgba(124,124,245,.1);
+  --green:#34d399;--green-dim:rgba(52,211,153,.12);
+  --amber:#fbbf24;
+  --text:#f5f5fa;--text2:#a3a3b8;--text3:#52526b;
+  --border:rgba(255,255,255,.07);--border-strong:rgba(255,255,255,.16);
+  --glass:rgba(255,255,255,.025);
+  --font-body:'Manrope',sans-serif;
+  --font-display:'Sora',sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+::selection{background:var(--accent);color:#fff}
+button{font-family:inherit;cursor:pointer}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:.8rem 2rem;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(18px);background:rgba(7,7,12,.8);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:var(--font-display);font-weight:700;font-size:1.05rem;color:var(--text)}
+.nav-logo b{color:var(--accent)}
+.nav-links{display:flex;gap:1.6rem;align-items:center}
+.nav-links a{color:var(--text2);font-size:.8rem;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.btn-accent{background:var(--accent);color:#fff!important;padding:.45rem 1rem;border-radius:8px;font-weight:600;font-size:.75rem;transition:all .2s}
+.btn-accent:hover{background:var(--accent2);transform:translateY(-1px)}
+
+/* HERO */
+.hero{min-height:88vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:7rem 2rem 4rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(124,124,245,.14) 0%,transparent 70%)}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2);border:1px solid var(--border);background:var(--accent-dim);padding:.4rem .9rem;border-radius:999px;margin-bottom:1.4rem}
+.hero h1{font-family:var(--font-display);font-size:clamp(2.4rem,5.5vw,4rem);font-weight:800;letter-spacing:-.03em;margin-bottom:1rem;line-height:1.1}
+.hero h1 .accent{color:var(--accent)}
+.hero p{color:var(--text2);font-size:1.05rem;max-width:620px;margin:0 auto 2rem}
+.hero-stats{display:flex;justify-content:center;gap:2.8rem;flex-wrap:wrap;margin-bottom:2.4rem}
+.hero-stat .num{font-family:var(--font-display);font-weight:700;font-size:1.5rem;color:var(--text)}
+.hero-stat .num b{color:var(--accent)}
+.hero-stat .lbl{font-size:.6rem;color:var(--text3);text-transform:uppercase;letter-spacing:.12em;font-family:var(--font-mono)}
+
+/* SEARCH */
+.search-section{padding:3.5rem 2rem;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.search-box{max-width:760px;margin:0 auto}
+.search-form{display:flex;gap:.6rem;margin-bottom:1.4rem;position:relative}
+.search-form input{flex:1;padding:.9rem 1.2rem;padding-left:2.9rem;background:var(--bg3);border:1px solid var(--border);border-radius:12px;color:var(--text);font-size:.92rem;font-family:var(--font-body);transition:border-color .2s,box-shadow .2s}
+.search-form input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(124,124,245,.15)}
+.search-form .sicon{position:absolute;left:1.1rem;top:50%;transform:translateY(-50%);color:var(--text3);display:flex}
+.search-form button{padding:.9rem 1.8rem;background:var(--accent);color:#fff;border:none;border-radius:12px;font-weight:700;font-size:.85rem;transition:all .2s}
+.search-form button:hover{background:var(--accent2);transform:translateY(-1px)}
+.search-form button:disabled{opacity:.6;cursor:wait;transform:none}
+.search-filters{display:flex;gap:.5rem;flex-wrap:wrap}
+.filter-btn{padding:.38rem .85rem;border-radius:999px;font-size:.68rem;font-weight:600;border:1px solid var(--border);background:transparent;color:var(--text2);transition:all .2s}
+.filter-btn:hover{border-color:var(--border-strong);color:var(--text)}
+.filter-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* RESULTS */
+.results{max-width:860px;margin:2.4rem auto;padding:0 2rem 4rem}
+.results-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem;gap:1rem;flex-wrap:wrap}
+.results-count{font-size:.78rem;color:var(--text3);font-family:var(--font-mono)}
+.results-count b{color:var(--accent2)}
+.export-btn{padding:.5rem .9rem;border-radius:8px;font-size:.7rem;font-weight:600;border:1px solid var(--border);background:transparent;color:var(--text2);transition:all .2s}
+.export-btn:hover{border-color:var(--green);color:var(--green)}
+.export-btn:disabled{opacity:.5;cursor:wait}
+
+/* SHIMMER */
+.shimmer-card{height:112px;border-radius:12px;margin-bottom:.8rem;background:linear-gradient(90deg,var(--bg3) 25%,var(--bg2) 50%,var(--bg3) 75%);background-size:200% 100%;animation:shimmer 1.2s infinite}
+@keyframes shimmer{to{background-position:-200% 0}}
+
+/* LEAD CARDS */
+.lead-card{background:var(--glass);border:1px solid var(--border);border-radius:14px;padding:1.2rem 1.4rem;margin-bottom:.8rem;display:flex;gap:1.1rem;align-items:flex-start;transition:all .25s}
+.lead-card:hover{border-color:var(--border-strong);transform:translateX(3px);background:var(--bg3)}
+.lead-avatar{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--accent-dim),var(--bg3));border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:.9rem;color:var(--accent2);flex-shrink:0}
+.lead-body{flex:1;min-width:0}
+.lead-top{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-bottom:.35rem}
+.lead-name{font-family:var(--font-display);font-weight:600;font-size:.95rem}
+.badge{display:inline-flex;align-items:center;gap:.3rem;font-size:.56rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:.2rem .5rem;border-radius:999px;font-family:var(--font-mono)}
+.badge.type{background:var(--accent-dim);color:var(--accent2);border:1px solid rgba(124,124,245,.25)}
+.badge.verified{background:var(--green-dim);color:var(--green);border:1px solid rgba(52,211,153,.25)}
+.badge.noemail{background:rgba(251,191,36,.08);color:var(--amber);border:1px solid rgba(251,191,36,.2)}
+.lead-info{font-size:.74rem;color:var(--text2);display:flex;gap:.9rem;flex-wrap:wrap;align-items:center}
+.lead-info span{display:inline-flex;align-items:center;gap:.35rem}
+.lead-info .mono{font-family:var(--font-mono);font-size:.7rem;color:var(--accent2)}
+.lead-tags{display:flex;gap:.3rem;margin-top:.55rem}
+.lead-tag{padding:.18rem .5rem;border-radius:6px;font-size:.58rem;font-family:var(--font-mono);background:rgba(255,255,255,.04);color:var(--text2);border:1px solid var(--border)}
+
+/* EMPTY */
+.empty{text-align:center;padding:3.5rem 1rem;border:1px dashed var(--border);border-radius:14px;color:var(--text3)}
+.empty .big{font-size:2rem;margin-bottom:.6rem}
+.empty p{font-size:.82rem;color:var(--text2)}
+.empty button{margin-top:1rem;padding:.5rem 1.2rem;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text2);font-size:.75rem;transition:all .2s}
+.empty button:hover{border-color:var(--accent);color:var(--accent)}
+
+/* FEATURES */
+.features{padding:5rem 2rem}
+.features-grid{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.1rem}
+.section-label{font-size:.6rem;text-transform:uppercase;letter-spacing:.2em;color:var(--accent2);font-family:var(--font-mono);margin-bottom:.5rem;text-align:center}
+.section-title{font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;text-align:center;margin-bottom:2.2rem}
+.feature-card{background:var(--glass);border:1px solid var(--border);border-radius:14px;padding:1.6rem;transition:all .3s;position:relative;overflow:hidden}
+.feature-card::after{content:'';position:absolute;top:-50%;right:-50%;width:70%;height:70%;background:radial-gradient(circle,rgba(124,124,245,.08),transparent 70%);opacity:0;transition:opacity .3s}
+.feature-card:hover{border-color:var(--border-strong);transform:translateY(-3px)}
+.feature-card:hover::after{opacity:1}
+.feature-card .num{font-family:var(--font-mono);font-size:.6rem;color:var(--accent2);margin-bottom:.6rem}
+.feature-card h3{font-family:var(--font-display);font-size:.92rem;font-weight:600;margin-bottom:.5rem}
+.feature-card p{font-size:.78rem;color:var(--text2);line-height:1.7}
+
+/* FOOTER */
+footer{text-align:center;padding:2.2rem;border-top:1px solid var(--border);color:var(--text3);font-size:.68rem;font-family:var(--font-mono)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:720px){
+  .nav-links a:not(.btn-accent){display:none}
+  .hero-stats{gap:1.6rem}
+  .search-form{flex-direction:column}
+  .search-form input{width:100%}
+  .results{padding:0 1.2rem 3rem}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Bellacore<b>.</b></div>
+  <div class="nav-links">
+    <a href="#search">Buscar</a>
+    <a href="#features">Funciones</a>
+    <a href="#search" class="btn-accent">Comenzar Gratis</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="hero-badge">Lead Intelligence Engine</div>
+    <h1>Extracción de <span class="accent">Leads</span><br>Inteligente</h1>
+    <p>Encuentra negocios, extrae emails verificados y genera outreach personalizado con IA. Todo desde una sola plataforma.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num"><b>2.4M</b>+</div><div class="lbl">Leads indexados</div></div>
+      <div class="hero-stat"><div class="num"><b>98.2</b>%</div><div class="lbl">Emails válidos</div></div>
+      <div class="hero-stat"><div class="num"><b>40</b>+</div><div class="lbl">Países</div></div>
+    </div>
+    <a href="#search" class="btn-accent" style="display:inline-block;padding:.85rem 2.2rem;font-size:.9rem;border-radius:12px">Comenzar Gratis</a>
+  </div>
+</section>
+
+<section id="search" class="search-section">
+  <div class="search-box">
+    <div class="search-form">
+      <span class="sicon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
+      <input type="text" id="searchInput" placeholder="Ej: dentistas en Barcelona, restaurantes en Madrid..." autocomplete="off">
+      <button id="searchBtn" onclick="searchLeads()">Buscar</button>
+    </div>
+    <div class="search-filters" id="filters">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="email">Con Email</button>
+      <button class="filter-btn" data-filter="web">Con Web</button>
+      <button class="filter-btn" data-filter="noweb">Sin Web</button>
+      <button class="filter-btn" data-filter="maps">Google Maps</button>
+    </div>
+  </div>
+</section>
+
+<div class="results" id="results" style="display:none">
+  <div class="results-header">
+    <div class="results-count" id="resultsCount">0 resultados</div>
+    <button class="export-btn" id="exportBtn" onclick="exportCSV()">⬇ Exportar CSV</button>
+  </div>
+  <div id="resultsList"></div>
+</div>
+
+<section id="features" class="features">
+  <div class="section-label">Capacidades</div>
+  <div class="section-title">Todo lo que necesitas para crecer</div>
+  <div class="features-grid">
+    <div class="feature-card reveal"><div class="num">01</div><h3>Scraping Inteligente</h3><p>Extrae datos de Google Maps, sitios web y directorios. Emails, teléfonos y redes sociales.</p></div>
+    <div class="feature-card reveal"><div class="num">02</div><h3>Verificación de Emails</h3><p>Valida cada email antes de guardarlo. Reduce rebotes y protege tu reputación de envío.</p></div>
+    <div class="feature-card reveal"><div class="num">03</div><h3>Personalización con IA</h3><p>Lee la web del prospecto y genera emails hiper-personalizados que no parecen spam.</p></div>
+    <div class="feature-card reveal"><div class="num">04</div><h3>Exportación CSV</h3><p>Descarga tus leads en CSV listos para importar en tu herramienta de email marketing.</p></div>
+    <div class="feature-card reveal"><div class="num">05</div><h3>Caché Multinivel</h3><p>Las búsquedas repetidas no consumen créditos. Resultados cacheados por 24h.</p></div>
+    <div class="feature-card reveal"><div class="num">06</div><h3>API REST</h3><p>Integra la extracción de leads en tus propios flujos de trabajo vía API.</p></div>
+  </div>
+</section>
+
+<footer>
+  <div>Bellacore · Lead Extraction Platform © 2026</div>
+</footer>
+
+<script>
+const DEMO_LEADS = [
+  {name:"Clínica Dental Barcelona",type:"Dentista",location:"Barcelona, Spain",email:"info@clinicadentalbcn.com",phone:"+34 931 234 567",web:"clinicadentalbcn.com",tags:["dental","salud"],src:"maps",verified:true},
+  {name:"Restaurante La Terraza",type:"Restaurante",location:"Madrid, Spain",email:"reservas@laterraza.es",phone:"+34 912 345 678",web:"laterraza.es",tags:["gastronomía","hostelería"],src:"maps",verified:true},
+  {name:"Studio Marketing Digital",type:"Agencia",location:"Barcelona, Spain",email:"hola@studiomarketing.com",phone:"+34 932 345 678",web:"studiomarketing.com",tags:["marketing","digital"],src:"maps",verified:true},
+  {name:"Gimnasio FitZone",type:"Gimnasio",location:"L'Hospitalet, Spain",email:"info@fitzone.cat",phone:"+34 934 567 890",web:"fitzone.cat",tags:["fitness","salud"],src:"web",verified:true},
+  {name:"Abogados García & Asociados",type:"Abogado",location:"Barcelona, Spain",email:"contacto@garcia-abogados.es",phone:"+34 933 456 789",web:"garcia-abogados.es",tags:["legal","abogacía"],src:"web",verified:false},
+  {name:"Peluquería Rizos",type:"Peluquería",location:"Valencia, Spain",email:null,phone:"+34 961 234 567",web:null,tags:["belleza"],src:"maps",verified:false},
+  {name:"Clínica Dental Madrid Centro",type:"Dentista",location:"Madrid, Spain",email:"cita@dentalmadrid.com",phone:"+34 911 876 543",web:"dentalmadrid.com",tags:["dental","salud"],src:"maps",verified:true},
+  {name:"Ecommerce Zero Stock",type:"Tienda Online",location:"Barcelona, Spain",email:"ventas@zerostock.es",phone:null,web:"zerostock.es",tags:["ecommerce"],src:"web",verified:true},
+  {name:"Taller Moto Rápida",type:"Taller",location:"Sevilla, Spain",email:null,phone:"+34 954 123 456",web:null,tags:["motor"],src:"maps",verified:false},
+  {name:"Consultora Estrategia 360",type:"Consultoría",location:"Madrid, Spain",email:"hola@estrategia360.com",phone:"+34 910 234 567",web:"estrategia360.com",tags:["consultoría","b2b"],src:"web",verified:true},
+  {name:"Sushi Osaka",type:"Restaurante",location:"Barcelona, Spain",email:"reservas@sushi-osaka.es",phone:"+34 935 432 109",web:null,tags:["gastronomía"],src:"maps",verified:true},
+  {name:"Academia de Inglés Speak",type:"Academia",location:"Málaga, Spain",email:"info@speakacademy.es",phone:"+34 952 345 678",web:"speakacademy.es",tags:["educación"],src:"web",verified:true}
+];
+
+const $ = id => document.getElementById(id);
+const state = { filter:'all', query:'' };
+
+function initials(name) {
+  return name.split(/[\s&]+/).slice(0,2).map(w => w[0].toUpperCase()).join('');
+}
+
+function applyFilters() {
+  const q = state.query.toLowerCase();
+  return DEMO_LEADS.filter(l => {
+    if (q && ![l.name,l.type,l.location].some(f => f.toLowerCase().includes(q))) return false;
+    switch (state.filter) {
+      case 'email': return !!l.email;
+      case 'web':   return !!l.web;
+      case 'noweb': return !l.web;
+      case 'maps':  return l.src === 'maps';
+      default:      return true;
+    }
+  });
+}
+
+function searchLeads() {
+  state.query = $('searchInput').value.trim();
+  const btn = $('searchBtn');
+  btn.disabled = true;
+  $('results').style.display = 'block';
+  $('resultsList').innerHTML = '<div class="shimmer-card"></div><div class="shimmer-card"></div><div class="shimmer-card"></div>';
+  $('resultsCount').textContent = 'Buscando…';
+  setTimeout(() => { renderResults(); btn.disabled = false; }, 450);
+}
+
+function renderResults() {
+  const results = applyFilters();
+  $('resultsCount').innerHTML = `<b>${results.length}</b> resultados${state.query ? ` para “${state.query}”` : ''}`;
+  const list = $('resultsList');
+  if (results.length === 0) {
+    list.innerHTML = `<div class="empty"><div class="big">∅</div>
+      <p>No encontramos leads que coincidan${state.query ? ` con “${state.query}”` : ''}.</p>
+      <button onclick="resetSearch()">Limpiar filtros</button></div>`;
+    return;
+  }
+  list.innerHTML = results.map(l => `
+    <div class="lead-card">
+      <div class="lead-avatar">${initials(l.name)}</div>
+      <div class="lead-body">
+        <div class="lead-top">
+          <span class="lead-name">${l.name}</span>
+          <span class="badge type">${l.type}</span>
+          ${l.email ? '<span class="badge verified">✓ Verificado</span>' : '<span class="badge noemail">Sin email</span>'}
+        </div>
+        <div class="lead-info">
+          <span>${l.location}</span>
+          ${l.email ? `<span class="mono">${l.email}</span>` : ''}
+          ${l.phone ? `<span>${l.phone}</span>` : ''}
+          ${l.web ? `<span>${l.web}</span>` : ''}
+        </div>
+        <div class="lead-tags">${l.tags.map(t => `<span class="lead-tag">${t}</span>`).join('')}</div>
+      </div>
+    </div>`).join('');
+}
+
+function resetSearch() {
+  $('searchInput').value = '';
+  state.query = '';
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector('[data-filter="all"]').classList.add('active');
+  state.filter = 'all';
+  renderResults();
+}
+
+function csvField(v) {
+  if (v == null) return '';
+  const s = String(v);
+  return /[",\n;]/.test(s) ? `"${s.replace(/"/g,'""')}"` : s;
+}
+
+function exportCSV() {
+  const results = applyFilters();
+  if (results.length === 0) return;
+  const btn = $('exportBtn');
+  btn.disabled = true;
+  setTimeout(() => { btn.disabled = false; }, 600);
+  const headers = ['Name','Type','Location','Email','Phone','Web','Tags'];
+  const rows = results.map(l => [l.name,l.type,l.location,l.email||'',l.phone||'',l.web||'',l.tags.join(';')]);
+  const csv = '\ufeff' + [headers, ...rows].map(r => r.map(csvField).join(',')).join('\n');
+  const blob = new Blob([csv], {type:'text/csv;charset=utf-8'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'bellacore-leads.csv';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.filter = btn.dataset.filter;
+    renderResults();
+  });
+});
+
+$('searchInput').addEventListener('keydown', e => { if (e.key === 'Enter') searchLeads(); });
+
+// Reveal on scroll
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:.1});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "ai-gateway-lab",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file=.env.local index.mts"
+  },
+  "dependencies": {
+    "ai": "latest"
+  }
+}

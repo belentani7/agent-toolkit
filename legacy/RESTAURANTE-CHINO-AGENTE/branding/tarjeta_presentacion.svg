@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4AF37"/>
+      <stop offset="100%" style="stop-color:#8B6914"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="500" fill="#0A0A0A" rx="20"/>
+  <rect x="0" y="0" width="4" height="500" fill="url(#gold)"/>
+
+  <text x="80" y="80" font-size="60">🐉</text>
+  <text x="80" y="130" font-family="serif" font-size="32" font-weight="bold" fill="#D4AF37">Dragón de Jade</text>
+  <text x="80" y="160" font-family="serif" font-size="20" fill="#8B6914">龍玉</text>
+  <text x="80" y="190" font-family="sans-serif" font-size="12" fill="#666" font-style="italic">Sabor auténtico, tradición milenaria</text>
+
+  <line x1="80" y1="210" x2="350" y2="210" stroke="#333" stroke-width="1"/>
+
+  <text x="80" y="250" font-family="sans-serif" font-size="14" fill="#888">📍 Calle Gran Vía de los Chinos, 42</text>
+  <text x="80" y="280" font-family="sans-serif" font-size="14" fill="#888">    08015 Barcelona, España</text>
+  <text x="80" y="320" font-family="sans-serif" font-size="14" fill="#888">📞 +34 933 456 789</text>
+  <text x="80" y="350" font-family="sans-serif" font-size="14" fill="#888">📱 +34 612 345 678</text>
+  <text x="80" y="380" font-family="sans-serif" font-size="14" fill="#888">✉️ info@dragondejade.es</text>
+  <text x="80" y="410" font-family="sans-serif" font-size="14" fill="#888">🌐 www.dragondejade.es</text>
+
+  <rect x="500" y="50" width="350" height="400" fill="#1A1A1A" rx="15"/>
+  <text x="675" y="100" font-family="sans-serif" font-size="14" text-anchor="middle" fill="#D4AF37">HORARIO</text>
+  <text x="675" y="140" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#888">Lu-Ju: 12:00 - 23:00</text>
+  <text x="675" y="165" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#888">Vi-Sa: 12:00 - 00:00</text>
+  <text x="675" y="190" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#888">Do: 12:00 - 22:00</text>
+
+  <line x1="550" y1="220" x2="800" y2="220" stroke="#333" stroke-width="1"/>
+
+  <text x="675" y="260" font-family="sans-serif" font-size="14" text-anchor="middle" fill="#D4AF37">RED SOCIALES</text>
+  <text x="675" y="295" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#888">📸 @dragondejade_bcn</text>
+  <text x="675" y="320" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#888">📘 facebook.com/dragondejade</text>
+  <text x="675" y="345" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#888">🎵 @dragondejade</text>
+
+  <line x1="550" y1="380" x2="800" y2="380" stroke="#333" stroke-width="1"/>
+  <text x="675" y="415" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#666">Menú del día desde 12.50€</text>
+</svg>

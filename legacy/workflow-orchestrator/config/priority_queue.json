@@ -1,0 +1,160 @@
+{
+  "generated_at": "2026-09-12T11:27:38.249376",
+  "total_tasks": 14,
+  "tasks": [
+    {
+      "id": "action_critical",
+      "name": "Send email to Alibaba Cloud",
+      "type": "pending_action",
+      "priority": "P0-Critical",
+      "score": 1.0,
+      "urgency": 1.0,
+      "impact": 0.8,
+      "cost": 0.3,
+      "status": "pending"
+    },
+    {
+      "id": "action_critical",
+      "name": "Send email to Kling AI",
+      "type": "pending_action",
+      "priority": "P0-Critical",
+      "score": 1.0,
+      "urgency": 1.0,
+      "impact": 0.8,
+      "cost": 0.3,
+      "status": "pending"
+    },
+    {
+      "id": "belentani-core",
+      "name": "Belentani Core",
+      "type": "backend",
+      "priority": "P0-Critical",
+      "score": 0.885,
+      "urgency": 0.9,
+      "impact": 1.0,
+      "cost": 0.9,
+      "status": "needs_audit"
+    },
+    {
+      "id": "belentani-judas-web",
+      "name": "Belentani Judas Web",
+      "type": "web_experience",
+      "priority": "P0-Critical",
+      "score": 0.8099999999999999,
+      "urgency": 0.9,
+      "impact": 1.0,
+      "cost": 0.6,
+      "status": "needs_audit"
+    },
+    {
+      "id": "belentani-unified",
+      "name": "Belentani Unified",
+      "type": "web_experience",
+      "priority": "P1-High",
+      "score": 0.7999999999999999,
+      "urgency": 0.9,
+      "impact": 1.0,
+      "cost": 0.6,
+      "status": "needs_audit"
+    },
+    {
+      "id": "newbelentani-judas",
+      "name": "newbelentani-judas",
+      "type": "web_app",
+      "priority": "P1-High",
+      "score": 0.735,
+      "urgency": 0.9,
+      "impact": 1.0,
+      "cost": 0.1,
+      "status": "needs_audit"
+    },
+    {
+      "id": "belentani7-profile",
+      "name": "Belentani7 Profile",
+      "type": "web_app",
+      "priority": "P1-High",
+      "score": 0.735,
+      "urgency": 0.9,
+      "impact": 1.0,
+      "cost": 0.1,
+      "status": "needs_audit"
+    },
+    {
+      "id": "newbelentani",
+      "name": "Secuencia de Acceso Judas",
+      "type": "unknown",
+      "priority": "P1-High",
+      "score": 0.725,
+      "urgency": 0.9,
+      "impact": 1.0,
+      "cost": 0.1,
+      "status": "needs_audit"
+    },
+    {
+      "id": "belentani-campaign-repo",
+      "name": "Belentani Campaign Repo",
+      "type": "audio_pipeline",
+      "priority": "P1-High",
+      "score": 0.725,
+      "urgency": 0.9,
+      "impact": 1.0,
+      "cost": 0.1,
+      "status": "needs_audit"
+    },
+    {
+      "id": "Belentani-Agency-AI-Omega",
+      "name": "Belentani Agency AI Omega",
+      "type": "unknown",
+      "priority": "P1-High",
+      "score": 0.725,
+      "urgency": 0.9,
+      "impact": 1.0,
+      "cost": 0.1,
+      "status": "needs_audit"
+    },
+    {
+      "id": "action_high",
+      "name": "Apply to Qwen Ambassador",
+      "type": "pending_action",
+      "priority": "P1-High",
+      "score": 0.6,
+      "urgency": 1.0,
+      "impact": 0.8,
+      "cost": 0.3,
+      "status": "pending"
+    },
+    {
+      "id": "action_high",
+      "name": "Apply to HuggingFace Builders",
+      "type": "pending_action",
+      "priority": "P1-High",
+      "score": 0.6,
+      "urgency": 1.0,
+      "impact": 0.8,
+      "cost": 0.3,
+      "status": "pending"
+    },
+    {
+      "id": "action_high",
+      "name": "Configure belentani.eu domain",
+      "type": "pending_action",
+      "priority": "P1-High",
+      "score": 0.6,
+      "urgency": 1.0,
+      "impact": 0.8,
+      "cost": 0.3,
+      "status": "pending"
+    },
+    {
+      "id": "belentani-v2",
+      "name": "BELENTANI v2 \u00c2\u00b7 Neural Lab",
+      "type": "web_experience",
+      "priority": "P2-Medium",
+      "score": 0.485,
+      "urgency": 0.3,
+      "impact": 1.0,
+      "cost": 0.1,
+      "status": "complete_functional"
+    }
+  ]
+}

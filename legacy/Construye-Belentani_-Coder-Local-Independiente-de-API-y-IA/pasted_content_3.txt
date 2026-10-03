@@ -1,0 +1,1813 @@
+AION — MASTER BUILD DIRECTIVE
+MAXIMUM AUTONOMOUS AI ENGINE
+Codex × Cursor × Claude Code × Manus Architecture
+LOCAL-FIRST · INTERNET-ENABLED · MODEL-AGNOSTIC · SELF-CORRECTING
+0. TU MISIÓN
+
+No quiero que diseñes una demo.
+
+No quiero un chatbot con una terminal al lado.
+
+No quiero una interfaz que SIMULE inteligencia.
+
+Quiero que CONSTRUYAS un sistema de software real llamado:
+
+AION
+
+Autonomous Intelligence Operating Network
+
+AION debe convertirse progresivamente en un agente capaz de recibir una intención humana y convertirla en una acción ejecutada y verificada.
+
+La ecuación fundamental es:
+
+HUMAN INTENT → UNDERSTANDING → RESEARCH → PLAN → EXECUTION → OBSERVATION → TEST → CORRECTION → DELIVERY
+
+El objetivo es conseguir una experiencia comparable conceptualmente a:
+
+Codex
+Cursor
+Claude Code
+Manus
+OpenHands
+
+pero mediante una arquitectura propia, modular y extensible.
+
+1. REGLA ABSOLUTA
+NO FINGIR
+
+Esta regla tiene prioridad sobre absolutamente todo.
+
+Nunca crear:
+
+terminal falsa;
+navegador falso;
+agentes simulados;
+pensamiento falso;
+tests falsos;
+resultados inventados;
+archivos virtuales cuando deberían ser reales;
+"completed" sin verificar;
+herramientas que únicamente muestran una animación.
+
+Si una función no está implementada:
+
+NOT IMPLEMENTED
+
+Si está parcialmente implementada:
+
+PARTIAL
+
+Si falla:
+
+FAILED
+
+Si funciona:
+
+VERIFIED
+
+La interfaz debe reflejar el estado real del sistema.
+
+2. SEGUNDA REGLA ABSOLUTA
+NO INTENTES CONSTRUIR TODO A LA VEZ
+
+Construye por capas.
+
+Cada capa debe:
+
+implementarse;
+ejecutarse;
+probarse;
+fallar de forma controlada;
+repararse;
+volver a probarse;
+quedar documentada;
+
+ANTES de comenzar la siguiente.
+
+No avances porque "parece funcionar".
+
+Avanza únicamente cuando exista evidencia.
+
+3. DEFINICIÓN DE ÉXITO
+
+AION será considerado funcional cuando pueda recibir:
+
+"Analiza este proyecto, encuentra los problemas, investiga las soluciones, modifica el código, ejecuta los tests y corrige los errores."
+
+Y realmente:
+
+lea el proyecto;
+comprenda su estructura;
+cree un plan;
+investigue;
+modifique archivos;
+ejecute comandos;
+ejecute tests;
+observe resultados;
+diagnostique errores;
+vuelva a modificar;
+vuelva a probar;
+entregue un resultado verificable.
+
+Segundo test:
+
+"Construye desde cero una aplicación web."
+
+Debe:
+
+crear proyecto;
+instalar dependencias;
+programar;
+ejecutar;
+abrir navegador;
+comprobar;
+corregir;
+entregar.
+
+Tercer test:
+
+"Hazlo sin utilizar ninguna API de IA de pago."
+
+Debe continuar funcionando con el backend local configurado.
+
+4. PRINCIPIO ARQUITECTÓNICO
+
+El modelo NO es AION.
+
+AION es:
+
+MODEL
++
+CONTEXT
++
+MEMORY
++
+TOOLS
++
+PLANNER
++
+EXECUTOR
++
+OBSERVER
++
+TESTER
++
+BROWSER
++
+RESEARCH
++
+SECURITY
++
+RECOVERY
+
+El modelo debe ser intercambiable.
+
+Nunca acoples el sistema a un único proveedor.
+
+5. MODEL-AGNOSTIC CORE
+
+Crear:
+
+AION MODEL BUS
+
+Interfaz abstracta:
+
+ModelProvider
+
+Debe soportar progresivamente:
+
+Ollama;
+llama.cpp;
+OpenAI-compatible endpoints;
+otros servidores locales;
+proveedores externos opcionales.
+
+Separar completamente:
+
+AION CORE
+      ↓
+MODEL BUS
+      ↓
+MODEL ADAPTER
+      ↓
+MODEL
+
+AION debe poder funcionar sin OpenAI.
+
+AION debe poder funcionar sin Anthropic.
+
+AION debe poder funcionar sin OpenRouter.
+
+AION debe poder funcionar sin cualquier proveedor concreto.
+
+6. LOCAL-FIRST
+
+El modo predeterminado será:
+
+LOCAL
+
+El usuario debe poder ejecutar AION con un modelo local.
+
+No exigir API keys externas para el funcionamiento básico.
+
+Preparar integración con Ollama.
+
+Detectar:
+
+modelos instalados;
+disponibilidad;
+contexto;
+capacidad de herramientas;
+visión;
+streaming;
+velocidad;
+errores.
+
+Crear:
+
+MODEL MANAGER
+
+Desde la interfaz el usuario podrá:
+
+detectar Ollama;
+listar modelos;
+seleccionar modelo;
+descargar modelo;
+eliminar modelo;
+probar modelo;
+establecer modelo predeterminado.
+7. OPTIONAL CLOUD
+
+Los proveedores externos son opcionales.
+
+Nunca activarlos silenciosamente.
+
+Crear:
+
+EXTERNAL PROVIDERS
+
+Cada proveedor debe tener:
+
+enabled;
+disabled;
+API key;
+limits;
+estimated cost;
+usage;
+emergency stop.
+
+Default:
+
+EXTERNAL AI = OFF
+8. COST FIREWALL
+
+Construir:
+
+AION COST GUARD
+
+Si una acción pudiera generar dinero:
+
+detectarla;
+informar;
+pedir autorización si corresponde.
+
+Nunca hacer fallback silencioso:
+
+LOCAL FAILURE
+→ PAID API
+
+Eso está PROHIBIDO.
+
+Debe ser:
+
+LOCAL FAILURE
+→ INFORM USER
+→ OPTIONAL FALLBACK
+→ APPROVAL
+9. CORE AGENT
+
+Construir primero un único agente robusto:
+
+AION AGENT
+
+No comenzar con veinte agentes.
+
+El agente debe poder:
+
+recibir objetivo;
+analizar contexto;
+decidir qué herramientas necesita;
+ejecutar herramientas;
+observar resultados;
+modificar plan;
+continuar;
+terminar cuando se cumplan criterios.
+10. TOOL CONTRACT
+
+Todas las herramientas deben implementar un contrato común.
+
+Cada herramienta declara:
+
+name
+description
+input_schema
+permissions
+risk_level
+execute
+
+Crear inicialmente:
+
+filesystem
+terminal
+search
+web_fetch
+git
+test
+
+Después:
+
+browser
+github
+docker
+database
+python
+npm
+screenshot
+vision
+11. REAL FILESYSTEM
+
+El agente debe trabajar sobre un workspace real.
+
+Debe poder:
+
+listar;
+leer;
+crear;
+editar;
+mover;
+renombrar;
+eliminar;
+buscar.
+
+Debe conocer:
+
+workspace root
+allowed paths
+blocked paths
+
+Nunca permitir acceso arbitrario al sistema operativo.
+
+12. TERMINAL REAL
+
+Construir:
+
+AION TERMINAL
+
+El agente debe poder ejecutar:
+
+npm
+pnpm
+yarn
+python
+pip
+uv
+git
+docker
+node
+
+y otros comandos autorizados.
+
+Registrar:
+
+command
+stdout
+stderr
+exit_code
+duration
+timestamp
+
+Añadir:
+
+timeout;
+cancel;
+process termination;
+resource limits;
+permission policy.
+13. COMMAND SAFETY
+
+Crear niveles:
+
+SAFE
+CAUTION
+DANGEROUS
+BLOCKED
+
+Ejemplos:
+
+SAFE:
+
+npm test
+git status
+npm run build
+
+CAUTION:
+
+npm install
+git commit
+docker build
+
+DANGEROUS:
+
+git reset --hard
+database migrations
+deployment
+
+BLOCKED:
+
+acciones fuera del workspace o destructivas sin autorización.
+
+14. PROJECT INTELLIGENCE
+
+Cuando AION abre un proyecto debe analizarlo.
+
+Crear:
+
+PROJECT ANALYZER
+
+Debe identificar:
+
+lenguaje;
+framework;
+package manager;
+entrypoints;
+routes;
+components;
+dependencies;
+configuration;
+tests;
+build system;
+deployment;
+Git state.
+
+Generar:
+
+PROJECT MAP
+ARCHITECTURE
+DEPENDENCIES
+RISKS
+ENTRYPOINTS
+TESTS
+TODO
+15. CODE INTELLIGENCE
+
+Construir:
+
+CODE GRAPH
+
+Relacionar:
+
+FILE
+ ↓
+IMPORT
+ ↓
+SYMBOL
+ ↓
+FUNCTION
+ ↓
+COMPONENT
+ ↓
+ROUTE
+ ↓
+API
+ ↓
+DATABASE
+
+El objetivo es poder determinar el impacto de un cambio.
+
+16. CONTEXT ENGINE
+
+NO enviar el repositorio entero al modelo.
+
+Crear:
+
+AION CONTEXT ENGINE
+
+Debe seleccionar dinámicamente:
+
+archivos relevantes;
+símbolos relevantes;
+errores;
+historial;
+documentación;
+decisiones;
+tareas;
+dependencias.
+
+El contexto debe adaptarse a cada tarea.
+
+17. MEMORY
+
+Tres capas:
+
+SESSION
+
+Conversación actual.
+
+PROJECT
+
+Conocimiento permanente del proyecto.
+
+USER
+
+Preferencias generales.
+
+Nunca guardar secretos.
+
+Todo debe poder eliminarse.
+
+18. PLANNER
+
+Construir:
+
+AION PLANNER
+
+Para tareas complejas:
+
+OBJECTIVE
+↓
+RESEARCH
+↓
+PLAN
+↓
+TASK GRAPH
+↓
+EXECUTION
+↓
+VALIDATION
+↓
+DELIVERY
+
+El plan debe ser dinámico.
+
+Si una tarea falla:
+
+FAIL
+↓
+DIAGNOSE
+↓
+REPLAN
+
+No seguir ciegamente el plan original.
+
+19. TASK GRAPH
+
+No utilizar únicamente una lista lineal.
+
+Crear grafo:
+
+TASK A ───→ TASK C
+   │
+   └──────→ TASK B
+
+Permitir paralelización únicamente cuando las tareas sean independientes.
+
+20. AUTONOMY LOOP
+
+Este es el corazón de AION:
+
+OBSERVE
+   ↓
+UNDERSTAND
+   ↓
+PLAN
+   ↓
+ACT
+   ↓
+OBSERVE
+   ↓
+TEST
+   ↓
+DIAGNOSE
+   ↓
+FIX
+   ↓
+TEST
+
+Repetir hasta:
+
+SUCCESS
+
+o:
+
+BLOCKED
+
+Nunca declarar éxito prematuramente.
+
+21. DEFINITION OF DONE
+
+Cada tarea debe tener criterios verificables.
+
+Ejemplo:
+
+BUILD WEBSITE
+
+DONE =
+server starts
++
+page loads
++
+no console errors
++
+responsive
++
+tests pass
++
+requested functionality works
+
+La palabra:
+
+DONE
+
+solo puede aparecer después de validación.
+
+22. FAILURE RECOVERY
+
+Crear:
+
+AION RECOVERY ENGINE
+
+Cuando algo falle:
+
+capturar error;
+clasificar;
+buscar documentación;
+inspeccionar código;
+proponer solución;
+aplicar;
+volver a ejecutar;
+verificar.
+
+Si falla repetidamente:
+
+STOP
+DIAGNOSE
+REPLAN
+
+No repetir exactamente la misma acción indefinidamente.
+
+23. INTERNET
+
+Crear:
+
+AION WEB RESEARCH
+
+Debe poder:
+
+buscar;
+abrir;
+leer;
+extraer;
+comparar;
+seguir enlaces;
+consultar documentación;
+investigar errores;
+consultar GitHub;
+consultar issues;
+verificar versiones.
+
+La investigación debe ser orientada al problema.
+
+No hacer búsquedas decorativas.
+
+24. SOURCE PRIORITY
+
+Para cuestiones técnicas:
+
+OFFICIAL DOCUMENTATION
+↓
+OFFICIAL REPOSITORY
+↓
+OFFICIAL ISSUES
+↓
+TRUSTED TECHNICAL SOURCES
+↓
+COMMUNITY SOURCES
+
+Priorizar información compatible con las versiones instaladas.
+
+25. BROWSER AGENT
+
+Construir:
+
+AION BROWSER
+
+Utilizar Playwright.
+
+Debe poder:
+
+abrir páginas;
+navegar;
+hacer click;
+escribir;
+leer;
+capturar screenshot;
+inspeccionar DOM;
+leer consola;
+observar network;
+probar formularios.
+26. VISUAL AGENT
+
+Construir:
+
+AION VISION
+
+Para interfaces:
+
+BUILD
+↓
+OPEN
+↓
+SCREENSHOT
+↓
+ANALYZE
+↓
+FIX
+↓
+SCREENSHOT
+↓
+COMPARE
+
+Buscar:
+
+overflow;
+responsive;
+elementos cortados;
+errores de layout;
+accesibilidad;
+tipografía;
+espaciado;
+errores visuales;
+problemas de interacción.
+27. GIT CHECKPOINTS
+
+Antes de cambios importantes:
+
+CHECKPOINT
+
+Registrar:
+
+commit;
+diff;
+task;
+timestamp.
+
+Permitir:
+
+ROLLBACK
+28. GITHUB
+
+Preparar integración para:
+
+clone;
+repository inspection;
+branches;
+commits;
+issues;
+pull requests;
+diffs.
+
+Nunca publicar automáticamente sin permisos.
+
+29. SKILLS
+
+Crear:
+
+/skills
+
+Cada skill debe poder aportar:
+
+instrucciones;
+herramientas;
+conocimiento;
+workflows;
+validación.
+
+Ejemplos:
+
+web-development
+react
+nextjs
+python
+typescript
+security
+testing
+ui-design
+seo
+devops
+github
+30. SPECIALISTS
+
+Solo cuando sean necesarios.
+
+Posibles especialistas:
+
+RESEARCHER
+CODER
+DEBUGGER
+TESTER
+SECURITY
+UI
+DEPLOYMENT
+
+Pero mantener un:
+
+PRIMARY AGENT
+
+como autoridad de coordinación.
+
+31. HUMAN GATE
+
+Configurar permisos:
+
+AUTO
+ASK
+BLOCK
+
+para:
+
+filesystem;
+terminal;
+Internet;
+Git;
+GitHub;
+deployment;
+external APIs;
+destructive operations.
+32. OBSERVABILITY
+
+Crear un panel real:
+
+TASK
+AGENT
+MODEL
+TOOL
+COMMAND
+FILE
+TEST
+STATUS
+ERROR
+
+Mostrar acciones y resultados.
+
+NO mostrar razonamiento interno privado.
+
+Mostrar únicamente resúmenes operativos.
+
+33. UI
+
+Construir una interfaz profesional tipo IDE.
+
+No hacer un chatbot con sidebar.
+
+Debe sentirse como:
+
+AUTONOMOUS DEVELOPMENT CONTROL CENTER
+
+Estructura:
+
+┌──────────────────────────────────────────────────────┐
+│ AION        MODEL        LOCAL/ONLINE       STATUS   │
+├──────────────┬───────────────────────────┬───────────┤
+│ PROJECT      │                           │ AGENT     │
+│              │       CODE EDITOR         │           │
+│ FILES        │                           │ PLAN      │
+│ SEARCH       │       PREVIEW             │ TASKS     │
+│ GIT          │                           │ TOOLS     │
+│ SKILLS       │       TERMINAL            │ STATUS    │
+│ MODELS       │                           │           │
+├──────────────┴───────────────────────────┴───────────┤
+│ DIFF │ TESTS │ LOGS │ BROWSER │ OUTPUT              │
+└──────────────────────────────────────────────────────┘
+34. CHAT COMMANDS
+
+Debe aceptar lenguaje natural.
+
+Ejemplos:
+
+Analiza este proyecto.
+
+Encuentra todos los bugs.
+
+Construye una aplicación.
+
+Rediseña esta página.
+
+Investiga este error.
+
+Corrige todo.
+
+Hazlo autónomamente.
+
+No utilices APIs de pago.
+
+Comprueba visualmente el resultado.
+
+Haz commit cuando termines.
+35. MODES
+
+Implementar:
+
+CHAT
+PLAN
+BUILD
+FIX
+AUDIT
+RESEARCH
+AUTONOMOUS
+36. AUTONOMOUS MODE
+
+Debe existir:
+
+START
+PAUSE
+STOP
+RESUME
+CANCEL
+ROLLBACK
+
+El usuario debe poder detener cualquier ejecución.
+
+37. AUDIT MODE
+
+Comando:
+
+AUDIT
+
+Debe analizar:
+
+BUGS
+SECURITY
+PERFORMANCE
+ACCESSIBILITY
+SEO
+UI
+RESPONSIVENESS
+ARCHITECTURE
+DEPENDENCIES
+TESTS
+
+Generar prioridades.
+
+Después:
+
+FIX ALL
+
+ejecuta correcciones con checkpoints.
+
+38. BUILD MODE
+
+Comando:
+
+BUILD
+
+Workflow:
+
+UNDERSTAND
+↓
+RESEARCH
+↓
+PLAN
+↓
+CREATE
+↓
+RUN
+↓
+TEST
+↓
+BROWSER
+↓
+VISUAL QA
+↓
+FIX
+↓
+TEST AGAIN
+↓
+DELIVER
+39. SECURITY
+
+Implementar:
+
+sandbox;
+path restrictions;
+command policy;
+network permissions;
+secret redaction;
+audit log;
+human approval;
+rollback.
+40. PRIVACY
+
+LOCAL FIRST.
+
+Por defecto:
+
+FILES = LOCAL
+MEMORY = LOCAL
+PROJECT DATA = LOCAL
+LOGS = LOCAL
+
+No transmitir datos externamente sin autorización.
+
+41. DEPENDENCY POLICY
+
+Priorizar:
+
+open source;
+local;
+free;
+maintained;
+documented.
+
+Evitar dependencias innecesarias.
+
+No introducir una plataforma de pago para una función que pueda realizarse localmente.
+
+42. MODEL ROUTING
+
+Crear:
+
+INTELLIGENCE ROUTER
+
+Clasificar tareas:
+
+FAST
+CODING
+REASONING
+VISION
+RESEARCH
+LONG_CONTEXT
+
+Seleccionar el modelo adecuado.
+
+Ejemplo:
+
+CSS EDIT
+→ FAST LOCAL
+
+ARCHITECTURE
+→ REASONING MODEL
+
+SCREENSHOT
+→ VISION MODEL
+
+RESEARCH
+→ MODEL + WEB
+43. MODEL BENCHMARK
+
+AION debe poder probar modelos instalados.
+
+Medir:
+
+latency;
+tokens;
+tool calling;
+coding;
+reasoning;
+context;
+reliability.
+
+Crear:
+
+MODEL BENCHMARK
+
+El usuario puede comparar modelos locales antes de seleccionarlos.
+
+44. CONTEXT MANAGEMENT
+
+Cuando el contexto sea demasiado grande:
+
+SUMMARIZE
+→ INDEX
+→ RETRIEVE
+→ CONTINUE
+
+No destruir información importante.
+
+Mantener referencias hacia archivos y decisiones.
+
+45. SELF-EVALUATION
+
+Después de cada tarea importante:
+
+EXPECTED
+vs
+ACTUAL
+
+El agente debe comprobar objetivamente si cumplió.
+
+46. ANTI-LOOP
+
+Crear protección contra:
+
+same action
+same error
+same action
+same error
+
+Detectar loops.
+
+Cuando ocurra:
+
+CHANGE STRATEGY
+47. BUDGETS
+
+Cada tarea tendrá:
+
+TIME LIMIT
+TOOL LIMIT
+ITERATION LIMIT
+RESOURCE LIMIT
+
+Estos límites deben ser configurables.
+
+48. PROJECT STATE
+
+Persistir:
+
+current task
+plan
+completed tasks
+failed tasks
+files changed
+tests
+errors
+checkpoints
+
+Si AION se cierra:
+
+RESUME
+
+debe permitir continuar.
+
+49. INTERRUPTIONS
+
+Si el usuario dice:
+
+"Para."
+
+AION debe detener la ejecución.
+
+Si dice:
+
+"Continúa."
+
+Debe recuperar el estado.
+
+50. INSTALLATION
+
+Preparar para:
+
+Windows
+Linux
+macOS
+
+La instalación debe ser sencilla.
+
+Crear:
+
+INSTALL
+START
+STOP
+UPDATE
+DOCTOR
+51. AION DOCTOR
+
+Comando:
+
+aion doctor
+
+Debe comprobar:
+
+Python/Node;
+Git;
+Docker;
+Playwright;
+Ollama;
+modelos;
+permisos;
+workspace;
+conectividad;
+dependencias.
+
+Generar diagnóstico accionable.
+
+52. CLI
+
+Crear CLI:
+
+aion
+
+Ejemplos:
+
+aion
+aion init
+aion doctor
+aion models
+aion run
+aion build
+aion audit
+aion fix
+aion resume
+53. API INTERNA
+
+Separar la lógica de la interfaz.
+
+La UI NO debe contener la inteligencia.
+
+Crear:
+
+AION CORE API
+
+Así posteriormente pueden existir:
+
+desktop;
+web;
+CLI;
+VS Code extension;
+remote client.
+54. FUTURE EXTENSIONS
+
+Diseñar sin implementarlas todavía:
+
+VS CODE EXTENSION
+JETBRAINS
+REMOTE AGENTS
+MULTI-MACHINE
+GPU CLUSTER
+VOICE
+MOBILE
+TEAM COLLABORATION
+AGENT MARKETPLACE
+
+No sacrificar el MVP por estas funciones.
+
+55. ARCHITECTURE
+
+Preferir:
+
+/aion
+  /core
+  /agents
+  /models
+  /tools
+  /planner
+  /orchestrator
+  /context
+  /memory
+  /browser
+  /vision
+  /workspace
+  /git
+  /github
+  /security
+  /skills
+  /web
+  /ui
+  /tests
+  /docs
+
+Mantener responsabilidades separadas.
+
+56. DOCUMENTATION
+
+Crear:
+
+README.md
+
+docs/
+  ARCHITECTURE.md
+  INSTALLATION.md
+  MODELS.md
+  LOCAL_MODE.md
+  TOOLS.md
+  AGENTS.md
+  MEMORY.md
+  SECURITY.md
+  BROWSER.md
+  SKILLS.md
+  DEVELOPMENT.md
+  TROUBLESHOOTING.md
+57. TESTING STRATEGY
+
+No aceptar únicamente tests unitarios.
+
+Crear:
+
+UNIT
+INTEGRATION
+E2E
+AGENT
+SECURITY
+RECOVERY
+58. REAL END-TO-END TEST
+
+AION debe probarse a sí mismo.
+
+Crear un proyecto de prueba deliberadamente pequeño con varios problemas.
+
+Ejemplo:
+
+broken-demo/
+
+Introducir:
+
+bug JavaScript;
+dependencia incorrecta;
+test roto;
+CSS roto.
+
+Orden:
+
+ANALYZE
+→
+FIND
+→
+PLAN
+→
+FIX
+→
+TEST
+→
+BROWSER
+→
+VERIFY
+
+Guardar evidencia del resultado.
+
+59. SECOND END-TO-END TEST
+
+Crear desde cero:
+
+hello-aion/
+
+Una pequeña aplicación funcional.
+
+AION debe construirla completamente.
+
+60. OFFLINE TEST
+
+Desactivar acceso a proveedores externos.
+
+AION debe seguir pudiendo:
+
+leer archivos;
+editar;
+ejecutar terminal;
+utilizar modelo local;
+testear.
+61. ONLINE TEST
+
+Activar Internet.
+
+AION debe demostrar:
+
+SEARCH
+→
+READ
+→
+UNDERSTAND
+→
+IMPLEMENT
+→
+VERIFY
+62. NO MAGIC
+
+No depender de prompts mágicos.
+
+El comportamiento debe estar respaldado por:
+
+código;
+herramientas;
+estado;
+validación;
+permisos;
+arquitectura.
+63. SELF-IMPROVEMENT
+
+Preparar una capa:
+
+AION EVALUATION
+
+Registrar:
+
+task success;
+failure reason;
+tool failures;
+model failures;
+recovery success;
+iterations;
+latency.
+
+Esto permitirá mejorar el sistema posteriormente.
+
+NO permitir que AION modifique su propio núcleo automáticamente sin revisión.
+
+64. PRIORITY ORDER
+
+Si tienes que elegir:
+
+FUNCTIONALITY
+>
+RELIABILITY
+>
+SECURITY
+>
+VERIFICATION
+>
+ARCHITECTURE
+>
+PERFORMANCE
+>
+UI
+>
+ANIMATION
+
+Una herramienta fea que funciona vale más que una interfaz preciosa que miente.
+
+65. BUILD ORDER OBLIGATORIO
+PHASE 0 — FOUNDATION
+
+Crear repositorio.
+
+Configurar:
+
+runtime;
+dependency management;
+configuration;
+logging;
+testing;
+environment.
+
+VERIFICAR.
+
+PHASE 1 — LOCAL AGENT
+
+Implementar:
+
+model bus;
+Ollama;
+agent;
+filesystem;
+terminal.
+
+VERIFICAR.
+
+Test:
+
+"Lee README y dime qué hay en el proyecto."
+
+PHASE 2 — CODING LOOP
+
+Implementar:
+
+planner;
+context;
+edits;
+tests;
+recovery.
+
+VERIFICAR.
+
+Test:
+
+"Corrige un bug real."
+
+PHASE 3 — GIT
+
+Implementar:
+
+status;
+diff;
+checkpoint;
+rollback.
+
+VERIFICAR.
+
+PHASE 4 — WEB
+
+Implementar:
+
+search;
+fetch;
+research.
+
+VERIFICAR.
+
+PHASE 5 — BROWSER
+
+Implementar:
+
+Playwright;
+browser;
+screenshot;
+console;
+DOM.
+
+VERIFICAR.
+
+PHASE 6 — VISUAL QA
+
+Implementar:
+
+screenshot analysis;
+UI diagnostics;
+correction loop.
+
+VERIFICAR.
+
+PHASE 7 — MEMORY
+
+Implementar:
+
+session;
+project;
+user.
+
+VERIFICAR.
+
+PHASE 8 — SKILLS
+
+Implementar sistema extensible.
+
+VERIFICAR.
+
+PHASE 9 — ORCHESTRATION
+
+Introducir especialistas únicamente cuando el núcleo ya sea estable.
+
+VERIFICAR.
+
+PHASE 10 — AUTONOMOUS MODE
+
+Implementar:
+
+PLAN
+→ EXECUTE
+→ OBSERVE
+→ TEST
+→ FIX
+→ COMPLETE
+
+VERIFICAR.
+
+66. RULE: NEVER MOVE FORWARD WITH A BROKEN FOUNDATION
+
+Si Phase 3 falla:
+
+NO empezar Phase 4.
+
+Primero reparar Phase 3.
+
+Si una dependencia bloquea el diseño:
+
+investigar alternativas.
+
+Si una capacidad no existe:
+
+documentarla.
+
+67. MANUS OPERATING PROCEDURE
+
+Mientras construyes AION:
+
+PASO 1
+
+Inspecciona el entorno.
+
+PASO 2
+
+Determina qué recursos existen.
+
+PASO 3
+
+Selecciona stack.
+
+PASO 4
+
+Construye Phase 0.
+
+PASO 5
+
+Ejecuta tests.
+
+PASO 6
+
+Corrige.
+
+PASO 7
+
+Repite.
+
+PASO 8
+
+Solo entonces continúa.
+
+No quiero que esperes instrucciones después de cada fase.
+
+Continúa autónomamente mientras:
+
+la fase actual esté verificada;
+no necesites una decisión humana;
+no exista riesgo relevante.
+68. HUMAN DECISION REQUIRED
+
+Detente únicamente cuando necesites:
+
+credenciales;
+autorización de pago;
+acceso externo;
+decisión irreversible;
+información que no pueda inferirse;
+hardware que no esté disponible.
+
+En todos los demás casos:
+
+RESUELVE EL PROBLEMA TÚ MISMO.
+
+Investiga.
+
+Prueba.
+
+Compara.
+
+Implementa.
+
+Verifica.
+
+69. WHEN SOMETHING DOES NOT WORK
+
+No digas:
+
+"No se puede."
+
+Haz:
+
+IDENTIFY
+↓
+RESEARCH
+↓
+ALTERNATIVES
+↓
+IMPLEMENT
+↓
+TEST
+
+Si sigue sin funcionar:
+
+LIMITATION REPORT
+
+explicando exactamente:
+
+qué falla;
+por qué;
+qué alternativas existen;
+qué falta.
+70. FINAL QUALITY BAR
+
+No quiero que termines cuando:
+
+"la aplicación parece terminada."
+
+Termina cuando puedas demostrar:
+
+BUILD
+✓
+
+RUN
+✓
+
+TOOLS
+✓
+
+MODEL
+✓
+
+FILES
+✓
+
+TERMINAL
+✓
+
+TESTS
+✓
+
+GIT
+✓
+
+WEB
+✓
+
+BROWSER
+✓
+
+RECOVERY
+✓
+
+SECURITY
+✓
+
+LOCAL MODE
+✓
+
+Cada check debe tener evidencia.
+
+71. THE ULTIMATE TEST
+
+Al final ejecuta literalmente esta prueba:
+
+"AION, analiza este proyecto. Encuentra los problemas. Investiga las soluciones en Internet. Haz un plan. Corrige el código. Ejecuta los tests. Abre la aplicación en el navegador. Comprueba visualmente que funciona. Corrige cualquier problema restante. Haz un resumen final."
+
+No intervengas salvo que exista un HUMAN GATE real.
+
+AION debe completar el ciclo.
+
+72. PRODUCT PHILOSOPHY
+
+No estás construyendo otro asistente.
+
+Estás construyendo:
+
+A MACHINE THAT CAN BUILD SOFTWARE.
+
+El chat es solamente la interfaz.
+
+La inteligencia real está en el ciclo:
+
+INTENT
+ ↓
+CONTEXT
+ ↓
+REASONING
+ ↓
+TOOLS
+ ↓
+EXECUTION
+ ↓
+OBSERVATION
+ ↓
+VALIDATION
+ ↓
+RECOVERY
+ ↓
+RESULT
+73. ÚLTIMA INSTRUCCIÓN
+
+Empieza ahora.
+
+NO respondas simplemente con un plan.
+
+NO expliques cómo lo harías.
+
+NO construyas un mockup.
+
+NO esperes instrucciones para cada fase.
+
+CONSTRUYE.
+
+Inspecciona el entorno disponible.
+
+Implementa Phase 0.
+
+Ejecuta los tests.
+
+Repara los fallos.
+
+Continúa automáticamente hasta alcanzar el máximo nivel funcional posible.
+
+Cuando encuentres una limitación real, busca primero una alternativa técnica.
+
+Cuando encuentres un error, corrígelo.
+
+Cuando una herramienta falle, diagnostícala.
+
+Cuando una decisión pueda resolverse técnicamente, resuélvela.
+
+Cuando una acción requiera autorización humana, detente.
+
+Y al final entrega:
+
+AION funcional;
+código fuente;
+documentación;
+tests;
+instrucciones de instalación;
+instrucciones de uso;
+estado real de cada capacidad;
+evidencia de las pruebas realizadas;
+limitaciones restantes;
+próximos pasos técnicos.
+NO DEMO.
+NO SIMULACIÓN.
+NO PROMESAS.
+SOFTWARE REAL.
+AION.

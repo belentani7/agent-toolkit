@@ -1,0 +1,18 @@
+{
+  "name": "Manos Abiertas - Plataforma Integral de Inclusión & Formación",
+  "short_name": "Manos Abiertas",
+  "description": "Plataforma solidaria integral de 15 nodos formativos, derechos de extranjería, cursos de IA y ofimática, simulador DELE/CCSE y recursos comunitarios en 39 idiomas.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fdf2e9",
+  "theme_color": "#f97316",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "government", "social", "productivity"]
+}

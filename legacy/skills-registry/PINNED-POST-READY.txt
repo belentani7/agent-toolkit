@@ -1,0 +1,69 @@
+# 📢 Bienvenido al Hub Oficial de Comunicación — Skills Registry Global
+
+¡Hola! Este es el espacio donde la comunidad construye, comparte y mejora las skills que hacen posible este ecosistema universal de distribución para agentes CLI (Qwen Code, Claude Code, Cline, OpenCode, Codex CLI, Gemini CLI...).
+
+## 🗂️ Categorías Disponibles (Usa cada una para su propósito específico)
+
+| Categoría | Para qué sirve | Ejemplo de uso |
+|-----------|---------------|----------------|
+| 💡 **Ideas** | Propone nuevas skills | "Quiero crear skill para deploy automático" |
+| 🐛 **Bugs & Issues** | Reporta problemas técnicos | "open-school no funciona con v2.0" |
+| 📦 **Featured Skills** | Showcase semanal mejores contribuciones | "Mi nueva skill X lista!" |
+| 🌍 **Translations** | Solicitar traducciones | "¿Quién puede traducir open-school → inglés?" |
+| 🎓 **Tutorials & How-To** | Guías comunitarias paso-a-paso | "Tutorial cómo crear primera skill en 15min" |
+| ❓ **Q&A** | Preguntas rápidas directas | "¿Cómo configuro CLAUDE.md correctamente?" |
+
+## 🔗 Links Útiles Inmediatos
+
+| Recurso | URL |
+|---------|-----|
+| **Registro Principal** | https://github.com/belentani7/skills-registry |
+| **Schema V1 Completo** | [/SCHEMA.md](https://github.com/belentani7/skills-registry/blob/main/SCHEMA.md) |
+| **Standard Tallas Universal** | [/SKILL-SIZING.md](https://github.com/belentani7/skills-registry/blob/main/SKILL-SIZING.md) |
+| **Hot-Swap System** | [/HOT-SWAP.md](https://github.com/belentani7/skills-registry/blob/main/HOT-SWAP.md) |
+| **Composition Engine** | [/SKILLS-COMBINE.md](https://github.com/belentani7/skills-registry/blob/main/SKILLS-COMBINE.md) |
+| **Expansion Strategy V2** | [/EXPANSION-STRATEGY.md](https://github.com/belentani7/skills-registry/blob/main/EXPANSION-STRATEGY.md) |
+
+## 👥 Cómo Empezar Ya
+
+### Si quieres usar las skills existentes:
+```bash
+npx skills add belentani7/skills-registry open-school
+```
+
+### Si quieres contribuir tu propia skill:
+```bash
+git clone https://github.com/belentani7/skills-registry.git
+cd skills-registry
+mkdir skills/mi-nueva-skill/
+# Crear SKILL.md siguiendo SKILL-SIZING estándar
+git checkout -b feat/mi-nueva-skill
+git add .
+git commit -m "feat(skill): add mi-nueva-skill v1.0.0"
+git push origin feat/mi-nueva-skill
+gh pr create --title "feat(skill): add mi-nueva-skill v1.0.0"
+```
+
+## 🏆 Sistema Reconocimientos Actual
+
+| Badge | Cómo Obtenerlo | Estado Hoy |
+|-------|---------------|------------|
+| 🔵 @founder | Creador original sistema | ✅ Asignado automáticamente |
+| 🟢 @contributor | >5 PRs merged exitosamente | ⚪ En espera primeras contribuciones |
+| 🟡 @moderator | Votado por comunidad existente | ⚪ Cuando se forme base usuarios |
+| 🟠 @expert | Calidad score ≥9.0 en 3+ skills | ⚪ Necesita datos reales primero |
+| 🔴 @sponsor | Apoyo financiero registrado | ⚪ Fase futura monetización |
+
+## 📊 Próximos Hitables Claros
+
+| Meta | Fecha Objetivo | Estado |
+|------|---------------|--------|
+| Primer PR merged por contributor externo | Semana 2 | ⏳ Pendiente |
+| Landing page pública con search bar | Mes 1 | ⏳ Planeado |
+| Discord server si hay tráfico real | Cuando llegue 5+ contrib/semana | ⏳ Revisión condicional |
+| 100+ skills registradas verificadas | Mes 1-3 | 📈 Creciendo desde 23 actuales |
+
+---
+
+*Última actualización: 2026-09-02 • Mantenido por founders team • Contribuciones welcome vía PR*
+*Este post está PINNED permanentemente como referencia central del proyecto.*

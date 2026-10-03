@@ -1,0 +1,320 @@
+{
+  "$schema_note": "Configuración de APIs gratuitas de IA 2026 para belentani-nexus. Reemplaza los valores *_API_KEY con tus claves reales (usa variables de entorno, nunca hardcodees claves en producción). Última revisión: 2026-08-31.",
+  "env_prefix": "Usa variables de entorno con los nombres indicados en cada 'api_key_env'.",
+
+  "text_llm": {
+    "openrouter": {
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key_env": "OPENROUTER_API_KEY",
+      "key_url": "https://openrouter.ai/keys",
+      "free_models": [
+        "deepseek/deepseek-r1:free",
+        "deepseek/deepseek-chat:free",
+        "meta-llama/llama-3.3-70b-instruct:free",
+        "qwen/qwen3-coder:free",
+        "moonshotai/kimi-k2.6:free",
+        "google/gemma-4-26b-a4b-it:free",
+        "nvidia/nemotron-3-super-120b-a12b:free",
+        "openrouter/free"
+      ],
+      "free_limits": "20 RPM, 50 RPD (1000 RPD tras recarga única de $10)",
+      "paid_after": "por token + 5.5% fee",
+      "notes": "Failover automático; variantes :free/:nitro/:floor"
+    },
+    "groq": {
+      "base_url": "https://api.groq.com/openai/v1",
+      "api_key_env": "GROQ_API_KEY",
+      "key_url": "https://console.groq.com/keys",
+      "free_models": ["openai/gpt-oss-120b", "openai/gpt-oss-20b", "qwen/qwen3.6-27b", "groq/compound", "groq/compound-mini"],
+      "free_limits": "30 RPM, 1000 RPD (250 RPD compound)",
+      "paid_after": "pay-as-you-go por token",
+      "notes": "LPU ultra-rápido (~300+ tok/s). Llama 3.3 70B retirado 2026-08-16"
+    },
+    "google_gemini": {
+      "base_url": "https://generativelanguage.googleapis.com/v1beta",
+      "api_key_env": "GEMINI_API_KEY",
+      "key_url": "https://aistudio.google.com/app/apikey",
+      "free_models": ["gemini-3-flash", "gemini-3.5-flash", "gemini-3.5-flash-lite", "gemini-2.5-flash", "gemini-2.5-pro"],
+      "free_limits": "Gemini 3 Flash: 10 RPM / 250K TPM / 1500 RPD; Flash-Lite 15-30 RPM; 2.5 Pro: 5 RPM / 50 RPD; contexto 1M",
+      "paid_after": "por token (tier 1+)",
+      "notes": "Prompts free pueden usarse para entrenar (excepto UE/UK/CH). OpenAI-compatible subset"
+    },
+    "deepseek": {
+      "base_url": "https://api.deepseek.com/v1",
+      "api_key_env": "DEEPSEEK_API_KEY",
+      "key_url": "https://platform.deepseek.com/api_keys",
+      "free_models": [],
+      "free_trial": "créditos de bienvenida variables (0-5M tokens)",
+      "paid_after": "V4 Flash $0.14/$0.28 por M tokens; V4 Pro $0.435/$0.87; R1 similar",
+      "models": ["deepseek-chat", "deepseek-reasoner"]
+    },
+    "zai_glm": {
+      "base_url": "https://api.z.ai/api/paas/v4",
+      "base_url_cn": "https://open.bigmodel.cn/api/paas/v4",
+      "api_key_env": "ZAI_API_KEY",
+      "key_url": "https://z.ai/manage-apikey/apikey-list",
+      "free_models": ["glm-4.7-flash", "glm-4.6v-flash", "glm-4.5-flash"],
+      "free_limits": "Permanente, 1 concurrent request",
+      "paid_after": "GLM-5.x por token",
+      "notes": "Registro con teléfono extranjero; sin real-name para chat API"
+    },
+    "moonshot_kimi": {
+      "base_url": "https://api.moonshot.ai/v1",
+      "api_key_env": "MOONSHOT_API_KEY",
+      "key_url": "https://platform.kimi.ai",
+      "models": ["kimi-k3", "kimi-k2.6", "kimi-k2.7-code"],
+      "free_trial": "Voucher de ¥15 al registrarse",
+      "paid_after": "~$0.60-$0.95/M input tokens",
+      "free_alternatives": ["openrouter: moonshotai/kimi-k2.6:free", "ollama cloud: kimi-k3"]
+    },
+    "alibaba_qwen": {
+      "base_url": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+      "base_url_cn": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+      "api_key_env": "DASHSCOPE_API_KEY",
+      "key_url": "https://modelstudio.console.alibabacloud.com/ap-southeast-1",
+      "free_models": ["qwen-plus", "qwen-flash", "qwq-plus", "qvq-max"],
+      "free_quota": "1M tokens por modelo, válido 90 días desde activación (región Singapur)",
+      "paid_after": "desde $0.07/M según modelo"
+    },
+    "baidu_ernie": {
+      "base_url": "https://qianfan.baidubce.com/v2",
+      "api_key_env": "QIANFAN_API_KEY",
+      "key_url": "https://console.bce.baidu.com/qianfan/ais/console/applicationConsole/application",
+      "free_models": ["ernie-3.5-8k", "ernie-speed-8k", "ernie-lite-8k"],
+      "free_limits": "Permanente (region CN); intl sin free garantizado",
+      "paid_after": "ERNIE 4.x/5.x por token"
+    },
+    "tencent_hunyuan": {
+      "base_url": "https://api.hunyuan.cloud.tencent.com/v1",
+      "api_key_env": "TENCENT_HUNYUAN_API_KEY",
+      "key_url": "https://console.cloud.tencent.com/hunyuan/api-key",
+      "models": ["hunyuan-t1", "hy3", "hunyuan-large"],
+      "free_trial": "1M tokens reportados al registro",
+      "free_alternatives": ["kilocode: tencent/hy3:free (200 req/hr)"]
+    },
+    "cerebras": {
+      "base_url": "https://api.cerebras.ai/v1",
+      "api_key_env": "CEREBRAS_API_KEY",
+      "key_url": "https://cloud.cerebras.ai",
+      "free_models": ["llama-3.3-70b"],
+      "free_limits": "tier Experiment ~1M tokens/día (opt-in de datos)",
+      "paid_after": "tier Production por token"
+    },
+    "nvidia_nim": {
+      "base_url": "https://integrate.api.nvidia.com/v1",
+      "api_key_env": "NVIDIA_API_KEY",
+      "key_url": "https://build.nvidia.com",
+      "free_models": ["nvidia/nemotron-3-super-120b-a12b", "nvidia/nemotron-3-ultra-550b-a55b", "meta/llama-3.3-70b-instruct", "openai/gpt-oss-120b", "minimaxai/minimax-m3"],
+      "free_limits": "~40 RPM, 10000 RPD por modelo",
+      "paid_after": "por token",
+      "notes": "Trial use only; datos logueados"
+    },
+    "mistral": {
+      "base_url": "https://api.mistral.ai/v1",
+      "api_key_env": "MISTRAL_API_KEY",
+      "key_url": "https://console.mistral.ai/api-keys",
+      "free_models": ["mistral-medium-latest", "mistral-small-latest", "ministral-3b-latest", "codestral-latest"],
+      "free_limits": "Free mode ~$10/mes en créditos; ~1 RPS / 500K TPM",
+      "paid_after": "por token",
+      "notes": "Opt-out de entrenamiento disponible"
+    },
+    "cohere": {
+      "base_url": "https://api.cohere.com/v2",
+      "api_key_env": "COHERE_API_KEY",
+      "key_url": "https://dashboard.cohere.com/api-keys",
+      "free_models": ["command-a-03-2025", "command-r-plus", "aya-expanse-32b"],
+      "free_limits": "Trial key: 1000 llamadas/mes, 20 RPM, solo no comercial",
+      "paid_after": "por token"
+    },
+    "cloudflare_workers_ai": {
+      "base_url": "https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/run",
+      "api_key_env": "CLOUDFLARE_API_TOKEN",
+      "key_url": "https://dash.cloudflare.com/profile/api-tokens",
+      "free_models": ["@cf/meta/llama-3.3-70b-instruct-fp8-fast", "@cf/openai/gpt-oss-120b", "@cf/zai-org/glm-4.7-flash", "@cf/deepseek-ai/deepseek-r1-distill-qwen-32b"],
+      "free_limits": "10000 Neurons/día compartido",
+      "paid_after": "Workers Paid"
+    },
+    "no_key_gateways": {
+      "kilo_code": {
+        "base_url": "https://api.kilo.ai/api/gateway",
+        "auth": "ninguna (200 req/hr/IP)",
+        "models": ["kilo-auto/free", "nvidia/nemotron-3-ultra-550b-a55b:free", "tencent/hy3:free"]
+      },
+      "ovh_ai_endpoints": {
+        "base_url": "https://oai.endpoints.kepler.ai.cloud.ovh.net/v1",
+        "auth": "ninguna (2 RPM/IP/modelo)",
+        "models": ["Qwen3.5-397B-A17B", "gpt-oss-120b", "Meta-Llama-3_3-70B-Instruct"],
+        "notes": "Datacenters UE"
+      },
+      "llm7": {
+        "base_url": "https://api.llm7.io/v1",
+        "auth": "anónimo 10 RPM / 60 req-h; token free en token.llm7.io → 40 RPM / 100 req-h",
+        "models": ["gpt-oss:20b", "minimax-m2.7"]
+      }
+    }
+  },
+
+  "image": {
+    "pollinations": {
+      "endpoint_get": "https://image.pollinations.ai/prompt/{prompt}?model=flux&width=1024&height=1024&nologo=true",
+      "endpoint_openai": "https://gen.pollinations.ai/v1",
+      "api_key_env": "POLLINATIONS_API_KEY",
+      "free_limits": "Flux ilimitado sin registro (~1 req/15s); tier Spore 1.5 Pollen/semana",
+      "models": ["flux", "turbo", "kontext", "gptimage", "seedream"],
+      "paid_after": "sistema Pollen"
+    },
+    "together_image": {
+      "base_url": "https://api.together.xyz/v1/images/generations",
+      "api_key_env": "TOGETHER_API_KEY",
+      "key_url": "https://api.together.ai",
+      "free_models": ["black-forest-labs/FLUX.1-schnell-Free"],
+      "free_limits": "schnell-Free: ilimitado durante promoción (3 meses); créditos trial en cuentas nuevas",
+      "paid_after": "~$0.053/imagen schnell; $0.027 SD-Turbo"
+    },
+    "pixazo": {
+      "base_url": "https://gateway.pixazo.ai",
+      "api_key_env": "PIXAZO_API_KEY",
+      "header": "Ocp-Apim-Subscription-Key",
+      "free_models": ["flux/text-to-image", "stable-diffusion/text-to-image", "sdxl/text-to-image"],
+      "free_limits": "preview: 60 RPM fair-use por modelo"
+    },
+    "fal_ai": {
+      "base_url": "https://fal.run",
+      "api_key_env": "FAL_KEY",
+      "key_url": "https://fal.ai/dashboard/keys",
+      "free_trial": "créditos de prueba al registrarse",
+      "models": ["fal-ai/flux", "fal-ai/flux/dev", "fal-ai/fast-sdxl"]
+    },
+    "ideogram": {
+      "base_url": "https://api.ideogram.ai",
+      "api_key_env": "IDEOGRAM_API_KEY",
+      "free_limits": "API: sin free tier. Web: 10 slow-credits/semana (comercial OK)",
+      "paid_after": "$0.03 turbo / $0.06 default / $0.10 quality por imagen"
+    },
+    "replicate": {
+      "base_url": "https://api.replicate.com/v1",
+      "api_key_env": "REPLICATE_API_TOKEN",
+      "free_trial": "créditos startup ($1K-$10K aplicando); resto pago",
+      "models": ["black-forest-labs/flux-schnell", "stability-ai/sdxl", "wan-video/wan-2.1"]
+    }
+  },
+
+  "video": {
+    "minimax_hailuo": {
+      "base_url_intl": "https://api.minimax.io/v1",
+      "base_url_cn": "https://api.minimaxi.com/v1",
+      "api_key_env": "MINIMAX_API_KEY",
+      "key_url": "https://platform.minimax.io",
+      "models": ["Hailuo-2.3", "Hailuo-02", "T2V-01-Director"],
+      "free_tier": "web hailuoai.video: generaciones gratis con refresh diario (watermark, uso personal)",
+      "paid_after": "~$0.10-$0.30 por clip",
+      "pattern": "async: POST /video_generation → task_id → GET /video_generation/{task_id}"
+    },
+    "luma": {
+      "base_url": "https://api.lumalabs.ai",
+      "api_key_env": "LUMA_API_KEY",
+      "key_url": "https://lumalabs.ai/api",
+      "models": ["ray-2", "dream-machine"],
+      "free_tier": "~5 generaciones/mes en web",
+      "paid_after": "planes desde $29.99/mes"
+    },
+    "alibaba_wan": {
+      "endpoint": "DashScope video synthesis (SDK dashscope / HTTP async tasks)",
+      "base_url": "https://dashscope-intl.aliyuncs.com/api/v1",
+      "api_key_env": "DASHSCOPE_API_KEY",
+      "models": ["wan2.6-t2v", "wan2.7-t2v", "wan2.2-s2v"],
+      "free_quota": "cuota free 90 días por modelo",
+      "paid_after": "~$0.10-$0.30 por vídeo"
+    },
+    "fal_video": {
+      "base_url": "https://fal.run",
+      "api_key_env": "FAL_KEY",
+      "models": ["fal-ai/minimax/video-01-live", "fal-ai/hunyuan-video", "fal-ai/luma-dream-machine", "fal-ai/kling-video", "fal-ai/pixverse", "fal-ai/veo3"],
+      "free_trial": "créditos de prueba"
+    }
+  },
+
+  "audio": {
+    "fish_audio": {
+      "base_url": "https://api.fish.audio/v1/tts",
+      "api_key_env": "FISH_AUDIO_API_KEY",
+      "key_url": "https://fish.audio/app/api-keys/",
+      "free_models": ["s2.1-pro-free"],
+      "free_limits": "Ilimitado bajo Fair Use (desde junio 2026); restricciones comerciales",
+      "paid_after": "por carácter"
+    },
+    "elevenlabs": {
+      "base_url": "https://api.elevenlabs.io/v1",
+      "api_key_env": "ELEVENLABS_API_KEY",
+      "key_url": "https://elevenlabs.io/app/settings/api-keys",
+      "free_limits": "10000 créditos/mes (~10 min audio); atribución obligatoria",
+      "models": ["eleven_multilingual_v2", "eleven_turbo_v2_5", "eleven_v3"],
+      "paid_after": "desde $5/mes"
+    },
+    "alibaba_cosyvoice": {
+      "base_url": "https://dashscope-intl.aliyuncs.com/api/v1",
+      "api_key_env": "DASHSCOPE_API_KEY",
+      "models": ["cosyvoice-v3-flash", "cosyvoice-v3-plus", "qwen3-tts-flash"],
+      "free_quota": "10000 caracteres (CosyVoice) / 110000 (Qwen-TTS) por 90 días",
+      "paid_after": "$0.10-$0.26 por 10K caracteres"
+    },
+    "pollinations_audio": {
+      "endpoint": "https://text.pollinations.ai/openai (audio speech)",
+      "api_key_env": "POLLINATIONS_API_KEY",
+      "free_limits": "gratis sin registro"
+    },
+    "edge_tts_unofficial": {
+      "library": "pip install edge-tts",
+      "api_key_env": null,
+      "notes": "No oficial; sin límites publicados; no usar en producción crítica",
+      "voices_hint": "es-ES-AlvaroNeuron, es-ES-ElviraNeuron, en-US-AriaNeuron"
+    }
+  },
+
+  "embeddings": {
+    "local_sentence_transformers": {
+      "library": "pip install sentence-transformers",
+      "api_key_env": null,
+      "models": ["BAAI/bge-m3", "sentence-transformers/all-MiniLM-L6-v2", "jinaai/jina-embeddings-v4", "Snowflake/snowflake-arctic-embed-l-v2.0"],
+      "free_limits": "ilimitado (tu hardware)"
+    },
+    "cohere_embed": {
+      "base_url": "https://api.cohere.com/v2/embed",
+      "api_key_env": "COHERE_API_KEY",
+      "models": ["embed-v4.0", "embed-multilingual-v3.0"],
+      "free_limits": "dentro de 1000 llamadas/mes trial"
+    },
+    "openai_embed": {
+      "base_url": "https://api.openai.com/v1/embeddings",
+      "api_key_env": "OPENAI_API_KEY",
+      "models": ["text-embedding-3-small", "text-embedding-3-large"],
+      "free_limits": "SIN free tier",
+      "paid_after": "$0.02 / $0.13 por M tokens"
+    },
+    "nvidia_embed": {
+      "base_url": "https://integrate.api.nvidia.com/v1/embeddings",
+      "api_key_env": "NVIDIA_API_KEY",
+      "models": ["nvidia/nv-embed-v1", "baai/bge-m3"],
+      "free_limits": "dentro del free tier NIM (~40 RPM)"
+    },
+    "gemini_embed": {
+      "base_url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:embedContent",
+      "api_key_env": "GEMINI_API_KEY",
+      "free_limits": "dentro del free tier Gemini"
+    },
+    "ollama_embed_local": {
+      "base_url": "http://localhost:11434/api/embed",
+      "models": ["nomic-embed-text", "bge-m3"],
+      "free_limits": "ilimitado (local)"
+    }
+  },
+
+  "aggregators": {
+    "openrouter": "https://openrouter.ai/api/v1 — 300+ modelos, una key",
+    "fal_ai": "https://fal.run — imagen/video por GPU-second",
+    "replicate": "https://api.replicate.com — miles de modelos open",
+    "huggingface": "https://router.huggingface.co/v1 — inference providers",
+    "siliconflow": "https://api.siliconflow.com/v1 (intl) / api.siliconflow.cn/v1 (CN)",
+    "pixazo": "https://gateway.pixazo.ai — free preview de imagen/video/audio"
+  }
+}

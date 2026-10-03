@@ -1,0 +1,12 @@
+fix(scripts): track fence character and length in readme_toc.py
+
+The ToC generator toggled a boolean on any line starting with ```, so
+headings inside tilde (~~~) fences were treated as headings, a literal ```
+line could prematurely close a longer ```` fence, and backtick openers whose
+info string contains a backtick were misparsed.
+
+Track the fence marker character and opening length; a fence only closes on a
+matching fence line with at least the same length.
+
+Adds scripts/test_readme_toc_fences.py with regression tests for all three
+cases from #41077.

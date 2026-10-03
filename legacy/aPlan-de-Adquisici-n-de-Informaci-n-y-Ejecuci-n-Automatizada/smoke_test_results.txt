@@ -1,0 +1,12 @@
+200 /
+503 /api/health
+500 /api/stats
+500 /api/skills
+500 /api/repos
+500 /api/phases
+500 /api/audit
+500 /api/simulate
+--- health body ---
+--- lexical validation ---
+500 /api/repos/search POST
+{"error":"Error en la búsqueda semántica"}

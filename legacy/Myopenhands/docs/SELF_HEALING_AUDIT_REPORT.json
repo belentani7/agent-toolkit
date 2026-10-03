@@ -1,0 +1,11 @@
+{
+  "status": "HEALTHY",
+  "timestamp": "2026-09-07T00:00:00Z",
+  "platform": "Manos Abiertas v2.0",
+  "totalNodes": 15,
+  "totalLanguages": 39,
+  "selfHealingEnabled": true,
+  "storageProtection": "SafeStorage (Deep Schema Auto-Repair)",
+  "speechSynthesis": "Web Speech API con Anti-Stall Guard & OnVoicesChanged Cache",
+  "pwaOffline": "Local-First / Zero Telemetry"
+}
