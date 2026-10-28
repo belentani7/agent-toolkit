@@ -134,7 +134,7 @@ Este ecosistema demuestra que es posible crear producción cinematográfica de a
 
 ## 🌐 Ecosistema Belentani
 
-- **Belentani Portal**: https://belentani7.github.io
+- **Belentani Portal**: https://github.com/belentani7
 - **GitHub**: https://github.com/belentani7
 - **Manos Abiertas**: Plataforma educativa para migrantes
 - **Judas Experience**: 36M+ streams
@@ -146,7 +146,7 @@ Este ecosistema demuestra que es posible crear producción cinematográfica de a
 
 - **Email**: belentani7pedro@gmail.com
 - **GitHub**: https://github.com/belentani7
-- **Portal**: https://belentani7.github.io
+- **Portal**: https://github.com/belentani7
 
 ---
 
