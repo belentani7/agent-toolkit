@@ -42,4 +42,4 @@ Documentación completa en español para Qwen Code CLI, incluyendo guías de con
 
 - **GitHub**: https://github.com/belentani7
 - **Email**: belentani7pedro@gmail.com
-- **Web**: https://belentani7.github.io/belentani_Omega/
+- **Web**: https://github.com/belentani7/belentani_Omega
