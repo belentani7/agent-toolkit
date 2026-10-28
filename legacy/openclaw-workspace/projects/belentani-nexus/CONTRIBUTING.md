@@ -150,7 +150,7 @@ npm run test:coverage
 ### **Contacto**
 - Email: belentani7pedro@gmail.com
 - GitHub: https://github.com/belentani7
-- Portal: https://belentani7.github.io
+- Portal: https://github.com/belentani7
 
 ---
 
