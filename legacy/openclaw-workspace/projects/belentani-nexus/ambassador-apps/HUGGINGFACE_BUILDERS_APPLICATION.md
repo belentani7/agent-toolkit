@@ -33,7 +33,7 @@
 **Ubicación**: Barcelona / L'Hospitalet, España
 **GitHub**: https://github.com/belentani7
 **Hugging Face**: (crear/verificar usuario en huggingface.co antes del envío)
-**Web**: https://belentani7.github.io/belentani_Omega/
+**Web**: https://github.com/belentani7/belentani_Omega
 
 **Bio propuesta (EN)**:
 
@@ -134,7 +134,7 @@
 3. **ZAI_PROMPTS.md + PROMPT_TRIAGE/DEEP**: prompts reutilizables para generar/auditar herramientas.
 4. **ManosAbiertas**: plataforma educativa desplegada, candidata a dataset/Space público.
 5. **Duck Studio + pipeline ACE-Step/Demucs**: material para talleres de audio IA.
-6. **Belentani Omega**: https://belentani7.github.io/belentani_Omega/ — portfolio público del ecosistema.
+6. **Belentani Omega**: https://github.com/belentani7/belentani_Omega — portfolio público del ecosistema.
 7. **Contenido planificado**: serie "Building open" (recap de cada evento del capítulo en el blog del Hub / Medium).
 
 ### Checklist de envío
