@@ -35,7 +35,7 @@
 
 ### 🎭 Judas Experience
 **Repo:** `judas-experience-galactic`  
-**URL:** https://belentani7.github.io/judas-experience-galactic/  
+**URL:** https://github.com/belentani7/judas-experience-galactic  
 **Estat:** ✅ Live
 
 **Descripció:** L'àlbum galàctic cyberpunk — 36M+ streams
@@ -56,7 +56,7 @@
 
 ### 🌌 Belentani Portal
 **Repo:** `belentani7.github.io`  
-**URL:** https://belentani7.github.io/  
+**URL:** https://github.com/belentani7  
 **Estat:** ✅ Live
 
 **Descripció:** Portal interactiu amb 16 mòduls
@@ -92,7 +92,7 @@
 
 ### 🦆 Duck Studio
 **Repo:** `duck-full-studio-pro`  
-**URL:** https://belentani7.github.io/duck-full-studio-pro/  
+**URL:** https://github.com/belentani7/duck-full-studio-pro  
 **Estat:** ✅ Live
 
 **Descripció:** Suite completa de producció musical amb IA
@@ -158,7 +158,7 @@ ARXIVAR/ELIMINAR:
 
 ### 🎨 Belentani.cv-ai (Document Studio)
 **Repo:** `Belentani.cv-ai`  
-**URL:** https://belentani7.github.io/Belentani.cv-ai/  
+**URL:** https://github.com/belentani7/Belentani.cv-ai  
 **Estat:** ✅ Live
 
 **Descripció:** Generador de documents amb IA (CV, cartes, presentacions)
@@ -169,7 +169,7 @@ ARXIVAR/ELIMINAR:
 
 ### 🤲 ManosAbiertas
 **Repo:** `ManosAbiertas`  
-**URL:** https://belentani7.github.io/ManosAbiertas/  
+**URL:** https://github.com/belentani7/ManosAbiertas  
 **Estat:** ✅ Live
 
 **Descripció:** Plataforma educativa gratuïta per a migrants
@@ -186,7 +186,7 @@ ARXIVAR/ELIMINAR:
 
 ### 🌈 Cruzando-el-Charco
 **Repo:** `Cruzando-el-charco`  
-**URL:** https://belentani7.github.io/Cruzando-el-charco/  
+**URL:** https://github.com/belentani7/Cruzando-el-charco  
 **Estat:** ✅ Live
 
 **Descripció:** Guia de suport per a migrants LGTBIQ+
@@ -200,8 +200,8 @@ ARXIVAR/ELIMINAR:
 
 ### 💬 Tender Words
 **Repos:**
-- `abrazo-tender-words` → https://belentani7.github.io/abrazo-tender-words/
-- `tender-words-connect` → https://belentani7.github.io/tender-words-connect/
+- `abrazo-tender-words` → https://github.com/belentani7/abrazo-tender-words
+- `tender-words-connect` → https://github.com/belentani7/tender-words-connect
 
 **Estat:** ✅ Live (⚠️ .env commiteado, verificar RLS)
 
