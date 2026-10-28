@@ -115,7 +115,7 @@ await assets.exportAssets('json');
 
 ## 🔗 Links
 
-- **Portal**: https://belentani7.github.io
+- **Portal**: https://github.com/belentani7
 - **GitHub**: https://github.com/belentani7/belentani-nexus
 - **Email**: belentani7pedro@gmail.com
 
