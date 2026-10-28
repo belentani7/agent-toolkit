@@ -281,7 +281,7 @@ LUMA_API_KEY=***
 
 ## 🌐 Ecosistema Belentani
 
-- **Belentani Portal**: https://belentani7.github.io
+- **Belentani Portal**: https://github.com/belentani7
 - **GitHub**: https://github.com/belentani7
 - **Manos Abiertas**: Plataforma educativa para migrantes
 - **Judas Experience**: 36M+ streams
