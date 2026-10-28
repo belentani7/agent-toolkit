@@ -10,7 +10,7 @@
    - Beneficio: Valor educativo, open source
 
 2. **Belentani Pages verificado**
-   - URL: https://belentani7.github.io/Belentani/
+   - URL: https://github.com/belentani7/Belentani
    - Estado: ✅ Pages ya estaba habilitado
    - Nota: No necesita acción adicional
 
