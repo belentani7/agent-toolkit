@@ -101,13 +101,13 @@ workspace/
 ### Core Belentani
 | Projecte | Repo | Estat | Pàgina |
 |----------|------|-------|--------|
-| **Belentani Portal** | belentani7.github.io | ✅ Live | https://belentani7.github.io/ |
+| **Belentani Portal** | belentani7.github.io | ✅ Live | https://github.com/belentani7 |
 | **Belentani OS** | Belentani | ✅ Active | http://belentani.eu/ |
-| **ManosAbiertas** | ManosAbiertas | ✅ Live | https://belentani7.github.io/ManosAbiertas/ |
-| **Cruzando-el-Charco** | Cruzando-el-charco | ✅ Live | https://belentani7.github.io/Cruzando-el-charco/ |
-| **Judas Experience** | judas-experience-galactic | ✅ Live | https://belentani7.github.io/judas-experience-galactic/ |
-| **Duck Studio** | duck-full-studio-pro | ✅ Live | https://belentani7.github.io/duck-full-studio-pro/ |
-| **Belentani.cv-ai** | Belentani.cv-ai | ✅ Live | https://belentani7.github.io/Belentani.cv-ai/ |
+| **ManosAbiertas** | ManosAbiertas | ✅ Live | https://github.com/belentani7/ManosAbiertas |
+| **Cruzando-el-Charco** | Cruzando-el-charco | ✅ Live | https://github.com/belentani7/Cruzando-el-charco |
+| **Judas Experience** | judas-experience-galactic | ✅ Live | https://github.com/belentani7/judas-experience-galactic |
+| **Duck Studio** | duck-full-studio-pro | ✅ Live | https://github.com/belentani7/duck-full-studio-pro |
+| **Belentani.cv-ai** | Belentani.cv-ai | ✅ Live | https://github.com/belentani7/Belentani.cv-ai |
 
 ### Duck Ecosystem (25+ repos)
 - duck-music-lab, duck-2026, duck-apps, duck-apps-web
