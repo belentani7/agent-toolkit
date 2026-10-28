@@ -39,7 +39,7 @@
 **Email**: belentani7pedro@gmail.com
 **Ubicación**: Barcelona / L'Hospitalet, España (zona horaria GMT+2)
 **GitHub**: https://github.com/belentani7
-**Web**: https://belentani7.github.io/belentani_Omega/
+**Web**: https://github.com/belentani7/belentani_Omega
 
 **Bio propuesta (campo del formulario, EN)**:
 
@@ -131,7 +131,7 @@
 2. **Driver de auditoría masiva con Qwen Code**: script PowerShell + prompts triage/deep para auditar 200+ repos (proyecto belentani-nexus)
 3. **ZAI_PROMPTS.md**: 10 prompts de generación de herramientas fullstack
 4. **Profile README profesional** en GitHub
-5. **Belentani Omega web**: https://belentani7.github.io/belentani_Omega/ — portal del ecosistema
+5. **Belentani Omega web**: https://github.com/belentani7/belentani_Omega — portal del ecosistema
 6. **Guía de aplicaciones ambassador** (documento interno de estrategia)
 7. **ManosAbiertas**: plataforma educativa desplegada (3,686+ recursos, 39 idiomas)
 
