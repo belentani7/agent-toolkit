@@ -197,7 +197,7 @@ DEBUG=true npm run demo
 ## 📞 Soporte
 
 - **GitHub Issues**: https://github.com/belentani7/belentani-nexus/issues
-- **Documentación**: https://belentani7.github.io
+- **Documentación**: https://github.com/belentani7
 - **Email**: belentani7pedro@gmail.com
 
 ---
