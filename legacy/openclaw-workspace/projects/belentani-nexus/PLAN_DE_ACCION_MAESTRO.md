@@ -110,8 +110,8 @@ GITHUB_TOKEN=...
 **Objetivo**: Desplegar todo el ecosistema
 
 #### Tasa 4.1: GitHub Pages
-- Desplegar `judas-omega-definitivo.html` en https://belentani7.github.io/
-- Desplegar dashboard en https://belentani7.github.io/belentani-nexus/
+- Desplegar `judas-omega-definitivo.html` en https://github.com/belentani7
+- Desplegar dashboard en https://github.com/belentani7/belentani-nexus
 
 #### Tarea 4.2: Docker Compose
 - Crear `docker-compose.yml` para:
