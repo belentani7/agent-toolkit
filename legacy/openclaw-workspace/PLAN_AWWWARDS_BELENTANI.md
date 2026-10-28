@@ -212,7 +212,7 @@ aiWorker.postMessage({ prompt: '...' });
 <meta name="description" content="Immersive cyberpunk music experience exploring betrayal and redemption. 36M+ streams. Interactive 3D web experience by Pedro Belentani.">
 <meta property="og:title" content="Belentani - Judas Experience">
 <meta property="og:description" content="Cyberpunk galactic music experience">
-<meta property="og:image" content="https://belentani7.github.io/judas-experience/og-image.jpg">
+<meta property="og:image" content="https://github.com/belentani7/judas-experience">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 ```
@@ -585,7 +585,7 @@ h1 {
 1. Ir a https://www.awwwards.com/submit/
 2. Seleccionar "Standard Submission" ($65)
 3. Rellenar:
-   - URL: https://belentani7.github.io/judas-experience/
+   - URL: https://github.com/belentani7/judas-experience
    - Title: "Judas Experience - Cyberpunk Galactic Music"
    - Description: "Immersive cyberpunk music experience..."
    - Category: "Music" o "Entertainment"
