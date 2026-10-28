@@ -44,11 +44,11 @@ gh repo edit belentani7/belentani-office --enable-pages --branch main
 # Verificar
 Write-Host "✅ Pages activado en 5 repos"
 Write-Host " URLs:"
-Write-Host " - https://belentani7.github.io/Belentani/"
-Write-Host " - https://belentani7.github.io/the-judas-experience/"
-Write-Host " - https://belentani7.github.io/duck-docs/"
-Write-Host " - https://belentani7.github.io/duck-hub/"
-Write-Host " - https://belentani7.github.io/belentani-office/"
+Write-Host " - https://github.com/belentani7/Belentani"
+Write-Host " - https://github.com/belentani7/the-judas-experience"
+Write-Host " - https://github.com/belentani7/duck-docs"
+Write-Host " - https://github.com/belentani7/duck-hub"
+Write-Host " - https://github.com/belentani7/belentani-office"
 ```
 
 ### 3. VERIFICAR TOKEN PLAN RESET (5 min)
