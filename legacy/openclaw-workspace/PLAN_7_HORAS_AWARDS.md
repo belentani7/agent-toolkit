@@ -206,7 +206,7 @@ ffmpeg -i judas-compressed.mp4 -ss 00:00:05 -vframes 1 judas-poster.jpg
 1. Git push a GitHub Pages
 2. Test URL live
 3. Preparar submission Awwwards:
-   - URL: https://belentani7.github.io/judas-experience/
+   - URL: https://github.com/belentani7/judas-experience
    - Title: "Belentani - Judas Experience"
    - Description: "239-second cinematic narrative..."
    - Category: Music / Entertainment
