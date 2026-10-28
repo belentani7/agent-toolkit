@@ -33,7 +33,7 @@ Soy usuario real y diario de Alibaba Cloud: mi stack entero corre sobre **DashSc
 **Ubicación**: Barcelona, España (GMT+2)
 **GitHub**: https://github.com/belentani7
 **Cuenta Alibaba Cloud**: activa (usuario real de DashScope/Bailian, Token Plan)
-**Web**: https://belentani7.github.io/belentani_Omega/
+**Web**: https://github.com/belentani7/belentani_Omega
 
 **Bio propuesta (ES/EN)**:
 
