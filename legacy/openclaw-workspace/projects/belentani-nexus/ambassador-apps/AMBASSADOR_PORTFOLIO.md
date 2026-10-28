@@ -14,7 +14,7 @@
 | **Ubicación** | Barcelona / L'Hospitalet, España (GMT+2) |
 | **Email** | belentani7pedro@gmail.com |
 | **GitHub** | https://github.com/belentani7 |
-| **Web** | https://belentani7.github.io/belentani_Omega/ |
+| **Web** | https://github.com/belentani7/belentani_Omega |
 | **Infraestructura** | Sin GPU local → 100% cloud APIs (DashScope/Bailian como backbone) |
 
 ### Bio corta (3 líneas, multilingüe adaptable)
@@ -87,7 +87,7 @@ Portal unificado del ecosistema con GitHub Pages (9+ repos activos). Punto de en
 2. **ARCHITECTURE.md** (Belentani Nexus) — integración de 35+ APIs
 3. **driver.ps1 + PROMPT_TRIAGE/DEEP** — auditoría masiva de repos con Qwen Code
 4. **ZAI_PROMPTS.md** — 10 prompts de generación fullstack
-5. **Belentani Omega** — https://belentani7.github.io/belentani_Omega/
+5. **Belentani Omega** — https://github.com/belentani7/belentani_Omega
 6. **ManosAbiertas** — plataforma educativa desplegada (3,686+ recursos)
 7. **Duck Studio** — suite audio IA funcional
 8. **Guías internas**: facturación cloud, setup Token Plan, endpoints DashScope
