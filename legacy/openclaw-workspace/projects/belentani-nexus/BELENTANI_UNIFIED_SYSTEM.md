@@ -143,7 +143,7 @@ git commit -m "Deploy unified Belentani ecosystem"
 git push origin main
 ```
 
-**URL**: https://belentani7.github.io/belentani-nexus/
+**URL**: https://github.com/belentani7/belentani-nexus
 
 ### Opción 2: Servidor Local
 ```bash
@@ -209,7 +209,7 @@ start C:\Users\USER\.openclaw\workspace\projects\belentani-nexus\judas-omega-def
 ### 4. Submit a Awwwards (10 min)
 - Ir a: https://www.awwwards.com/websites/submit/
 - Cost: $65 (~€60)
-- URL: https://belentani7.github.io/belentani-nexus/judas-omega-definitivo.html
+- URL: https://github.com/belentani7/belentani-nexus
 - Categoría: Music / Entertainment
 
 ### 5. Generar Primer Videoclip (30 min)
