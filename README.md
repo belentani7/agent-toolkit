@@ -67,3 +67,24 @@ Cada carpeta de `legacy/` conserva el contenido del repo original sin reescribir
 | `legacy/ai-gateway-lab` | [`ai-gateway-lab`](https://github.com/belentani7/ai-gateway-lab) | 8 | priv | — | AI Gateway lab - pruebas de gateway de modelos. |
 | `legacy/escaneo-seguridad` | [`escaneo-seguridad`](https://github.com/belentani7/escaneo-seguridad) | 8 | priv | — | Escaneo de seguridad. |
 | `legacy/customer-agent` | [`customer-agent`](https://github.com/belentani7/customer-agent) | 6 | priv | — | customer-agent |
+
+## Estructura
+
+```
+backend_aportaciones_software02/
+├── .github/            # workflows de CI (quality, codeql) y CODEOWNERS
+├── legacy/             # los 57 repos originales archivados, sin reescribir
+├── scripts/export.py   # exporta el inventario de bloques a JSON
+├── tests/              # tests básicos (unittest / pytest)
+├── LICENSE             # MIT, titular Belentani (2026)
+└── MOTHER.md           # ficha de la Mother 02 del atlas Belentani
+```
+
+## Utilidad
+
+- **Utilidad social:** conserva en un único repositorio consultable el historial y las herramientas del ecosistema Belentani (skills, CLIs, runtimes de agentes, ejecución segura) para que cualquier persona pueda estudiarlas y reutilizarlas.
+- **Utilidad comercial:** funciona como inventario auditable de los activos de software de la Mother 02 (`python scripts/export.py` genera el catálogo en JSON), base del portal de Belentani; la licencia MIT permite su reutilización comercial con atribución.
+
+## Licencia
+
+MIT, titular **Belentani** (2026). Véase [LICENSE](LICENSE).

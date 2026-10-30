@@ -8,9 +8,6 @@ permissions:
   contents: read
 
 jobs:
-  quality:
-    runs-on: ubuntu-latest
-    steps:
   analyze:
     runs-on: ubuntu-latest
     permissions:
@@ -20,5 +17,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: github/codeql-action/init@v3
         with:
-          languages: python javascript go java
+          # Lenguajes dominantes del archivo (1236 ficheros .py, 1040 .js/.ts).
+          # Go (9 ficheros) y Java (2) se omiten: Java requiere paso de build
+          # (autobuild) y ambos son residuales en legacy/.
+          languages: python, javascript
       - uses: github/codeql-action/analyze@v3
